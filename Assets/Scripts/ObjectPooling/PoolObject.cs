@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Kelompok6.EcoToss.ObjectPooling
+namespace EcoTeam.EcoToss.ObjectPooling
 {
     public abstract class PoolObject : MonoBehaviour, IPoolObject
     {

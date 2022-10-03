@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Kelompok6.EcoToss.PubSub
+namespace EcoTeam.EcoToss.PubSub
 {
     public class PubSubContainer { }
 
