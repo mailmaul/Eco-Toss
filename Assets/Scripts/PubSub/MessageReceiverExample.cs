@@ -8,13 +8,13 @@ public class MessageReceiverExample : MonoBehaviour
 {
     private void Awake()
     {
-        PublishSubscribe.Instance.Subscribe<ExampleMessage>(OnMessageReceived);
+        PublishSubscribe.Instance.Subscribe<MessageExample>(OnMessageReceived);
     }
     private void OnDestroy()
     {
-        PublishSubscribe.Instance.Unsubscribe<ExampleMessage>(OnMessageReceived);
+        PublishSubscribe.Instance.Unsubscribe<MessageExample>(OnMessageReceived);
     }
-    public void OnMessageReceived(ExampleMessage message)
+    public void OnMessageReceived(MessageExample message)
     {
         Debug.Log("Pesan : " + message.IDMessage + "|" + message.BodyMessage);
     }

@@ -4,21 +4,21 @@ using UnityEngine;
 
 namespace EcoTeam.EcoToss.ObjectPooling
 {
-    public class PoolingSystem : MonoBehaviour
+    public class PoolingSystem
     {
         public int AmountToPool;
         Queue<IPoolObject> _storedList = new Queue<IPoolObject>();
         Queue<IPoolObject> _spawnedList = new Queue<IPoolObject>();
 
-        public PoolingSystem(int poolLimit = 10)
+        public PoolingSystem(int AmountToPool = 10)
         {
-            this.AmountToPool = poolLimit;
+            this.AmountToPool = AmountToPool;
         }
 
         public IPoolObject CreateObject(IPoolObject objectPrefab, Vector3 spawnPos, Transform parent = null)
         {
             IPoolObject outObject;
-            if (_storedList.Count < 1 || _storedList.Peek().gameObject == null)
+            if (_storedList.Count < AmountToPool || _storedList.Peek().gameObject == null)
             {
                 outObject = MonoBehaviour.Instantiate(objectPrefab.gameObject).
                 GetComponent<IPoolObject>();

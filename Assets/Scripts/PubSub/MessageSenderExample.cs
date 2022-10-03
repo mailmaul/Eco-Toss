@@ -8,12 +8,12 @@ public class MessageSenderExample : MonoBehaviour
 {
     private void PublishMessageWithParameter()
     {
-        PublishSubscribe.Instance.Publish<ExampleMessage>(new ExampleMessage("1", 10));
+        PublishSubscribe.Instance.Publish<MessageExample>(new MessageExample("1", 10));
     }
 
     private void PublishMessageWithoutParameter()
     {
-        PublishSubscribe.Instance.Publish<ExampleMessage>(new ExampleMessage());
+        PublishSubscribe.Instance.Publish<MessageExample>(new MessageExample());
     }
 
     private void Update()
