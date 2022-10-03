@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - TrashOrganic
+  - TrashNonOrganic
+  - TrashDangerous
+  - TrashCanOrganic
+  - TrashCanNonOrganic
+  - TrashCanDangerous
+  - Ground
+  - Intruder
   layers:
   - Default
   - TransparentFX

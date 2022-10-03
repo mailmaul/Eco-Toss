@@ -10,9 +10,9 @@ namespace EcoTeam.EcoToss.TrashSpawner
 {
     public class TrashSpawnerController : MonoBehaviour
     {
-        private PoolingSystem _trashPool = new();
+        private PoolingSystem _trashPool = new PoolingSystem(20);
 
-        [SerializeField] private TrashController _trashController;
+        [SerializeField] private TrashController[] _trashController;
 
         private void Awake()
         {
@@ -29,9 +29,22 @@ namespace EcoTeam.EcoToss.TrashSpawner
             PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
         }
 
+        private void Update()
+        {
+            // Debugging purposes
+            //if (Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
+            //}
+        }
+
         private void MessageTrashSpawnReceived(MessageTrashSpawn message)
         {
-            IPoolObject createdTrash = _trashPool.CreateObject(_trashController, transform.position, Quaternion.identity);
+            int randomIndex = Random.Range(0, _trashController.Length);
+            IPoolObject createdTrash = _trashPool.CreateObject(_trashController[randomIndex], transform.position);
+
+            // Debugging purposes
+            //createdTrash.transform.position = new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y, transform.position.z);
         }
     }
 }

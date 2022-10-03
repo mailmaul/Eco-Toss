@@ -18,7 +18,7 @@ namespace EcoTeam.EcoToss.ObjectPooling
         public IPoolObject CreateObject(IPoolObject objectPrefab, Vector3 spawnPos, Transform parent = null)
         {
             IPoolObject outObject;
-            if (_storedList.Count < 1 || _storedList.Peek().gameObject == null)
+            if (_storedList.Count < AmountToPool || _storedList.Peek().gameObject == null)
             {
                 outObject = MonoBehaviour.Instantiate(objectPrefab.gameObject).
                 GetComponent<IPoolObject>();
