@@ -9,6 +9,14 @@ namespace EcoTeam.EcoToss.WindArea
         [SerializeField] private float _maxWindStrength;
         [SerializeField] private List<Vector3> _windDirections = new List<Vector3>();
 
+        private float _windStrength;
+        private Vector3 _windDirection;
+
+        private void Start()
+        {
+            RandomPropertiesValue();
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             WindForce(other.gameObject);
@@ -16,16 +24,21 @@ namespace EcoTeam.EcoToss.WindArea
 
         public void WindForce(GameObject obj)
         {
-            float strength = Random.Range(0.1f, _maxWindStrength);
-            int index = Random.Range(0, _windDirections.Count);
-
             Rigidbody rb = obj.GetComponent<Rigidbody>();
 
             if (rb)
             {
-                rb.AddForce(strength * _windDirections[index]);
-                Debug.Log("Str : " + strength + ", Dir : " + _windDirections[index]);
+                rb.AddForce(_windStrength * _windDirection);
+                Debug.Log("Str : " + _windStrength + ", Dir : " + _windDirection);
             }
+        }
+
+        //Dipanggil ketika sampah jatuh setelah dilempar
+        public void RandomPropertiesValue()
+        {
+            _windStrength = Random.Range(0.5f, _maxWindStrength);
+            int index = Random.Range(0, _windDirections.Count);
+            _windDirection = _windDirections[index];
         }
     }
 }
