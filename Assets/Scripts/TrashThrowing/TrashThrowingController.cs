@@ -4,32 +4,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrashThrowingController : MonoBehaviour
+namespace EcoTeam.EcoToss.TrashThrowing
 {
-    [SerializeField] Rigidbody _rigidbody;
-    [SerializeField] float _throwForceInX = 10f; // to control throw force in X directions
-    [SerializeField] float _throwForceInY = 10f; // to control throw force in Y directions
-    [SerializeField] float _throwForceInZ = 250f; // to control throw force in Z direction
-
-    private void Awake()
+    public class TrashThrowingController : MonoBehaviour
     {
-        PublishSubscribe.Instance.Subscribe<MessageTrashThrowing>(ThrowTrash);
-    }
+        [SerializeField] Rigidbody _rigidbody;
+        [SerializeField] float _throwForceInX = 10f; // to control throw force in X directions
+        [SerializeField] float _throwForceInY = 10f; // to control throw force in Y directions
+        [SerializeField] float _throwForceInZ = 250f; // to control throw force in Z direction
 
-    private void OnDestroy()
-    {
-        PublishSubscribe.Instance.Unsubscribe<MessageTrashThrowing>(ThrowTrash);
-    }
+        private void Awake()
+        {
+            PublishSubscribe.Instance.Subscribe<MessageTrashThrowing>(ThrowTrash);
+        }
 
-    // add force to balls rigidbody in 3D space depending on swipe direction and throw forces
-    void ThrowTrash(MessageTrashThrowing message)
-    {
-        _rigidbody = message.TrashRigidbody;
-        _rigidbody.isKinematic = false;
-        _rigidbody.AddForce(
-            -message.SwipeDirection.x * _throwForceInX, 
-            -message.SwipeDirection.y * _throwForceInY, 
-            _throwForceInZ
-            );
+        private void OnDestroy()
+        {
+            PublishSubscribe.Instance.Unsubscribe<MessageTrashThrowing>(ThrowTrash);
+        }
+
+        // add force to balls rigidbody in 3D space depending on swipe direction and throw forces
+        void ThrowTrash(MessageTrashThrowing message)
+        {
+            _rigidbody = message.TrashRigidbody;
+            _rigidbody.isKinematic = false;
+            _rigidbody.AddForce(
+                -message.SwipeDirection.x * _throwForceInX,
+                -message.SwipeDirection.y * _throwForceInY,
+                _throwForceInZ
+                );
+        }
     }
 }
