@@ -22,4 +22,9 @@ namespace EcoTeam.EcoToss.PubSub
     {
 
     }
+
+    public struct MessageOnHitIntruder
+    {
+
+    }
 }
