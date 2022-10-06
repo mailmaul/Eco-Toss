@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EcoTeam.EcoToss.PubSub;
+using Agate.MVC.Core;
 
 namespace EcoTeam.EcoToss.WindArea
 {
@@ -12,9 +14,19 @@ namespace EcoTeam.EcoToss.WindArea
         private float _windStrength;
         private Vector3 _windDirection;
 
+        private void Awake()
+        {
+            PublishSubscribe.Instance.Subscribe<MessageSetRandomPropetiesWindArea>(RandomPropertiesValue);
+        }
+
+        private void OnDestroy()
+        {
+            PublishSubscribe.Instance.Unsubscribe<MessageSetRandomPropetiesWindArea>(RandomPropertiesValue);
+        }
+
         private void Start()
         {
-            RandomPropertiesValue();
+            //RandomPropertiesValue();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -33,8 +45,8 @@ namespace EcoTeam.EcoToss.WindArea
             }
         }
 
-        //Dipanggil ketika sampah jatuh setelah dilempar
-        public void RandomPropertiesValue()
+        //Dipanggil pada script TrashController saat sampah collide with ground or intruder
+        public void RandomPropertiesValue(MessageSetRandomPropetiesWindArea msg)
         {
             _windStrength = Random.Range(0.5f, _maxWindStrength);
             int index = Random.Range(0, _windDirections.Count);
