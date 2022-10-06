@@ -13,6 +13,7 @@ TagManager:
   - Ground
   - Intruder
   - CheckPoint
+  - DestroyPoint
   layers:
   - Default
   - TransparentFX

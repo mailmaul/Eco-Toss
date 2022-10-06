@@ -10,10 +10,15 @@ namespace EcoTeam.EcoToss.Intruder
     {
         private const float _timer = 5f;
         private float _currentTime;
-        private bool _isMove = true;
+        private bool _isMove;
 
         [Header("Properties")]
         [SerializeField] private float _speed;
+
+        private void Start()
+        {
+            OnCreate();
+        }
 
         private void Update()
         {
@@ -58,6 +63,16 @@ namespace EcoTeam.EcoToss.Intruder
             {
                 _isMove = false;
             }
+
+            if (other.gameObject.CompareTag("DestroyPoint"))
+            {
+                StoreToPool();
+            }
+        }
+
+        public override void OnCreate()
+        {
+            _isMove = true;
         }
     }
 }

@@ -27,4 +27,14 @@ namespace EcoTeam.EcoToss.PubSub
     {
 
     }
+
+    public struct MessageSpawnIntruder
+    {
+        public int Index { get; private set; }
+
+        public MessageSpawnIntruder(int index)
+        {
+            Index = index;
+        }
+    }
 }
