@@ -9,6 +9,9 @@ public class TestTrash : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        PublishSubscribe.Instance.Publish<MessageOnHitIntruder>(new MessageOnHitIntruder());
+        if (other.gameObject.CompareTag("Intruder"))
+        {
+            PublishSubscribe.Instance.Publish<MessageOnHitIntruder>(new MessageOnHitIntruder());
+        }
     }
 }

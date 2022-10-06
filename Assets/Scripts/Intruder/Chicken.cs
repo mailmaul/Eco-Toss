@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EcoTeam.EcoToss.PubSub;
+using EcoTeam.EcoToss.ObjectPooling;
 
 namespace EcoTeam.EcoToss.Intruder
 {
-    public class Chicken : Intruder
+    public class Chicken : BaseIntruder
     {
         private const float _timer = 5f;
         private float _currentTime;
-        public bool _isMove = true;
+        private bool _isMove = true;
+
+        [Header("Properties")]
+        [SerializeField] private float _speed;
 
         private void Update()
         {
@@ -28,8 +32,8 @@ namespace EcoTeam.EcoToss.Intruder
         {
             if(_currentTime > _timer)
             {
-                //mengacaukan tempat sampah (animasi tempat sampah berantakan dan ayam pergi)
-                Debug.Log("Kurangi poin player");
+                //mengacaukan tempat sampah (animasi tempat sampah berantakan)
+                Debug.Log("Kurangi poin player"); //publish event to decrease score
                 _currentTime = 0;
             }
 
@@ -38,15 +42,14 @@ namespace EcoTeam.EcoToss.Intruder
 
         public override void Movement()
         {
-            transform.Translate(new Vector3(1f, 0, 0) * Time.deltaTime);
-            Debug.Log("Movement");
+            transform.Translate(new Vector3(_speed, 0, 0) * Time.deltaTime);
         }
 
         //called by event when trash hit intruder
         public override void OnHit(MessageOnHitIntruder msg)
         {
             _isMove = true;
-            Debug.Log("Ayam kena lempar " + _isMove);
+            Debug.Log("Ayam kena lempar");
         }
 
         private void OnTriggerEnter(Collider other)
