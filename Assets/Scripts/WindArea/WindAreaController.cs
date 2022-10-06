@@ -41,7 +41,10 @@ namespace EcoTeam.EcoToss.WindArea
             if (rb)
             {
                 rb.AddForce(_windStrength * _windDirection);
-                Debug.Log("Str : " + _windStrength + ", Dir : " + _windDirection);
+                if (Debug.isDebugBuild)
+                {
+                   Debug.Log("Str : " + _windStrength + ", Dir : " + _windDirection);
+                }
             }
         }
 
