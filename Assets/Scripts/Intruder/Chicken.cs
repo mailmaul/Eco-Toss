@@ -6,9 +6,8 @@ namespace EcoTeam.EcoToss.Intruder
 {
     public class Chicken : MonoBehaviour
     {
-        private const float _castingTime = 5f;
-        private float _time;
-        private bool _isIntrude = false;
+        private const float _timer = 5f;
+        private float _currentTime;
         private bool _isMove = true;
 
         private void Update()
@@ -18,7 +17,7 @@ namespace EcoTeam.EcoToss.Intruder
                 Movement();
             }
 
-            if (!_isIntrude && !_isMove)
+            if (!_isMove)
             {
                 Intrude();
             }
@@ -26,17 +25,14 @@ namespace EcoTeam.EcoToss.Intruder
 
         public void Intrude()
         {
-            if (_time > _castingTime)
+            if(_currentTime > _timer)
             {
                 //mengacaukan tempat sampah (animasi tempat sampah berantakan dan ayam pergi)
-                Debug.Log("Mengacaukan tempat sampah");
-                _isIntrude = true;
-                _isMove = true;
-                _time = 0;
-                return;
+                Debug.Log("Kurangi poin player");
+                _currentTime = 0;
             }
 
-            _time += Time.deltaTime;
+            _currentTime += Time.deltaTime;
         }
 
         public void Movement()
@@ -47,7 +43,6 @@ namespace EcoTeam.EcoToss.Intruder
         //called by event when trash hit intruder
         public void OnHit()
         {
-            _isIntrude = true;
             _isMove = true;
             Debug.Log("Ayam kena lempar");
         }
