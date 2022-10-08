@@ -9,10 +9,17 @@ namespace EcoTeam.EcoToss.Trash
 {
     public class TrashController : PoolObject
     {
-        
-        public static int jumlahsampah = 0;
-
         private Rigidbody _rigidbody;
+
+        private void Awake()
+        {
+            PublishSubscribe.Instance.Subscribe<MessageStoreToPool>(StoreToPool);
+        }
+
+        private void OnDestroy()
+        {
+            PublishSubscribe.Instance.Unsubscribe<MessageStoreToPool>(StoreToPool);
+        }
 
         private void Start()
         {
@@ -27,22 +34,29 @@ namespace EcoTeam.EcoToss.Trash
             base.StoreToPool();
         }
 
+        // Overload with MessageStoreToPool
+        public override void StoreToPool(MessageStoreToPool message)
+        {
+            transform.SetPositionAndRotation(transform.position, Quaternion.identity);
+            _rigidbody.velocity = Vector3.zero;
+            _rigidbody.angularVelocity = Vector3.zero;
+            base.StoreToPool();
+        }
+
         private void OnCollisionEnter(Collision collision)
         {
-            
-            if (collision.gameObject.CompareTag("TrashCanOrganic") && jumlahsampah <= 19)
+            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Intruder"))
             {
                 PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
-                jumlahsampah++;
-                Debug.Log("Jumlah Sampah" + jumlahsampah);
+
                 // Store game object to pool and set active false
-                Invoke("StoreToPool", 1);
+                Invoke(nameof(StoreToPool), 1);
             }
         }
 
         public override void OnCreate()
         {
-
+            
         }
     }
 }

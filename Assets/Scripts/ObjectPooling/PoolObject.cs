@@ -1,3 +1,4 @@
+using EcoTeam.EcoToss.PubSub;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,13 +10,21 @@ namespace EcoTeam.EcoToss.ObjectPooling
         public PoolingSystem Pooling { private set; get; }
         void IPoolObject.Initial(PoolingSystem poolSystem)
         {
-            Debug.Log("Intial" + poolSystem);
+            //Debug.Log("Intial" + poolSystem);
             Pooling = poolSystem;
         }
         public abstract void OnCreate();
         public virtual void StoreToPool()
         {
-            Debug.Log(Pooling);
+            //Debug.Log(Pooling);
+            Pooling.Store(this);
+            gameObject.SetActive(false);
+        }
+
+        // Overload with MessageStoreToPool
+        public virtual void StoreToPool(MessageStoreToPool message)
+        {
+            //Debug.Log(Pooling);
             Pooling.Store(this);
             gameObject.SetActive(false);
         }
