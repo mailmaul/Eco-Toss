@@ -44,4 +44,9 @@ namespace EcoTeam.EcoToss.PubSub
     }
 
     public struct MessageStoreToPool { }
+
+    public struct MessageSetRandomPropetiesWindArea
+    {
+
+    }
 }
