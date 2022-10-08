@@ -23,6 +23,28 @@ namespace EcoTeam.EcoToss.PubSub
 
     }
 
+    public struct MessageAddScore
+    {
+        public string Amount;
+
+        public MessageAddScore(string amount)
+        {
+            Amount = amount;
+        }
+    }
+
+    public struct MessageRemoveScore
+    {
+        public string Amount;
+
+        public MessageRemoveScore(string amount)
+        {
+            Amount = amount;
+        }
+    }
+
+    public struct MessageStoreToPool { }
+
     public struct MessageSetRandomPropetiesWindArea
     {
 
