@@ -12,6 +12,8 @@ TagManager:
   - TrashCanDangerous
   - Ground
   - Intruder
+  - CheckPoint
+  - DestroyPoint
   layers:
   - Default
   - TransparentFX
