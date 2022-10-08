@@ -23,6 +23,18 @@ namespace EcoTeam.EcoToss.PubSub
 
     }
 
+    public struct MessageTrashThrowing
+    {
+        public Rigidbody TrashRigidbody;
+        public Vector2 SwipeDirection;
+
+        public MessageTrashThrowing(Rigidbody trashRigidbody, Vector2 swipeDirection)
+        {
+            TrashRigidbody = trashRigidbody;
+            SwipeDirection = swipeDirection;
+        }
+    }
+    
     public struct MessageAddScore
     {
         public string Amount;
