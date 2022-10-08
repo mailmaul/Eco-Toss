@@ -11,6 +11,16 @@ namespace EcoTeam.EcoToss.Trash
     {
         private Rigidbody _rigidbody;
 
+        private void Awake()
+        {
+            PublishSubscribe.Instance.Subscribe<MessageStoreToPool>(StoreToPool);
+        }
+
+        private void OnDestroy()
+        {
+            PublishSubscribe.Instance.Unsubscribe<MessageStoreToPool>(StoreToPool);
+        }
+
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
@@ -25,6 +35,15 @@ namespace EcoTeam.EcoToss.Trash
             base.StoreToPool();
         }
 
+        // Overload with MessageStoreToPool
+        public override void StoreToPool(MessageStoreToPool message)
+        {
+            transform.SetPositionAndRotation(transform.position, Quaternion.identity);
+            _rigidbody.velocity = Vector3.zero;
+            _rigidbody.angularVelocity = Vector3.zero;
+            base.StoreToPool();
+        }
+
         private void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Intruder"))
@@ -32,13 +51,13 @@ namespace EcoTeam.EcoToss.Trash
                 PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
 
                 // Store game object to pool and set active false
-                Invoke("StoreToPool", 3);
+                Invoke(nameof(StoreToPool), 1);
             }
         }
 
         public override void OnCreate()
         {
-
+            
         }
     }
 }
