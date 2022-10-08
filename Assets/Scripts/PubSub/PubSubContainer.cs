@@ -37,4 +37,43 @@ namespace EcoTeam.EcoToss.PubSub
             Index = index;
         }
     }
+    
+    public struct MessageTrashThrowing
+    {
+        public Rigidbody TrashRigidbody;
+        public Vector2 SwipeDirection;
+
+        public MessageTrashThrowing(Rigidbody trashRigidbody, Vector2 swipeDirection)
+        {
+            TrashRigidbody = trashRigidbody;
+            SwipeDirection = swipeDirection;
+        }
+    }
+    
+    public struct MessageAddScore
+    {
+        public string Amount;
+
+        public MessageAddScore(string amount)
+        {
+            Amount = amount;
+        }
+    }
+
+    public struct MessageRemoveScore
+    {
+        public string Amount;
+
+        public MessageRemoveScore(string amount)
+        {
+            Amount = amount;
+        }
+    }
+
+    public struct MessageStoreToPool { }
+
+    public struct MessageSetRandomPropetiesWindArea
+    {
+
+    }
 }
