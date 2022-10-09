@@ -76,4 +76,23 @@ namespace EcoTeam.EcoToss.PubSub
     {
 
     }
+
+    public struct MessageDecreaseHealth { }
+    public struct MessageIncraeseHealth
+    {
+        public int AdditionalHealth { get; private set; }
+        public MessageIncraeseHealth(int health)
+        {
+            AdditionalHealth = health;
+        }
+    }
+
+    public struct MessageOnGameOver
+    {
+        public bool IsGameOver { get; private set; }
+        public MessageOnGameOver(bool gameover)
+        {
+            IsGameOver = gameover;
+        }
+    }
 }

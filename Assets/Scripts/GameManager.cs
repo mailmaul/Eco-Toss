@@ -8,6 +8,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private void OnEnable()
+    {
+        PublishSubscribe.Instance.Subscribe<MessageOnGameOver>(OnGameOver);
+    }
+
+    private void OnDisable()
+    {
+        PublishSubscribe.Instance.Unsubscribe<MessageOnGameOver>(OnGameOver);
+    }
 
     public static int PlayerScore = 0;
     public static int Organic = 0;
@@ -20,12 +29,19 @@ public class GameManager : MonoBehaviour
     GameObject TrashNonOrganic;
     GameObject TrashDangerous;
 
+    public bool IsGameOver { get; private set; }
+
     // Start is called before the first frame update
     void Start()
     {
         TrashOrganic    =   GameObject.FindGameObjectWithTag("TrashOrganic");
         TrashNonOrganic =   GameObject.FindGameObjectWithTag("TrashNonOrganic");
         TrashDangerous  =   GameObject.FindGameObjectWithTag("TrashDangerous");
+    }
+
+    public void OnGameOver(MessageOnGameOver msg)
+    {
+        IsGameOver = msg.IsGameOver;
     }
 
     public static void Score (string trashCanID) {
