@@ -8,6 +8,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    #region Singleton
+    public static GameManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+    }
+    #endregion
 
     public static int PlayerScore = 0;
     public static int Organic = 0;
@@ -20,25 +31,35 @@ public class GameManager : MonoBehaviour
     GameObject TrashNonOrganic;
     GameObject TrashDangerous;
 
+    public bool IsWindSpawn { get; private set; }
+
     // Start is called before the first frame update
     void Start()
     {
         TrashOrganic    =   GameObject.FindGameObjectWithTag("TrashOrganic");
         TrashNonOrganic =   GameObject.FindGameObjectWithTag("TrashNonOrganic");
         TrashDangerous  =   GameObject.FindGameObjectWithTag("TrashDangerous");
+
+        IsWindSpawn = false;
     }
 
     public static void Score (string trashCanID) {
-    if (trashCanID == "TrashCanOrganic" || trashCanID == "TrashNonOrganic" || trashCanID == "TrashDangerous")
-    {
-        PlayerScore++;
-        Debug.Log(PlayerScore);
-        //PublishSubscribe.Instance.Unsubscribe<MessageTrashSpawn>(MessageTrashSpawnReceived);
-        
-    } else
-    {
-        Organic++;
+        if (trashCanID == "TrashCanOrganic" || trashCanID == "TrashNonOrganic" || trashCanID == "TrashDangerous")
+        {
+            PlayerScore++;
+            Debug.Log(PlayerScore);
+            //PublishSubscribe.Instance.Unsubscribe<MessageTrashSpawn>(MessageTrashSpawnReceived);
+            
+        } 
+        else
+        {
+            Organic++;
+        }
     }
+
+    public void OnWindSpawn(bool msg)
+    {
+        IsWindSpawn = msg;
     }
 
     void OnGUI () {

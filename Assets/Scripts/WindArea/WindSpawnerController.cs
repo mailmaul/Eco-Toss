@@ -38,6 +38,7 @@ namespace EcoTeam.EcoToss.WindArea
         public void Spawn(MessageSpawnWindArea msg)
         {
             Instantiate(prefab, transform);
+            GameManager.Instance.OnWindSpawn(true);
             PublishSubscribe.Instance.Publish<MessageSetRandomPropetiesWindArea>(new MessageSetRandomPropetiesWindArea());
         }
 
