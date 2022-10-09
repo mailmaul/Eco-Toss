@@ -1160,9 +1160,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 0}
-  _throwForceInX: 10
-  _throwForceInY: 10
-  _throwForceInZ: 250
+  _throwForceInX: 1
+  _throwForceInY: 1
+  _throwForceInZ: 425
 --- !u!4 &1605242198
 Transform:
   m_ObjectHideFlags: 0

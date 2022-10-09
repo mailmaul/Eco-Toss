@@ -9,9 +9,9 @@ namespace EcoTeam.EcoToss.TrashThrowing
     public class TrashThrowingController : MonoBehaviour
     {
         [SerializeField] Rigidbody _rigidbody;
-        [SerializeField] float _throwForceInX = 10f; // to control throw force in X directions
-        [SerializeField] float _throwForceInY = 10f; // to control throw force in Y directions
-        [SerializeField] float _throwForceInZ = 250f; // to control throw force in Z direction
+        [SerializeField] float _throwForceInX = 1f; // to control throw force in X directions
+        [SerializeField] float _throwForceInY = 1f; // to control throw force in Y directions
+        [SerializeField] float _throwForceInZ = 425f; // to control throw force in Z direction
 
         private void Awake()
         {
