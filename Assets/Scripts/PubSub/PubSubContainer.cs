@@ -18,15 +18,9 @@ namespace EcoTeam.EcoToss.PubSub
         }
     }
 
-    public struct MessageTrashSpawn
-    {
+    public struct MessageTrashSpawn { }
 
-    }
-
-    public struct MessageOnHitIntruder
-    {
-
-    }
+    public struct MessageOnHitIntruder { }
 
     public struct MessageSpawnIntruder
     {
@@ -72,8 +66,7 @@ namespace EcoTeam.EcoToss.PubSub
 
     public struct MessageStoreToPool { }
 
-    public struct MessageSetRandomPropetiesWindArea
-    {
+    public struct MessageSetRandomPropetiesWindArea { }
 
-    }
+    public struct MessageSpawnWindArea { }
 }

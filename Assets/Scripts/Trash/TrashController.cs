@@ -50,6 +50,11 @@ namespace EcoTeam.EcoToss.Trash
             {
                 PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
 
+                if (GameManager.Instance.IsWindSpawn)
+                {
+                    PublishSubscribe.Instance.Publish<MessageSetRandomPropetiesWindArea>(new MessageSetRandomPropetiesWindArea());
+                }
+
                 // Store game object to pool and set active false
                 Invoke(nameof(StoreToPool), 1);
             }
