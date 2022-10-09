@@ -37,6 +37,9 @@ namespace EcoTeam.EcoToss.InputSystem
                 _swipeDirection = _touchStartPosition - _touchEndPosition;
 
                 PublishSubscribe.Instance.Publish<MessageTrashThrowing>(new MessageTrashThrowing(_rigidbody, _swipeDirection));
+                
+                // reset selected rigidbody
+                _rigidbody = null;
             }
         }
 
