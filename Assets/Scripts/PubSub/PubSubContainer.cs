@@ -69,4 +69,11 @@ namespace EcoTeam.EcoToss.PubSub
     public struct MessageSetRandomPropetiesWindArea { }
 
     public struct MessageSpawnWindArea { }
+
+    public struct MessageClearTrashList { }
+
+    public struct MessagePlayBuff { }
+
+    public struct MessageActivateDoubleScore { }
+    public struct MessageDeactivateDoubleScore { }
 }

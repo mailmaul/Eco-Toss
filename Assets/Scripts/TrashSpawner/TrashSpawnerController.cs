@@ -10,7 +10,7 @@ namespace EcoTeam.EcoToss.TrashSpawner
 {
     public class TrashSpawnerController : MonoBehaviour
     {
-        private PoolingSystem _trashPool = new PoolingSystem(20);
+        private PoolingSystem _trashPool = new PoolingSystem(30);
 
         [SerializeField] private TrashController[] _trashController;
 

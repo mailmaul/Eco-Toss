@@ -13,12 +13,12 @@ namespace EcoTeam.EcoToss.Trash
 
         private void Awake()
         {
-            PublishSubscribe.Instance.Subscribe<MessageStoreToPool>(StoreToPool);
+            PublishSubscribe.Instance.Subscribe<MessageStoreToPool>(StoreToPoolWithMessage);
         }
 
         private void OnDestroy()
         {
-            PublishSubscribe.Instance.Unsubscribe<MessageStoreToPool>(StoreToPool);
+            PublishSubscribe.Instance.Unsubscribe<MessageStoreToPool>(StoreToPoolWithMessage);
         }
 
         private void Start()
@@ -31,17 +31,18 @@ namespace EcoTeam.EcoToss.Trash
             transform.SetPositionAndRotation(transform.position, Quaternion.identity);
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.angularVelocity = Vector3.zero;
-            _rigidbody.isKinematic = true;
+            //_rigidbody.isKinematic = true;
             base.StoreToPool();
         }
 
         // Overload with MessageStoreToPool
-        public override void StoreToPool(MessageStoreToPool message)
+        public override void StoreToPoolWithMessage(MessageStoreToPool message)
         {
             transform.SetPositionAndRotation(transform.position, Quaternion.identity);
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.angularVelocity = Vector3.zero;
-            base.StoreToPool();
+            //_rigidbody.isKinematic = true;
+            base.StoreToPoolWithMessage(message);
         }
 
         private void OnCollisionEnter(Collision collision)
