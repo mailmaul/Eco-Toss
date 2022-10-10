@@ -68,5 +68,25 @@ namespace EcoTeam.EcoToss.PubSub
 
     public struct MessageSetRandomPropetiesWindArea { }
 
+    public struct MessageDecreaseHealth { }
+  
+    public struct MessageIncraeseHealth
+    {
+        public int AdditionalHealth { get; private set; }
+        public MessageIncraeseHealth(int health)
+        {
+            AdditionalHealth = health;
+        }
+    }
+
+    public struct MessageGameOver
+    {
+        public bool IsGameOver { get; private set; }
+        public MessageGameOver(bool gameover)
+        {
+            IsGameOver = gameover;
+        }
+    }
+
     public struct MessageSpawnWindArea { }
 }

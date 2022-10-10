@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EcoTeam.EcoToss.PubSub;
+using EcoTeam.EcoToss.GameManager;
 using Agate.MVC.Core;
 
 namespace EcoTeam.EcoToss.WindArea
@@ -38,7 +39,7 @@ namespace EcoTeam.EcoToss.WindArea
         public void Spawn(MessageSpawnWindArea msg)
         {
             Instantiate(prefab, transform);
-            GameManager.Instance.OnWindSpawn(true);
+            GameManagerController.Instance.OnWindSpawn(true);
             PublishSubscribe.Instance.Publish<MessageSetRandomPropetiesWindArea>(new MessageSetRandomPropetiesWindArea());
         }
 
