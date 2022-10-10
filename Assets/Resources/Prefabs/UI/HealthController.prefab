@@ -281,4 +281,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5edb28f81b86dd4ca76aeed5fb7cbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 3
   _healthText: {fileID: 8000498299743032756}

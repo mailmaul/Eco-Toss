@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using EcoTeam.EcoToss.PubSub;
+using EcoTeam.EcoToss.GameManager;
 using Agate.MVC.Core;
 
 namespace EcoTeam.EcoToss.Health
 {
     public class HealthController : MonoBehaviour
     {
-        private int _health;
+        [SerializeField] private int _health;
 
         [SerializeField] private TMP_Text _healthText;
 
@@ -25,16 +26,13 @@ namespace EcoTeam.EcoToss.Health
             PublishSubscribe.Instance.Unsubscribe<MessageIncraeseHealth>(IncreaseHealth);
         }
 
-        private void Start()
-        {
-            _health = 3;
-        }
-
         private void Update()
         {
-            //wrap ke dalam if(!GameManager.Instance.IsGameOver){}
-            SetUI();
-            EmptyHealth();
+            if (!GameManagerController.Instance.IsGameOver)
+            {
+                SetUI();
+                EmptyHealth();
+            }
         }
 
         //publish ketika sampah tidak masuk ke tong sampah
@@ -53,13 +51,13 @@ namespace EcoTeam.EcoToss.Health
         {
             if(_health <= 0)
             {
-                PublishSubscribe.Instance.Publish<MessageOnGameOver>(new MessageOnGameOver(true));
+                PublishSubscribe.Instance.Publish<MessageGameOver>(new MessageGameOver(true));
             }
         }
 
         private void SetUI()
         {
-            _healthText.text = "Health : " + _health.ToString();
+            _healthText.SetText("Health : " + _health);
         }
     }
 }
