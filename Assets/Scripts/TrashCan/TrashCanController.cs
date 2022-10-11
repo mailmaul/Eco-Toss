@@ -9,12 +9,22 @@ namespace EcoTeam.EcoToss.TrashCan
 {
     public class TrashCanController : MonoBehaviour
     {
-        [SerializeField] private List<GameObject> _trashList;
+        [SerializeField] private List<GameObject> _trashList = new();
+        [SerializeField] private List<GameObject> _matchedTrashList = new();
         private string _trashCanTag;
+
+        private void Awake()
+        {
+            PublishSubscribe.Instance.Subscribe<MessageClearTrashList>(ClearTrashList);
+        }
+
+        private void OnDestroy()
+        {
+            PublishSubscribe.Instance.Unsubscribe<MessageClearTrashList>(ClearTrashList);
+        }
 
         private void Start()
         {
-            _trashList = new List<GameObject>();
             _trashCanTag = gameObject.tag.Substring(8);
         }
 
@@ -36,8 +46,6 @@ namespace EcoTeam.EcoToss.TrashCan
 
         private void CheckTrashListElements(string collidedGameObjectTag)
         {
-            List<GameObject> matchedTrashList = new List<GameObject>();
-
             for (int i = 0; i < _trashList.Count; i++)
             {
                 // Determine whether collidedGameObjectTag is the same as previous or next index of list
@@ -46,27 +54,33 @@ namespace EcoTeam.EcoToss.TrashCan
                         (i != _trashList.Count - 1 && _trashList[i + 1].CompareTag(collidedGameObjectTag)))
                     )
                 {
-                    matchedTrashList.Add(_trashList[i]);
+                    _matchedTrashList.Add(_trashList[i]);
 
                     // if Match-3
-                    if (matchedTrashList.Count == 3)
+                    if (_matchedTrashList.Count == 3)
                     {
                         // Match-3 bonus score
                         PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Match3"));
 
-                        for (int j = 0; j < matchedTrashList.Count; j++)
+                        for (int j = 0; j < _matchedTrashList.Count; j++)
                         {
-                            _trashList.Remove(matchedTrashList[j]);
-                            matchedTrashList[j].GetComponent<TrashController>().StoreToPool();
+                            _matchedTrashList[j].GetComponent<TrashController>().StoreToPool();
+                            _trashList.Remove(_matchedTrashList[j]);
                         }
-                        matchedTrashList.Clear();
+                        _matchedTrashList.Clear();
                     }
                 }
                 else
                 {
-                    matchedTrashList.Clear();
+                    _matchedTrashList.Clear();
                 }
             }
+        }
+
+        private void ClearTrashList(MessageClearTrashList message)
+        {
+            _trashList.Clear();
+            _matchedTrashList.Clear();
         }
     }
 }
