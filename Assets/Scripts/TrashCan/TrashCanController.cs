@@ -36,7 +36,10 @@ namespace EcoTeam.EcoToss.TrashCan
             {
                 PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Normal"));
                 _trashList.Add(collision.gameObject);
-                CheckTrashListElements(collision.gameObject.tag);
+                if (_trashList.Count > 1)
+                {
+                    CheckTrashListElements();
+                }
             }
             else
             {
@@ -44,30 +47,51 @@ namespace EcoTeam.EcoToss.TrashCan
             }
         }
 
-        private void CheckTrashListElements(string collidedGameObjectTag)
+        private void CheckTrashListElements()
         {
             for (int i = 0; i < _trashList.Count; i++)
             {
-                // Determine whether collidedGameObjectTag is the same as previous or next index of list
-                if ((_trashList[i].CompareTag(collidedGameObjectTag)) &&
-                    ((i != 0 && _trashList[i - 1].CompareTag(collidedGameObjectTag)) ||
-                        (i != _trashList.Count - 1 && _trashList[i + 1].CompareTag(collidedGameObjectTag)))
-                    )
+                if (_trashList[i].tag.Substring(5) == _trashCanTag)
                 {
-                    _matchedTrashList.Add(_trashList[i]);
-
-                    // if Match-3
-                    if (_matchedTrashList.Count == 3)
+                    // Jika dia adalah element pertama atau kedua, maka cukup cek apakah _trashList[i] punya tag yang sama dengan TrashCan
+                    if (i == 0 || i == 1)
                     {
-                        // Match-3 bonus score
-                        PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Match3"));
+                        _matchedTrashList.Add(_trashList[i]);
+                    }
 
-                        for (int j = 0; j < _matchedTrashList.Count; j++)
+                    // Jika dia adalah element ketiga dan seterusnya, maka cek apakah _trashList[i] punya tag yang sama dengan 2 object sebelumnya
+                    else if (i > 1)
+                    {
+                        // Match-2 validation
+                        if (_trashList[i].CompareTag(_trashList[i - 1].tag))
                         {
-                            _matchedTrashList[j].GetComponent<TrashController>().StoreToPool();
-                            _trashList.Remove(_matchedTrashList[j]);
+                            // Match-3 validation
+                            if (_trashList[i - 1].CompareTag(_trashList[i - 2].tag))
+                            {
+                                _matchedTrashList.Add(_trashList[i]);
+
+                                // Match-3 bonus score
+                                PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Match3"));
+
+                                for (int j = 0; j < _matchedTrashList.Count; j++)
+                                {
+                                    _matchedTrashList[j].GetComponent<TrashController>().StoreToPool();
+                                    _trashList.Remove(_matchedTrashList[j]);
+                                }
+                                _matchedTrashList.Clear();
+                            }
+                            // Jika Match-2 maka tetap masukkan ke dalam list
+                            else
+                            {
+                                _matchedTrashList.Add(_trashList[i]);
+                            }
                         }
-                        _matchedTrashList.Clear();
+                        // Jika tidak Match-2 maka masukkan ke dalam list yang di reset, karena kategori sampah sesuai dengan tempatnya tapi sebelumnya sampahnya salah
+                        else
+                        {
+                            _matchedTrashList.Clear();
+                            _matchedTrashList.Add(_trashList[i]);
+                        }
                     }
                 }
                 else
