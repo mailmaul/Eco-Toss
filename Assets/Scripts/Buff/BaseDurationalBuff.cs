@@ -15,16 +15,5 @@ namespace EcoTeam.EcoToss.Buff
             get { return Duration; }
             set { Duration = value; }
         }
-
-        public override void BuffEffect()
-        {
-            base.BuffEffect();
-            StartCoroutine(nameof(Debuff));
-        }
-
-        protected virtual IEnumerator Debuff()
-        {
-            yield return new WaitForSecondsRealtime(Duration);
-        }
     }
 }

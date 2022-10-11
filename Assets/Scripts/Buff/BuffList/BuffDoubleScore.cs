@@ -10,20 +10,19 @@ namespace EcoTeam.EcoToss.Buff
     {
         public override void BuffEffect()
         {
+            base.BuffEffect();
+
             // Double the score the player will get
             PublishSubscribe.Instance.Publish<MessageActivateDoubleScore>(new MessageActivateDoubleScore());
-
-            base.BuffEffect();
+            StartCoroutine(nameof(Debuff));
         }
 
-        protected override IEnumerator Debuff()
+        private IEnumerator Debuff()
         {
-            return base.Debuff();
-
-            Debug.Log("debuff double score berjalan");
+            yield return new WaitForSecondsRealtime(Duration);
 
             // Return score to normal
-            //PublishSubscribe.Instance.Publish<MessageDeactivateDoubleScore>(new MessageDeactivateDoubleScore());
+            PublishSubscribe.Instance.Publish<MessageDeactivateDoubleScore>(new MessageDeactivateDoubleScore());
         }
     }
 }

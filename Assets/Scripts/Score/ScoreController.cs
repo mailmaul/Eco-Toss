@@ -63,7 +63,7 @@ namespace EcoTeam.EcoToss.Score
                 _score >= _previousScoreWhenActivatingBuff + _scoreMultiplierToActivateBuff) // Does the score past it
             {
                 PublishSubscribe.Instance.Publish<MessagePlayBuff>(new MessagePlayBuff());
-                _score = _previousScoreWhenActivatingBuff;
+                _previousScoreWhenActivatingBuff = _score;
             }
         }
 

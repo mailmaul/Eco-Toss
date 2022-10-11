@@ -510,6 +510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrashbinGreen
       objectReference: {fileID: 0}
+    - target: {fileID: 3664727159909379089, guid: 3ea21168c89e2de4caa080f21dba250e, type: 3}
+      propertyPath: m_TagString
+      value: TrashCanOrganic
+      objectReference: {fileID: 0}
     - target: {fileID: 4228343360813323982, guid: 3ea21168c89e2de4caa080f21dba250e, type: 3}
       propertyPath: m_RootOrder
       value: 1

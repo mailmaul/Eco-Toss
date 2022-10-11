@@ -21,11 +21,18 @@ namespace EcoTeam.EcoToss.Buff
             PublishSubscribe.Instance.Unsubscribe<MessagePlayBuff>(PlayBuff);
         }
 
-        void PlayBuff(MessagePlayBuff message)
+        private void PlayBuff(MessagePlayBuff message)
         {
             _randomIndex = Random.Range(0, _buffList.Count);
+            Debug.Log("random index: " + _randomIndex);
+            Debug.Log("buff list: " + _buffList.Count);
+
             _buffList[_randomIndex].BuffEffect();
-            Debug.Log(_buffList[_randomIndex].name);
+
+            if (Debug.isDebugBuild)
+            {
+                Debug.Log(_buffList[_randomIndex].name);
+            }
         }
     }
 }

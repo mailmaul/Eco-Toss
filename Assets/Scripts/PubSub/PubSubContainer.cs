@@ -95,5 +95,6 @@ namespace EcoTeam.EcoToss.PubSub
     public struct MessagePlayBuff { }
 
     public struct MessageActivateDoubleScore { }
+
     public struct MessageDeactivateDoubleScore { }
 }

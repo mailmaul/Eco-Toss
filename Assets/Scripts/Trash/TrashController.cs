@@ -32,7 +32,7 @@ namespace EcoTeam.EcoToss.Trash
             transform.SetPositionAndRotation(transform.position, Quaternion.identity);
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.angularVelocity = Vector3.zero;
-            //_rigidbody.isKinematic = true;
+            _rigidbody.isKinematic = true;
             base.StoreToPool();
         }
 
@@ -42,7 +42,7 @@ namespace EcoTeam.EcoToss.Trash
             transform.SetPositionAndRotation(transform.position, Quaternion.identity);
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.angularVelocity = Vector3.zero;
-            //_rigidbody.isKinematic = true;
+            _rigidbody.isKinematic = true;
             base.StoreToPoolWithMessage(message);
         }
 
@@ -62,9 +62,6 @@ namespace EcoTeam.EcoToss.Trash
             }
         }
 
-        public override void OnCreate()
-        {
-            
-        }
+        public override void OnCreate() { }
     }
 }
