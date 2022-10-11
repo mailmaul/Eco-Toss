@@ -29,7 +29,7 @@ namespace EcoTeam.EcoToss.WindArea
         private void Update()
         {
             //for testing, delete soon
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Debug.isDebugBuild && Input.GetKeyDown(KeyCode.Space))
             {
                 Spawn(new MessageSpawnWindArea());
             }

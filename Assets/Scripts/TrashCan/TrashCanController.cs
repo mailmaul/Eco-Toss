@@ -9,8 +9,9 @@ namespace EcoTeam.EcoToss.TrashCan
 {
     public class TrashCanController : MonoBehaviour
     {
-        [SerializeField] private List<GameObject> _trashList = new();
-        [SerializeField] private List<GameObject> _matchedTrashList = new();
+        [SerializeField] private List<TrashController> _trashList = new();
+        [SerializeField] private List<TrashController> _matchedTrashList = new();
+        private int _trashCanThreshold = 10;
         private string _trashCanTag;
 
         private void Awake()
@@ -30,20 +31,31 @@ namespace EcoTeam.EcoToss.TrashCan
 
         private void OnCollisionEnter(Collision collision)
         {
+            TrashController collisionTrashController = collision.gameObject.GetComponent<TrashController>();
+            string collisionTag = collision.gameObject.tag.Substring(5);
+
             PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
 
-            if (_trashCanTag == collision.gameObject.tag.Substring(5))
+            if (_trashCanTag == collisionTag)
             {
                 PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Normal"));
-                _trashList.Add(collision.gameObject);
+                _trashList.Add(collisionTrashController);
                 if (_trashList.Count > 1)
                 {
                     CheckTrashListElements();
+                    if (_trashList.Count == _trashCanThreshold)
+                    {
+                        PublishSubscribe.Instance.Publish<MessageGameOver>(new MessageGameOver(true));
+                    }
                 }
             }
             else
             {
-                _trashList.Add(collision.gameObject);
+                _trashList.Add(collisionTrashController);
+                if (_trashList.Count == _trashCanThreshold)
+                {
+                    PublishSubscribe.Instance.Publish<MessageGameOver>(new MessageGameOver(true));
+                }
             }
         }
 
@@ -75,7 +87,7 @@ namespace EcoTeam.EcoToss.TrashCan
 
                                 for (int j = 0; j < _matchedTrashList.Count; j++)
                                 {
-                                    _matchedTrashList[j].GetComponent<TrashController>().StoreToPool();
+                                    _matchedTrashList[j].StoreToPool();
                                     _trashList.Remove(_matchedTrashList[j]);
                                 }
                                 _matchedTrashList.Clear();

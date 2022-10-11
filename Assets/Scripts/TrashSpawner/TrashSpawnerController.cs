@@ -29,15 +29,6 @@ namespace EcoTeam.EcoToss.TrashSpawner
             PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
         }
 
-        private void Update()
-        {
-            // Debugging purposes
-            //if (Input.GetKeyDown(KeyCode.Space))
-            //{
-            //    PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
-            //}
-        }
-
         private void MessageTrashSpawnReceived(MessageTrashSpawn message)
         {
             int randomIndex = Random.Range(0, _trashController.Length);

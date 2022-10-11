@@ -10,8 +10,6 @@ namespace EcoTeam.EcoToss.Buff
     {
         public override void BuffEffect()
         {
-            base.BuffEffect();
-
             // Double the score the player will get
             PublishSubscribe.Instance.Publish<MessageActivateDoubleScore>(new MessageActivateDoubleScore());
             StartCoroutine(nameof(Debuff));

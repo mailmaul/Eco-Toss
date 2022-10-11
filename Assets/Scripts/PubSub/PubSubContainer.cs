@@ -70,10 +70,10 @@ namespace EcoTeam.EcoToss.PubSub
 
     public struct MessageDecreaseHealth { }
   
-    public struct MessageIncraeseHealth
+    public struct MessageIncreaseHealth
     {
         public int AdditionalHealth { get; private set; }
-        public MessageIncraeseHealth(int health)
+        public MessageIncreaseHealth(int health)
         {
             AdditionalHealth = health;
         }

@@ -11,6 +11,7 @@ namespace EcoTeam.EcoToss.InputSystem
         private Vector3 _touchRayPosition; // touch raycast
         private Vector2 _touchStartPosition, _touchEndPosition, _swipeDirection;
 
+        [SerializeField] Camera _mainCamera;
         [SerializeField] Rigidbody _rigidbody;
 
         // Update is called once per frame
@@ -21,7 +22,7 @@ namespace EcoTeam.EcoToss.InputSystem
             {
                 _touchRayPosition = Input.GetTouch(0).position;
                 _touchRayPosition.z = 100f;
-                _touchRayPosition = Camera.main.ScreenToWorldPoint(_touchRayPosition);
+                _touchRayPosition = _mainCamera.ScreenToWorldPoint(_touchRayPosition);
 
                 _touchStartPosition = Input.GetTouch(0).position;
                 Raycast();

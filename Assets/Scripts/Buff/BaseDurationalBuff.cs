@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace EcoTeam.EcoToss.Buff
 {
-    public class BaseDurationalBuff : BaseBuff
+    public abstract class BaseDurationalBuff : BaseBuff
     {
         protected float Duration = 10;
 

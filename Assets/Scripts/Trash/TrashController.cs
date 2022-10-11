@@ -50,6 +50,11 @@ namespace EcoTeam.EcoToss.Trash
         {
             if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Intruder"))
             {
+                if (collision.gameObject.CompareTag("Ground"))
+                {
+                    PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
+                }
+
                 PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
 
                 if (GameManagerController.Instance.IsWindSpawn)

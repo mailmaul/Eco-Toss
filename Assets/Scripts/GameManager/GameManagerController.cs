@@ -33,17 +33,17 @@ namespace EcoTeam.EcoToss.GameManager
         }
 
         public bool IsWindSpawn { get; private set; }
-        public bool IsGameOver { get; private set; }
+        private bool _isGameOver = false;
 
         void Start()
         {
             IsWindSpawn = false;
-            PublishSubscribe.Instance.Publish<MessageGameOver>(new MessageGameOver(false));
         }
 
         public void OnGameOver(MessageGameOver msg)
         {
-            IsGameOver = msg.IsGameOver;
+            _isGameOver = msg.IsGameOver;
+            Time.timeScale = 0;
         }
 
         public void OnWindSpawn(bool msg)

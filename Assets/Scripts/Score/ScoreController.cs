@@ -10,7 +10,7 @@ namespace EcoTeam.EcoToss.Score
 {
     public class ScoreController : MonoBehaviour
     {
-        private TMP_Text _scoreTMP;
+        [SerializeField] private TMP_Text _scoreTMP;
         private int _score = 0;
         [SerializeField] private int _normalScore = 2;
         private int _match3Score;
@@ -36,7 +36,6 @@ namespace EcoTeam.EcoToss.Score
         private void Start()
         {
             _match3Score = _score * 2 + 1;
-            _scoreTMP = GetComponent<TMP_Text>();
             _scoreTMP.SetText($"{_score}");
         }
 

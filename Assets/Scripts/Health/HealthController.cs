@@ -17,42 +17,36 @@ namespace EcoTeam.EcoToss.Health
         private void Awake()
         {
             PublishSubscribe.Instance.Subscribe<MessageDecreaseHealth>(DecreaseHealth);
-            PublishSubscribe.Instance.Subscribe<MessageIncraeseHealth>(IncreaseHealth);
+            PublishSubscribe.Instance.Subscribe<MessageIncreaseHealth>(IncreaseHealth);
         }
 
         private void OnDestroy()
         {
             PublishSubscribe.Instance.Unsubscribe<MessageDecreaseHealth>(DecreaseHealth);
-            PublishSubscribe.Instance.Unsubscribe<MessageIncraeseHealth>(IncreaseHealth);
+            PublishSubscribe.Instance.Unsubscribe<MessageIncreaseHealth>(IncreaseHealth);
         }
 
-        private void Update()
+        private void Start()
         {
-            if (!GameManagerController.Instance.IsGameOver)
-            {
-                SetUI();
-                EmptyHealth();
-            }
+            SetUI();
         }
 
         //publish ketika sampah tidak masuk ke tong sampah
         public void DecreaseHealth(MessageDecreaseHealth msg)
         {
             _health--;
-        }
-
-        //publish ketika dapat buff add health
-        public void IncreaseHealth(MessageIncraeseHealth msg)
-        {
-            _health += msg.AdditionalHealth;
-        }
-
-        public void EmptyHealth()
-        {
-            if(_health <= 0)
+            if (_health <= 0)
             {
                 PublishSubscribe.Instance.Publish<MessageGameOver>(new MessageGameOver(true));
             }
+            SetUI();
+        }
+
+        //publish ketika dapat buff add health
+        public void IncreaseHealth(MessageIncreaseHealth msg)
+        {
+            _health += msg.AdditionalHealth;
+            SetUI();
         }
 
         private void SetUI()

@@ -27,7 +27,7 @@ namespace EcoTeam.EcoToss.IntruderSpawner
         private void Update()
         {
             //for testing
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Debug.isDebugBuild && Input.GetKeyDown(KeyCode.Escape))
             {
                 PublishSubscribe.Instance.Publish<MessageSpawnIntruder>(new MessageSpawnIntruder(0));
             }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace EcoTeam.EcoToss.Buff
 {
-    public class BaseBuff : MonoBehaviour
+    public abstract class BaseBuff : MonoBehaviour
     {
-        public virtual void BuffEffect() { }
+        public abstract void BuffEffect();
     }
 }
