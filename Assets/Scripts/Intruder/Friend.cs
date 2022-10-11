@@ -1,64 +1,75 @@
+using EcoTeam.EcoToss.PubSub;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using EcoTeam.EcoToss.PubSub;
 
 namespace EcoTeam.EcoToss.Intruder
 {
-    public class Friend : Intruder
+    public class Friend : BaseIntruder
     {
-        private const float _timer = 5f;
+        private const float _timer = 3f;
         private float _currentTime;
-        public bool _isMove = true;
+        private bool _isMove;
 
-        private void Update()
+        [Header("Properties")]
+        [SerializeField] private float _speed;
+
+        private void Start()
+        {
+            OnCreate();
+        }
+
+        private void FixedUpdate()
+        {
+            if (_currentTime > _timer)
+            {
+                Intrude();
+                _currentTime = 0f;
+            }
+            else
+            {
+                Movement();
+            }
+            _currentTime += Time.fixedDeltaTime;
+        }
+
+        public override void OnHit(MessageOnHitIntruder msg) { }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.tag.Substring(0, 5) == "Trash")
+            {
+                StoreToPool();
+            }
+        }
+
+        public override void Movement()
         {
             if (_isMove)
             {
-                MovementRight();
-               // MovementLeft();
+                transform.Translate(_speed * Time.fixedDeltaTime * Vector3.right);
             }
-
-            if (!_isMove)
+            else
             {
-                MovementLeft();
+                transform.Translate(_speed * Time.deltaTime * Vector3.left);
             }
-
         }
 
-        public override void MovementRight()
+        public override void Intrude()
         {
-            transform.Translate(new Vector3(1f, 0, 0) * (Time.deltaTime*2));
-            Debug.Log("Movement Right");
-            
-        }
-
-        public override void MovementLeft()
-        {
-            transform.Translate(new Vector3(-1f, 0, 0) * (Time.deltaTime*2));
-            Debug.Log("Movement Left");
-            
-            
-        }
-
-        //called by event when trash hit intruder
-        public override void OnHit(MessageOnHitIntruder msg)
-        {
-            _isMove = true;
-            Debug.Log("Teman kena lempar " + _isMove);
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.gameObject.CompareTag("RightCheckPoint"))
+            if (_isMove)
             {
                 _isMove = false;
             }
-
-            if (other.gameObject.CompareTag("LeftCheckPoint"))
+            else
             {
                 _isMove = true;
             }
+        }
+
+        public override void OnCreate()
+        {
+            _isMove = true;
         }
     }
 }
