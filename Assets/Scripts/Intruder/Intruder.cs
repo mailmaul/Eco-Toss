@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using EcoTeam.EcoToss.PubSub;
+using Agate.MVC.Core;
+
+namespace EcoTeam.EcoToss.Intruder
+{
+    public abstract class Intruder : MonoBehaviour
+    {
+        public abstract void MovementRight();
+        public abstract void MovementLeft();
+        public abstract void OnHit(MessageOnHitIntruder msg);
+
+        private void Awake()
+        {
+            PublishSubscribe.Instance.Subscribe<MessageOnHitIntruder>(OnHit);
+        }
+
+        private void OnDestroy()
+        {
+            PublishSubscribe.Instance.Unsubscribe<MessageOnHitIntruder>(OnHit);
+        }
+    }
+}
+
