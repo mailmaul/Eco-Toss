@@ -7,18 +7,18 @@ namespace EcoTeam.EcoToss.ObjectPooling
     public class PoolingSystem
     {
         public int AmountToPool;
-        Queue<IPoolObject> _storedList = new Queue<IPoolObject>();
-        Queue<IPoolObject> _spawnedList = new Queue<IPoolObject>();
+        List<IPoolObject> _storedList = new List<IPoolObject>();
+        List<IPoolObject> _spawnedList = new List<IPoolObject>();
 
         public PoolingSystem(int AmountToPool = 10)
         {
             this.AmountToPool = AmountToPool;
         }
 
-        public IPoolObject CreateObject(IPoolObject objectPrefab, Vector3 spawnPos, Transform parent = null)
+        public IPoolObject CreateObject(IPoolObject objectPrefab, Vector3 spawnPosition, Transform parent = null)
         {
             IPoolObject outObject;
-            if (_storedList.Count < AmountToPool || _storedList.Peek().gameObject == null)
+            if (_storedList.Count < AmountToPool /*|| _storedList.Peek().gameObject == null*/)
             {
                 outObject = MonoBehaviour.Instantiate(objectPrefab.gameObject).
                 GetComponent<IPoolObject>();
@@ -26,16 +26,16 @@ namespace EcoTeam.EcoToss.ObjectPooling
             }
             else
             {
-                outObject = _storedList.Dequeue();
+                outObject = _storedList[Random.Range(0, _storedList.Count)];
+                _storedList.Remove(outObject);
             }
-            outObject.transform.position = spawnPos;
+            outObject.transform.position = spawnPosition;
             outObject.transform.parent = parent;
 
 
-            outObject.OnCreate();
             outObject.gameObject.SetActive(true);
 
-            _spawnedList.Enqueue(outObject);
+            _spawnedList.Add(outObject);
 
 
             return outObject;
@@ -54,17 +54,17 @@ namespace EcoTeam.EcoToss.ObjectPooling
             }
             else
             {
-                outObject = _storedList.Dequeue();
+                outObject = _storedList[Random.Range(0, _storedList.Count)];
+                _storedList.Remove(outObject);
             }
             outObject.transform.position = spawnPosition;
             outObject.transform.rotation = spawnRotation;
             outObject.transform.parent = parent;
 
 
-            outObject.OnCreate();
             outObject.gameObject.SetActive(true);
 
-            _spawnedList.Enqueue(outObject);
+            _spawnedList.Add(outObject);
 
 
             return outObject;
@@ -73,7 +73,7 @@ namespace EcoTeam.EcoToss.ObjectPooling
 
         public void Store(IPoolObject poolObject)
         {
-            _storedList.Enqueue((IPoolObject)poolObject);
+            _storedList.Add((IPoolObject)poolObject);
         }
     }
 }

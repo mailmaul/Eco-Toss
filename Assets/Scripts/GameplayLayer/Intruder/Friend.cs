@@ -16,7 +16,7 @@ namespace EcoTeam.EcoToss.Intruder
 
         private void Start()
         {
-            OnCreate();
+            _isMove = true;
         }
 
         private void FixedUpdate()
@@ -63,11 +63,6 @@ namespace EcoTeam.EcoToss.Intruder
             {
                 _isMove = true;
             }
-        }
-
-        public override void OnCreate()
-        {
-            _isMove = true;
         }
     }
 }
