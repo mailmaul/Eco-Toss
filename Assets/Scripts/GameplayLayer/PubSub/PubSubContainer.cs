@@ -89,4 +89,6 @@ namespace EcoTeam.EcoToss.PubSub
     public struct MessageActivateDoubleScore { }
 
     public struct MessageDeactivateDoubleScore { }
+
+    public struct MessageIncreaseTrashCanCapacity { }
 }

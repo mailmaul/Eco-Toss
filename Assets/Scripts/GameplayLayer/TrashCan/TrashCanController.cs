@@ -11,21 +11,25 @@ namespace EcoTeam.EcoToss.TrashCan
     {
         [SerializeField] private List<TrashController> _trashList = new();
         [SerializeField] private List<TrashController> _matchedTrashList = new();
-        private int _trashCanThreshold = 10;
+        private int _trashCanCapacity = 6;
+        private int _trashCanMaxCapacity = 10;
         private string _trashCanTag;
 
         private void Awake()
         {
             PublishSubscribe.Instance.Subscribe<MessageClearTrashList>(ClearTrashList);
+            PublishSubscribe.Instance.Subscribe<MessageIncreaseTrashCanCapacity>(IncreaseTrashCanCapacity);
         }
 
         private void OnDestroy()
         {
             PublishSubscribe.Instance.Unsubscribe<MessageClearTrashList>(ClearTrashList);
+            PublishSubscribe.Instance.Unsubscribe<MessageIncreaseTrashCanCapacity>(IncreaseTrashCanCapacity);
         }
 
         private void Start()
         {
+            _trashList.Capacity = _trashCanCapacity;
             _trashCanTag = gameObject.tag.Substring(8);
         }
 
@@ -43,7 +47,7 @@ namespace EcoTeam.EcoToss.TrashCan
                 if (_trashList.Count > 1)
                 {
                     CheckTrashListElements();
-                    if (_trashList.Count == _trashCanThreshold)
+                    if (_trashList.Count == _trashCanCapacity)
                     {
                         PublishSubscribe.Instance.Publish<MessageGameOver>(new MessageGameOver(true));
                     }
@@ -52,7 +56,7 @@ namespace EcoTeam.EcoToss.TrashCan
             else
             {
                 _trashList.Add(collisionTrashController);
-                if (_trashList.Count == _trashCanThreshold)
+                if (_trashList.Count == _trashCanCapacity)
                 {
                     PublishSubscribe.Instance.Publish<MessageGameOver>(new MessageGameOver(true));
                 }
@@ -87,7 +91,7 @@ namespace EcoTeam.EcoToss.TrashCan
 
                                 for (int j = 0; j < _matchedTrashList.Count; j++)
                                 {
-                                    _matchedTrashList[j].StoreToPool();
+                                    //_matchedTrashList[j].StoreToPool();
                                     _trashList.Remove(_matchedTrashList[j]);
                                 }
                                 _matchedTrashList.Clear();
@@ -117,6 +121,14 @@ namespace EcoTeam.EcoToss.TrashCan
         {
             _trashList.Clear();
             _matchedTrashList.Clear();
+        }
+
+        private void IncreaseTrashCanCapacity(MessageIncreaseTrashCanCapacity message)
+        {
+            if (_trashCanCapacity < _trashCanMaxCapacity)
+            {
+                _trashCanCapacity++;
+            }
         }
     }
 }
