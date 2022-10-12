@@ -22,15 +22,7 @@ namespace EcoTeam.EcoToss.PubSub
 
     public struct MessageOnHitIntruder { }
 
-    public struct MessageSpawnIntruder
-    {
-        public int Index { get; private set; }
-
-        public MessageSpawnIntruder(int index)
-        {
-            Index = index;
-        }
-    }
+    public struct MessageSpawnIntruder { }
     
     public struct MessageTrashThrowing
     {

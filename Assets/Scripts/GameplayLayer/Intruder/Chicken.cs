@@ -51,10 +51,13 @@ namespace EcoTeam.EcoToss.Intruder
         }
 
         //called by event when trash hit intruder
-        public override void OnHit(MessageOnHitIntruder msg)
+        private void OnCollisionEnter(Collision collision)
         {
-            _isMove = true;
-            Debug.Log("Ayam kena lempar");
+            if (collision.gameObject.tag.Substring(0, 5) == "Trash")
+            {
+                _isMove = true;
+                Debug.Log("Ayam kena lempar");
+            }
         }
 
         private void OnTriggerEnter(Collider other)

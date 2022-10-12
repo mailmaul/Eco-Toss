@@ -33,8 +33,6 @@ namespace EcoTeam.EcoToss.Intruder
             _currentTime += Time.fixedDeltaTime;
         }
 
-        public override void OnHit(MessageOnHitIntruder msg) { }
-
         private void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.tag.Substring(0, 5) == "Trash")

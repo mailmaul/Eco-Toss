@@ -11,17 +11,6 @@ namespace EcoTeam.EcoToss.Intruder
     {
         public abstract void Movement();
         public abstract void Intrude();
-        public abstract void OnHit(MessageOnHitIntruder msg);
-
-        private void Awake()
-        {
-            PublishSubscribe.Instance.Subscribe<MessageOnHitIntruder>(OnHit);
-        }
-
-        private void OnDestroy()
-        {
-            PublishSubscribe.Instance.Unsubscribe<MessageOnHitIntruder>(OnHit);
-        }
     }
 }
 

@@ -29,14 +29,15 @@ namespace EcoTeam.EcoToss.IntruderSpawner
             //for testing
             if (Debug.isDebugBuild && Input.GetKeyDown(KeyCode.Escape))
             {
-                PublishSubscribe.Instance.Publish<MessageSpawnIntruder>(new MessageSpawnIntruder(0));
+                PublishSubscribe.Instance.Publish<MessageSpawnIntruder>(new MessageSpawnIntruder());
             }
         }
 
         //publish pada progression score tertentu
         public void Spawn(MessageSpawnIntruder msg)
         {
-            _pool.CreateObject(_intrudersList[msg.Index], transform.position, transform);
+            int randomIndex = Random.Range(0, _intrudersList.Count);
+            _pool.CreateObject(_intrudersList[randomIndex], transform.position, transform);
         }
     }
 }

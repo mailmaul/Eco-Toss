@@ -1,4 +1,5 @@
 using Agate.MVC.Core;
+using EcoTeam.EcoToss.GameManager;
 using EcoTeam.EcoToss.PubSub;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,9 +15,12 @@ namespace EcoTeam.EcoToss.Score
         private int _score = 0;
         [SerializeField] private int _normalScore = 2;
         private int _match3Score;
-        [SerializeField] private int _scoreMultiplierToActivateBuff = 10;
+        [SerializeField] private int _firstScoreToActivateBuff = 10;
+        [SerializeField] private float _scoreMultiplierToActivateBuff = 1.5f;
         private int _previousScoreWhenActivatingBuff = 0;
-        
+        [SerializeField] private int _scoreMultiplierToSpawnIntruder = 5;
+        private int _previousScoreWhenSpawningIntruder = 0;
+
         private void Awake()
         {
             PublishSubscribe.Instance.Subscribe<MessageAddScore>(AddScore);
@@ -58,12 +62,8 @@ namespace EcoTeam.EcoToss.Score
                 Debug.Log("Skor bertambah jadi: " + _score);
             }
 
-            if (_score % _scoreMultiplierToActivateBuff == 0 || // Does the score reach a multiple of the specified number to activate the Buff
-                _score >= _previousScoreWhenActivatingBuff + _scoreMultiplierToActivateBuff) // Does the score past it
-            {
-                PublishSubscribe.Instance.Publish<MessagePlayBuff>(new MessagePlayBuff());
-                _previousScoreWhenActivatingBuff = _score;
-            }
+            CheckScoreToActivateBuff();
+            CheckScoreToSpawnIntruder();
         }
 
         private void RemoveScore(MessageRemoveScore message)
@@ -80,6 +80,40 @@ namespace EcoTeam.EcoToss.Score
             if (Debug.isDebugBuild)
             {
                 Debug.Log("Skor berkurang jadi: " + _score);
+            }
+        }
+
+        private void CheckScoreToActivateBuff()
+        {
+            // Does the score reach the specified number to activate a Buff
+            // First buff = 10
+            // Second and beyond buff = 10 + (10 x 1.5) = 25
+            if (_score >= _firstScoreToActivateBuff && _score >= _previousScoreWhenActivatingBuff + (_previousScoreWhenActivatingBuff * _scoreMultiplierToActivateBuff))
+            {
+                PublishSubscribe.Instance.Publish<MessagePlayBuff>(new MessagePlayBuff());
+                _previousScoreWhenActivatingBuff = _score;
+            }
+            else if (_score >= _firstScoreToActivateBuff)
+            {
+                PublishSubscribe.Instance.Publish<MessagePlayBuff>(new MessagePlayBuff());
+                _previousScoreWhenActivatingBuff = _score;
+            }
+        }
+
+        private void CheckScoreToSpawnIntruder()
+        {
+            // Does the score reach a multiple of the specified number to spawn an intruder
+            if (_score >= _previousScoreWhenSpawningIntruder + _scoreMultiplierToSpawnIntruder)
+            {
+                if (!GameManagerController.Instance.IsWindSpawn)
+                {
+                    PublishSubscribe.Instance.Publish<MessageSpawnWindArea>(new MessageSpawnWindArea());
+                }
+                else
+                {
+                    PublishSubscribe.Instance.Publish<MessageSpawnIntruder>(new MessageSpawnIntruder());
+                }
+                _previousScoreWhenSpawningIntruder = _score;
             }
         }
 

@@ -34,16 +34,19 @@ namespace EcoTeam.EcoToss.GameManager
 
         public bool IsWindSpawn { get; private set; }
         private bool _isGameOver = false;
+        [SerializeField] private GameObject _gameOverPanel;
 
         void Start()
         {
             IsWindSpawn = false;
+            Time.timeScale = 1;
         }
 
         public void OnGameOver(MessageGameOver msg)
         {
             _isGameOver = msg.IsGameOver;
             Time.timeScale = 0;
+            _gameOverPanel.SetActive(true);
         }
 
         public void OnWindSpawn(bool msg)

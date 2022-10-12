@@ -37,10 +37,13 @@ namespace EcoTeam.EcoToss.InputSystem
                 // calculating swipe direction in 2D space
                 _swipeDirection = _touchStartPosition - _touchEndPosition;
 
-                PublishSubscribe.Instance.Publish<MessageTrashThrowing>(new MessageTrashThrowing(_rigidbody, _swipeDirection));
-                
-                // reset selected rigidbody
-                _rigidbody = null;
+                if (_rigidbody != null)
+                {
+                    PublishSubscribe.Instance.Publish<MessageTrashThrowing>(new MessageTrashThrowing(_rigidbody, _swipeDirection));
+
+                    // reset selected rigidbody
+                    _rigidbody = null;
+                }
             }
         }
 
@@ -58,9 +61,12 @@ namespace EcoTeam.EcoToss.InputSystem
 
             if (raycastIsHit)
             {
-                if (hit.collider != null && hit.rigidbody.isKinematic == true)
+                if (hit.collider != null && hit.collider.GetComponent<Rigidbody>() != null)
                 {
-                    _rigidbody = hit.rigidbody;
+                    if (hit.rigidbody.isKinematic)
+                    {
+                        _rigidbody = hit.rigidbody;
+                    }
                 }
             }
         }

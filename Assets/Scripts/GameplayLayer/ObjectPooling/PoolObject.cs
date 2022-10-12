@@ -17,7 +17,7 @@ namespace EcoTeam.EcoToss.ObjectPooling
         public virtual void StoreToPool()
         {
             //Debug.Log(Pooling);
-            Debug.Log("store to pool tanpa message");
+            //Debug.Log("store to pool tanpa message");
             Pooling.Store(this);
             gameObject.SetActive(false);
         }
@@ -26,7 +26,7 @@ namespace EcoTeam.EcoToss.ObjectPooling
         public virtual void StoreToPoolWithMessage(MessageStoreToPool message)
         {
             //Debug.Log(Pooling);
-            Debug.Log("store to pool dengan message");
+            //Debug.Log("store to pool dengan message");
             Pooling.Store(this);
             gameObject.SetActive(false);
         }
