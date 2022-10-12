@@ -24,8 +24,6 @@ namespace EcoTeam.EcoToss.Buff
         private void PlayBuff(MessagePlayBuff message)
         {
             _randomIndex = Random.Range(0, _buffList.Count);
-            Debug.Log("random index: " + _randomIndex);
-            Debug.Log("buff list: " + _buffList.Count);
 
             _buffList[_randomIndex].BuffEffect();
 
