@@ -11,7 +11,7 @@ namespace EcoTeam.EcoToss.ObjectPooling
         PoolingSystem Pooling { get; }
 
         void Initial(PoolingSystem poolSystem);
-        void OnCreate();
+        //void OnCreate();
         void StoreToPool();
     }
 }

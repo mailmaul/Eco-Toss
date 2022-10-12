@@ -13,7 +13,7 @@ namespace EcoTeam.EcoToss.ObjectPooling
             //Debug.Log("Intial" + poolSystem);
             Pooling = poolSystem;
         }
-        public abstract void OnCreate();
+
         public virtual void StoreToPool()
         {
             //Debug.Log(Pooling);

@@ -10,10 +10,6 @@ namespace EcoTeam.EcoToss.Buff
     {
         public override void BuffEffect()
         {
-            // Store Trash to pool
-            PublishSubscribe.Instance.Publish<MessageStoreToPool>(new MessageStoreToPool());
-
-            // Clear trash list in TrashCan
             PublishSubscribe.Instance.Publish<MessageClearTrashList>(new MessageClearTrashList());
         }
     }

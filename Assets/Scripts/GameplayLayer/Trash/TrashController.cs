@@ -12,16 +12,6 @@ namespace EcoTeam.EcoToss.Trash
     {
         private Rigidbody _rigidbody;
 
-        private void Awake()
-        {
-            PublishSubscribe.Instance.Subscribe<MessageStoreToPool>(StoreToPoolWithMessage);
-        }
-
-        private void OnDestroy()
-        {
-            PublishSubscribe.Instance.Unsubscribe<MessageStoreToPool>(StoreToPoolWithMessage);
-        }
-
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
@@ -36,26 +26,16 @@ namespace EcoTeam.EcoToss.Trash
             base.StoreToPool();
         }
 
-        // Overload with MessageStoreToPool
-        public override void StoreToPoolWithMessage(MessageStoreToPool message)
-        {
-            transform.SetPositionAndRotation(transform.position, Quaternion.identity);
-            _rigidbody.velocity = Vector3.zero;
-            _rigidbody.angularVelocity = Vector3.zero;
-            _rigidbody.isKinematic = true;
-            base.StoreToPoolWithMessage(message);
-        }
-
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Intruder"))
+            if (collision.gameObject.CompareTag("Ground") ||
+                collision.gameObject.CompareTag("Intruder") ||
+                collision.gameObject.tag.Substring(8) == "TrashCan")
             {
                 if (collision.gameObject.CompareTag("Ground"))
                 {
                     PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
                 }
-
-                PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
 
                 if (GameManagerController.Instance.IsWindSpawn)
                 {
@@ -63,10 +43,11 @@ namespace EcoTeam.EcoToss.Trash
                 }
 
                 // Store game object to pool and set active false
-                Invoke(nameof(StoreToPool), 1);
+                Invoke(nameof(StoreToPool), 0.5f);
+                //StoreToPool();
+
+                PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
             }
         }
-
-        public override void OnCreate() { }
     }
 }

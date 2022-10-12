@@ -17,7 +17,7 @@ namespace EcoTeam.EcoToss.Intruder
 
         private void Start()
         {
-            OnCreate();
+            _isMove = true;
         }
 
         private void Update()
@@ -71,11 +71,6 @@ namespace EcoTeam.EcoToss.Intruder
             {
                 StoreToPool();
             }
-        }
-
-        public override void OnCreate()
-        {
-            _isMove = true;
         }
     }
 }
