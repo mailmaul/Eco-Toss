@@ -32,32 +32,36 @@ namespace EcoTeam.EcoToss.Trash
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (_hasCollided == false)
+            Debug.Log(transform.name + "nabrak" + collision.transform.name);
+
+            if (collision.gameObject.CompareTag("Ground") ||
+                collision.gameObject.CompareTag("Intruder") ||
+                collision.gameObject.tag.Substring(0, 8) == "TrashCan")
             {
-                _hasCollided = true;
+                if (_hasCollided == false)
+                {
+                    _hasCollided = true;
 
-                if (collision.gameObject.CompareTag("Ground"))
-                {
-                    PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
-                    Invoke(nameof(StoreToPool), 0.5f);
-                }
-                // Store game object to pool and set active false
-                else if (collision.gameObject.tag.Substring(0, 8) == "TrashCan")
-                {
-                    
-                    StoreToPool();
-                }
-                else
-                {
-                    Invoke(nameof(StoreToPool), 0.5f);
-                }
+                    if (collision.gameObject.CompareTag("Ground") ||
+                        collision.gameObject.CompareTag("Intruder"))
+                    {
+                        PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
+                        Invoke(nameof(StoreToPool), 0.5f);
+                    }
+                    // Store game object to pool and set active false
+                    else if (collision.gameObject.tag.Substring(0, 8) == "TrashCan")
+                    {
+                        StoreToPool();
+                    }
 
-                if (GameManagerController.Instance.IsWindSpawn)
-                {
-                    PublishSubscribe.Instance.Publish<MessageSetRandomPropetiesWindArea>(new MessageSetRandomPropetiesWindArea());
-                }
+                    if (GameManagerController.Instance.IsWindSpawn)
+                    {
+                        PublishSubscribe.Instance.Publish<MessageSetRandomPropetiesWindArea>(new MessageSetRandomPropetiesWindArea());
+                    }
 
-                PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
+                    Debug.Log("spawn");
+                    PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
+                }
             }
         }
     }

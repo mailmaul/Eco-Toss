@@ -3,12 +3,17 @@ using EcoTeam.EcoToss.PubSub;
 using EcoTeam.EcoToss.Trash;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace EcoTeam.EcoToss.TrashCan
 {
     public class TrashCanController : MonoBehaviour
     {
+        [SerializeField] private Image[] _indicators;
+        [SerializeField] private TMP_Text _capacityTMP;
+        [SerializeField] private TMP_Text _match3TMP;
         [SerializeField] private List<TrashController> _trashList = new();
         [SerializeField] private List<TrashController> _matchedTrashList = new();
         private int _trashCanCapacity = 6;
@@ -33,33 +38,29 @@ namespace EcoTeam.EcoToss.TrashCan
             _trashCanTag = gameObject.tag.Substring(8);
         }
 
+        private void Update()
+        {
+            _capacityTMP.SetText($"Capacity: {_trashList.Count}/{_trashCanCapacity}");
+            _match3TMP.SetText($"Match-3: {_matchedTrashList.Count}/3");
+        }
+
         private void OnCollisionEnter(Collision collision)
         {
             TrashController collisionTrashController = collision.gameObject.GetComponent<TrashController>();
             string collisionTag = collision.gameObject.tag.Substring(5);
 
-            PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
+            _trashList.Add(collisionTrashController);
 
             if (_trashCanTag == collisionTag)
             {
                 PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Normal"));
-                _trashList.Add(collisionTrashController);
-                if (_trashList.Count > 1)
-                {
-                    CheckTrashListElements();
-                    if (_trashList.Count == _trashCanCapacity)
-                    {
-                        PublishSubscribe.Instance.Publish<MessageGameOver>(new MessageGameOver(true));
-                    }
-                }
             }
-            else
+
+            CheckTrashListElements();
+
+            if (_trashList.Count == _trashCanCapacity)
             {
-                _trashList.Add(collisionTrashController);
-                if (_trashList.Count == _trashCanCapacity)
-                {
-                    PublishSubscribe.Instance.Publish<MessageGameOver>(new MessageGameOver(true));
-                }
+                PublishSubscribe.Instance.Publish<MessageGameOver>(new MessageGameOver(true));
             }
         }
 
@@ -69,6 +70,9 @@ namespace EcoTeam.EcoToss.TrashCan
             {
                 if (_trashList[i].tag.Substring(5) == _trashCanTag)
                 {
+                    // Buat indikator jadi hijau
+                    _indicators[i].color = Color.green;
+
                     // Jika dia adalah element pertama atau kedua, maka cukup cek apakah _trashList[i] punya tag yang sama dengan TrashCan
                     if (i == 0 || i == 1)
                     {
@@ -110,8 +114,16 @@ namespace EcoTeam.EcoToss.TrashCan
                         }
                     }
                 }
+                else if (_trashList[i] == null)
+                {
+                    // Buat indikator jadi hijau
+                    _indicators[i].color = Color.white;
+                }
                 else
                 {
+                    // Buat indikator jadi hijau
+                    _indicators[i].color = Color.red;
+
                     _matchedTrashList.Clear();
                 }
             }
@@ -127,6 +139,9 @@ namespace EcoTeam.EcoToss.TrashCan
         {
             if (_trashCanCapacity < _trashCanMaxCapacity)
             {
+                // Buat indikator jadi putih
+                _indicators[_trashCanCapacity].color = Color.white;
+
                 _trashCanCapacity++;
             }
         }
