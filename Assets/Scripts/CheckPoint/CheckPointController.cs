@@ -26,11 +26,6 @@ namespace EcoTeam.EcoToss.CheckPoint
                 StoreToPool();
             }
         }
-
-        public override void OnCreate()
-        {
-            
-        }
     }
 }
 
