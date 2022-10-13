@@ -1,0 +1,133 @@
+using Agate.MVC.Core;
+using EcoTeam.EcoToss.GameManager;
+using EcoTeam.EcoToss.PubSub;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+
+
+namespace EcoTeam.EcoToss.Score
+{
+    public class ScoreController : MonoBehaviour
+    {
+        [SerializeField] private TMP_Text _scoreTMP;
+        private int _score = 0;
+        [SerializeField] private int _normalScore = 2;
+        private int _match3Score;
+        [SerializeField] private int _firstScoreToActivateBuff = 10;
+        [SerializeField] private float _scoreMultiplierToActivateBuff = 1.5f;
+        private int _previousScoreWhenActivatingBuff = 0;
+        [SerializeField] private int _scoreMultiplierToSpawnIntruder = 5;
+        private int _previousScoreWhenSpawningIntruder = 0;
+
+        private void Awake()
+        {
+            PublishSubscribe.Instance.Subscribe<MessageAddScore>(AddScore);
+            PublishSubscribe.Instance.Subscribe<MessageRemoveScore>(RemoveScore);
+            PublishSubscribe.Instance.Subscribe<MessageActivateDoubleScore>(OnDoubleScoreActivated);
+            PublishSubscribe.Instance.Subscribe<MessageDeactivateDoubleScore>(OnDoubleScoreDeactivated);
+        }
+
+        private void OnDestroy()
+        {
+            PublishSubscribe.Instance.Unsubscribe<MessageAddScore>(AddScore);
+            PublishSubscribe.Instance.Unsubscribe<MessageRemoveScore>(RemoveScore);
+            PublishSubscribe.Instance.Unsubscribe<MessageActivateDoubleScore>(OnDoubleScoreActivated);
+            PublishSubscribe.Instance.Unsubscribe<MessageDeactivateDoubleScore>(OnDoubleScoreDeactivated);
+        }
+
+        private void Start()
+        {
+            _match3Score = _score * 2 + 1;
+            _scoreTMP.SetText($"{_score}");
+        }
+
+        private void AddScore(MessageAddScore message)
+        {
+            switch (message.Amount)
+            {
+                case "Normal":
+                    _score += _normalScore;
+                    break;
+                case "Match3":
+                    _score += _match3Score;
+                    break;
+            }
+
+            _scoreTMP.SetText($"{_score}");
+
+            if (Debug.isDebugBuild)
+            {
+                Debug.Log("Skor bertambah jadi: " + _score);
+            }
+
+            CheckScoreToActivateBuff();
+            CheckScoreToSpawnIntruder();
+        }
+
+        private void RemoveScore(MessageRemoveScore message)
+        {
+            switch (message.Amount)
+            {
+                case "Normal":
+                    _score -= _normalScore;
+                    break;
+            }
+
+            _scoreTMP.SetText($"{_score}");
+
+            if (Debug.isDebugBuild)
+            {
+                Debug.Log("Skor berkurang jadi: " + _score);
+            }
+        }
+
+        private void CheckScoreToActivateBuff()
+        {
+            // Does the score reach the specified number to activate a Buff
+            // First buff = 10
+            // Second and beyond buff = 10 + (10 x 1.5) = 25
+            if (_score >= _firstScoreToActivateBuff && _score >= _previousScoreWhenActivatingBuff + (_previousScoreWhenActivatingBuff * _scoreMultiplierToActivateBuff))
+            {
+                PublishSubscribe.Instance.Publish<MessagePlayBuff>(new MessagePlayBuff());
+                _previousScoreWhenActivatingBuff = _score;
+            }
+            else if (_score >= _firstScoreToActivateBuff)
+            {
+                PublishSubscribe.Instance.Publish<MessagePlayBuff>(new MessagePlayBuff());
+                _previousScoreWhenActivatingBuff = _score;
+            }
+        }
+
+        private void CheckScoreToSpawnIntruder()
+        {
+            // Does the score reach a multiple of the specified number to spawn an intruder
+            if (_score >= _previousScoreWhenSpawningIntruder + _scoreMultiplierToSpawnIntruder)
+            {
+                if (!GameManagerController.Instance.IsWindSpawn)
+                {
+                    PublishSubscribe.Instance.Publish<MessageSpawnWindArea>(new MessageSpawnWindArea());
+                }
+                else
+                {
+                    PublishSubscribe.Instance.Publish<MessageSpawnIntruder>(new MessageSpawnIntruder());
+                }
+                _previousScoreWhenSpawningIntruder = _score;
+            }
+        }
+
+        private void OnDoubleScoreActivated(MessageActivateDoubleScore message)
+        {
+            _normalScore *= 2;
+            _match3Score *= 2;
+        }
+
+        private void OnDoubleScoreDeactivated(MessageDeactivateDoubleScore message)
+        {
+            _normalScore /= 2;
+            _match3Score /= 2;
+        }
+    }
+
+}
