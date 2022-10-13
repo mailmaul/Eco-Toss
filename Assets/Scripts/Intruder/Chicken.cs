@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EcoTeam.EcoToss.PubSub;
-using EcoTeam.EcoToss.ObjectPooling;
+using Agate.MVC.Core;
 
 namespace EcoTeam.EcoToss.Intruder
 {
@@ -61,7 +61,9 @@ namespace EcoTeam.EcoToss.Intruder
         {
             if (other.gameObject.CompareTag("CheckPoint"))
             {
+                if (!_isMove) return;
                 _isMove = false;
+                PublishSubscribe.Instance.Publish<MessageCheckPointDestroy>(new MessageCheckPointDestroy(other.gameObject));
             }
 
             if (other.gameObject.CompareTag("DestroyPoint"))

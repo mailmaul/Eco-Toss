@@ -27,16 +27,18 @@ namespace EcoTeam.EcoToss.IntruderSpawner
         private void Update()
         {
             //for testing
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Debug.isDebugBuild && Input.GetKeyDown(KeyCode.Escape))
             {
-                PublishSubscribe.Instance.Publish<MessageSpawnIntruder>(new MessageSpawnIntruder(0));
+                PublishSubscribe.Instance.Publish<MessageSpawnIntruder>(new MessageSpawnIntruder());
             }
         }
 
         //publish pada progression score tertentu
         public void Spawn(MessageSpawnIntruder msg)
         {
-            _pool.CreateObject(_intrudersList[msg.Index], transform.position, transform);
+            int randomIndex = Random.Range(0, _intrudersList.Count);
+            _pool.CreateObject(_intrudersList[randomIndex], transform.position, transform);
+            PublishSubscribe.Instance.Publish<MessageCheckPointSpawn>(new MessageCheckPointSpawn());
         }
     }
 }

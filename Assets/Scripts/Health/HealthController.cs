@@ -17,13 +17,13 @@ namespace EcoTeam.EcoToss.Health
         private void Awake()
         {
             PublishSubscribe.Instance.Subscribe<MessageDecreaseHealth>(DecreaseHealth);
-            PublishSubscribe.Instance.Subscribe<MessageIncraeseHealth>(IncreaseHealth);
+            PublishSubscribe.Instance.Subscribe<MessageIncreaseHealth>(IncreaseHealth);
         }
 
         private void OnDestroy()
         {
             PublishSubscribe.Instance.Unsubscribe<MessageDecreaseHealth>(DecreaseHealth);
-            PublishSubscribe.Instance.Unsubscribe<MessageIncraeseHealth>(IncreaseHealth);
+            PublishSubscribe.Instance.Unsubscribe<MessageIncreaseHealth>(IncreaseHealth);
         }
 
         private void Update()
@@ -42,7 +42,7 @@ namespace EcoTeam.EcoToss.Health
         }
 
         //publish ketika dapat buff add health
-        public void IncreaseHealth(MessageIncraeseHealth msg)
+        public void IncreaseHealth(MessageIncreaseHealth msg)
         {
             _health += msg.AdditionalHealth;
         }

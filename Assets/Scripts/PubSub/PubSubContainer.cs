@@ -22,15 +22,7 @@ namespace EcoTeam.EcoToss.PubSub
 
     public struct MessageOnHitIntruder { }
 
-    public struct MessageSpawnIntruder
-    {
-        public int Index { get; private set; }
-
-        public MessageSpawnIntruder(int index)
-        {
-            Index = index;
-        }
-    }
+    public struct MessageSpawnIntruder { }
     
     public struct MessageTrashThrowing
     {
@@ -70,10 +62,10 @@ namespace EcoTeam.EcoToss.PubSub
 
     public struct MessageDecreaseHealth { }
   
-    public struct MessageIncraeseHealth
+    public struct MessageIncreaseHealth
     {
         public int AdditionalHealth { get; private set; }
-        public MessageIncraeseHealth(int health)
+        public MessageIncreaseHealth(int health)
         {
             AdditionalHealth = health;
         }
@@ -97,4 +89,15 @@ namespace EcoTeam.EcoToss.PubSub
     public struct MessageActivateDoubleScore { }
 
     public struct MessageDeactivateDoubleScore { }
+
+    public struct MessageIncreaseTrashCanCapacity { }
+    public struct MessageCheckPointSpawn { }
+    public struct MessageCheckPointDestroy
+    {
+        public GameObject CheckPointObject { get; private set; }
+        public MessageCheckPointDestroy(GameObject obj)
+        {
+            CheckPointObject = obj;
+        }
+    }
 }
