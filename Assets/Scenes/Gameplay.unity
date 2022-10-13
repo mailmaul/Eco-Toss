@@ -312,6 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trashList: []
+  _matchedTrashList: []
 --- !u!1 &717536523
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0ec7650c894b14da803ceed6caafdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layout: {fileID: 0}
 --- !u!4 &717536525
 Transform:
   m_ObjectHideFlags: 0
@@ -1174,7 +1174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _normalScore: 1
-  _match3Score: 10
+  _scoreMultiplierToActivateBuff: 10
 --- !u!1 &1605242196
 GameObject:
   m_ObjectHideFlags: 0

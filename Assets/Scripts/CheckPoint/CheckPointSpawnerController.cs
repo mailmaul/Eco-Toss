@@ -4,6 +4,7 @@ using UnityEngine;
 using EcoTeam.EcoToss.TrashCan;
 using EcoTeam.EcoToss.PubSub;
 using EcoTeam.EcoToss.ObjectPooling;
+using EcoTeam.EcoToss.IntruderSpawner;
 using Agate.MVC.Core;
 
 namespace EcoTeam.EcoToss.CheckPoint
@@ -33,6 +34,8 @@ namespace EcoTeam.EcoToss.CheckPoint
 
         private void Initialize()
         {
+            Vector3 intruderSpawnerPos = FindObjectOfType<IntruderSpawnerController>().gameObject.transform.position;
+            transform.position = new Vector3(transform.position.x, intruderSpawnerPos.y, intruderSpawnerPos.z);
             TrashCanController[] trashCan = FindObjectsOfType<TrashCanController>();
             foreach (var tc in trashCan)
             {
