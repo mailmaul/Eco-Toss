@@ -24,13 +24,12 @@ namespace EcoTeam.EcoToss.WindArea
             PublishSubscribe.Instance.Unsubscribe<MessageSetRandomPropetiesWindArea>(RandomPropertiesValue);
         }
 
-        private void Start()
-        {
-            //RandomPropertiesValue();
-        }
-
         private void OnTriggerEnter(Collider other)
         {
+            if (Debug.isDebugBuild)
+            {
+                Debug.Log(other.name);
+            }
             WindForce(other.gameObject);
         }
 

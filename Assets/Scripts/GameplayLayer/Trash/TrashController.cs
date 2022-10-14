@@ -32,7 +32,10 @@ namespace EcoTeam.EcoToss.Trash
 
         private void OnCollisionEnter(Collision collision)
         {
-            Debug.Log(transform.name + "nabrak" + collision.transform.name);
+            if (Debug.isDebugBuild)
+            {
+                Debug.Log(transform.name + "nabrak" + collision.transform.name);
+            }
 
             if (collision.gameObject.CompareTag("Ground") ||
                 collision.gameObject.CompareTag("Intruder") ||

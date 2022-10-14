@@ -9,7 +9,7 @@ namespace EcoTeam.EcoToss.WindArea
 {
     public class WindSpawnerController : MonoBehaviour
     {
-        private WindAreaController prefab;
+        [SerializeField] private WindAreaController prefab;
 
         private void Awake()
         {
