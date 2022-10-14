@@ -64,7 +64,7 @@ namespace EcoTeam.EcoToss.Trash
                         PublishSubscribe.Instance.Publish<MessageSetRandomPropetiesWindArea>(new MessageSetRandomPropetiesWindArea());
                     }
 
-                    Debug.Log("spawn");
+                    //Debug.Log("spawn");
                     PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
                 }
             }
@@ -79,6 +79,7 @@ namespace EcoTeam.EcoToss.Trash
             else
             {
                 StoreToPool();
+                PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
                 _stayDuration = 0;
             }
         }
