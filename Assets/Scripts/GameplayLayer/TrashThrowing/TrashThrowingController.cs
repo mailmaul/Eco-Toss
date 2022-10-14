@@ -30,7 +30,7 @@ namespace EcoTeam.EcoToss.TrashThrowing
             _rigidbody.isKinematic = false;
             _rigidbody.AddForce(
                 -message.SwipeDirection.x * _throwForceInX,
-                -message.SwipeDirection.y * _throwForceInY,
+                /*-message.SwipeDirection.y **/ _throwForceInY,
                 _throwForceInZ
                 );
         }

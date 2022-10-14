@@ -29,7 +29,7 @@ namespace EcoTeam.EcoToss.Buff
 
             if (Debug.isDebugBuild)
             {
-                Debug.Log(_buffList[_randomIndex].name);
+                Debug.Log("get buff: " + _buffList[_randomIndex].name);
             }
         }
     }
