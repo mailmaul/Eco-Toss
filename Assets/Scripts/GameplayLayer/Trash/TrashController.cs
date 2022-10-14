@@ -13,6 +13,8 @@ namespace EcoTeam.EcoToss.Trash
         private Quaternion _defaultRotation;
         private Rigidbody _rigidbody;
         private bool _hasCollided;
+        private float _stayDuration = 0f;
+        private float _stayMaxDuration = 1.5f;
 
         private void Start()
         {
@@ -65,6 +67,19 @@ namespace EcoTeam.EcoToss.Trash
                     Debug.Log("spawn");
                     PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
                 }
+            }
+        }
+
+        private void OnCollisionStay(Collision collision)
+        {
+            if (_stayDuration < _stayMaxDuration)
+            {
+                _stayDuration += Time.fixedDeltaTime;
+            }
+            else
+            {
+                StoreToPool();
+                _stayDuration = 0;
             }
         }
     }

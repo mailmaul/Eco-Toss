@@ -9,7 +9,7 @@ namespace EcoTeam.EcoToss.WindArea
 {
     public class WindSpawnerController : MonoBehaviour
     {
-        [SerializeField] private WindAreaController prefab;
+        [SerializeField] private WindAreaController _windAreaPrefab;
 
         private void Awake()
         {
@@ -19,11 +19,6 @@ namespace EcoTeam.EcoToss.WindArea
         private void OnDestroy()
         {
             PublishSubscribe.Instance.Unsubscribe<MessageSpawnWindArea>(Spawn);
-        }
-
-        private void Start()
-        {
-            prefab = Resources.Load<WindAreaController>("Prefabs/WindArea/WindArea");
         }
 
         private void Update()
@@ -38,7 +33,7 @@ namespace EcoTeam.EcoToss.WindArea
         //publish di progression tertentu
         public void Spawn(MessageSpawnWindArea msg)
         {
-            Instantiate(prefab, transform);
+            Instantiate(_windAreaPrefab, transform);
             GameManagerController.Instance.OnWindSpawn(true);
             PublishSubscribe.Instance.Publish<MessageSetRandomPropetiesWindArea>(new MessageSetRandomPropetiesWindArea());
         }

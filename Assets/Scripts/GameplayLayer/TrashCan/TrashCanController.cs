@@ -100,7 +100,7 @@ namespace EcoTeam.EcoToss.TrashCan
                         {
                             if (Debug.isDebugBuild) { Debug.Log("match-2 valid"); }
                             // Match-3 validation
-                            if (_trashList[i].CompareTag(_trashList[i - 2].tag))
+                            if (i > 1 && _trashList[i].CompareTag(_trashList[i - 2].tag))
                             {
                                 if (Debug.isDebugBuild) { Debug.Log("match-3 valid"); }
                                 _matchedTrashList.Add(_trashList[i]);

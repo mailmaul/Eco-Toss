@@ -8,8 +8,9 @@ namespace EcoTeam.EcoToss.WindArea
 {
     public class WindAreaController : MonoBehaviour
     {
+        [SerializeField] private float _minWindStrength;
         [SerializeField] private float _maxWindStrength;
-        [SerializeField] private List<Vector3> _windDirections = new List<Vector3>();
+        [SerializeField] private Vector3[] _windDirections = new Vector3[2];
 
         private float _windStrength;
         private Vector3 _windDirection;
@@ -24,11 +25,17 @@ namespace EcoTeam.EcoToss.WindArea
             PublishSubscribe.Instance.Unsubscribe<MessageSetRandomPropetiesWindArea>(RandomPropertiesValue);
         }
 
+        // Debugging Purposes
+        //private void Start()
+        //{
+        //    RandomPropertiesValue(new MessageSetRandomPropetiesWindArea());
+        //}
+
         private void OnTriggerEnter(Collider other)
         {
             if (Debug.isDebugBuild)
             {
-                Debug.Log(other.name);
+                Debug.Log("Wind affecting " + other.name);
             }
             WindForce(other.gameObject);
         }
@@ -50,8 +57,8 @@ namespace EcoTeam.EcoToss.WindArea
         //Dipanggil pada script TrashController saat sampah collide with ground or intruder
         public void RandomPropertiesValue(MessageSetRandomPropetiesWindArea msg)
         {
-            _windStrength = Random.Range(0.5f, _maxWindStrength);
-            int index = Random.Range(0, _windDirections.Count);
+            _windStrength = Random.Range(_minWindStrength, _maxWindStrength);
+            int index = Random.Range(0, _windDirections.Length);
             _windDirection = _windDirections[index];
         }
     }
