@@ -36,6 +36,7 @@ namespace EcoTeam.EcoToss.InputSystem
 
                 // calculating swipe direction in 2D space
                 _swipeDirection = _touchStartPosition - _touchEndPosition;
+                _swipeDirection = Vector3.Normalize(_swipeDirection);
 
                 if (_rigidbody != null)
                 {
