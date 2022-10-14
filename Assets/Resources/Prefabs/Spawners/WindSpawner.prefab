@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd1af1eb75303448887c50557ea31db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _windAreaPrefab: {fileID: 3817843876530823537, guid: 4643dd5959479b749b478a6f23d56fb2, type: 3}
