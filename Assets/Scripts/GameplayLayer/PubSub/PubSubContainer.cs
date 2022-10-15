@@ -112,4 +112,15 @@ namespace EcoTeam.EcoToss.PubSub
             CheckPointObject = obj;
         }
     }
+
+    public struct MessageSpawnVFX
+    {
+        public string Name { get; private set; }
+        public Vector3 Position { get; private set; }
+        public MessageSpawnVFX(string name, Vector3 pos)
+        {
+            Name = name;
+            Position = pos;
+        }
+    }
 }
