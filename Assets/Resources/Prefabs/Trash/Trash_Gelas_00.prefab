@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3235465681988072248}
   - component: {fileID: 3235465681988072263}
   - component: {fileID: 3555765766181408355}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trash_Gelas_00
   m_TagString: TrashDangerous
   m_Icon: {fileID: 0}

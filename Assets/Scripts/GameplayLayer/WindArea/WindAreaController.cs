@@ -17,19 +17,13 @@ namespace EcoTeam.EcoToss.WindArea
 
         private void Awake()
         {
-            PublishSubscribe.Instance.Subscribe<MessageSetRandomPropetiesWindArea>(RandomPropertiesValue);
+            PublishSubscribe.Instance.Subscribe<MessageSetRandomPropertiesWindArea>(RandomPropertiesValue);
         }
 
         private void OnDestroy()
         {
-            PublishSubscribe.Instance.Unsubscribe<MessageSetRandomPropetiesWindArea>(RandomPropertiesValue);
+            PublishSubscribe.Instance.Unsubscribe<MessageSetRandomPropertiesWindArea>(RandomPropertiesValue);
         }
-
-        // Debugging Purposes
-        //private void Start()
-        //{
-        //    RandomPropertiesValue(new MessageSetRandomPropetiesWindArea());
-        //}
 
         private void OnTriggerEnter(Collider other)
         {
@@ -37,7 +31,10 @@ namespace EcoTeam.EcoToss.WindArea
             {
                 Debug.Log("Wind affecting " + other.name);
             }
-            WindForce(other.gameObject);
+            if (other.CompareTag("TrashOrganic") || other.CompareTag("TrashNonOrganic") || other.CompareTag("TrashDangerous"))
+            {
+                WindForce(other.gameObject);
+            }
         }
 
         public void WindForce(GameObject obj)
@@ -55,11 +52,23 @@ namespace EcoTeam.EcoToss.WindArea
         }
 
         //Dipanggil pada script TrashController saat sampah collide with ground or intruder
-        public void RandomPropertiesValue(MessageSetRandomPropetiesWindArea msg)
+        public void RandomPropertiesValue(MessageSetRandomPropertiesWindArea msg)
         {
             _windStrength = Random.Range(_minWindStrength, _maxWindStrength);
             int index = Random.Range(0, _windDirections.Length);
             _windDirection = _windDirections[index];
+
+            string direction = string.Empty;
+            if(index == 0)
+            {
+                direction = "Right";
+            } 
+            else if(index == 1)
+            {
+                direction = "Left";
+            }
+
+            PublishSubscribe.Instance.Publish<MessageShowWindProperties>(new MessageShowWindProperties((Mathf.Round(_windStrength * 100) / 100), direction));
         }
     }
 }

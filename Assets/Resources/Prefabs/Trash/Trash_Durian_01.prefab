@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6712537028925583119}
   - component: {fileID: 6712537028925583116}
   - component: {fileID: 5777717398397001822}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trash_Durian_01
   m_TagString: TrashOrganic
   m_Icon: {fileID: 0}

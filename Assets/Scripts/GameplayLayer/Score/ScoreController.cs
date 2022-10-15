@@ -14,7 +14,8 @@ namespace EcoTeam.EcoToss.Score
         [SerializeField] private TMP_Text _scoreTMP;
         [SerializeField] private TMP_Text _finalScoreTMP;
         private int _score = 0;
-        [SerializeField] private int _normalScore = 2;
+        [SerializeField] private int _normalAddScore = 2;
+        private int _normalRemoveScore = 1;
         private int _match3Score;
         [SerializeField] private int _firstScoreToActivateBuff = 10;
         [SerializeField] private float _scoreMultiplierToActivateBuff = 1.5f;
@@ -43,7 +44,7 @@ namespace EcoTeam.EcoToss.Score
 
         private void Start()
         {
-            _match3Score = _normalScore * 2 + 1;
+            _match3Score = _normalAddScore * 2 + 1;
             _scoreTMP.SetText($"{_score}");
             _previousScoreWhenActivatingBuff = _firstScoreToActivateBuff;
         }
@@ -53,7 +54,7 @@ namespace EcoTeam.EcoToss.Score
             switch (message.Amount)
             {
                 case "Normal":
-                    _score += _normalScore;
+                    _score += _normalAddScore;
                     break;
                 case "Match3":
                     _score += _match3Score;
@@ -76,7 +77,7 @@ namespace EcoTeam.EcoToss.Score
             switch (message.Amount)
             {
                 case "Normal":
-                    _score -= _normalScore;
+                    _score -= _normalRemoveScore;
                     break;
             }
 
@@ -138,13 +139,13 @@ namespace EcoTeam.EcoToss.Score
 
         private void OnDoubleScoreActivated(MessageActivateDoubleScore message)
         {
-            _normalScore *= 2;
+            _normalAddScore *= 2;
             _match3Score *= 2;
         }
 
         private void OnDoubleScoreDeactivated(MessageDeactivateDoubleScore message)
         {
-            _normalScore /= 2;
+            _normalAddScore /= 2;
             _match3Score /= 2;
         }
     }

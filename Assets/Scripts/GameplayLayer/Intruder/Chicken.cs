@@ -2,18 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EcoTeam.EcoToss.PubSub;
-using EcoTeam.EcoToss.ObjectPooling;
+using Agate.MVC.Core;
 
 namespace EcoTeam.EcoToss.Intruder
 {
     public class Chicken : BaseIntruder
     {
-        private const float _timer = 5f;
-        private float _currentTime;
-        private bool _isMove;
-
-        [Header("Properties")]
-        [SerializeField] private float _speed;
+        
 
         private void Start()
         {
@@ -38,7 +33,7 @@ namespace EcoTeam.EcoToss.Intruder
             if(_currentTime > _timer)
             {
                 //mengacaukan tempat sampah (animasi tempat sampah berantakan)
-                Debug.Log("Kurangi poin player"); //publish event to decrease score
+                PublishSubscribe.Instance.Publish<MessageRemoveScore>(new MessageRemoveScore("Normal"));
                 _currentTime = 0;
             }
 
@@ -64,7 +59,9 @@ namespace EcoTeam.EcoToss.Intruder
         {
             if (other.gameObject.CompareTag("CheckPoint"))
             {
+                if (!_isMove) return;
                 _isMove = false;
+                PublishSubscribe.Instance.Publish<MessageCheckPointDestroy>(new MessageCheckPointDestroy(other.gameObject));
             }
 
             if (other.gameObject.CompareTag("DestroyPoint"))

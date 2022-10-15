@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4881872346093473918}
   - component: {fileID: 4881872346093473861}
   - component: {fileID: 5697772568972607156}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trash_Apple_01
   m_TagString: TrashOrganic
   m_Icon: {fileID: 0}
