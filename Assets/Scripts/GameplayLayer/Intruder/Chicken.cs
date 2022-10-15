@@ -33,7 +33,7 @@ namespace EcoTeam.EcoToss.Intruder
             if(_currentTime > _timer)
             {
                 //mengacaukan tempat sampah (animasi tempat sampah berantakan)
-                PublishSubscribe.Instance.Publish<MessageRemoveScore>(new MessageRemoveScore(_amountScoreDecrease));
+                PublishSubscribe.Instance.Publish<MessageRemoveScore>(new MessageRemoveScore("Normal"));
                 _currentTime = 0;
             }
 
