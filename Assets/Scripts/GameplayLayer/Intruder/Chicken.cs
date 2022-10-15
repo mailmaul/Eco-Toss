@@ -8,7 +8,7 @@ namespace EcoTeam.EcoToss.Intruder
 {
     public class Chicken : BaseIntruder
     {
-        [SerializeField] private string _amountScoreDecrease;
+        
 
         private void Start()
         {
