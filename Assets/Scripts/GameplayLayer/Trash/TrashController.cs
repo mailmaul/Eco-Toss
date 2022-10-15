@@ -61,7 +61,7 @@ namespace EcoTeam.EcoToss.Trash
 
                     if (GameManagerController.Instance.IsWindSpawn)
                     {
-                        PublishSubscribe.Instance.Publish<MessageSetRandomPropetiesWindArea>(new MessageSetRandomPropetiesWindArea());
+                        PublishSubscribe.Instance.Publish<MessageSetRandomPropertiesWindArea>(new MessageSetRandomPropertiesWindArea());
                     }
 
                     //Debug.Log("spawn");

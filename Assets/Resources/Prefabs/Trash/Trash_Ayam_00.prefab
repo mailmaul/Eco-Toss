@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1273598932648252457}
   - component: {fileID: 1273598932648252438}
   - component: {fileID: 6228123480818983810}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trash_Ayam_00
   m_TagString: TrashDangerous
   m_Icon: {fileID: 0}

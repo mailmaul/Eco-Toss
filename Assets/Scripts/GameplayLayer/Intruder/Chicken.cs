@@ -8,12 +8,7 @@ namespace EcoTeam.EcoToss.Intruder
 {
     public class Chicken : BaseIntruder
     {
-        private const float _timer = 5f;
-        private float _currentTime;
-        private bool _isMove;
-
-        [Header("Properties")]
-        [SerializeField] private float _speed;
+        [SerializeField] private string _amountScoreDecrease;
 
         private void Start()
         {
@@ -38,7 +33,7 @@ namespace EcoTeam.EcoToss.Intruder
             if(_currentTime > _timer)
             {
                 //mengacaukan tempat sampah (animasi tempat sampah berantakan)
-                Debug.Log("Kurangi poin player"); //publish event to decrease score
+                PublishSubscribe.Instance.Publish<MessageRemoveScore>(new MessageRemoveScore(_amountScoreDecrease));
                 _currentTime = 0;
             }
 

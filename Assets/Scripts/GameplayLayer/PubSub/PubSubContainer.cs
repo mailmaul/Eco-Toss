@@ -58,7 +58,19 @@ namespace EcoTeam.EcoToss.PubSub
 
     public struct MessageStoreToPool { }
 
-    public struct MessageSetRandomPropetiesWindArea { }
+    public struct MessageSetRandomPropertiesWindArea { }
+
+    public struct MessageShowWindProperties
+    {
+        public float Strength { get; private set; }
+        public string Direction { get; private set; }
+
+        public MessageShowWindProperties(float str, string dir)
+        {
+            Strength = str;
+            Direction = dir;
+        }
+    }
 
     public struct MessageDecreaseHealth { }
   

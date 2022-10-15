@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4124161471191675978}
   - component: {fileID: 4124161471191675981}
   - component: {fileID: 1291803230463100025}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trash_Tupperware_04
   m_TagString: TrashNonOrganic
   m_Icon: {fileID: 0}

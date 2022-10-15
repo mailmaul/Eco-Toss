@@ -7,13 +7,6 @@ namespace EcoTeam.EcoToss.Intruder
 {
     public class Friend : BaseIntruder
     {
-        private const float _timer = 3f;
-        private float _currentTime;
-        private bool _isMove;
-
-        [Header("Properties")]
-        [SerializeField] private float _speed;
-
         private void Start()
         {
             _isMove = true;

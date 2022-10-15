@@ -27,7 +27,7 @@ namespace EcoTeam.EcoToss.IntruderSpawner
         private void Update()
         {
             //for testing
-            if (Debug.isDebugBuild && Input.GetKeyDown(KeyCode.Escape))
+            if (Debug.isDebugBuild && Input.GetKeyDown(KeyCode.Return))
             {
                 PublishSubscribe.Instance.Publish<MessageSpawnIntruder>(new MessageSpawnIntruder());
             }
@@ -38,7 +38,10 @@ namespace EcoTeam.EcoToss.IntruderSpawner
         {
             int randomIndex = Random.Range(0, _intrudersList.Count);
             _pool.CreateObject(_intrudersList[randomIndex], transform.position, transform);
-            PublishSubscribe.Instance.Publish<MessageCheckPointSpawn>(new MessageCheckPointSpawn());
+            if(_intrudersList[randomIndex].name == "Chicken")
+            {
+                PublishSubscribe.Instance.Publish<MessageCheckPointSpawn>(new MessageCheckPointSpawn());
+            }   
         }
     }
 }
