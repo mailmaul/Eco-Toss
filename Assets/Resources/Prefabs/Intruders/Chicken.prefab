@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3
   _timer: 5
-  _amountScoreDecrease: 1
+  _amountScoreDecrease: Normal
 --- !u!54 &3596413763781480546
 Rigidbody:
   m_ObjectHideFlags: 0
