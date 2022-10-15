@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -220,6 +220,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8226582539497787054, guid: 840137d7b8d464142b00b33476e3b4cc, type: 3}
+      propertyPath: _intruderSpawner
+      value: 
+      objectReference: {fileID: 1006288591}
+    - target: {fileID: 8226582539497787054, guid: 840137d7b8d464142b00b33476e3b4cc, type: 3}
+      propertyPath: _trashCanList.Array.data[0]
+      value: 
+      objectReference: {fileID: 361208429}
+    - target: {fileID: 8226582539497787054, guid: 840137d7b8d464142b00b33476e3b4cc, type: 3}
+      propertyPath: _trashCanList.Array.data[1]
+      value: 
+      objectReference: {fileID: 1763717640}
+    - target: {fileID: 8226582539497787054, guid: 840137d7b8d464142b00b33476e3b4cc, type: 3}
+      propertyPath: _trashCanList.Array.data[2]
+      value: 
+      objectReference: {fileID: 640764317}
     - target: {fileID: 8226582539497787055, guid: 840137d7b8d464142b00b33476e3b4cc, type: 3}
       propertyPath: m_Name
       value: CheckPointSpawner
@@ -685,6 +701,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266450606}
   m_CullTransparentMesh: 1
+--- !u!114 &361208429 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 383348961371729308, guid: a402a987b3ae4ed408bd73f5eb9b1014, type: 3}
+  m_PrefabInstance: {fileID: 4384688117140354332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8301914a85fad246a1139322ed8a62b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &402319300 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1892725335093958619, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
@@ -1087,6 +1114,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 462376170}
   m_CullTransparentMesh: 1
+--- !u!114 &640764317 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3992176262562285475, guid: 9453a727a90bda24baa803a950db564c, type: 3}
+  m_PrefabInstance: {fileID: 8411427158987313556}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8301914a85fad246a1139322ed8a62b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &717536523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,6 +1780,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!4 &1006288591 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1443540485028722914, guid: 24f64f00fb0fded4facbdccc8807430a, type: 3}
+  m_PrefabInstance: {fileID: 900872199}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1035459890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2845,7 +2888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scoreTMP: {fileID: 1531653405}
   _finalScoreTMP: {fileID: 1987420497}
-  _normalScore: 2
+  _normalAddScore: 2
   _firstScoreToActivateBuff: 10
   _scoreMultiplierToActivateBuff: 1.5
   _scoreMultiplierToSpawnIntruder: 5
@@ -3200,6 +3243,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1763717640 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2905134279978631188, guid: 0521857139d578d46a5524eb683fa208, type: 3}
+  m_PrefabInstance: {fileID: 101093223733492506}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8301914a85fad246a1139322ed8a62b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1877896917 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1892725335093958619, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}

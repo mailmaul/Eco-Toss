@@ -44,6 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51f8e4ecda930740bfa2da40e407f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trashCanList: []
+  _intruderSpawner: {fileID: 0}
+  _trashCanList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _checkPoint: {fileID: 8488748361492997224, guid: 941b2cf9bf318554f88b54a963eddd67, type: 3}
   offset: 0.5

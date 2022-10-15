@@ -11,7 +11,8 @@ namespace EcoTeam.EcoToss.CheckPoint
 {
     public class CheckPointSpawnerController : MonoBehaviour
     {
-        [SerializeField] private List<TrashCanController> _trashCanList = new List<TrashCanController>();
+        [SerializeField] private Transform _intruderSpawner;
+        [SerializeField] private TrashCanController[] _trashCanList;
         [SerializeField] private CheckPointController _checkPoint;
         [SerializeField] private float offset;
 
@@ -34,21 +35,12 @@ namespace EcoTeam.EcoToss.CheckPoint
 
         private void Initialize()
         {
-            Vector3 intruderSpawnerPos = FindObjectOfType<IntruderSpawnerController>().gameObject.transform.position;
-            transform.position = new Vector3(transform.position.x, intruderSpawnerPos.y, intruderSpawnerPos.z);
-            TrashCanController[] trashCan = FindObjectsOfType<TrashCanController>();
-            foreach (var tc in trashCan)
-            {
-                if (!_trashCanList.Contains(tc))
-                {
-                    _trashCanList.Add(tc);
-                }
-            }
+            transform.position = new Vector3(transform.position.x, _intruderSpawner.position.y, _intruderSpawner.position.z);
         }
 
         public void CheckPointSpawn(MessageCheckPointSpawn msg)
         {
-            int index = Random.Range(0, _trashCanList.Count);
+            int index = Random.Range(0, _trashCanList.Length);
             Vector3 pos = new Vector3(_trashCanList[index].transform.position.x + offset, transform.position.y, transform.position.z);
             _pool.CreateObject(_checkPoint, pos, transform);
         }
