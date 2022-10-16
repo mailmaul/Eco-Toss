@@ -24,14 +24,14 @@ namespace EcoTeam.EcoToss.IntruderSpawner
             PublishSubscribe.Instance.Unsubscribe<MessageSpawnIntruder>(Spawn);
         }
 
-        private void Update()
-        {
-            //for testing
-            if (Debug.isDebugBuild && Input.GetKeyDown(KeyCode.Return))
-            {
-                PublishSubscribe.Instance.Publish<MessageSpawnIntruder>(new MessageSpawnIntruder());
-            }
-        }
+        //private void Update()
+        //{
+        //    //for testing
+        //    if (Input.GetKeyDown(KeyCode.Return))
+        //    {
+        //        PublishSubscribe.Instance.Publish<MessageSpawnIntruder>(new MessageSpawnIntruder());
+        //    }
+        //}
 
         //publish pada progression score tertentu
         public void Spawn(MessageSpawnIntruder msg)

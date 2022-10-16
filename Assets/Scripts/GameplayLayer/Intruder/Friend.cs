@@ -7,28 +7,20 @@ namespace EcoTeam.EcoToss.Intruder
 {
     public class Friend : BaseIntruder
     {
-        private void Start()
-        {
-            _isMove = true;
-        }
+        private Vector3 _intrudeDirection = Vector3.right;
 
         private void FixedUpdate()
         {
-            if (_currentTime > _timer)
-            {
-                Intrude();
-                _currentTime = 0f;
-            }
-            else
-            {
-                Movement();
-            }
-            _currentTime += Time.fixedDeltaTime;
+            Intrude();
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider other)
         {
-            if (collision.gameObject.tag.Substring(0, 5) == "Trash")
+            if (other.tag.Substring(0, 5) == "Trash" && _isMove == false)
+            {
+                _isMove = true;
+            }
+            else if (other.CompareTag("DestroyPoint") && _isMove)
             {
                 StoreToPool();
             }
@@ -36,25 +28,32 @@ namespace EcoTeam.EcoToss.Intruder
 
         public override void Movement()
         {
-            if (_isMove)
-            {
-                transform.Translate(_speed * Time.fixedDeltaTime * Vector3.right);
-            }
-            else
-            {
-                transform.Translate(_speed * Time.deltaTime * Vector3.left);
-            }
+            transform.Translate(_speed * Time.fixedDeltaTime * Vector3.right);
         }
 
         public override void Intrude()
         {
-            if (_isMove)
+            if (_isMove == false)
             {
-                _isMove = false;
+                if (_currentTime >= _timer)
+                {
+                    if (_intrudeDirection == Vector3.right)
+                    {
+                        _intrudeDirection = Vector3.left;
+                    }
+                    else
+                    {
+                        _intrudeDirection = Vector3.right;
+                    }
+                    _currentTime = 0f;
+                }
+
+                transform.Translate(_speed * Time.fixedDeltaTime * _intrudeDirection);
+                _currentTime += Time.fixedDeltaTime;
             }
             else
             {
-                _isMove = true;
+                Movement();
             }
         }
     }

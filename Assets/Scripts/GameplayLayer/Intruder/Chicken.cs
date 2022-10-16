@@ -8,13 +8,6 @@ namespace EcoTeam.EcoToss.Intruder
 {
     public class Chicken : BaseIntruder
     {
-        
-
-        private void Start()
-        {
-            _isMove = true;
-        }
-
         private void Update()
         {
             if (_isMove)
@@ -45,16 +38,6 @@ namespace EcoTeam.EcoToss.Intruder
             transform.Translate(new Vector3(_speed, 0, 0) * Time.deltaTime);
         }
 
-        //called by event when trash hit intruder
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.tag.Substring(0, 5) == "Trash")
-            {
-                _isMove = true;
-                Debug.Log("Ayam kena lempar");
-            }
-        }
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("CheckPoint"))
@@ -63,10 +46,14 @@ namespace EcoTeam.EcoToss.Intruder
                 _isMove = false;
                 PublishSubscribe.Instance.Publish<MessageCheckPointDestroy>(new MessageCheckPointDestroy(other.gameObject));
             }
-
-            if (other.gameObject.CompareTag("DestroyPoint"))
+            else if (other.gameObject.CompareTag("DestroyPoint"))
             {
                 StoreToPool();
+            }
+            else if (other.gameObject.tag.Substring(0, 5) == "Trash")
+            {
+                _isMove = true;
+                if (Debug.isDebugBuild) { Debug.Log("Ayam kena lempar"); }
             }
         }
     }

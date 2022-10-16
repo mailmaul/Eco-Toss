@@ -140,14 +140,14 @@ namespace EcoTeam.EcoToss.TrashCan
 
         private void ClearTrashList(MessageClearTrashList message)
         {
-            _trashList.Clear();
-            _matchedTrashList.Clear();
-
             // Buat indikator jadi putih
             for (int i = 0; i < _trashList.Count; i++)
             {
                 _indicators[i].color = Color.white;
             }
+
+            _trashList.Clear();
+            _matchedTrashList.Clear();
         }
 
         private void IncreaseTrashCanCapacity(MessageIncreaseTrashCanCapacity message)

@@ -47,14 +47,12 @@ namespace EcoTeam.EcoToss.Trash
                 {
                     _hasCollided = true;
 
-                    if (collision.gameObject.CompareTag("Ground") ||
-                        collision.gameObject.CompareTag("Intruder"))
+                    if (collision.gameObject.CompareTag("Ground"))
                     {
                         PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
                         Invoke(nameof(StoreToPool), 0.5f);
                     }
-                    // Store game object to pool and set active false
-                    else if (collision.gameObject.tag.Substring(0, 8) == "TrashCan")
+                    else if (collision.gameObject.tag.Substring(0, 8) == "TrashCan" || collision.gameObject.CompareTag("Intruder"))
                     {
                         StoreToPool();
                     }
