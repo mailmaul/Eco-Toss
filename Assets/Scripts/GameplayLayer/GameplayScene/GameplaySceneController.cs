@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using EcoTeam.EcoToss.PubSub;
+using Agate.MVC.Core;
 
 namespace EcoTeam.EcoToss.GameplayScene
 {
@@ -34,11 +36,13 @@ namespace EcoTeam.EcoToss.GameplayScene
 
         private void GoToMainMenu()
         {
+            PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("button_click"));
             SceneManager.LoadScene(0);
         }
 
         private void ReloadGameplayScene()
         {
+            PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("button_click"));
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }

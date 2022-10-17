@@ -123,4 +123,24 @@ namespace EcoTeam.EcoToss.PubSub
             Position = pos;
         }
     }
+
+    public struct MessagePlayBGM
+    {
+        public string Name { get; private set; }
+
+        public MessagePlayBGM(string name)
+        {
+            Name = name;
+        }
+    }
+
+    public struct MessagePlaySFX
+    {
+        public string Name { get; private set; }
+
+        public MessagePlaySFX(string name)
+        {
+            Name = name;
+        }
+    }
 }
