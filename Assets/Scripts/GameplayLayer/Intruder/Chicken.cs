@@ -8,6 +8,11 @@ namespace EcoTeam.EcoToss.Intruder
 {
     public class Chicken : BaseIntruder
     {
+        private void Start()
+        {
+            _isMove = true;
+        }
+
         private void Update()
         {
             if (_isMove)
