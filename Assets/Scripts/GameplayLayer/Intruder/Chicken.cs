@@ -43,23 +43,28 @@ namespace EcoTeam.EcoToss.Intruder
             transform.Translate(new Vector3(_speed, 0, 0) * Time.deltaTime);
         }
 
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.tag.Substring(0, 5) == "Trash")
+            {
+                _isMove = true;
+                if (Debug.isDebugBuild) { Debug.Log("Ayam kena lempar"); }
+            }
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("CheckPoint"))
+            if (other.CompareTag("CheckPoint"))
             {
                 if (!_isMove) return;
                 _isMove = false;
                 PublishSubscribe.Instance.Publish<MessageCheckPointDestroy>(new MessageCheckPointDestroy(other.gameObject));
             }
-            else if (other.gameObject.CompareTag("DestroyPoint"))
+            else if (other.CompareTag("DestroyPoint"))
             {
                 StoreToPool();
             }
-            else if (other.gameObject.tag.Substring(0, 5) == "Trash")
-            {
-                _isMove = true;
-                if (Debug.isDebugBuild) { Debug.Log("Ayam kena lempar"); }
-            }
+            
         }
     }
 }
