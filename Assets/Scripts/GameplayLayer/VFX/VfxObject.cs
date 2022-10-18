@@ -7,9 +7,14 @@ namespace EcoTeam.EcoToss.VFX
 {
     public class VfxObject : PoolObject
     {
-        public void UnUse()
+        private void Start()
         {
-            StoreToPool();
+            Invoke("StoreToPool", 3f);
+        }
+
+        public override void StoreToPool()
+        {
+            base.StoreToPool();
         }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Agate.MVC.Core;
 using EcoTeam.EcoToss.PubSub;
+using EcoTeam.EcoToss.SaveData;
 
 namespace EcoTeam.EcoToss.Audio
 {
@@ -17,8 +18,8 @@ namespace EcoTeam.EcoToss.Audio
 
         private void Start()
         {
-            _bgmToggle.isOn = _audioData.isBgmPlay;
-            _sfxToggle.isOn = _audioData.isSfxPlay;
+           _bgmToggle.isOn = _audioData.isBgmPlay;
+           _sfxToggle.isOn = _audioData.isSfxPlay;
             SetToggleListener();
         }
 
@@ -35,6 +36,7 @@ namespace EcoTeam.EcoToss.Audio
             PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("button_click"));
             _bgmToggle.isOn = !play;
             _audioData.isBgmPlay = !play;
+            SaveAudioDataController.Instance.SetData(_audioData);
             PublishSubscribe.Instance.Publish<MessagePlayBGM>(new MessagePlayBGM("bgm"));
         }
 
@@ -43,6 +45,12 @@ namespace EcoTeam.EcoToss.Audio
             PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("button_click"));
             _sfxToggle.isOn = !play;
             _audioData.isSfxPlay = !play;
+            SaveAudioDataController.Instance.SetData(_audioData);
+        }
+
+        private void OnApplicationQuit()
+        {
+            SaveAudioDataController.Instance.SetData(_audioData);
         }
     }
 }
