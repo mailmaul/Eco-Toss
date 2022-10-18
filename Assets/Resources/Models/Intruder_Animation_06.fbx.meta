@@ -1,17 +1,24 @@
 fileFormatVersion: 2
-guid: 120b090aba22cdb4f9d9fbe972b7aec9
+guid: f52bf12d27fa23142af6756d865d85a6
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Plate
-    second: {fileID: 2100000, guid: e75d5781d4e83b14fb9a768d3431c319, type: 2}
+      74: -573765527335660580
+    second: Action|ArmatureAction
+  - first:
+      74: -4334534625275885154
+    second: Action|Running
+  - first:
+      74: 661034536070485195
+    second: Action|Terpentung
+  - first:
+      74: 1214988252240127757
+    second: Action|Walking
+  externalObjects: {}
   materials:
     materialImportMode: 2
-    materialName: 0
+    materialName: 2
     materialSearch: 1
     materialLocation: 1
   animations:
