@@ -41,7 +41,7 @@ namespace EcoTeam.EcoToss.IntruderSpawner
             if(_intrudersList[randomIndex].name == "Chicken")
             {
                 PublishSubscribe.Instance.Publish<MessageCheckPointSpawn>(new MessageCheckPointSpawn());
-            }   
+            }
         }
     }
 }
