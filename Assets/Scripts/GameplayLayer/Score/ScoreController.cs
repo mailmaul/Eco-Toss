@@ -1,5 +1,6 @@
 using Agate.MVC.Core;
 using EcoTeam.EcoToss.GameManager;
+using EcoTeam.EcoToss.HighScore;
 using EcoTeam.EcoToss.PubSub;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace EcoTeam.EcoToss.Score
     {
         [SerializeField] private TMP_Text _scoreTMP;
         [SerializeField] private TMP_Text _finalScoreTMP;
+        [SerializeField] private TMP_Text _highScoreTMP;
         private int _score = 0;
         [SerializeField] private int _normalAddScore = 2;
         private int _normalRemoveScore = 1;
@@ -118,6 +120,13 @@ namespace EcoTeam.EcoToss.Score
         private void UpdateFinalScore(MessageGameOver message)
         {
             _finalScoreTMP.SetText($"Your score: {_score}");
+            if(_score > HighScoreController.Instance.HighScore)
+            {
+                HighScoreController.Instance.UpdateHighScore(_score);
+
+            }
+            _highScoreTMP.SetText($"HighScore: {HighScoreController.Instance.HighScore}");
+            
         }
 
         private void CheckScoreToSpawnIntruder()

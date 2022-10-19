@@ -14,6 +14,7 @@ TagManager:
   - Intruder
   - CheckPoint
   - DestroyPoint
+  - HighScore
   layers:
   - Default
   - TransparentFX
