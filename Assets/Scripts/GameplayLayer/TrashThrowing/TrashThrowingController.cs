@@ -13,10 +13,12 @@ namespace EcoTeam.EcoToss.TrashThrowing
         [SerializeField] float _throwForceInY = 1f; // to control throw force in Y directions
         [SerializeField] float _throwForceInZ = 425f; // to control throw force in Z direction
 
+
         private void Awake()
         {
             PublishSubscribe.Instance.Subscribe<MessageTrashThrowing>(ThrowTrash);
         }
+        
 
         private void OnDestroy()
         {
@@ -33,6 +35,8 @@ namespace EcoTeam.EcoToss.TrashThrowing
                 /*-message.SwipeDirection.y **/ _throwForceInY,
                 _throwForceInZ
                 );
+
+            
         }
     }
 }
