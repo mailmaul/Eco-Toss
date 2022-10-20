@@ -89,6 +89,8 @@ namespace EcoTeam.EcoToss.Score
             {
                 Debug.Log("Skor berkurang jadi: " + _score);
             }
+
+            PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
         }
 
         private void CheckScoreToActivateBuff()

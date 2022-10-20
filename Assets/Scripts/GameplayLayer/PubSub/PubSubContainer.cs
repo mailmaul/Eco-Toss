@@ -143,4 +143,6 @@ namespace EcoTeam.EcoToss.PubSub
             Name = name;
         }
     }
+
+    public struct MessageShakingCamera { }
 }
