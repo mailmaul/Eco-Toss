@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1273598932648252457}
   - component: {fileID: 1273598932648252438}
   - component: {fileID: 6228123480818983810}
+  - component: {fileID: 2267125038221668260}
   m_Layer: 7
   m_Name: Trash_Ayam_00
   m_TagString: TrashDangerous
@@ -127,4 +128,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2056464ff21fc4fa312cb7b18e3884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spark: {fileID: 8516134654809978904, guid: 4be8847674778c44fad53bdbd515b070, type: 3}
+  _rotation: {x: 1, y: 1, z: 3}
+  _rotateSpeed: 200
+--- !u!95 &2267125038221668260
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120582630554627153}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79224029fb53ce84fbc00e36873a0255, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -1,9 +1,18 @@
 fileFormatVersion: 2
-guid: d91273bf215f42b41bf22c8bca3bbfb2
+guid: d64c60ad095f384449a94bad3a8880c4
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kertas
+<<<<<<<< HEAD:Assets/Resources/Models/Trash_Kertas_01.fbx.meta
+    second: {fileID: 2100000, guid: 1afcbc7702af3c042a49d6c11bc66b10, type: 2}
+========
+    second: {fileID: 2100000, guid: eadcd52007e45734e9927ec50c5e713c, type: 2}
+>>>>>>>> develop:Assets/Resources/Models/Trash_Kertas_02.fbx.meta
   materials:
     materialImportMode: 2
     materialName: 0
