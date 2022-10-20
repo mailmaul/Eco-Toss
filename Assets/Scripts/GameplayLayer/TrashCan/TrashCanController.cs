@@ -66,6 +66,10 @@ namespace EcoTeam.EcoToss.TrashCan
             {
                 PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Normal"));
             }
+            else
+            {
+                PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
+            }
 
             CheckTrashListElements();
 
@@ -133,7 +137,6 @@ namespace EcoTeam.EcoToss.TrashCan
                 {
                     // Buat indikator jadi merah
                     _indicators[i].color = Color.red;
-                    PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
                 }
             }
             _matchedTrashList.Clear();
