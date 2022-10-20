@@ -133,6 +133,7 @@ namespace EcoTeam.EcoToss.TrashCan
                 {
                     // Buat indikator jadi merah
                     _indicators[i].color = Color.red;
+                    PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
                 }
             }
             _matchedTrashList.Clear();

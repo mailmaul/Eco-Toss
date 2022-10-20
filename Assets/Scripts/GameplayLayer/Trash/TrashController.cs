@@ -47,6 +47,7 @@ namespace EcoTeam.EcoToss.Trash
                 if (collision.gameObject.CompareTag("Ground"))
                 {
                     PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
+                    PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
                     Invoke(nameof(StoreToPool), 0.5f);
                 }
                 else if (collision.gameObject.tag.Substring(0, 8) == "TrashCan" || collision.gameObject.CompareTag("Intruder"))
