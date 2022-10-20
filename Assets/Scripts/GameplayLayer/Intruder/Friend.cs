@@ -38,16 +38,6 @@ namespace EcoTeam.EcoToss.Intruder
                 Debug.Log(_currentTime);
                 if (_currentTime >= _timer)
                 {
-                    // if (_intrudeDirection == Vector3.forward)
-                    // {
-                        
-                        
-                    // }
-                    // else
-                    // {
-                        
-                    //     _intrudeDirection = Vector3.forward;
-                    // }
                     Vector3 newRotation = new Vector3(transform.rotation.x, transform.rotation.y + 180, transform.rotation.z);
                         transform.Rotate(newRotation);
                         _intrudeDirection = Vector3.forward;
