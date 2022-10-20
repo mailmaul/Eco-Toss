@@ -10,13 +10,17 @@ namespace EcoTeam.EcoToss.SaveData
     public class SaveData
     {
         public int SavedHighScore;
-        public AudioData AudioData;
     }
 
     public class SaveDataController : MonoBehaviour
     {
         public static SaveDataController Instance;
-        public SaveData SavedData;
+        public SaveData SaveData;
+        public AudioData AudioData;
+        private readonly string[] DataLibrary = {
+            "SaveData",
+            "AudioData",
+        };
 
         private void Awake()
         {
@@ -35,33 +39,53 @@ namespace EcoTeam.EcoToss.SaveData
 
         public void Save()
         {
-            string json = JsonUtility.ToJson(SavedData);
-            File.WriteAllText(Application.dataPath + "/JSON/SavedData.json", json);
-            PlayerPrefs.SetString("SaveData", json);
+            string jsonSaveData = JsonUtility.ToJson(SaveData);
+            string jsonAudioData = JsonUtility.ToJson(AudioData);
+            File.WriteAllText(Application.dataPath + "/SavedData.json", jsonSaveData);
+            File.WriteAllText(Application.dataPath + "/SavedAudioData.json", jsonAudioData);
+            PlayerPrefs.SetString(DataLibrary[0], jsonSaveData);
+            PlayerPrefs.SetString(DataLibrary[1], jsonAudioData);
             PlayerPrefs.Save();
         }
 
         public void Load()
         {
-            if (PlayerPrefs.HasKey("SaveData"))
+            if (PlayerPrefs.HasKey(DataLibrary[0]))
             {
-                string json = PlayerPrefs.GetString("SaveData");
-                JsonUtility.FromJsonOverwrite(json, SavedData);
-                File.WriteAllText(Application.dataPath + "/JSON/SavedData.json", json);
+                string jsonSaveData = PlayerPrefs.GetString(DataLibrary[0]);
+                JsonUtility.FromJsonOverwrite(jsonSaveData, SaveData);
+                File.WriteAllText(Application.dataPath + "/" + DataLibrary[0] + ".json", jsonSaveData);
             }
             else
             {
-                SavedData = new SaveData();
-                SavedData.SavedHighScore = 0;
-                SavedData.AudioData = Resources.Load<AudioData>("Data/AudioData");
-                Save();
+                SaveData = new SaveData();
+                SaveData.SavedHighScore = 0;
+                // Save();
+            }
+
+            if (PlayerPrefs.HasKey(DataLibrary[1]))
+            {
+                string jsonAudioData = PlayerPrefs.GetString(DataLibrary[1]);
+                JsonUtility.FromJsonOverwrite(jsonAudioData, AudioData);
+                File.WriteAllText(Application.dataPath + "/" + DataLibrary[1] + ".json", jsonAudioData);
             }
         }
 
         public void SetAudioData(AudioData data)
         {
-            SavedData.AudioData = data;
-            Save();
+            AudioData = data;
+            SaveAudio();
+        }
+
+        public void SaveAudio()
+        {
+            // string jsonSaveData = JsonUtility.ToJson(SaveData);
+            string jsonAudioData = JsonUtility.ToJson(AudioData);
+            // File.WriteAllText(Application.dataPath + "/SavedData.json", jsonSaveData);
+            File.WriteAllText(Application.dataPath + "/SavedAudioData.json", jsonAudioData);
+            // PlayerPrefs.SetString(DataLibrary[0], jsonSaveData);
+            PlayerPrefs.SetString(DataLibrary[1], jsonAudioData);
+            PlayerPrefs.Save();
         }
     }
 }

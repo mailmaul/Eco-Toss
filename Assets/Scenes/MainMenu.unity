@@ -1333,9 +1333,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cacb8dd47f81045880932cc1595284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SavedData:
+  SaveData:
     SavedHighScore: 0
-    AudioData: {fileID: 0}
+  AudioData: {fileID: 0}
 --- !u!4 &1328553350
 Transform:
   m_ObjectHideFlags: 0
