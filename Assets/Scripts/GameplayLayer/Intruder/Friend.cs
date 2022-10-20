@@ -7,7 +7,7 @@ namespace EcoTeam.EcoToss.Intruder
 {
     public class Friend : BaseIntruder
     {
-        private Vector3 _intrudeDirection = Vector3.right;
+        private Vector3 _intrudeDirection = Vector3.forward;
 
         private void FixedUpdate()
         {
@@ -28,7 +28,7 @@ namespace EcoTeam.EcoToss.Intruder
 
         public override void Movement()
         {
-            transform.Translate(_speed * Time.fixedDeltaTime * Vector3.right);
+            transform.Translate(_speed * Time.fixedDeltaTime * _intrudeDirection);
         }
 
         public override void Intrude()
@@ -37,14 +37,10 @@ namespace EcoTeam.EcoToss.Intruder
             {
                 if (_currentTime >= _timer)
                 {
-                    if (_intrudeDirection == Vector3.right)
-                    {
-                        _intrudeDirection = Vector3.left;
-                    }
-                    else
-                    {
-                        _intrudeDirection = Vector3.right;
-                    }
+                    Vector3 newRotation = new Vector3(transform.rotation.x, transform.rotation.y + 180, transform.rotation.z);
+                        transform.Rotate(newRotation);
+                        _intrudeDirection = Vector3.forward;
+                    
                     _currentTime = 0f;
                 }
 
