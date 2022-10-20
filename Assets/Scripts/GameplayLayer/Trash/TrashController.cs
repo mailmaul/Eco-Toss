@@ -19,7 +19,7 @@ namespace EcoTeam.EcoToss.Trash
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
-            _defaultRotation = transform.rotation;
+            _defaultRotation = transform.rotation;     
         }
 
         public override void StoreToPool()
