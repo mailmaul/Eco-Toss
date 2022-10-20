@@ -46,16 +46,6 @@ namespace EcoTeam.EcoToss.PubSub
         }
     }
 
-    public struct MessageRemoveScore
-    {
-        public string Amount;
-
-        public MessageRemoveScore(string amount)
-        {
-            Amount = amount;
-        }
-    }
-
     public struct MessageStoreToPool { }
 
     public struct MessageSetRandomPropertiesWindArea { }
