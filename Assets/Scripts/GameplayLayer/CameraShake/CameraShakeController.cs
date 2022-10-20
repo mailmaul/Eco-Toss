@@ -8,7 +8,8 @@ namespace EcoTeam.EcoToss.CameraShake
 {
     public class CameraShakeController : MonoBehaviour
     {
-        private float duration = .5f;
+        [SerializeField] private float duration = .5f;
+        [SerializeField] private float smoothness;
 
         private void Awake()
         {
@@ -28,7 +29,7 @@ namespace EcoTeam.EcoToss.CameraShake
             while (elapsedTime < duration)
             {
                 elapsedTime += Time.deltaTime;
-                transform.position = startPos + Random.insideUnitSphere;
+                transform.position = startPos + Random.insideUnitSphere * smoothness;
                 yield return null;
             }
 

@@ -2448,6 +2448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0.5
+  smoothness: 0.5
 --- !u!1 &1394144121
 GameObject:
   m_ObjectHideFlags: 0
