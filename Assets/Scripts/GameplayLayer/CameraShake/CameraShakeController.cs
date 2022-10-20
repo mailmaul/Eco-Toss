@@ -34,6 +34,7 @@ namespace EcoTeam.EcoToss.CameraShake
             }
 
             transform.position = startPos;
+            Handheld.Vibrate();
         }
 
         public void Shake(MessageShakingCamera msg)
