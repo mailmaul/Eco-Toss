@@ -28,7 +28,7 @@ namespace EcoTeam.EcoToss.Intruder
 
         public override void Movement()
         {
-            transform.Translate(_speed * Time.fixedDeltaTime * Vector3.forward);
+            transform.Translate(_speed * Time.fixedDeltaTime * _intrudeDirection);
         }
 
         public override void Intrude()
