@@ -8,8 +8,9 @@ namespace EcoTeam.EcoToss.CameraShake
 {
     public class CameraShakeController : MonoBehaviour
     {
-        [SerializeField] private float duration = .5f;
-        [SerializeField] private float smoothness;
+        [SerializeField] private float _duration = .5f;
+        [SerializeField] private float _smoothness;
+        private Vector3 _startPos;
 
         private void Awake()
         {
@@ -21,19 +22,23 @@ namespace EcoTeam.EcoToss.CameraShake
             PublishSubscribe.Instance.Unsubscribe<MessageShakingCamera>(Shake);
         }
 
+        private void Start()
+        {
+            _startPos = transform.position;
+        }
+
         IEnumerator ShakeCoroutine()
         {
-            Vector3 startPos = transform.position;
             float elapsedTime = .1f;
 
-            while (elapsedTime < duration)
+            while (elapsedTime < _duration)
             {
-                elapsedTime += Time.deltaTime;
-                transform.position = startPos + Random.insideUnitSphere * smoothness;
+                elapsedTime += Time.unscaledDeltaTime;
+                transform.position = _startPos + Random.insideUnitSphere * _smoothness;
                 yield return null;
             }
 
-            transform.position = startPos;
+            transform.position = _startPos;
         }
 
         public void Shake(MessageShakingCamera msg)
