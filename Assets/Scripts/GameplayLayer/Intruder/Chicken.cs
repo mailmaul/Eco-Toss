@@ -43,15 +43,6 @@ namespace EcoTeam.EcoToss.Intruder
             transform.Translate(new Vector3(_speed, 0, 0) * Time.deltaTime);
         }
 
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.tag.Substring(0, 5) == "Trash")
-            {
-                _isMove = true;
-                if (Debug.isDebugBuild) { Debug.Log("Ayam kena lempar"); }
-            }
-        }
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("CheckPoint"))
@@ -64,7 +55,11 @@ namespace EcoTeam.EcoToss.Intruder
             {
                 StoreToPool();
             }
-            
+            else if (other.gameObject.tag.Substring(0, 5) == "Trash")
+            {
+                _isMove = true;
+                if (Debug.isDebugBuild) { Debug.Log("Ayam kena lempar"); }
+            }
         }
     }
 }
