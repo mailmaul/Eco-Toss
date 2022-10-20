@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: deeb5bc29c84f824fb4b671841dbb753
+guid: d64c60ad095f384449a94bad3a8880c4
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kertas
+    second: {fileID: 2100000, guid: eadcd52007e45734e9927ec50c5e713c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

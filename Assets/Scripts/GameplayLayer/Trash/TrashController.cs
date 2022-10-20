@@ -16,11 +16,22 @@ namespace EcoTeam.EcoToss.Trash
         private float _stayDuration = 0f;
         private float _stayMaxDuration = 1.5f;
 
+                [SerializeField] private Vector3 _rotation;
+        [SerializeField] private float _rotateSpeed = 200;
+
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
             _defaultRotation = transform.rotation;
         }
+
+        private void Update() {
+            if(_rigidbody.isKinematic == false){
+                transform.Rotate(_rotation * _rotateSpeed * Time.deltaTime);
+            }
+                
+        }
+        
 
         public override void StoreToPool()
         {

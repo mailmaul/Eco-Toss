@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4881872346093473918}
   - component: {fileID: 4881872346093473861}
   - component: {fileID: 5697772568972607156}
+  - component: {fileID: -8177534476677018432}
+  - component: {fileID: 4153206865320570025}
   m_Layer: 7
   m_Name: Trash_Apple_01
   m_TagString: TrashOrganic
@@ -127,3 +129,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2056464ff21fc4fa312cb7b18e3884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rotation: {x: 5, y: 1, z: 3}
+  _rotateSpeed: 250
+--- !u!111 &-8177534476677018432
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5728170640705070304}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: -2040942502886355444, guid: 7615ae19f6fb8ec4db1f0c0e61651012, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 1
+  m_CullingType: 1
+--- !u!95 &4153206865320570025
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5728170640705070304}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d730822fb3fd6e34284b978305b33735, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
