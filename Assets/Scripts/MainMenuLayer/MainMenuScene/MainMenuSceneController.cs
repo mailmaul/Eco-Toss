@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using EcoTeam.EcoToss.Audio;
+using EcoTeam.EcoToss.PubSub;
+using Agate.MVC.Core;
 
 namespace EcoTeam.EcoToss.MainMenu
 {
@@ -10,7 +13,6 @@ namespace EcoTeam.EcoToss.MainMenu
     {
         [SerializeField] private Button _playButton;
 
-        // Start is called before the first frame update
         void Start()
         {
             Input.backButtonLeavesApp = true;
@@ -20,6 +22,7 @@ namespace EcoTeam.EcoToss.MainMenu
 
         private void GoToGameplay()
         {
+            PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("button_click"));
             SceneManager.LoadScene(1);
         }
     }
