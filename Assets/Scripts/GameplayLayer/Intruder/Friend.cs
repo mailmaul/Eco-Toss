@@ -35,7 +35,6 @@ namespace EcoTeam.EcoToss.Intruder
         {
             if (_isMove == false)
             {
-                Debug.Log(_currentTime);
                 if (_currentTime >= _timer)
                 {
                     Vector3 newRotation = new Vector3(transform.rotation.x, transform.rotation.y + 180, transform.rotation.z);
