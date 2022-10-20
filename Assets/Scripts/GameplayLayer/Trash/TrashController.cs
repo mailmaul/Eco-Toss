@@ -43,7 +43,6 @@ namespace EcoTeam.EcoToss.Trash
                 collision.gameObject.tag.Substring(0, 8) == "TrashCan") && _hasCollided == false)
             {       
                 _hasCollided = true;
-                Debug.Log("has collided= " + _hasCollided);
                 if (collision.gameObject.CompareTag("Ground"))
                 {
                     PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
@@ -88,8 +87,7 @@ namespace EcoTeam.EcoToss.Trash
             if (other.gameObject.CompareTag("Intruder") && _hasCollided == false)
             {       
                 _hasCollided = true;
-                Debug.Log("has collided= " + _hasCollided);
-                    StoreToPool();
+                StoreToPool();
 
                 if (GameManagerController.Instance.IsWindSpawn)
                 {
