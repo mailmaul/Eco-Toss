@@ -29,6 +29,7 @@ namespace EcoTeam.EcoToss.CameraShake
 
         IEnumerator ShakeCoroutine()
         {
+            Handheld.Vibrate();
             float elapsedTime = .1f;
 
             while (elapsedTime < _duration)
