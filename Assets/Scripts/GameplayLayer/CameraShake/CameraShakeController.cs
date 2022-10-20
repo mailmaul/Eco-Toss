@@ -23,6 +23,7 @@ namespace EcoTeam.EcoToss.CameraShake
 
         IEnumerator ShakeCoroutine()
         {
+            Handheld.Vibrate();
             Vector3 startPos = transform.position;
             float elapsedTime = .1f;
 
@@ -34,7 +35,6 @@ namespace EcoTeam.EcoToss.CameraShake
             }
 
             transform.position = startPos;
-            Handheld.Vibrate();
         }
 
         public void Shake(MessageShakingCamera msg)
