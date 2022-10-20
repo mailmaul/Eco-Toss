@@ -12,9 +12,12 @@ namespace EcoTeam.EcoToss.Trash
     {
         private Quaternion _defaultRotation;
         private Rigidbody _rigidbody;
-        private bool _hasCollided;
+        private bool _hasCollided = false;
         private float _stayDuration = 0f;
         private float _stayMaxDuration = 1.5f;
+
+                [SerializeField] private Vector3 _rotation;
+        [SerializeField] private float _rotateSpeed = 200;
 
         private void Start()
         {
@@ -22,8 +25,17 @@ namespace EcoTeam.EcoToss.Trash
             _defaultRotation = transform.rotation;
         }
 
+        private void Update() {
+            if(_rigidbody.isKinematic == false){
+                transform.Rotate(_rotation * _rotateSpeed * Time.deltaTime);
+            }
+                
+        }
+        
+
         public override void StoreToPool()
         {
+            PublishSubscribe.Instance.Publish<MessageSpawnVFX>(new MessageSpawnVFX("ParticleEffect", transform.position));
             transform.SetPositionAndRotation(transform.position, _defaultRotation);
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.angularVelocity = Vector3.zero;
@@ -39,33 +51,30 @@ namespace EcoTeam.EcoToss.Trash
                 Debug.Log(transform.name + "nabrak" + collision.transform.name);
             }
 
-            if (collision.gameObject.CompareTag("Ground") ||
-                collision.gameObject.CompareTag("Intruder") ||
-                collision.gameObject.tag.Substring(0, 8) == "TrashCan")
-            {
-                if (_hasCollided == false)
+            if ((collision.gameObject.CompareTag("Ground") ||
+                collision.gameObject.tag.Substring(0, 8) == "TrashCan") && _hasCollided == false)
+            {       
+                _hasCollided = true;
+                if (collision.gameObject.CompareTag("Ground"))
                 {
-                    _hasCollided = true;
-
-                    if (collision.gameObject.CompareTag("Ground"))
-                    {
-                        PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
-                        PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
-                        Invoke(nameof(StoreToPool), 0.5f);
-                    }
-                    else if (collision.gameObject.tag.Substring(0, 8) == "TrashCan" || collision.gameObject.CompareTag("Intruder"))
-                    {
-                        StoreToPool();
-                    }
-
-                    if (GameManagerController.Instance.IsWindSpawn)
-                    {
-                        PublishSubscribe.Instance.Publish<MessageSetRandomPropertiesWindArea>(new MessageSetRandomPropertiesWindArea());
-                    }
-
-                    //Debug.Log("spawn");
-                    PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
+                    PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
+                    PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
+                    Invoke(nameof(StoreToPool), 0.5f);
                 }
+                else if (collision.gameObject.tag.Substring(0, 8) == "TrashCan" || collision.gameObject.CompareTag("Intruder"))
+                {
+                    StoreToPool();
+                }
+
+                PublishSubscribe.Instance.Publish<MessageSpawnVFX>(new MessageSpawnVFX("ParticleEffect", transform.position));
+
+                if (GameManagerController.Instance.IsWindSpawn)
+                {
+                    PublishSubscribe.Instance.Publish<MessageSetRandomPropertiesWindArea>(new MessageSetRandomPropertiesWindArea());
+                }
+
+                //Debug.Log("spawn");
+                PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
             }
         }
 
@@ -80,6 +89,27 @@ namespace EcoTeam.EcoToss.Trash
                 StoreToPool();
                 PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
                 _stayDuration = 0;
+            }
+        }
+
+        private void OnTriggerExit(Collider other) {
+            if (Debug.isDebugBuild)
+            {
+                Debug.Log(transform.name + "nabrak" + other.transform.name);
+            }
+
+            if (other.gameObject.CompareTag("Intruder") && _hasCollided == false)
+            {       
+                _hasCollided = true;
+                StoreToPool();
+
+                if (GameManagerController.Instance.IsWindSpawn)
+                {
+                    PublishSubscribe.Instance.Publish<MessageSetRandomPropertiesWindArea>(new MessageSetRandomPropertiesWindArea());
+                }
+
+                //Debug.Log("spawn");
+                PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
             }
         }
     }

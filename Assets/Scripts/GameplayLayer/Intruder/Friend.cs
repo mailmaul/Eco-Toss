@@ -14,19 +14,15 @@ namespace EcoTeam.EcoToss.Intruder
             Intrude();
         }
 
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.tag.Substring(0, 5) == "Trash" && _isMove == false)
-            {
-                _isMove = true;
-            }
-        }
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("DestroyPoint") && _isMove)
             {
                 StoreToPool();
+            }
+            else if (other.gameObject.tag.Substring(0, 5) == "Trash" && _isMove == false)
+            {
+                _isMove = true;
             }
         }
 
