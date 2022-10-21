@@ -21,6 +21,8 @@ namespace EcoTeam.EcoToss.Audio
            _bgmToggle.isOn = _audioData.isBgmPlay;
            _sfxToggle.isOn = _audioData.isSfxPlay;
             SetToggleListener();
+
+            PublishSubscribe.Instance.Publish<MessagePlayBGM>(new MessagePlayBGM("bgm_menu"));
         }
 
         private void SetToggleListener()
@@ -33,16 +35,16 @@ namespace EcoTeam.EcoToss.Audio
 
         public void SetBGMToggle(bool play)
         {
-            PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("button_click"));
+            PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("ui_button"));
             _bgmToggle.isOn = !play;
             _audioData.isBgmPlay = !play;
             SaveAudioDataController.Instance.SetData(_audioData);
-            PublishSubscribe.Instance.Publish<MessagePlayBGM>(new MessagePlayBGM("bgm"));
+            PublishSubscribe.Instance.Publish<MessagePlayBGM>(new MessagePlayBGM("bgm_menu"));
         }
 
         public void SetSFXToggle(bool play)
         {
-            PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("button_click"));
+            PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("ui_button"));
             _sfxToggle.isOn = !play;
             _audioData.isSfxPlay = !play;
             SaveAudioDataController.Instance.SetData(_audioData);

@@ -40,6 +40,7 @@ namespace EcoTeam.EcoToss.Buff
 
         IEnumerator RandomBuff()
         {
+            PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("powerup_roll"));
             _currentImage.gameObject.SetActive(true);
             while (_currentTimerSpin >= 0)
             {
@@ -51,6 +52,7 @@ namespace EcoTeam.EcoToss.Buff
 
             _currentTimerSpin = _timerSpin;
             _buffList[_randomIndex].BuffEffect();
+            PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("powerup_dapat"));
 
             if (Debug.isDebugBuild)
             {

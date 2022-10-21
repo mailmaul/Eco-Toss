@@ -91,6 +91,7 @@ namespace EcoTeam.EcoToss.TrashCan
                     // Jika dia adalah element pertama atau kedua, maka cukup cek apakah _trashList[i] punya tag yang sama dengan TrashCan
                     if (i == 0)
                     {
+                        PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("sampah_benar"));
                         if (Debug.isDebugBuild) { Debug.Log("match 1"); }
                         _matchedTrashList.Add(_trashList[i]);
                     }
@@ -101,6 +102,7 @@ namespace EcoTeam.EcoToss.TrashCan
                         // Match-2 validation
                         if (_trashList[i].CompareTag(_trashList[i - 1].tag))
                         {
+                            PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("sampah_benar_2"));
                             if (Debug.isDebugBuild) { Debug.Log("match-2 valid"); }
                             // Match-3 validation
                             if (i > 1 && _trashList[i].CompareTag(_trashList[i - 2].tag))
@@ -109,6 +111,7 @@ namespace EcoTeam.EcoToss.TrashCan
                                 _matchedTrashList.Add(_trashList[i]);
 
                                 // Match-3 bonus score
+                                PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("match3"));
                                 PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Match3"));
                                 PublishSubscribe.Instance.Publish<MessageSpawnVFX>(new MessageSpawnVFX("ParticleEffect", transform.position));
 
@@ -135,6 +138,7 @@ namespace EcoTeam.EcoToss.TrashCan
                 }
                 else
                 {
+                    PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("sampah_salah_tanah"));
                     // Buat indikator jadi merah
                     _indicators[i].color = Color.red;
                 }

@@ -57,6 +57,7 @@ namespace EcoTeam.EcoToss.Trash
                 _hasCollided = true;
                 if (collision.gameObject.CompareTag("Ground"))
                 {
+                    PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("sampah_salah_tanah"));
                     PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
                     PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
                     Invoke(nameof(StoreToPool), 0.5f);
