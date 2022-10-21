@@ -220,6 +220,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8226582539497787054, guid: 840137d7b8d464142b00b33476e3b4cc, type: 3}
+      propertyPath: offset
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8226582539497787054, guid: 840137d7b8d464142b00b33476e3b4cc, type: 3}
       propertyPath: _intruderSpawner
       value: 
       objectReference: {fileID: 1006288591}
@@ -1891,11 +1895,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1443540485028722914, guid: 24f64f00fb0fded4facbdccc8807430a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1443540485028722914, guid: 24f64f00fb0fded4facbdccc8807430a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.87
+      value: 4.85
       objectReference: {fileID: 0}
     - target: {fileID: 1443540485028722914, guid: 24f64f00fb0fded4facbdccc8807430a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1932,11 +1936,11 @@ PrefabInstance:
     - target: {fileID: 1443540485028722915, guid: 24f64f00fb0fded4facbdccc8807430a, type: 3}
       propertyPath: _intrudersList.Array.data[0]
       value: 
-      objectReference: {fileID: 1123038893080882642, guid: 2b80997ff65efcc44b7ccf47810ec682, type: 3}
+      objectReference: {fileID: 6467426395818871461, guid: 7bfb53cc5b23ca04c9c147598533e5dd, type: 3}
     - target: {fileID: 1443540485028722915, guid: 24f64f00fb0fded4facbdccc8807430a, type: 3}
       propertyPath: _intrudersList.Array.data[1]
       value: 
-      objectReference: {fileID: 3596413763781480551, guid: b26a5c2304c9ce4428ebe4ab3de7949e, type: 3}
+      objectReference: {fileID: -5975618052070144695, guid: 086ccbae3a58eef448d52dc5b820ee8b, type: 3}
     - target: {fileID: 1443540485028722915, guid: 24f64f00fb0fded4facbdccc8807430a, type: 3}
       propertyPath: _intrudersList.Array.data[2]
       value: 
@@ -2325,14 +2329,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trashController:
   - {fileID: 5697772568972607156, guid: c3768f5a7fabfca4389be47d86abf68f, type: 3}
-  - {fileID: 6228123480818983810, guid: 47b6407e38c095c4f878896a82c0a8bd, type: 3}
-  - {fileID: 3495764905650393253, guid: 0ffd0628833c4e647b4d0983fea94a92, type: 3}
-  - {fileID: 5777717398397001822, guid: 74f4d80e49a39214b931d2d5ad58f0fd, type: 3}
-  - {fileID: 3555765766181408355, guid: a19d9c6ec45544d4f8e5e9e16f28642c, type: 3}
-  - {fileID: 8477853262905599123, guid: 80500472b76fb9b4da856b46f6a38381, type: 3}
-  - {fileID: 3614586860556200956, guid: 9692fe387ce1b354ea073e2e7fa51220, type: 3}
-  - {fileID: 5238954935676135602, guid: 8ccb080e9daf02947a6abed0df29f832, type: 3}
-  - {fileID: 1291803230463100025, guid: 2de80a25baf8a5142b709de9f78b1796, type: 3}
 --- !u!1 &1258000450
 GameObject:
   m_ObjectHideFlags: 0

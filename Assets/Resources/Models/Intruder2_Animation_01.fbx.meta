@@ -1,17 +1,26 @@
 fileFormatVersion: 2
-guid: ee337d0b2607edf4a97cde7fe1a7deda
+guid: 6efe9987c2bae8f489b5e25ae3ae139e
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: -573765527335660580
-    second: Action|ArmatureAction
+      74: 7139602118524001832
+    second: Action|Acak Sampah
+  - first:
+      74: -6414640571465683034
+    second: Action|ActionNgacak
   - first:
       74: -4334534625275885154
     second: Action|Running
   - first:
-      74: 661034536070485195
-    second: Action|Terpentung
+      74: -2850972646871217478
+    second: Action|Terpentung_Depan
+  - first:
+      74: 3707932511787493635
+    second: Action|Terpentung_Kanan ke Kiri
+  - first:
+      74: -7133591907166222315
+    second: Action|Terpentung_Kiri ke Kanan
   - first:
       74: 1214988252240127757
     second: Action|Walking
