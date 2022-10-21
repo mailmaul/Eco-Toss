@@ -61,7 +61,7 @@ namespace EcoTeam.EcoToss.Score
                     break;
             }
 
-            _scoreTMP.SetText($"{_score}");
+            _scoreTMP.SetText($"Score: {_score}");
 
             if (Debug.isDebugBuild)
             {

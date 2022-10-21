@@ -65,6 +65,7 @@ namespace EcoTeam.EcoToss.TrashCan
             if (_trashCanTag == collisionTag)
             {
                 PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Normal"));
+                PublishSubscribe.Instance.Publish<MessageSpawnVFX>(new MessageSpawnVFX("NewParticleEffect", transform.position));
             }
             else
             {
@@ -111,7 +112,7 @@ namespace EcoTeam.EcoToss.TrashCan
 
                                 // Match-3 bonus score
                                 PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Match3"));
-                                PublishSubscribe.Instance.Publish<MessageSpawnVFX>(new MessageSpawnVFX("ParticleEffect", transform.position));
+                                PublishSubscribe.Instance.Publish<MessageSpawnVFX>(new MessageSpawnVFX("NewParticleEffect", transform.position));
 
                                 for (int j = 0; j < _matchedTrashList.Count; j++)
                                 {

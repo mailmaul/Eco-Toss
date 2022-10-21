@@ -35,7 +35,6 @@ namespace EcoTeam.EcoToss.Trash
 
         public override void StoreToPool()
         {
-            PublishSubscribe.Instance.Publish<MessageSpawnVFX>(new MessageSpawnVFX("ParticleEffect", transform.position));
             transform.SetPositionAndRotation(transform.position, _defaultRotation);
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.angularVelocity = Vector3.zero;
@@ -61,12 +60,10 @@ namespace EcoTeam.EcoToss.Trash
                     PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
                     Invoke(nameof(StoreToPool), 0.5f);
                 }
-                else if (collision.gameObject.tag.Substring(0, 8) == "TrashCan" || collision.gameObject.CompareTag("Intruder"))
+                else if (collision.gameObject.tag.Substring(0, 8) == "TrashCan")
                 {
                     StoreToPool();
                 }
-
-                PublishSubscribe.Instance.Publish<MessageSpawnVFX>(new MessageSpawnVFX("ParticleEffect", transform.position));
 
                 if (GameManagerController.Instance.IsWindSpawn)
                 {
