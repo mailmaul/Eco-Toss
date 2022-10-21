@@ -1058,7 +1058,7 @@ MonoBehaviour:
   _speed: 5
   _timer: 3.2
   _animator: {fileID: -7011340461489279547}
-  _stunTime: 1.5
+  _stunTime: 1.9
 --- !u!65 &-1098800335391242095
 BoxCollider:
   m_ObjectHideFlags: 0

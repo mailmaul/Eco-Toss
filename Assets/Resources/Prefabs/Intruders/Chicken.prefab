@@ -631,7 +631,7 @@ MonoBehaviour:
   _speed: 3
   _timer: 5
   _animator: {fileID: 8785870409274464543}
-  _stunTime: 1.5
+  _stunTime: 1.9
 --- !u!1 &3948535032242020425
 GameObject:
   m_ObjectHideFlags: 0
