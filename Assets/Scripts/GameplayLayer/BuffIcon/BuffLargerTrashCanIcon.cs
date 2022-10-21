@@ -6,29 +6,32 @@ using TMPro;
 using EcoTeam.EcoToss.PubSub;
 using Agate.MVC.Core;
 
-public class BuffLargerTrashCanIcon : BaseBuffIcon
+namespace EcoTeam.EcoToss.BuffIcon
 {
-    private int _count;
-
-    private void Awake()
+    public class BuffLargerTrashCanIcon : BaseBuffIcon
     {
-        PublishSubscribe.Instance.Subscribe<MessageIncreaseCountBuff>(AddCount);
-    }
+        private int _count;
 
-    private void OnDestroy()
-    {
-        PublishSubscribe.Instance.Subscribe<MessageIncreaseCountBuff>(AddCount);
-    }
+        private void Awake()
+        {
+            PublishSubscribe.Instance.Subscribe<MessageIncreaseCountBuff>(AddCount);
+        }
 
-    protected override void Start()
-    {
-        base.Start();
-        PublishSubscribe.Instance.Publish<MessageIncreaseCountBuff>(new MessageIncreaseCountBuff());
-    }
+        private void OnDestroy()
+        {
+            PublishSubscribe.Instance.Subscribe<MessageIncreaseCountBuff>(AddCount);
+        }
 
-    public void AddCount(MessageIncreaseCountBuff msg)
-    {
-        _count++;
-        _text.SetText("x" + _count);
+        protected override void Start()
+        {
+            base.Start();
+            PublishSubscribe.Instance.Publish<MessageIncreaseCountBuff>(new MessageIncreaseCountBuff());
+        }
+
+        public void AddCount(MessageIncreaseCountBuff msg)
+        {
+            _count++;
+            _text.SetText("x" + _count);
+        }
     }
 }

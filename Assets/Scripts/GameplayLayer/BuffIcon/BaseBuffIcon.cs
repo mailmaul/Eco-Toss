@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public abstract class BaseBuffIcon : MonoBehaviour
+namespace EcoTeam.EcoToss.BuffIcon
 {
-    [SerializeField] protected TMP_Text _text;
-
-    protected virtual void Start()
+    public abstract class BaseBuffIcon : MonoBehaviour
     {
-        
+        [SerializeField] protected TMP_Text _text;
+
+        protected virtual void Start()
+        {
+
+        }
     }
 }
