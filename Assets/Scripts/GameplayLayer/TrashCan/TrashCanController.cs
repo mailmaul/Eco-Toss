@@ -81,7 +81,6 @@ namespace EcoTeam.EcoToss.TrashCan
 
         private void CheckTrashListElements()
         {
-            Debug.Log("masuk check");
             for (int i = 0; i < _trashList.Count; i++)
             {
                 if (_trashList[i].tag.Substring(5) == _trashCanTag)

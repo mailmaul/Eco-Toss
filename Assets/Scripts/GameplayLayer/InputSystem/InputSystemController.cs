@@ -27,7 +27,6 @@ namespace EcoTeam.EcoToss.InputSystem
                 // Detect if player is swiping
                 if (Input.touches[0].position.x <= _touchStartPosition.x - _pixelToDetect ||
                 Input.touches[0].position.x >= _touchStartPosition.x + _pixelToDetect ||
-                Input.touches[0].position.y <= _touchStartPosition.y - _pixelToDetect ||
                 Input.touches[0].position.y >= _touchStartPosition.y + _pixelToDetect)
                 {
                     _fingerDown = false;
@@ -41,6 +40,7 @@ namespace EcoTeam.EcoToss.InputSystem
                 // Detect if player is removing their touch input
                 if (Input.GetTouch(0).phase == TouchPhase.Ended ||
                 Input.GetTouch(0).phase == TouchPhase.Canceled ||
+                Input.touches[0].position.y <= _touchStartPosition.y - _pixelToDetect ||
                 Time.timeScale == 0)
                 {
                     _fingerDown = false;
@@ -56,7 +56,7 @@ namespace EcoTeam.EcoToss.InputSystem
             // calculating swipe direction in 2D space
             _swipeDirection = _touchStartPosition - _touchEndPosition;
             _swipeDirection = Vector3.Normalize(_swipeDirection);
-            Debug.Log("Swipe direction: " + _swipeDirection);
+            
             PublishSubscribe.Instance.Publish<MessageTrashThrowing>(new MessageTrashThrowing(_swipeDirection));
         }
     }
