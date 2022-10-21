@@ -81,7 +81,6 @@ namespace EcoTeam.EcoToss.TrashCan
 
         private void CheckTrashListElements()
         {
-            Debug.Log("masuk check");
             for (int i = 0; i < _trashList.Count; i++)
             {
                 if (_trashList[i].tag.Substring(5) == _trashCanTag)
@@ -111,6 +110,7 @@ namespace EcoTeam.EcoToss.TrashCan
 
                                 // Match-3 bonus score
                                 PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Match3"));
+                                PublishSubscribe.Instance.Publish<MessageSpawnVFX>(new MessageSpawnVFX("ParticleEffect", transform.position));
 
                                 for (int j = 0; j < _matchedTrashList.Count; j++)
                                 {

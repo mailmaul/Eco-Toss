@@ -17,7 +17,7 @@ namespace EcoTeam.EcoToss.Score
         [SerializeField] private TMP_Text _highScoreTMP;
         private int _score = 0;
         [SerializeField] private int _normalAddScore = 2;
-        private int _normalRemoveScore = 1;
+        // private int _normalRemoveScore = 1;
         private int _match3Score;
         [SerializeField] private int _firstScoreToActivateBuff = 10;
         [SerializeField] private float _scoreMultiplierToActivateBuff = 1.5f;
@@ -29,7 +29,6 @@ namespace EcoTeam.EcoToss.Score
         private void Awake()
         {
             PublishSubscribe.Instance.Subscribe<MessageAddScore>(AddScore);
-            PublishSubscribe.Instance.Subscribe<MessageRemoveScore>(RemoveScore);
             PublishSubscribe.Instance.Subscribe<MessageGameOver>(UpdateFinalScore);
             PublishSubscribe.Instance.Subscribe<MessageActivateDoubleScore>(OnDoubleScoreActivated);
             PublishSubscribe.Instance.Subscribe<MessageDeactivateDoubleScore>(OnDoubleScoreDeactivated);
@@ -38,7 +37,6 @@ namespace EcoTeam.EcoToss.Score
         private void OnDestroy()
         {
             PublishSubscribe.Instance.Unsubscribe<MessageAddScore>(AddScore);
-            PublishSubscribe.Instance.Unsubscribe<MessageRemoveScore>(RemoveScore);
             PublishSubscribe.Instance.Unsubscribe<MessageGameOver>(UpdateFinalScore);
             PublishSubscribe.Instance.Unsubscribe<MessageActivateDoubleScore>(OnDoubleScoreActivated);
             PublishSubscribe.Instance.Unsubscribe<MessageDeactivateDoubleScore>(OnDoubleScoreDeactivated);
@@ -72,25 +70,6 @@ namespace EcoTeam.EcoToss.Score
 
             CheckScoreToActivateBuff();
             CheckScoreToSpawnIntruder();
-        }
-
-        private void RemoveScore(MessageRemoveScore message)
-        {
-            switch (message.Amount)
-            {
-                case "Normal":
-                    _score -= _normalRemoveScore;
-                    break;
-            }
-
-            _scoreTMP.SetText($"{_score}");
-
-            if (Debug.isDebugBuild)
-            {
-                Debug.Log("Skor berkurang jadi: " + _score);
-            }
-
-            PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
         }
 
         private void CheckScoreToActivateBuff()

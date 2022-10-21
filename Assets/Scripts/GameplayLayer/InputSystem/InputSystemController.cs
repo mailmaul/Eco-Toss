@@ -3,73 +3,61 @@ using EcoTeam.EcoToss.PubSub;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace EcoTeam.EcoToss.InputSystem
 {
     public class InputSystemController : MonoBehaviour
     {
-        private Vector3 _touchRayPosition; // touch raycast
         private Vector2 _touchStartPosition, _touchEndPosition, _swipeDirection;
+        private bool _fingerDown;
+        [SerializeField] private int _pixelToDetect = 50;
 
-        [SerializeField] Camera _mainCamera;
-        [SerializeField] Rigidbody _rigidbody;
-
-        // Update is called once per frame
         void Update()
         {
-            // if you touch the screen
-            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            // Detect if there is touch input
+            if (_fingerDown == false && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began && !EventSystem.current.IsPointerOverGameObject(0))
             {
-                _touchRayPosition = Input.GetTouch(0).position;
-                _touchRayPosition.z = 100f;
-                _touchRayPosition = _mainCamera.ScreenToWorldPoint(_touchRayPosition);
-
-                _touchStartPosition = Input.GetTouch(0).position;
-                Raycast();
+                _touchStartPosition = Input.touches[0].position;
+                _fingerDown = true;
             }
 
-            // if you release your finger
-            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+            if (_fingerDown && Time.timeScale == 1)
             {
-                // getting release finger position
-                _touchEndPosition = Input.GetTouch(0).position;
-
-                // calculating swipe direction in 2D space
-                _swipeDirection = _touchStartPosition - _touchEndPosition;
-                _swipeDirection = Vector3.Normalize(_swipeDirection);
-
-                if (_rigidbody != null)
+                // Detect if player is swiping
+                if (Input.touches[0].position.x <= _touchStartPosition.x - _pixelToDetect ||
+                Input.touches[0].position.x >= _touchStartPosition.x + _pixelToDetect ||
+                Input.touches[0].position.y >= _touchStartPosition.y + _pixelToDetect)
                 {
-                    PublishSubscribe.Instance.Publish<MessageTrashThrowing>(new MessageTrashThrowing(_rigidbody, _swipeDirection));
+                    _fingerDown = false;
+                    OnSwipe();
+                    if (Debug.isDebugBuild)
+                    {
+                        Debug.Log("Swipe");
+                    }
+                }
 
-                    // reset selected rigidbody
-                    _rigidbody = null;
+                // Detect if player is removing their touch input
+                if (Input.GetTouch(0).phase == TouchPhase.Ended ||
+                Input.GetTouch(0).phase == TouchPhase.Canceled ||
+                Input.touches[0].position.y <= _touchStartPosition.y - _pixelToDetect ||
+                Time.timeScale == 0)
+                {
+                    _fingerDown = false;
                 }
             }
         }
 
-        private void Raycast()
+        private void OnSwipe()
         {
-            RaycastHit hit;
+            // getting release finger position
+            _touchEndPosition = Input.GetTouch(0).position;
 
-            Ray ray = new Ray(transform.position, _touchRayPosition - transform.position);
-            if (Debug.isDebugBuild)
-            {
-                Debug.DrawRay(transform.position, _touchRayPosition - transform.position, Color.red, 3f);
-            }
-
-            bool raycastIsHit = Physics.Raycast(ray, out hit);
-
-            if (raycastIsHit)
-            {
-                if (hit.collider != null && hit.collider.GetComponent<Rigidbody>() != null)
-                {
-                    if (hit.rigidbody.isKinematic)
-                    {
-                        _rigidbody = hit.rigidbody;
-                    }
-                }
-            }
+            // calculating swipe direction in 2D space
+            _swipeDirection = _touchStartPosition - _touchEndPosition;
+            _swipeDirection = Vector3.Normalize(_swipeDirection);
+            
+            PublishSubscribe.Instance.Publish<MessageTrashThrowing>(new MessageTrashThrowing(_swipeDirection));
         }
     }
 }

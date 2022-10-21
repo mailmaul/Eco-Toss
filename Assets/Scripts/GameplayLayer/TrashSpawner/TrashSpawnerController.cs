@@ -33,6 +33,7 @@ namespace EcoTeam.EcoToss.TrashSpawner
         {
             int randomIndex = Random.Range(0, _trashController.Length);
             IPoolObject createdTrash = _trashPool.CreateObject(_trashController[randomIndex], transform.position);
+            PublishSubscribe.Instance.Publish<MessageSetTrashToThrow>(new MessageSetTrashToThrow(createdTrash.gameObject.GetComponent<Rigidbody>()));
 
             // Debugging purposes
             //IPoolObject createdTrash = _trashPool.CreateObject(_trashController[0], transform.position);

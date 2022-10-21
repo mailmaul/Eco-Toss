@@ -36,7 +36,7 @@ namespace EcoTeam.EcoToss.Audio
             PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("button_click"));
             _bgmToggle.isOn = !play;
             _audioData.isBgmPlay = !play;
-            SaveDataController.Instance.SetAudioData(_audioData);
+            SaveAudioDataController.Instance.SetData(_audioData);
             PublishSubscribe.Instance.Publish<MessagePlayBGM>(new MessagePlayBGM("bgm"));
         }
 
@@ -45,12 +45,12 @@ namespace EcoTeam.EcoToss.Audio
             PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("button_click"));
             _sfxToggle.isOn = !play;
             _audioData.isSfxPlay = !play;
-            SaveDataController.Instance.SetAudioData(_audioData);
+            SaveAudioDataController.Instance.SetData(_audioData);
         }
 
         private void OnApplicationQuit()
         {
-            SaveDataController.Instance.SetAudioData(_audioData);
+            SaveAudioDataController.Instance.SetData(_audioData);
         }
     }
 }

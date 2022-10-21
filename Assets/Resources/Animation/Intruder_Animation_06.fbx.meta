@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 904e0f73afc76d3459cc49f865fcb160
+guid: ee337d0b2607edf4a97cde7fe1a7deda
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
@@ -15,16 +15,11 @@ ModelImporter:
   - first:
       74: 1214988252240127757
     second: Action|Walking
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 8e0de8a2c89bff547b3f1e328ac18945, type: 2}
+  externalObjects: {}
   materials:
-    materialImportMode: 1
-    materialName: 2
-    materialSearch: 0
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
