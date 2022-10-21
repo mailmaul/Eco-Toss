@@ -143,23 +143,4 @@ namespace EcoTeam.EcoToss.PubSub
             TrashToThrow = trashToThrow;
         }
     }
-
-    public struct MessageIncreaseCountBuff { }
-    public struct MessageDoubleScoreBuffCountdown
-    {
-        public float Duration { get; private set; }
-        public MessageDoubleScoreBuffCountdown(float duration)
-        {
-            Duration = duration;
-        }
-    }
-
-    public struct MessageSpawnBuffIcon 
-    { 
-        public string Name { get; private set; }
-        public MessageSpawnBuffIcon(string name)
-        {
-            Name = name;
-        }
-    }
 }
