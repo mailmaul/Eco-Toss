@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 52180d48c8fcd7c429bdc80c82411b60
+guid: 904e0f73afc76d3459cc49f865fcb160
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
+  - first:
+      74: -573765527335660580
+    second: Action|ArmatureAction
   - first:
       74: -4334534625275885154
     second: Action|Running
@@ -10,19 +13,18 @@ ModelImporter:
       74: 661034536070485195
     second: Action|Terpentung
   - first:
-      74: 3707932511787493635
-    second: Action|Terpentung_Kanan ke Kiri
-  - first:
-      74: -7133591907166222315
-    second: Action|Terpentung_Kiri ke Kanan
-  - first:
       74: 1214988252240127757
     second: Action|Walking
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 8e0de8a2c89bff547b3f1e328ac18945, type: 2}
   materials:
-    materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialImportMode: 1
+    materialName: 2
+    materialSearch: 0
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
