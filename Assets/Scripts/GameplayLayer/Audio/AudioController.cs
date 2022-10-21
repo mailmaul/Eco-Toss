@@ -63,7 +63,7 @@ namespace EcoTeam.EcoToss.Audio
                         _audioData.bgm = _bgmList[i];
                         _soundBGM.Play();
                         _soundBGM.volume = 1;
-                        SaveDataController.Instance.SetAudioData(_audioData);
+                        SaveAudioDataController.Instance.SetData(_audioData);
                         return;
                     }
                 }
