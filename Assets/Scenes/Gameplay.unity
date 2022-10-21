@@ -1590,11 +1590,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1443540485028722914, guid: 24f64f00fb0fded4facbdccc8807430a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1443540485028722914, guid: 24f64f00fb0fded4facbdccc8807430a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.3
+      value: 4.87
       objectReference: {fileID: 0}
     - target: {fileID: 1443540485028722914, guid: 24f64f00fb0fded4facbdccc8807430a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1624,6 +1624,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1443540485028722915, guid: 24f64f00fb0fded4facbdccc8807430a, type: 3}
+      propertyPath: _intrudersList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443540485028722915, guid: 24f64f00fb0fded4facbdccc8807430a, type: 3}
+      propertyPath: _intrudersList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1123038893080882642, guid: 2b80997ff65efcc44b7ccf47810ec682, type: 3}
+    - target: {fileID: 1443540485028722915, guid: 24f64f00fb0fded4facbdccc8807430a, type: 3}
+      propertyPath: _intrudersList.Array.data[1]
+      value: 
+      objectReference: {fileID: 3596413763781480551, guid: b26a5c2304c9ce4428ebe4ab3de7949e, type: 3}
+    - target: {fileID: 1443540485028722915, guid: 24f64f00fb0fded4facbdccc8807430a, type: 3}
+      propertyPath: _intrudersList.Array.data[2]
+      value: 
+      objectReference: {fileID: 3388412133751118272, guid: 64e9c8d02bb4d234c962d17d6f666da0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24f64f00fb0fded4facbdccc8807430a, type: 3}
 --- !u!1001 &928214749
@@ -2090,7 +2106,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: -144.11327, z: 0}
 --- !u!114 &1141889759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2109,7 +2125,7 @@ MonoBehaviour:
   - {fileID: 3495764905650393253, guid: 0ffd0628833c4e647b4d0983fea94a92, type: 3}
   - {fileID: 5777717398397001822, guid: 74f4d80e49a39214b931d2d5ad58f0fd, type: 3}
   - {fileID: 3555765766181408355, guid: a19d9c6ec45544d4f8e5e9e16f28642c, type: 3}
-  - {fileID: 5521096294243914061, guid: 960a7650692cc354d973ebdf50de2855, type: 3}
+  - {fileID: 8477853262905599123, guid: 80500472b76fb9b4da856b46f6a38381, type: 3}
   - {fileID: 3614586860556200956, guid: 9692fe387ce1b354ea073e2e7fa51220, type: 3}
   - {fileID: 5238954935676135602, guid: 8ccb080e9daf02947a6abed0df29f832, type: 3}
   - {fileID: 1291803230463100025, guid: 2de80a25baf8a5142b709de9f78b1796, type: 3}
@@ -2360,6 +2376,7 @@ GameObject:
   - component: {fileID: 1289669022}
   - component: {fileID: 1289669021}
   - component: {fileID: 1289669020}
+  - component: {fileID: 1289669023}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2434,6 +2451,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+--- !u!114 &1289669023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289669019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6344cdff78682354296d85161398acbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 0.5
+  _smoothness: 0.2
 --- !u!1 &1394144121
 GameObject:
   m_ObjectHideFlags: 0
@@ -3914,6 +3945,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6780692130268881700, guid: ba87495c79c46de418e2b063f3e3412a, type: 3}
+      propertyPath: _vfxList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6780692130268881700, guid: ba87495c79c46de418e2b063f3e3412a, type: 3}
+      propertyPath: _vfxList.Array.data[1]
+      value: 
+      objectReference: {fileID: 8890899562100699739, guid: 62e2b49b46a8db64c9fa8a9fa591e71f, type: 3}
     - target: {fileID: 6780692130268881701, guid: ba87495c79c46de418e2b063f3e3412a, type: 3}
       propertyPath: m_Name
       value: VFXSpawner

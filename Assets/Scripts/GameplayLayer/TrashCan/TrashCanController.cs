@@ -66,6 +66,10 @@ namespace EcoTeam.EcoToss.TrashCan
             {
                 PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Normal"));
             }
+            else
+            {
+                PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
+            }
 
             CheckTrashListElements();
 
@@ -107,6 +111,7 @@ namespace EcoTeam.EcoToss.TrashCan
 
                                 // Match-3 bonus score
                                 PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Match3"));
+                                PublishSubscribe.Instance.Publish<MessageSpawnVFX>(new MessageSpawnVFX("ParticleEffect", transform.position));
 
                                 for (int j = 0; j < _matchedTrashList.Count; j++)
                                 {

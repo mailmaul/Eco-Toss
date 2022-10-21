@@ -31,7 +31,8 @@ namespace EcoTeam.EcoToss.Intruder
             if(_currentTime > _timer)
             {
                 //mengacaukan tempat sampah (animasi tempat sampah berantakan)
-                PublishSubscribe.Instance.Publish<MessageRemoveScore>(new MessageRemoveScore("Normal"));
+                PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
+                PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
                 _currentTime = 0;
             }
 
@@ -41,15 +42,6 @@ namespace EcoTeam.EcoToss.Intruder
         public override void Movement()
         {
             transform.Translate(new Vector3(_speed, 0, 0) * Time.deltaTime);
-        }
-
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.tag.Substring(0, 5) == "Trash")
-            {
-                _isMove = true;
-                if (Debug.isDebugBuild) { Debug.Log("Ayam kena lempar"); }
-            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -64,7 +56,11 @@ namespace EcoTeam.EcoToss.Intruder
             {
                 StoreToPool();
             }
-            
+            else if (other.gameObject.tag.Substring(0, 5) == "Trash")
+            {
+                _isMove = true;
+                if (Debug.isDebugBuild) { Debug.Log("Ayam kena lempar"); }
+            }
         }
     }
 }
