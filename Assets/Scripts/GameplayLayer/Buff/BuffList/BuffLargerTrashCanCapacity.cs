@@ -11,7 +11,6 @@ namespace EcoTeam.EcoToss.Buff
         public override void BuffEffect()
         {
             PublishSubscribe.Instance.Publish<MessageIncreaseTrashCanCapacity>(new MessageIncreaseTrashCanCapacity());
-            PublishSubscribe.Instance.Publish<MessageSpawnBuffIcon>(new MessageSpawnBuffIcon(gameObject.name));
         }
     }
 }

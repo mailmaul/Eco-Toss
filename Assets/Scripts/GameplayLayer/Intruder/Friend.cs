@@ -7,14 +7,7 @@ namespace EcoTeam.EcoToss.Intruder
 {
     public class Friend : BaseIntruder
     {
-        [SerializeField] private Animator _animator;
-        [SerializeField] private float _stunTime;
         private Vector3 _intrudeDirection = Vector3.forward;
-
-        private void FindGameAnimator()
-        {
-            _animator = GetComponent<Animator>();
-        }
 
         private void FixedUpdate()
         {
@@ -25,23 +18,12 @@ namespace EcoTeam.EcoToss.Intruder
         {
             if (other.CompareTag("DestroyPoint") && _isMove)
             {
-                
                 StoreToPool();
             }
             else if (other.gameObject.tag.Substring(0, 5) == "Trash" && _isMove == false)
             {
                 _isMove = true;
-                _animator.SetTrigger("ketimpuk");
-                StartCoroutine(Stun());
             }
-        }
-
-        IEnumerator Stun (){
-            _speed = 0;
-
-            yield return new WaitForSeconds(_stunTime);
-            _animator.SetBool("isWalk", true);
-            _speed = 5;
         }
 
         public override void Movement()
