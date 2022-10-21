@@ -10,7 +10,7 @@ namespace EcoTeam.EcoToss.TrashCan
 {
     public class TrashCanController : MonoBehaviour
     {
-        [SerializeField] private Image _indicatorParent;
+        [SerializeField] private GameObject _indicatorParent;
         [SerializeField] private Image _indicatorPrefab;
         [SerializeField] private Image[] _indicators;
         [SerializeField] private List<TrashController> _trashList = new();
@@ -18,7 +18,7 @@ namespace EcoTeam.EcoToss.TrashCan
         private int _trashCanCapacity = 6;
         private int _trashCanMaxCapacity = 10;
         private string _trashCanTag;
-        private HorizontalLayoutGroup _indicatorParentLayoutGroup;
+        private GridLayoutGroup _indicatorParentLayoutGroup;
         private RectTransform _indicatorParentRectTransform;
 
         private void Awake()
@@ -39,7 +39,7 @@ namespace EcoTeam.EcoToss.TrashCan
             _trashCanTag = gameObject.tag.Substring(8);
 
             _indicators = new Image[_trashCanMaxCapacity];
-            _indicatorParentLayoutGroup = _indicatorParent.GetComponent<HorizontalLayoutGroup>();
+            _indicatorParentLayoutGroup = _indicatorParent.GetComponent<GridLayoutGroup>();
             _indicatorParentRectTransform = _indicatorParent.GetComponent<RectTransform>();
 
             // spawn TrashCan Indicators
@@ -85,8 +85,9 @@ namespace EcoTeam.EcoToss.TrashCan
             {
                 if (_trashList[i].tag.Substring(5) == _trashCanTag)
                 {
-                    //Buat indikator jadi hijau
-                    _indicators[i].color = Color.green;
+                    //Buat indikator jadi benar
+                    _indicators[i].enabled = true;
+                    _indicators[i].sprite = Resources.Load<Sprite>("Prefabs/UI/benar");
 
                     // Jika dia adalah element pertama atau kedua, maka cukup cek apakah _trashList[i] punya tag yang sama dengan TrashCan
                     if (i == 0)
@@ -115,7 +116,7 @@ namespace EcoTeam.EcoToss.TrashCan
                                 for (int j = 0; j < _matchedTrashList.Count; j++)
                                 {
                                     _trashList.RemoveAt(i - j);
-                                    _indicators[i - j].color = Color.white;
+                                    _indicators[i - j].enabled = false;
                                 }
                                 _matchedTrashList.Clear();
                             }
@@ -135,8 +136,9 @@ namespace EcoTeam.EcoToss.TrashCan
                 }
                 else
                 {
-                    // Buat indikator jadi merah
-                    _indicators[i].color = Color.red;
+                    // Buat indikator jadi salah
+                    _indicators[i].enabled = true;
+                    _indicators[i].sprite = Resources.Load<Sprite>("Prefabs/UI/salah");
                 }
             }
             _matchedTrashList.Clear();

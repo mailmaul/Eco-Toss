@@ -73,6 +73,7 @@ namespace EcoTeam.EcoToss.Intruder
             IEnumerator Stun (){
             _speed = 0;
             
+            
 
             yield return new WaitForSeconds(_stunTime);
             transform.Rotate(new Vector3(0,90,0));
