@@ -26,12 +26,10 @@ namespace EcoTeam.EcoToss.PubSub
     
     public struct MessageTrashThrowing
     {
-        public Rigidbody TrashRigidbody;
         public Vector2 SwipeDirection;
 
-        public MessageTrashThrowing(Rigidbody trashRigidbody, Vector2 swipeDirection)
+        public MessageTrashThrowing(Vector2 swipeDirection)
         {
-            TrashRigidbody = trashRigidbody;
             SwipeDirection = swipeDirection;
         }
     }
@@ -135,4 +133,14 @@ namespace EcoTeam.EcoToss.PubSub
     }
 
     public struct MessageShakingCamera { }
+
+    public struct MessageSetTrashToThrow
+    {
+        public Rigidbody TrashToThrow { get; private set; }
+
+        public MessageSetTrashToThrow(Rigidbody trashToThrow)
+        {
+            TrashToThrow = trashToThrow;
+        }
+    }
 }

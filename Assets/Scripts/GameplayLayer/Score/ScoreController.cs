@@ -17,7 +17,7 @@ namespace EcoTeam.EcoToss.Score
         [SerializeField] private TMP_Text _highScoreTMP;
         private int _score = 0;
         [SerializeField] private int _normalAddScore = 2;
-        private int _normalRemoveScore = 1;
+        // private int _normalRemoveScore = 1;
         private int _match3Score;
         [SerializeField] private int _firstScoreToActivateBuff = 10;
         [SerializeField] private float _scoreMultiplierToActivateBuff = 1.5f;
