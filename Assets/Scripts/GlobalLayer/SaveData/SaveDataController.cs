@@ -10,13 +10,12 @@ namespace EcoTeam.EcoToss.SaveData
     public class SaveData
     {
         public int SavedHighScore;
-        public AudioData AudioData;
     }
 
     public class SaveDataController : MonoBehaviour
     {
         public static SaveDataController Instance;
-        public SaveData SavedData;
+        public SaveData SaveData;
 
         private void Awake()
         {
@@ -35,9 +34,9 @@ namespace EcoTeam.EcoToss.SaveData
 
         public void Save()
         {
-            string json = JsonUtility.ToJson(SavedData);
-            File.WriteAllText(Application.dataPath + "/JSON/SavedData.json", json);
-            PlayerPrefs.SetString("SaveData", json);
+            string jsonSaveData = JsonUtility.ToJson(SaveData);
+            File.WriteAllText(Application.dataPath + "/SaveData.json", jsonSaveData);
+            PlayerPrefs.SetString("SaveData", jsonSaveData);
             PlayerPrefs.Save();
         }
 
@@ -45,23 +44,16 @@ namespace EcoTeam.EcoToss.SaveData
         {
             if (PlayerPrefs.HasKey("SaveData"))
             {
-                string json = PlayerPrefs.GetString("SaveData");
-                JsonUtility.FromJsonOverwrite(json, SavedData);
-                File.WriteAllText(Application.dataPath + "/JSON/SavedData.json", json);
+                string jsonSaveData = PlayerPrefs.GetString("SaveData");
+                JsonUtility.FromJsonOverwrite(jsonSaveData, SaveData);
+                File.WriteAllText(Application.dataPath + "/SaveData.json", jsonSaveData);
             }
             else
             {
-                SavedData = new SaveData();
-                SavedData.SavedHighScore = 0;
-                SavedData.AudioData = Resources.Load<AudioData>("Data/AudioData");
+                SaveData = new SaveData();
+                SaveData.SavedHighScore = 0;
                 Save();
             }
-        }
-
-        public void SetAudioData(AudioData data)
-        {
-            SavedData.AudioData = data;
-            Save();
         }
     }
 }

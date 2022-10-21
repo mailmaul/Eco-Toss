@@ -34,12 +34,12 @@ namespace EcoTeam.EcoToss.HighScore
         public void UpdateHighScore(int _score)
         {
             HighScore = _score;
-            SaveDataController.Instance.SavedData.SavedHighScore = HighScore;
+            SaveDataController.Instance.SaveData.SavedHighScore = HighScore;
         }
 
         public void LoadHighScore()
         {
-            HighScore = SaveDataController.Instance.SavedData.SavedHighScore;
+            HighScore = SaveDataController.Instance.SaveData.SavedHighScore;
             SetHighScoreText();
         }
 

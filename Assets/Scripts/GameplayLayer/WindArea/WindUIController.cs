@@ -9,7 +9,8 @@ namespace EcoTeam.EcoToss.WindArea
 {
     public class WindUIController : MonoBehaviour
     {
-        [SerializeField] private TMP_Text _text;
+        [SerializeField] private RectTransform _arrowTransform;
+        [SerializeField] private TMP_Text _strengthtext;
 
         private void Awake()
         {
@@ -23,7 +24,19 @@ namespace EcoTeam.EcoToss.WindArea
 
         public void SetUI(MessageShowWindProperties msg)
         {
-            _text.SetText("Wind Strength : " + msg.Strength + " Dir : " + msg.Direction);
+            _arrowTransform.gameObject.SetActive(true);
+            _strengthtext.gameObject.SetActive(true);
+            
+            if(msg.Direction == "Left")
+            {
+                _arrowTransform.localScale = new Vector3(-1, 1, 1);
+            } 
+            else if (msg.Direction == "Right")
+            {
+                _arrowTransform.localScale = new Vector3(1, 1, 1);
+            }
+
+            _strengthtext.SetText(msg.Strength.ToString());
         }
     }
 }
