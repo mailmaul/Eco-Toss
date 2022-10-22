@@ -4,11 +4,13 @@ using UnityEngine;
 using TMPro;
 using EcoTeam.EcoToss.PubSub;
 using Agate.MVC.Core;
+using UnityEngine.UI;
 
 namespace EcoTeam.EcoToss.WindArea
 {
     public class WindUIController : MonoBehaviour
     {
+        private Color _baseImageColor;
         [SerializeField] private RectTransform _arrowTransform;
         [SerializeField] private TMP_Text _strengthtext;
 
@@ -20,6 +22,11 @@ namespace EcoTeam.EcoToss.WindArea
         private void OnDestroy()
         {
             PublishSubscribe.Instance.Unsubscribe<MessageShowWindProperties>(SetUI);
+        }
+
+        private void Start() {
+            _baseImageColor = GetComponent<Image>().color;
+            _baseImageColor = Color.white;
         }
 
         public void SetUI(MessageShowWindProperties msg)

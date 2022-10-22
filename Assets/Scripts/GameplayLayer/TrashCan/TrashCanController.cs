@@ -155,7 +155,7 @@ namespace EcoTeam.EcoToss.TrashCan
             // Buat indikator jadi putih
             for (int i = 0; i < _trashList.Count; i++)
             {
-                _indicators[i].color = Color.white;
+                _indicators[i].enabled = false;
             }
 
             _trashList.Clear();

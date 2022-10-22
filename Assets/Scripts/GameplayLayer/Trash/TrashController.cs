@@ -14,9 +14,9 @@ namespace EcoTeam.EcoToss.Trash
         private Rigidbody _rigidbody;
         private bool _hasCollided = false;
         private float _stayDuration = 0f;
-        private float _stayMaxDuration = 1.5f;
+        private float _stayMaxDuration = 3f;
 
-                [SerializeField] private Vector3 _rotation;
+        [SerializeField] private Vector3 _rotation;
         [SerializeField] private float _rotateSpeed = 200;
 
         private void Start()
@@ -30,6 +30,10 @@ namespace EcoTeam.EcoToss.Trash
                 transform.Rotate(_rotation * _rotateSpeed * Time.deltaTime);
             }
                 
+        }
+
+        private void OnEnable() {
+            _stayDuration = 0f;
         }
         
 

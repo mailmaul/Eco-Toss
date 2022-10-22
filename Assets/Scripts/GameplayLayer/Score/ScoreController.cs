@@ -45,7 +45,7 @@ namespace EcoTeam.EcoToss.Score
         private void Start()
         {
             _match3Score = _normalAddScore * 2 + 1;
-            _scoreTMP.SetText($"{_score}");
+            _scoreTMP.SetText($"Score: {_score}");
             _previousScoreWhenActivatingBuff = _firstScoreToActivateBuff;
         }
 
