@@ -35,6 +35,7 @@ namespace EcoTeam.EcoToss.HighScore
         {
             HighScore = _score;
             SaveDataController.Instance.SaveData.SavedHighScore = HighScore;
+            SaveDataController.Instance.Save();
         }
 
         public void LoadHighScore()

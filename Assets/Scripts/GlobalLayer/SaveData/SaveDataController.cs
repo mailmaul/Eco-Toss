@@ -35,7 +35,6 @@ namespace EcoTeam.EcoToss.SaveData
         public void Save()
         {
             string jsonSaveData = JsonUtility.ToJson(SaveData);
-            File.WriteAllText(Application.dataPath + "/SaveData.json", jsonSaveData);
             PlayerPrefs.SetString("SaveData", jsonSaveData);
             PlayerPrefs.Save();
         }
@@ -46,7 +45,6 @@ namespace EcoTeam.EcoToss.SaveData
             {
                 string jsonSaveData = PlayerPrefs.GetString("SaveData");
                 JsonUtility.FromJsonOverwrite(jsonSaveData, SaveData);
-                File.WriteAllText(Application.dataPath + "/SaveData.json", jsonSaveData);
             }
             else
             {
