@@ -4222,8 +4222,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6780692130268881700, guid: ba87495c79c46de418e2b063f3e3412a, type: 3}
       propertyPath: _vfxList.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6780692130268881700, guid: ba87495c79c46de418e2b063f3e3412a, type: 3}
+      propertyPath: _vfxList.Array.data[0]
+      value: 
+      objectReference: {fileID: -4175474873484651827, guid: 281a5b3a239dd6a4686733354e8a7dd4, type: 3}
     - target: {fileID: 6780692130268881700, guid: ba87495c79c46de418e2b063f3e3412a, type: 3}
       propertyPath: _vfxList.Array.data[1]
       value: 

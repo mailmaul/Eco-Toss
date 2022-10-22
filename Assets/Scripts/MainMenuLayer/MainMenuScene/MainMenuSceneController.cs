@@ -29,7 +29,7 @@ namespace EcoTeam.EcoToss.MainMenu
 
         private void GoToGameplay()
         {
-            PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("button_click"));
+            PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("ui_button"));
             SceneManager.LoadScene(1);
         }
 

@@ -48,12 +48,11 @@ namespace EcoTeam.EcoToss.Audio
         {
             _soundBGM = gameObject.AddComponent<AudioSource>();
             _soundSFX = gameObject.AddComponent<AudioSource>();
-            PublishSubscribe.Instance.Publish<MessagePlayBGM>(new MessagePlayBGM("bgm"));
         }
 
         public void PlayBGM(MessagePlayBGM msg)
         {
-            if (!_soundBGM.isPlaying && _audioData.isBgmPlay)
+            if (_audioData.isBgmPlay)
             {
                 for (int i = 0; i < _bgmList.Count; i++)
                 {
@@ -62,16 +61,12 @@ namespace EcoTeam.EcoToss.Audio
                         _soundBGM.clip = _bgmList[i];
                         _audioData.bgm = _bgmList[i];
                         _soundBGM.Play();
-                        _soundBGM.volume = 1;
+                        _soundBGM.volume = .6f;
+                        _soundBGM.loop = true;
                         SaveAudioDataController.Instance.SetData(_audioData);
                         return;
                     }
-                }
-            }
-
-            if (_audioData.isBgmPlay)
-            {
-                _soundBGM.volume = 1;
+                } 
             }
             else
             {
