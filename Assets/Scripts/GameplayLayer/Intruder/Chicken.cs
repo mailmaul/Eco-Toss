@@ -10,9 +10,11 @@ namespace EcoTeam.EcoToss.Intruder
     {
         [SerializeField] private Animator _animator;
         [SerializeField] private float _stunTime;
+        [SerializeField] private bool _isAttack;
         private void Start()
         {
             _isMove = true;
+            _isAttack = false;
         }
 
         private void Update()
@@ -22,7 +24,7 @@ namespace EcoTeam.EcoToss.Intruder
                 Movement();
             }
 
-            if (!_isMove)
+            else if (!_isMove)
             {
                 Intrude();
             }
@@ -30,6 +32,7 @@ namespace EcoTeam.EcoToss.Intruder
 
         public override void Intrude()
         {
+            _isAttack = true;
             if(_currentTime > _timer)
             {
                 //mengacaukan tempat sampah (animasi tempat sampah berantakan)
@@ -48,7 +51,14 @@ namespace EcoTeam.EcoToss.Intruder
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("CheckPoint"))
+            if (other.gameObject.tag.Substring(0, 5) == "Trash")
+            {
+                _animator.SetTrigger("ketimpuk");
+
+                StartCoroutine(Stun());
+                if (Debug.isDebugBuild) { Debug.Log("Ayam kena lempar"); }
+            }
+            else if (other.CompareTag("CheckPoint"))
             {
                 if (!_isMove) return;
                 _isMove = false;
@@ -61,23 +71,16 @@ namespace EcoTeam.EcoToss.Intruder
             {
                 StoreToPool();
             }
-            else if (other.gameObject.tag.Substring(0, 5) == "Trash")
-            {
-                _animator.SetTrigger("ketimpuk");
-                
-                StartCoroutine(Stun());
-                if (Debug.isDebugBuild) { Debug.Log("Ayam kena lempar"); }
-            }
         }
 
             IEnumerator Stun (){
             _speed = 0;
-            
-            
 
             yield return new WaitForSeconds(_stunTime);
-            transform.Rotate(new Vector3(0,90,0));
-            
+            if (_isAttack){
+                transform.Rotate(new Vector3(0, 90, 0));
+            }
+
             _animator.SetBool("isWalk", true);
             _speed = 5;
             _isMove = true;
