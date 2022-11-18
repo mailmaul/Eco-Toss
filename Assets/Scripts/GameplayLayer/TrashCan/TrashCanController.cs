@@ -1,7 +1,6 @@
 using Agate.MVC.Core;
 using EcoTeam.EcoToss.PubSub;
 using EcoTeam.EcoToss.Trash;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

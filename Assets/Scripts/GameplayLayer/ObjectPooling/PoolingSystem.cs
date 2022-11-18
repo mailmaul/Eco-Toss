@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,10 +17,9 @@ namespace EcoTeam.EcoToss.ObjectPooling
         public IPoolObject CreateObject(IPoolObject objectPrefab, Vector3 spawnPosition, Transform parent = null)
         {
             IPoolObject outObject;
-            if (_storedList.Count < AmountToPool /*|| _storedList.Peek().gameObject == null*/)
+            if (_storedList.Count < AmountToPool)
             {
-                outObject = MonoBehaviour.Instantiate(objectPrefab.gameObject).
-                GetComponent<IPoolObject>();
+                outObject = MonoBehaviour.Instantiate(objectPrefab.gameObject).GetComponent<IPoolObject>();
                 outObject.Initial(this);
             }
             else
@@ -46,10 +44,9 @@ namespace EcoTeam.EcoToss.ObjectPooling
         public IPoolObject CreateObject(IPoolObject objectPrefab, Vector3 spawnPosition, Quaternion spawnRotation, Transform parent = null)
         {
             IPoolObject outObject;
-            if (_storedList.Count < 1)
+            if (_storedList.Count < AmountToPool)
             {
-                outObject = MonoBehaviour.Instantiate(objectPrefab.gameObject).
-                GetComponent<IPoolObject>();
+                outObject = MonoBehaviour.Instantiate(objectPrefab.gameObject).GetComponent<IPoolObject>();
                 outObject.Initial(this);
             }
             else

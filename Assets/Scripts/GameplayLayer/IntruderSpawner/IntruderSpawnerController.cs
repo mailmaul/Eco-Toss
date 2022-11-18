@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Agate.MVC.Core;
 using EcoTeam.EcoToss.Intruder;
 using EcoTeam.EcoToss.ObjectPooling;
 using EcoTeam.EcoToss.PubSub;
-using Agate.MVC.Core;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace EcoTeam.EcoToss.IntruderSpawner
 {
@@ -24,21 +23,21 @@ namespace EcoTeam.EcoToss.IntruderSpawner
             PublishSubscribe.Instance.Unsubscribe<MessageSpawnIntruder>(Spawn);
         }
 
+        //// Debug purposes
         //private void Update()
         //{
-        //    //for testing
         //    if (Input.GetKeyDown(KeyCode.Return))
         //    {
         //        PublishSubscribe.Instance.Publish<MessageSpawnIntruder>(new MessageSpawnIntruder());
         //    }
         //}
 
-        //publish pada progression score tertentu
+        // Publish pada progression score tertentu
         public void Spawn(MessageSpawnIntruder msg)
         {
             int randomIndex = Random.Range(0, _intrudersList.Count);
             _pool.CreateObject(_intrudersList[randomIndex], transform.position, transform);
-            if(_intrudersList[randomIndex].name == "Chicken")
+            if (_intrudersList[randomIndex].name == "Chicken")
             {
                 PublishSubscribe.Instance.Publish<MessageCheckPointSpawn>(new MessageCheckPointSpawn());
             }

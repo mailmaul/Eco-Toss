@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using EcoTeam.EcoToss.PubSub;
 using Agate.MVC.Core;
+using EcoTeam.EcoToss.PubSub;
+using System.Collections;
+using UnityEngine;
 
 namespace EcoTeam.EcoToss.Intruder
 {
@@ -23,7 +22,6 @@ namespace EcoTeam.EcoToss.Intruder
             {
                 Movement();
             }
-
             else if (!_isMove)
             {
                 Intrude();
@@ -33,9 +31,9 @@ namespace EcoTeam.EcoToss.Intruder
         public override void Intrude()
         {
             _isAttack = true;
-            if(_currentTime > _timer)
+            if (_currentTime > _timer)
             {
-                //mengacaukan tempat sampah (animasi tempat sampah berantakan)
+                // Mengacaukan tempat sampah (animasi tempat sampah berantakan)
                 PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
                 PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
                 _currentTime = 0;
@@ -62,10 +60,10 @@ namespace EcoTeam.EcoToss.Intruder
             {
                 if (!_isMove) return;
                 _isMove = false;
-                transform.Rotate(new Vector3(0,-90,0));
+                transform.Rotate(new Vector3(0, -90, 0));
                 _animator.SetTrigger("acaksampah");
                 PublishSubscribe.Instance.Publish<MessageCheckPointDestroy>(new MessageCheckPointDestroy(other.gameObject));
-                
+
             }
             else if (other.CompareTag("DestroyPoint"))
             {
@@ -73,11 +71,13 @@ namespace EcoTeam.EcoToss.Intruder
             }
         }
 
-            IEnumerator Stun (){
+        IEnumerator Stun()
+        {
             _speed = 0;
 
             yield return new WaitForSeconds(_stunTime);
-            if (_isAttack){
+            if (_isAttack)
+            {
                 transform.Rotate(new Vector3(0, 90, 0));
             }
 

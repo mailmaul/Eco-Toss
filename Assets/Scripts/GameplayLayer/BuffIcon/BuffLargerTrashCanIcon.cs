@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using EcoTeam.EcoToss.PubSub;
 using Agate.MVC.Core;
+using EcoTeam.EcoToss.PubSub;
 
 namespace EcoTeam.EcoToss.BuffIcon
 {
@@ -22,9 +17,8 @@ namespace EcoTeam.EcoToss.BuffIcon
             PublishSubscribe.Instance.Subscribe<MessageIncreaseCountBuff>(AddCount);
         }
 
-        protected override void Start()
+        private void Start()
         {
-            base.Start();
             PublishSubscribe.Instance.Publish<MessageIncreaseCountBuff>(new MessageIncreaseCountBuff());
         }
 

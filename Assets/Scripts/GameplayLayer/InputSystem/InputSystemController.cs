@@ -1,7 +1,5 @@
 using Agate.MVC.Core;
 using EcoTeam.EcoToss.PubSub;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -31,7 +29,7 @@ namespace EcoTeam.EcoToss.InputSystem
                 {
                     return;
                 }
-                else if(Input.GetTouch(0).phase == TouchPhase.Ended)
+                else if (Input.GetTouch(0).phase == TouchPhase.Ended)
                 {
                     OnRelease();
                 }

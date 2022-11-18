@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
-using EcoTeam.EcoToss.PubSub;
-using EcoTeam.EcoToss.GameManager;
 using Agate.MVC.Core;
+using EcoTeam.EcoToss.PubSub;
+using TMPro;
+using UnityEngine;
 
 namespace EcoTeam.EcoToss.Health
 {

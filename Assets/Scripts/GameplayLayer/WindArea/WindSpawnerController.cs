@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using EcoTeam.EcoToss.PubSub;
-using EcoTeam.EcoToss.GameManager;
 using Agate.MVC.Core;
+using EcoTeam.EcoToss.GameManager;
+using EcoTeam.EcoToss.PubSub;
+using UnityEngine;
 
 namespace EcoTeam.EcoToss.WindArea
 {
@@ -21,14 +19,14 @@ namespace EcoTeam.EcoToss.WindArea
             PublishSubscribe.Instance.Unsubscribe<MessageSpawnWindArea>(Spawn);
         }
 
-        private void Update()
-        {
-            //for testing, delete soon
-            if (Debug.isDebugBuild && Input.GetKeyDown(KeyCode.Space))
-            {
-                Spawn(new MessageSpawnWindArea());
-            }
-        }
+        // Debug purposes
+        //private void Update()
+        //{
+        //    if (Input.GetKeyDown(KeyCode.Space))
+        //    {
+        //        Spawn(new MessageSpawnWindArea());
+        //    }
+        //}
 
         //publish di progression tertentu
         public void Spawn(MessageSpawnWindArea msg)

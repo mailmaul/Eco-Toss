@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace EcoTeam.EcoToss.PubSub
@@ -23,7 +21,7 @@ namespace EcoTeam.EcoToss.PubSub
     public struct MessageOnHitIntruder { }
 
     public struct MessageSpawnIntruder { }
-    
+
     public struct MessageTrashThrowing
     {
         public Vector2 SwipeDirection;
@@ -33,7 +31,7 @@ namespace EcoTeam.EcoToss.PubSub
             SwipeDirection = swipeDirection;
         }
     }
-    
+
     public struct MessageAddScore
     {
         public string Amount;
@@ -61,7 +59,7 @@ namespace EcoTeam.EcoToss.PubSub
     }
 
     public struct MessageDecreaseHealth { }
-  
+
     public struct MessageIncreaseHealth
     {
         public int AdditionalHealth { get; private set; }
@@ -154,8 +152,8 @@ namespace EcoTeam.EcoToss.PubSub
         }
     }
 
-    public struct MessageSpawnBuffIcon 
-    { 
+    public struct MessageSpawnBuffIcon
+    {
         public string Name { get; private set; }
         public MessageSpawnBuffIcon(string name)
         {
@@ -169,7 +167,7 @@ namespace EcoTeam.EcoToss.PubSub
         public MessageSimulateThrowing(Vector2 swipeDirection)
         {
             SwipeDirection = swipeDirection;
-        }   
+        }
     }
 
     public struct MessageDeleteTrajectory { }

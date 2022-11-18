@@ -1,9 +1,7 @@
 using Agate.MVC.Core;
+using EcoTeam.EcoToss.GameManager;
 using EcoTeam.EcoToss.ObjectPooling;
 using EcoTeam.EcoToss.PubSub;
-using EcoTeam.EcoToss.GameManager;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace EcoTeam.EcoToss.Trash

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using EcoTeam.EcoToss.PubSub;
 using Agate.MVC.Core;
+using EcoTeam.EcoToss.PubSub;
+using UnityEngine;
 
 namespace EcoTeam.EcoToss.BuffIcon
 {
@@ -21,9 +19,8 @@ namespace EcoTeam.EcoToss.BuffIcon
             PublishSubscribe.Instance.Subscribe<MessageDoubleScoreBuffCountdown>(CountDuration);
         }
 
-        protected override void Start()
+        private void Start()
         {
-            base.Start();
             gameObject.SetActive(true);
         }
 

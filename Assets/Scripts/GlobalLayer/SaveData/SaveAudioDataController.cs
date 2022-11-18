@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using EcoTeam.EcoToss.Audio;
+using UnityEngine;
 
 namespace EcoTeam.EcoToss.SaveData
 {

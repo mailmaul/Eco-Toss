@@ -1,8 +1,7 @@
-using System.Collections;
+using Agate.MVC.Core;
+using EcoTeam.EcoToss.PubSub;
 using System.Collections.Generic;
 using UnityEngine;
-using EcoTeam.EcoToss.PubSub;
-using Agate.MVC.Core;
 
 namespace EcoTeam.EcoToss.BuffIcon
 {
@@ -31,9 +30,9 @@ namespace EcoTeam.EcoToss.BuffIcon
                 }
             }
 
-            for(int i = 0; i < _buffList.Count; i++)
+            for (int i = 0; i < _buffList.Count; i++)
             {
-                if(_buffList[i].name == msg.Name)
+                if (_buffList[i].name == msg.Name)
                 {
                     Instantiate(_buffList[i].gameObject, transform);
                 }

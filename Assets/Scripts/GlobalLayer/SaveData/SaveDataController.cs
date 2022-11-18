@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using EcoTeam.EcoToss.Audio;
 using UnityEngine;
 
 namespace EcoTeam.EcoToss.SaveData
@@ -48,8 +44,10 @@ namespace EcoTeam.EcoToss.SaveData
             }
             else
             {
-                SaveData = new SaveData();
-                SaveData.SavedHighScore = 0;
+                SaveData = new()
+                {
+                    SavedHighScore = 0
+                };
                 Save();
             }
         }

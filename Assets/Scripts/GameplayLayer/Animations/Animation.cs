@@ -1,30 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace EcoTeam.EcoToss.Animation
 {
     public class Animation : MonoBehaviour
-{
-
-    private Animator _animator;
-
-    private void FindGameObjects()
     {
-        _animator = GetComponent<Animator>();
-    }
-    
-    private void NullChecking()
-    {
-        if(_animator == null)
+        private Animator _animator;
+
+        private void FindGameObjects()
         {
-            Debug.LogError("haha");
+            _animator = GetComponent<Animator>();
         }
-        else
+
+        private void NullChecking()
         {
-            Debug.LogError("ueay");
+            if (_animator == null)
+            {
+                Debug.LogError("haha");
+            }
+            else
+            {
+                Debug.LogError("ueay");
+            }
         }
     }
-}
 
 }

@@ -2,8 +2,6 @@ using Agate.MVC.Core;
 using EcoTeam.EcoToss.ObjectPooling;
 using EcoTeam.EcoToss.PubSub;
 using EcoTeam.EcoToss.Trash;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace EcoTeam.EcoToss.TrashSpawner

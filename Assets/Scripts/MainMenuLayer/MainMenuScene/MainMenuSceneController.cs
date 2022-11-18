@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+using Agate.MVC.Core;
+using EcoTeam.EcoToss.PubSub;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using EcoTeam.EcoToss.PubSub;
-using Agate.MVC.Core;
 
 namespace EcoTeam.EcoToss.MainMenu
 {
@@ -25,7 +23,7 @@ namespace EcoTeam.EcoToss.MainMenu
             _intruderButton.onClick.AddListener(GoToHTP2);
             _powerButton.onClick.AddListener(GoToHTP3);
             _mainmenuButton.onClick.AddListener(GoToMainMenu);
-        }   
+        }
 
         private void GoToGameplay()
         {

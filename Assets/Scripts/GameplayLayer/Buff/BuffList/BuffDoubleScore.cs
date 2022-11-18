@@ -8,10 +8,10 @@ namespace EcoTeam.EcoToss.Buff
 {
     public class BuffDoubleScore : BaseDurationalBuff
     {
-        private void Update()
-        {
-            //CountDown();
-        }
+        //private void Update()
+        //{
+        //    //CountDown();
+        //}
 
         public override void BuffEffect()
         {
@@ -30,14 +30,14 @@ namespace EcoTeam.EcoToss.Buff
             PublishSubscribe.Instance.Publish<MessageDeactivateDoubleScore>(new MessageDeactivateDoubleScore());
         }
 
-        public void CountDown()
-        {
-            if (Duration < 0) return;
-            if(Duration >= 0)
-            {
-                Duration -= Time.deltaTime;
-                PublishSubscribe.Instance.Publish<MessageDoubleScoreBuffCountdown>(new MessageDoubleScoreBuffCountdown(Duration));
-            }
-        }
+        //public void CountDown()
+        //{
+        //    if (Duration < 0) return;
+        //    if (Duration >= 0)
+        //    {
+        //        Duration -= Time.deltaTime;
+        //        PublishSubscribe.Instance.Publish<MessageDoubleScoreBuffCountdown>(new MessageDoubleScoreBuffCountdown(Duration));
+        //    }
+        //}
     }
 }
