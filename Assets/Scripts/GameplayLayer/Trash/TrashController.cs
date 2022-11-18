@@ -14,7 +14,7 @@ namespace EcoTeam.EcoToss.Trash
         private Rigidbody _rigidbody;
         private bool _hasCollided = false;
         private float _stayDuration = 0f;
-        private float _stayMaxDuration = 3f;
+        private const float _stayMaxDuration = 3f;
 
         [SerializeField] private Vector3 _rotation;
         [SerializeField] private float _rotateSpeed = 200;
@@ -22,20 +22,22 @@ namespace EcoTeam.EcoToss.Trash
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
-            _defaultRotation = transform.rotation;     
+            _defaultRotation = transform.rotation;
         }
 
-        private void Update() {
-            if(_rigidbody.isKinematic == false){
-                transform.Rotate(_rotation * _rotateSpeed * Time.deltaTime);
+        private void Update()
+        {
+            if (_rigidbody.isKinematic == false)
+            {
+                transform.Rotate(_rotateSpeed * Time.deltaTime * _rotation);
             }
-                
         }
 
-        private void OnEnable() {
+        private void OnEnable()
+        {
             _stayDuration = 0f;
         }
-        
+
 
         public override void StoreToPool()
         {
@@ -44,6 +46,7 @@ namespace EcoTeam.EcoToss.Trash
             _rigidbody.angularVelocity = Vector3.zero;
             _rigidbody.isKinematic = true;
             _hasCollided = false;
+            PublishSubscribe.Instance.Publish<MessageDeleteTrajectory>(new MessageDeleteTrajectory());
             base.StoreToPool();
         }
 
@@ -56,7 +59,7 @@ namespace EcoTeam.EcoToss.Trash
 
             if ((collision.gameObject.CompareTag("Ground") ||
                 collision.gameObject.tag.Substring(0, 8) == "TrashCan") && _hasCollided == false)
-            {       
+            {
                 _hasCollided = true;
                 if (collision.gameObject.CompareTag("Ground"))
                 {
@@ -75,7 +78,6 @@ namespace EcoTeam.EcoToss.Trash
                     PublishSubscribe.Instance.Publish<MessageSetRandomPropertiesWindArea>(new MessageSetRandomPropertiesWindArea());
                 }
 
-                //Debug.Log("spawn");
                 PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
             }
         }
@@ -94,14 +96,15 @@ namespace EcoTeam.EcoToss.Trash
             }
         }
 
-        private void OnTriggerExit(Collider other) {
+        private void OnTriggerExit(Collider other)
+        {
             if (Debug.isDebugBuild)
             {
                 Debug.Log(transform.name + "nabrak" + other.transform.name);
             }
 
             if (other.gameObject.CompareTag("Intruder") && _hasCollided == false)
-            {       
+            {
                 _hasCollided = true;
                 StoreToPool();
 
@@ -110,7 +113,6 @@ namespace EcoTeam.EcoToss.Trash
                     PublishSubscribe.Instance.Publish<MessageSetRandomPropertiesWindArea>(new MessageSetRandomPropertiesWindArea());
                 }
 
-                //Debug.Log("spawn");
                 PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
             }
         }

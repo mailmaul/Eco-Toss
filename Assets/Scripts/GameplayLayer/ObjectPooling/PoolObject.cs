@@ -10,14 +10,11 @@ namespace EcoTeam.EcoToss.ObjectPooling
         public PoolingSystem Pooling { private set; get; }
         void IPoolObject.Initial(PoolingSystem poolSystem)
         {
-            //Debug.Log("Intial" + poolSystem);
             Pooling = poolSystem;
         }
 
         public virtual void StoreToPool()
         {
-            //Debug.Log(Pooling);
-            //Debug.Log("store to pool tanpa message");
             Pooling.Store(this);
             gameObject.SetActive(false);
         }
@@ -25,8 +22,6 @@ namespace EcoTeam.EcoToss.ObjectPooling
         // Overload with MessageStoreToPool
         public virtual void StoreToPoolWithMessage(MessageStoreToPool message)
         {
-            //Debug.Log(Pooling);
-            //Debug.Log("store to pool dengan message");
             Pooling.Store(this);
             gameObject.SetActive(false);
         }

@@ -162,4 +162,15 @@ namespace EcoTeam.EcoToss.PubSub
             Name = name;
         }
     }
+
+    public struct MessageSimulateThrowing
+    {
+        public Vector2 SwipeDirection { get; private set; }
+        public MessageSimulateThrowing(Vector2 swipeDirection)
+        {
+            SwipeDirection = swipeDirection;
+        }   
+    }
+
+    public struct MessageDeleteTrajectory { }
 }
