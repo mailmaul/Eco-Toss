@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using EcoTeam.EcoToss.TrashCan;
-using EcoTeam.EcoToss.PubSub;
-using EcoTeam.EcoToss.ObjectPooling;
-using EcoTeam.EcoToss.IntruderSpawner;
 using Agate.MVC.Core;
+using EcoTeam.EcoToss.ObjectPooling;
+using EcoTeam.EcoToss.PubSub;
+using EcoTeam.EcoToss.TrashCan;
+using UnityEngine;
 
 namespace EcoTeam.EcoToss.CheckPoint
 {
@@ -40,11 +37,11 @@ namespace EcoTeam.EcoToss.CheckPoint
 
         public void CheckPointSpawn(MessageCheckPointSpawn msg)
         {
-            Debug.Log("Masuk");
+            if (Debug.isDebugBuild) Debug.Log("Masuk");
             int index = Random.Range(0, _trashCanList.Length);
             Vector3 pos = new Vector3(_trashCanList[index].transform.position.x + offset, transform.position.y, transform.position.z);
             _pool.CreateObject(_checkPoint, pos, transform);
-            Debug.Log("Spawn checkpoint");
+            if (Debug.isDebugBuild) Debug.Log("Spawn checkpoint");
         }
     }
 

@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+using Agate.MVC.Core;
+using EcoTeam.EcoToss.PubSub;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using EcoTeam.EcoToss.PubSub;
-using Agate.MVC.Core;
 
 namespace EcoTeam.EcoToss.GameplayScene
 {

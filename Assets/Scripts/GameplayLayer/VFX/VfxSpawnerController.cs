@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Agate.MVC.Core;
 using EcoTeam.EcoToss.ObjectPooling;
 using EcoTeam.EcoToss.PubSub;
-using Agate.MVC.Core;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace EcoTeam.EcoToss.VFX
 {
@@ -23,12 +22,12 @@ namespace EcoTeam.EcoToss.VFX
             PublishSubscribe.Instance.Unsubscribe<MessageSpawnVFX>(Spawn);
         }
 
-        //publish di script yang butuh vfx 
+        // Publish di script yang butuh vfx 
         public void Spawn(MessageSpawnVFX msg)
         {
-            for(int i = 0; i < _vfxList.Count; i++)
+            for (int i = 0; i < _vfxList.Count; i++)
             {
-                if(_vfxList[i].name == msg.Name)
+                if (_vfxList[i].name == msg.Name)
                 {
                     _pool.CreateObject(_vfxList[i], msg.Position, transform);
                     return;

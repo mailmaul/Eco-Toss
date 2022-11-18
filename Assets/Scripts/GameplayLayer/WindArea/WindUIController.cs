@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
-using EcoTeam.EcoToss.PubSub;
 using Agate.MVC.Core;
+using EcoTeam.EcoToss.PubSub;
+using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace EcoTeam.EcoToss.WindArea
@@ -24,7 +22,8 @@ namespace EcoTeam.EcoToss.WindArea
             PublishSubscribe.Instance.Unsubscribe<MessageShowWindProperties>(SetUI);
         }
 
-        private void Start() {
+        private void Start()
+        {
             _baseImageColor = GetComponent<Image>().color;
             _baseImageColor = Color.white;
         }
@@ -33,11 +32,11 @@ namespace EcoTeam.EcoToss.WindArea
         {
             _arrowTransform.gameObject.SetActive(true);
             _strengthtext.gameObject.SetActive(true);
-            
-            if(msg.Direction == "Left")
+
+            if (msg.Direction == "Left")
             {
                 _arrowTransform.localScale = new Vector3(-1, 1, 1);
-            } 
+            }
             else if (msg.Direction == "Right")
             {
                 _arrowTransform.localScale = new Vector3(1, 1, 1);

@@ -1,7 +1,5 @@
 using Agate.MVC.Core;
 using EcoTeam.EcoToss.PubSub;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace EcoTeam.EcoToss.TrashThrowing
@@ -9,9 +7,10 @@ namespace EcoTeam.EcoToss.TrashThrowing
     public class TrashThrowingController : MonoBehaviour
     {
         [SerializeField] Rigidbody _rigidbody;
-        [SerializeField] float _throwForceInX = 1f; // to control throw force in X directions
-        [SerializeField] float _throwForceInY = 1f; // to control throw force in Y directions
-        [SerializeField] float _throwForceInZ = 425f; // to control throw force in Z direction
+        [SerializeField] Rigidbody _simulatedRigidbody;
+        [SerializeField] float _throwForceInX = 0.4f; // to control throw force in X directions
+        [SerializeField] float _throwForceInY = 375f; // to control throw force in Y directions
+        [SerializeField] float _throwForceInZ = 575f; // to control throw force in Z direction
 
         private void Awake()
         {
@@ -28,17 +27,39 @@ namespace EcoTeam.EcoToss.TrashThrowing
         // add force to balls rigidbody in 3D space depending on swipe direction and throw forces
         void ThrowTrash(MessageTrashThrowing message)
         {
-            // _rigidbody = message.TrashRigidbody;
-
             if (_rigidbody != null)
             {
                 _rigidbody.isKinematic = false;
-                _rigidbody.AddForce(
-                    -message.SwipeDirection.x * _throwForceInX,
-                    /*-message.SwipeDirection.y **/ _throwForceInY,
-                    _throwForceInZ
-                );
+
+                Vector3 force = new Vector3
+                    (
+                        -message.SwipeDirection.x * _throwForceInX,
+                        _throwForceInY,
+                        _throwForceInZ
+                    );
+
+                _rigidbody.AddForce(force);
                 _rigidbody = null;
+            }
+        }
+
+        public void SimulateThrowTrash(Vector2 swipeDirectionSimulation, Rigidbody rigidbody)
+        {
+            _simulatedRigidbody = rigidbody;
+
+            if (_simulatedRigidbody != null)
+            {
+                _simulatedRigidbody.isKinematic = false;
+
+                Vector3 force = new Vector3
+                    (
+                        -swipeDirectionSimulation.x * _throwForceInX,
+                        _throwForceInY,
+                        _throwForceInZ
+                    );
+
+                _simulatedRigidbody.AddForce(force);
+                _simulatedRigidbody = null;
             }
         }
 

@@ -1,7 +1,5 @@
 using Agate.MVC.Core;
 using EcoTeam.EcoToss.PubSub;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MessageSenderExample : MonoBehaviour

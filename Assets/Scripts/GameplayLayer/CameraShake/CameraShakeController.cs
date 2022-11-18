@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using EcoTeam.EcoToss.PubSub;
 using Agate.MVC.Core;
+using EcoTeam.EcoToss.PubSub;
+using System.Collections;
+using UnityEngine;
 
 namespace EcoTeam.EcoToss.CameraShake
 {

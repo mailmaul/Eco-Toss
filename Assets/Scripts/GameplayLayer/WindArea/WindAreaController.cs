@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using EcoTeam.EcoToss.PubSub;
 using Agate.MVC.Core;
+using EcoTeam.EcoToss.PubSub;
+using UnityEngine;
 
 namespace EcoTeam.EcoToss.WindArea
 {
@@ -46,7 +44,7 @@ namespace EcoTeam.EcoToss.WindArea
                 rb.AddForce(_windStrength * _windDirection);
                 if (Debug.isDebugBuild)
                 {
-                   Debug.Log("Str : " + _windStrength + ", Dir : " + _windDirection);
+                    Debug.Log("Str : " + _windStrength + ", Dir : " + _windDirection);
                 }
             }
         }
@@ -59,11 +57,11 @@ namespace EcoTeam.EcoToss.WindArea
             _windDirection = _windDirections[index];
 
             string direction = string.Empty;
-            if(index == 0)
+            if (index == 0)
             {
                 direction = "Right";
-            } 
-            else if(index == 1)
+            }
+            else if (index == 1)
             {
                 direction = "Left";
             }

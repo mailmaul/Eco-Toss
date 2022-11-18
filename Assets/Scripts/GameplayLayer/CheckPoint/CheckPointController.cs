@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Agate.MVC.Core;
 using EcoTeam.EcoToss.ObjectPooling;
 using EcoTeam.EcoToss.PubSub;
-using Agate.MVC.Core;
 
 namespace EcoTeam.EcoToss.CheckPoint
 {
@@ -21,7 +18,7 @@ namespace EcoTeam.EcoToss.CheckPoint
 
         public void DestroyCheckPoint(MessageCheckPointDestroy msg)
         {
-            if(gameObject == msg.CheckPointObject)
+            if (gameObject == msg.CheckPointObject)
             {
                 StoreToPool();
             }

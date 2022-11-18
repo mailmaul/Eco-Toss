@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using EcoTeam.EcoToss.ObjectPooling;
+using Agate.MVC.Core;
 using EcoTeam.EcoToss.PubSub;
 using EcoTeam.EcoToss.SaveData;
-using UnityEngine.UI;
-using UnityEngine.Events;
-using Agate.MVC.Core;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace EcoTeam.EcoToss.Audio
 {
@@ -16,8 +12,8 @@ namespace EcoTeam.EcoToss.Audio
 
         [SerializeField] private AudioData _audioData;
 
-        [SerializeField] private List<AudioClip> _bgmList = new List<AudioClip>();
-        [SerializeField] private List<AudioClip> _sfxList = new List<AudioClip>();
+        [SerializeField] private List<AudioClip> _bgmList = new();
+        [SerializeField] private List<AudioClip> _sfxList = new();
 
         private AudioSource _soundBGM;
         private AudioSource _soundSFX;
@@ -66,7 +62,7 @@ namespace EcoTeam.EcoToss.Audio
                         SaveAudioDataController.Instance.SetData(_audioData);
                         return;
                     }
-                } 
+                }
             }
             else
             {
@@ -78,9 +74,9 @@ namespace EcoTeam.EcoToss.Audio
         {
             if (!_audioData.isSfxPlay) return;
 
-            for(int i = 0; i <_sfxList.Count; i++)
+            for (int i = 0; i < _sfxList.Count; i++)
             {
-                if(_sfxList[i].name == msg.Name)
+                if (_sfxList[i].name == msg.Name)
                 {
                     _soundSFX.clip = _sfxList[i];
                     _soundSFX.Play();

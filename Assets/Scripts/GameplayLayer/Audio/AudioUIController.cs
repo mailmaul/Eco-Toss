@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using Agate.MVC.Core;
 using EcoTeam.EcoToss.PubSub;
 using EcoTeam.EcoToss.SaveData;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace EcoTeam.EcoToss.Audio
 {
@@ -18,8 +16,8 @@ namespace EcoTeam.EcoToss.Audio
 
         private void Start()
         {
-           _bgmToggle.isOn = _audioData.isBgmPlay;
-           _sfxToggle.isOn = _audioData.isSfxPlay;
+            _bgmToggle.isOn = _audioData.isBgmPlay;
+            _sfxToggle.isOn = _audioData.isSfxPlay;
             SetToggleListener();
 
             PublishSubscribe.Instance.Publish<MessagePlayBGM>(new MessagePlayBGM("bgm_menu"));

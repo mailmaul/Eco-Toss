@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using EcoTeam.EcoToss.PubSub;
 using EcoTeam.EcoToss.ObjectPooling;
-using Agate.MVC.Core;
+using UnityEngine;
 
 namespace EcoTeam.EcoToss.Intruder
 {
