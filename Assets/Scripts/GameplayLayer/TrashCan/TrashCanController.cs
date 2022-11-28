@@ -12,6 +12,7 @@ namespace EcoTeam.EcoToss.TrashCan
         [SerializeField] private GameObject _indicatorParent;
         [SerializeField] private Image _indicatorPrefab;
         [SerializeField] private Image[] _indicators;
+        [SerializeField] private float _indicatorParentOutlineBlinkDuration;
         [SerializeField] private List<TrashController> _trashList = new();
         private List<TrashController> _matchedTrashList = new();
         private int _trashCanCapacity = 6;
@@ -19,7 +20,10 @@ namespace EcoTeam.EcoToss.TrashCan
         private string _trashCanTag;
         private GridLayoutGroup _indicatorParentLayoutGroup;
         private RectTransform _indicatorParentRectTransform;
-
+        private Outline _indicatorParentOutline;
+        private bool _indicatorParentIsAlmostFull;
+        private float _indicatorParentOutlineBlinkTime;
+        
         private void Awake()
         {
             PublishSubscribe.Instance.Subscribe<MessageClearTrashList>(ClearTrashList);
@@ -40,6 +44,8 @@ namespace EcoTeam.EcoToss.TrashCan
             _indicators = new Image[_trashCanMaxCapacity];
             _indicatorParentLayoutGroup = _indicatorParent.GetComponent<GridLayoutGroup>();
             _indicatorParentRectTransform = _indicatorParent.GetComponent<RectTransform>();
+            _indicatorParentOutline = _indicatorParent.GetComponent<Outline>();
+            _indicatorParentOutlineBlinkTime = _indicatorParentOutlineBlinkDuration;
 
             // spawn TrashCan Indicators
             for (int i = 0; i < _trashCanMaxCapacity; i++)
@@ -52,6 +58,29 @@ namespace EcoTeam.EcoToss.TrashCan
             }
             LayoutRebuilder.ForceRebuildLayoutImmediate(_indicatorParentRectTransform);
             _indicatorParentLayoutGroup.enabled = false;
+        }
+
+        private void Update()
+        {
+            if (_indicatorParentIsAlmostFull)
+            {
+                if (_indicatorParentOutlineBlinkTime <= _indicatorParentOutlineBlinkDuration)
+                {
+                    _indicatorParentOutlineBlinkTime += Time.deltaTime;
+                }
+                else
+                {
+                    if (_indicatorParentOutline.enabled)
+                    {
+                        _indicatorParentOutline.enabled = false;
+                    }
+                    else
+                    {
+                        _indicatorParentOutline.enabled = true;
+                    }
+                    _indicatorParentOutlineBlinkTime = 0f;
+                }
+            }
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -76,6 +105,14 @@ namespace EcoTeam.EcoToss.TrashCan
             if (_trashList.Count == _trashCanCapacity)
             {
                 PublishSubscribe.Instance.Publish<MessageGameOver>(new MessageGameOver(true));
+            }
+            else if (_trashList.Count >= _trashCanCapacity - 3)
+            {
+                _indicatorParentIsAlmostFull = true;
+            }
+            else if (_trashList.Count < _trashCanCapacity - 3)
+            {
+                _indicatorParentIsAlmostFull = false;
             }
         }
 
