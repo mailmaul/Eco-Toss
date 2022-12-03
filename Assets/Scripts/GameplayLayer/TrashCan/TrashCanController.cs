@@ -1,6 +1,7 @@
 using Agate.MVC.Core;
 using EcoTeam.EcoToss.PubSub;
 using EcoTeam.EcoToss.Trash;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ namespace EcoTeam.EcoToss.TrashCan
         [SerializeField] private GameObject _indicatorParent;
         [SerializeField] private Image _indicatorPrefab;
         [SerializeField] private Image[] _indicators;
+        [SerializeField] private float _indicatorParentOutlineBlinkDuration;
         [SerializeField] private List<TrashController> _trashList = new();
         private List<TrashController> _matchedTrashList = new();
         private int _trashCanCapacity = 6;
@@ -19,7 +21,10 @@ namespace EcoTeam.EcoToss.TrashCan
         private string _trashCanTag;
         private GridLayoutGroup _indicatorParentLayoutGroup;
         private RectTransform _indicatorParentRectTransform;
-
+        private Outline _indicatorParentOutline;
+        private bool _indicatorParentIsAlmostFull;
+        private float _indicatorParentOutlineBlinkTime;
+        
         private void Awake()
         {
             PublishSubscribe.Instance.Subscribe<MessageClearTrashList>(ClearTrashList);
@@ -40,6 +45,8 @@ namespace EcoTeam.EcoToss.TrashCan
             _indicators = new Image[_trashCanMaxCapacity];
             _indicatorParentLayoutGroup = _indicatorParent.GetComponent<GridLayoutGroup>();
             _indicatorParentRectTransform = _indicatorParent.GetComponent<RectTransform>();
+            _indicatorParentOutline = _indicatorParent.GetComponent<Outline>();
+            _indicatorParentOutlineBlinkTime = 0f;
 
             // spawn TrashCan Indicators
             for (int i = 0; i < _trashCanMaxCapacity; i++)
@@ -54,6 +61,34 @@ namespace EcoTeam.EcoToss.TrashCan
             _indicatorParentLayoutGroup.enabled = false;
         }
 
+        private void Update()
+        {
+            if (_indicatorParentIsAlmostFull)
+            {
+                if (_indicatorParentOutlineBlinkTime < _indicatorParentOutlineBlinkDuration)
+                {
+                    _indicatorParentOutlineBlinkTime += Time.deltaTime;
+                }
+                else
+                {
+                    if (_indicatorParentOutline.effectColor != Color.red)
+                    {
+                        _indicatorParentOutline.effectColor = Color.red;
+                    }
+
+                    if (!_indicatorParentOutline.enabled)
+                    {
+                        _indicatorParentOutline.enabled = true;
+                    }
+                    else
+                    {
+                        _indicatorParentOutline.enabled = false;
+                    }
+                    _indicatorParentOutlineBlinkTime = 0f;
+                }
+            }
+        }
+
         private void OnCollisionEnter(Collision collision)
         {
             TrashController collisionTrashController = collision.gameObject.GetComponent<TrashController>();
@@ -65,10 +100,12 @@ namespace EcoTeam.EcoToss.TrashCan
             {
                 PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Normal"));
                 PublishSubscribe.Instance.Publish<MessageSpawnVFX>(new MessageSpawnVFX("NewParticleEffect", transform.position));
+                StartCoroutine(IndicatorParentOutlineFlash("green"));
             }
             else
             {
                 PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
+                StartCoroutine(IndicatorParentOutlineFlash("red"));
             }
 
             CheckTrashListElements();
@@ -76,6 +113,14 @@ namespace EcoTeam.EcoToss.TrashCan
             if (_trashList.Count == _trashCanCapacity)
             {
                 PublishSubscribe.Instance.Publish<MessageGameOver>(new MessageGameOver(true));
+            }
+            else if (_trashList.Count >= _trashCanCapacity - 3)
+            {
+                _indicatorParentIsAlmostFull = true;
+            }
+            else if (_trashList.Count < _trashCanCapacity - 3)
+            {
+                _indicatorParentIsAlmostFull = false;
             }
         }
 
@@ -173,6 +218,24 @@ namespace EcoTeam.EcoToss.TrashCan
 
                 _trashCanCapacity++;
             }
+        }
+
+        private IEnumerator IndicatorParentOutlineFlash(string color)
+        {
+            if (color == "green")
+            {
+                _indicatorParentOutline.effectColor = Color.green;
+            }
+            else if (color == "red")
+            {
+                _indicatorParentOutline.effectColor = Color.red;
+            }
+
+            _indicatorParentOutline.enabled = true;
+
+            yield return new WaitForSecondsRealtime(_indicatorParentOutlineBlinkDuration);
+
+            _indicatorParentOutline.enabled = false;
         }
     }
 }

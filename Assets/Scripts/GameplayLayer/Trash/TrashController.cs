@@ -44,7 +44,6 @@ namespace EcoTeam.EcoToss.Trash
             _rigidbody.angularVelocity = Vector3.zero;
             _rigidbody.isKinematic = true;
             _hasCollided = false;
-            PublishSubscribe.Instance.Publish<MessageDeleteTrajectory>(new MessageDeleteTrajectory());
             base.StoreToPool();
         }
 
