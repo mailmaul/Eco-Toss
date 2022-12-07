@@ -14,6 +14,8 @@ namespace EcoTeam.EcoToss.Score
         [SerializeField] private TMP_Text _finalScoreTMP;
         [SerializeField] private TMP_Text _highScoreTMP;
         private int _score = 0;
+        private float _maxScore;
+        private float _previousMaxScoreBuff;
         [SerializeField] private int _normalAddScore = 2;
         private int _match3Score;
         [SerializeField] private int _firstScoreToActivateBuff = 10;
@@ -44,6 +46,9 @@ namespace EcoTeam.EcoToss.Score
             _match3Score = _normalAddScore * 2 + 1;
             _scoreTMP.SetText($"Score: {_score}");
             _previousScoreWhenActivatingBuff = _firstScoreToActivateBuff;
+            _previousMaxScoreBuff = 0;
+            _maxScore = _firstScoreToActivateBuff;
+            PublishSubscribe.Instance.Publish<MessageSetProgressBarFill>(new MessageSetProgressBarFill(_score, _maxScore, _previousMaxScoreBuff));
         }
 
         private void AddScore(MessageAddScore message)
@@ -82,6 +87,8 @@ namespace EcoTeam.EcoToss.Score
                 }
                 PublishSubscribe.Instance.Publish<MessagePlayBuff>(new MessagePlayBuff());
                 _previousScoreWhenActivatingBuff = _score;
+                _previousMaxScoreBuff = _maxScore;
+                _maxScore = _previousScoreWhenActivatingBuff + (_previousScoreWhenActivatingBuff * _scoreMultiplierToActivateBuff);
             }
             else if (!_gotFirstBuff && _score >= _firstScoreToActivateBuff)
             {
@@ -92,7 +99,11 @@ namespace EcoTeam.EcoToss.Score
                 _gotFirstBuff = true;
                 PublishSubscribe.Instance.Publish<MessagePlayBuff>(new MessagePlayBuff());
                 _previousScoreWhenActivatingBuff = _score;
+                _previousMaxScoreBuff = _maxScore;
+                _maxScore = _previousScoreWhenActivatingBuff + (_previousScoreWhenActivatingBuff * _scoreMultiplierToActivateBuff);
             }
+
+            PublishSubscribe.Instance.Publish<MessageSetProgressBarFill>(new MessageSetProgressBarFill(_score, _maxScore, _previousMaxScoreBuff));
         }
 
         private void UpdateFinalScore(MessageGameOver message)

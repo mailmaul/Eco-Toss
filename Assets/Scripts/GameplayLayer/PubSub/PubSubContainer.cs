@@ -171,4 +171,17 @@ namespace EcoTeam.EcoToss.PubSub
     }
 
     public struct MessageDeleteTrajectory { }
+
+    public struct MessageSetProgressBarFill
+    {
+        public float MaxValue { get; private set; }
+        public float CurrentValue { get; private set; }
+        public float PreviousMaxValue { get; private set; }
+        public MessageSetProgressBarFill(float current, float max, float prevMax)
+        {
+            MaxValue = max;
+            CurrentValue = current;
+            PreviousMaxValue = prevMax;
+        }
+    }
 }
