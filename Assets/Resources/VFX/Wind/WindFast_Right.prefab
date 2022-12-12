@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 927976029288993781}
   - component: {fileID: 3497376254895264549}
   m_Layer: 0
-  m_Name: WindFast
+  m_Name: WindFast_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

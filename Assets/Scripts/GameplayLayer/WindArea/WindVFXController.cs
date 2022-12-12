@@ -5,8 +5,15 @@ using UnityEngine;
 
 public class WindVFXController : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _windVFXList = new List<GameObject>();
-    [SerializeField] private GameObject[] _windVFXInHierarchy = new GameObject[3];
+    [System.Serializable]
+    public struct WindVFXObject
+    {
+        public GameObject wind;
+        public Vector3 position;
+    }
+
+    [SerializeField] private List<WindVFXObject> _windVFXList = new List<WindVFXObject>();
+    [SerializeField] private GameObject[] _windVFXInHierarchy = new GameObject[6];
 
     private void Awake()
     {
@@ -27,7 +34,8 @@ public class WindVFXController : MonoBehaviour
     {
         for (int i = 0; i < _windVFXList.Count; i++)
         {
-            GameObject windVFX = Instantiate(_windVFXList[i], transform);
+            GameObject windVFX = Instantiate(_windVFXList[i].wind, _windVFXList[i].position, _windVFXList[i].wind.transform.rotation);
+            windVFX.transform.SetParent(transform);
             _windVFXInHierarchy[i] = windVFX;
             _windVFXInHierarchy[i].SetActive(false);
         }
@@ -50,23 +58,53 @@ public class WindVFXController : MonoBehaviour
 
         if (msg.Strength < 1.5f)
         {
-            if (!_windVFXInHierarchy[0].activeInHierarchy)
+            if(msg.Direction == "Right")
             {
-                _windVFXInHierarchy[0].gameObject.SetActive(true);
+                if (!_windVFXInHierarchy[0].activeInHierarchy)
+                {
+                    _windVFXInHierarchy[0].gameObject.SetActive(true);
+                }
+            } 
+            else if(msg.Direction == "Left")
+            {
+                if (!_windVFXInHierarchy[3].activeInHierarchy)
+                {
+                    _windVFXInHierarchy[3].gameObject.SetActive(true);
+                }
             }
         }
         else if (msg.Strength < 3f)
         {
-            if (!_windVFXInHierarchy[1].activeInHierarchy)
+            if (msg.Direction == "Right")
             {
-                _windVFXInHierarchy[1].gameObject.SetActive(true);
+                if (!_windVFXInHierarchy[1].activeInHierarchy)
+                {
+                    _windVFXInHierarchy[1].gameObject.SetActive(true);
+                }
+            }
+            else if (msg.Direction == "Left")
+            {
+                if (!_windVFXInHierarchy[4].activeInHierarchy)
+                {
+                    _windVFXInHierarchy[4].gameObject.SetActive(true);
+                }
             }
         }
         else
         {
-            if (!_windVFXInHierarchy[2].activeInHierarchy)
+            if (msg.Direction == "Right")
             {
-                _windVFXInHierarchy[2].gameObject.SetActive(true);
+                if (!_windVFXInHierarchy[2].activeInHierarchy)
+                {
+                    _windVFXInHierarchy[2].gameObject.SetActive(true);
+                }
+            }
+            else if (msg.Direction == "Left")
+            {
+                if (!_windVFXInHierarchy[5].activeInHierarchy)
+                {
+                    _windVFXInHierarchy[5].gameObject.SetActive(true);
+                }
             }
         }
     }
