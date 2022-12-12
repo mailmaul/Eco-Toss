@@ -8,21 +8,33 @@ namespace EcoTeam.EcoToss.MainMenu
 {
     public class MainMenuSceneController : MonoBehaviour
     {
+        [SerializeField] private GameObject _mainPanel;
         [SerializeField] private Button _playButton;
-        [SerializeField] private Button _htpButton;
-        [SerializeField] private Button _intruderButton;
-        [SerializeField] private Button _powerButton;
-        [SerializeField] private Button _mainmenuButton;
+        [SerializeField] private Button _tutorialButton;
+        [SerializeField] private Button _creditButton;
+        [SerializeField] private GameObject _creditPanel;
+        [SerializeField] private Button _backButton;
+        [SerializeField] private GameObject[] _tutorialPanels;
+        [SerializeField] private GameObject _navigationButton;
+        [SerializeField] private Button _continueButton;
+        [SerializeField] private Button _previousButton;
 
         void Start()
         {
             Input.backButtonLeavesApp = true;
             _playButton.onClick.RemoveAllListeners();
+            _tutorialButton.onClick.RemoveAllListeners();
+            _creditButton.onClick.RemoveAllListeners();
+            _backButton.onClick.RemoveAllListeners();
+            _continueButton.onClick.RemoveAllListeners();
+            _previousButton.onClick.RemoveAllListeners();
+
             _playButton.onClick.AddListener(GoToGameplay);
-            _htpButton.onClick.AddListener(GoToHTP);
-            _intruderButton.onClick.AddListener(GoToHTP2);
-            _powerButton.onClick.AddListener(GoToHTP3);
-            _mainmenuButton.onClick.AddListener(GoToMainMenu);
+            _tutorialButton.onClick.AddListener(GoToTutorial);
+            _creditButton.onClick.AddListener(SetActiveCreditPanel);
+            _backButton.onClick.AddListener(SetActiveCreditPanel);
+            _continueButton.onClick.AddListener(ContinueTutorial);
+            _previousButton.onClick.AddListener(PreviousTutorial);
         }
 
         private void GoToGameplay()
@@ -31,28 +43,67 @@ namespace EcoTeam.EcoToss.MainMenu
             SceneManager.LoadScene(1);
         }
 
-        private void GoToHTP()
+        private void SetActiveCreditPanel()
         {
             PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("button_click"));
-            SceneManager.LoadScene(2);
+            if (_creditPanel.activeInHierarchy)
+            {
+                _creditPanel.SetActive(false);
+                _mainPanel.SetActive(true);
+            }
+            else
+            {
+                _creditPanel.SetActive(true);
+                _mainPanel.SetActive(false);
+            }
         }
 
-        private void GoToHTP2()
+        private void GoToTutorial()
         {
             PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("button_click"));
-            SceneManager.LoadScene(3);
+            _tutorialPanels[0].SetActive(true);
+            _navigationButton.SetActive(true);
+            _mainPanel.SetActive(false);
         }
 
-        private void GoToHTP3()
+        private void PreviousTutorial()
         {
-            PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("button_click"));
-            SceneManager.LoadScene(4);
+            for(int i = 0; i < _tutorialPanels.Length; i++)
+            {
+                if (i == 0 && _tutorialPanels[i].activeInHierarchy)
+                {
+                    _mainPanel.SetActive(true);
+                    _navigationButton.SetActive(false);
+                    _tutorialPanels[i].SetActive(false);
+                    break;
+                }
+                else if (i >= 0 && _tutorialPanels[i].activeInHierarchy)
+                {
+                    _tutorialPanels[i - 1].SetActive(true);
+                    _tutorialPanels[i].SetActive(false);
+                    break;
+                }
+            }
         }
 
-        private void GoToMainMenu()
+        private void ContinueTutorial()
         {
-            PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("button_click"));
-            SceneManager.LoadScene(0);
+            for (int i = 0; i < _tutorialPanels.Length; i++)
+            {
+                if (i == _tutorialPanels.Length - 1 && _tutorialPanels[i].activeInHierarchy)
+                {
+                    _mainPanel.SetActive(true);
+                    _navigationButton.SetActive(false);
+                    _tutorialPanels[i].SetActive(false);
+                    break;
+                }
+                else if (i < _tutorialPanels.Length - 1 && _tutorialPanels[i].activeInHierarchy)
+                {
+                    _tutorialPanels[i + 1].SetActive(true);
+                    _tutorialPanels[i].SetActive(false);
+                    break;
+                }
+            }
         }
     }
 }

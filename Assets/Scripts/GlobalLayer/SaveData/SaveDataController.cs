@@ -3,8 +3,9 @@ using UnityEngine;
 namespace EcoTeam.EcoToss.SaveData
 {
     [System.Serializable]
-    public class SaveData
+    public struct SaveData
     {
+        public bool HasDoneTutorial;
         public int SavedHighScore;
     }
 
@@ -46,7 +47,8 @@ namespace EcoTeam.EcoToss.SaveData
             {
                 SaveData = new()
                 {
-                    SavedHighScore = 0
+                    HasDoneTutorial = false,
+                    SavedHighScore = 0,
                 };
                 Save();
             }
