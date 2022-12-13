@@ -132,7 +132,7 @@ namespace EcoTeam.EcoToss.TrashCan
                 {
                     //Buat indikator jadi benar
                     _indicators[i].enabled = true;
-                    _indicators[i].sprite = Resources.Load<Sprite>("Prefabs/UI/benar");
+                    _indicators[i].sprite = Resources.Load<Sprite>("Sprites/UI/benar");
 
                     // Jika dia adalah element pertama atau kedua, maka cukup cek apakah _trashList[i] punya tag yang sama dengan TrashCan
                     if (i == 0)
@@ -188,7 +188,7 @@ namespace EcoTeam.EcoToss.TrashCan
 
                     // Buat indikator jadi salah
                     _indicators[i].enabled = true;
-                    _indicators[i].sprite = Resources.Load<Sprite>("Prefabs/UI/salah");
+                    _indicators[i].sprite = Resources.Load<Sprite>("Sprites/UI/salah");
                 }
             }
             _matchedTrashList.Clear();
