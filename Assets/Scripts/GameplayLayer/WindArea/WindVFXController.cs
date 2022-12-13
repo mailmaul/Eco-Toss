@@ -62,14 +62,14 @@ public class WindVFXController : MonoBehaviour
             {
                 if (!_windVFXInHierarchy[0].activeInHierarchy)
                 {
-                    _windVFXInHierarchy[0].gameObject.SetActive(true);
+                    _windVFXInHierarchy[0].SetActive(true);
                 }
             } 
             else if(msg.Direction == "Left")
             {
                 if (!_windVFXInHierarchy[3].activeInHierarchy)
                 {
-                    _windVFXInHierarchy[3].gameObject.SetActive(true);
+                    _windVFXInHierarchy[3].SetActive(true);
                 }
             }
         }
@@ -79,14 +79,14 @@ public class WindVFXController : MonoBehaviour
             {
                 if (!_windVFXInHierarchy[1].activeInHierarchy)
                 {
-                    _windVFXInHierarchy[1].gameObject.SetActive(true);
+                    _windVFXInHierarchy[1].SetActive(true);
                 }
             }
             else if (msg.Direction == "Left")
             {
                 if (!_windVFXInHierarchy[4].activeInHierarchy)
                 {
-                    _windVFXInHierarchy[4].gameObject.SetActive(true);
+                    _windVFXInHierarchy[4].SetActive(true);
                 }
             }
         }
@@ -96,14 +96,14 @@ public class WindVFXController : MonoBehaviour
             {
                 if (!_windVFXInHierarchy[2].activeInHierarchy)
                 {
-                    _windVFXInHierarchy[2].gameObject.SetActive(true);
+                    _windVFXInHierarchy[2].SetActive(true);
                 }
             }
             else if (msg.Direction == "Left")
             {
                 if (!_windVFXInHierarchy[5].activeInHierarchy)
                 {
-                    _windVFXInHierarchy[5].gameObject.SetActive(true);
+                    _windVFXInHierarchy[5].SetActive(true);
                 }
             }
         }
