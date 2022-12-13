@@ -9,7 +9,7 @@ namespace EcoTeam.EcoToss.ProgressBar
 {
     public class ProgressBarController : MonoBehaviour
     {
-        [SerializeField] private Image fill;
+        [SerializeField] private Image _fill;
 
         private float _score;
         private float _maxScore;
@@ -29,7 +29,7 @@ namespace EcoTeam.EcoToss.ProgressBar
             _score = msg.CurrentValue - msg.PreviousMaxValue;
             _maxScore = msg.MaxValue - msg.PreviousMaxValue;
             
-            fill.fillAmount = _score / _maxScore;
+            _fill.fillAmount = _score / _maxScore;
         }
     }
 }
