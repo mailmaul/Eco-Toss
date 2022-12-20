@@ -1,0 +1,46 @@
+Tutorial
+attach scriptable objects yang sesuai dengan event yang terjadi
+
+- tap dan hold untuk lempar
+It's class duty time. But, hey, let's make it more interesting! ;)
+
+- throw to correct bin (ga ada button, hilang sendiri jika sudah lempar sampah)
+Throw it to the correct bin!
+
+- If forget, press ? icon
+Nice! Still don't understand? Press ? icon to rehearse last tutorial.
+
+ada tombol help, ikon tanda tanya -> buat ngulang step tutorial terakhir
+
+
+- kalau sampah masuk/nyentuh lantai -> jelaskan kalau ground dan trash can
+vertical dialog, satu tahap, no image, OK, middle center
+The Health will decrease when a trash hit the ground.
+The game will be over when Health reach 0!
+
+- vertical dialog, tiga tahap, no image, OK, upper center
+This is the Trash Bin Indicator. It explains the bin's capacity.
+
+It will flash green if trash goes into the correct bin.
+
+It will flash red if the trash goes into the wrong bin.
+
+It will blink red continuously if the bin is almost filled.
+The game will be over when a bin is filled!
+
+You can remove trash if you throw three pieces of trash into the correct bin consecutively.
+
+- setelah angin spawn
+vertical dialog, tanpa image, satu tahap, OK, lower center
+Your classroom is drafty as ever.
+Watchout for strong/weak wind, adjust your throw carefully!
+
+- setelah spawn intruder, jelaskan intruder secara general
+vertical dialog, tanpa image, satu tahap, OK, lower center
+Classmates has come!
+Each of them has their own unique way to ruin the game.
+So, hit 'em up!
+
+
+mark done tutorialnya setelah masuk scene tutorial.
+
