@@ -4,8 +4,10 @@ attach scriptable objects yang sesuai dengan event yang terjadi
 - tap dan hold untuk lempar
 It's class duty time. But, hey, let's make it more interesting! ;)
 
+Tap and hold the Trash.
+
 - throw to correct bin (ga ada button, hilang sendiri jika sudah lempar sampah)
-Throw it to the correct bin!
+Good! Now drag it to the correct bin, then release!
 
 - If forget, press ? icon
 Nice! Still don't understand? Press ? icon to rehearse last tutorial.

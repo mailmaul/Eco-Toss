@@ -167,10 +167,10 @@ RectTransform:
   m_Father: {fileID: 2830257269842852645}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -111}
+  m_SizeDelta: {x: 400, y: 222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2830257268719674043
 CanvasRenderer:
@@ -249,10 +249,10 @@ RectTransform:
   m_Father: {fileID: 2830257269568588511}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 443.34976, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 443.6019, y: -1147.01}
+  m_SizeDelta: {x: 410, y: 374.02002}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &2830257268773654644
 CanvasRenderer:
@@ -309,7 +309,7 @@ MonoBehaviour:
     m_Right: 5
     m_Top: 5
     m_Bottom: 5
-  m_ChildAlignment: 1
+  m_ChildAlignment: 4
   m_Spacing: 5
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -386,10 +386,10 @@ RectTransform:
   m_Father: {fileID: 2830257269842852645}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -250.005}
+  m_SizeDelta: {x: 400, y: 36.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2830257268992041054
 CanvasRenderer:
@@ -705,9 +705,9 @@ RectTransform:
   m_Father: {fileID: 2830257269892778034}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 300, y: -20}
   m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2830257269112708720
@@ -839,9 +839,9 @@ RectTransform:
   m_Father: {fileID: 2830257269892778034}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -20}
   m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2830257269187757140
@@ -1190,6 +1190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f7fdae46d8d2fe42bba628162327576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _modalWindowPanel: {fileID: 2830257269568588508}
   _headerArea: {fileID: 2830257270050205110}
   _HeaderTMP: {fileID: 2830257269747666466}
   _bodyArea: {fileID: 2830257270446791646}
@@ -1201,11 +1202,11 @@ MonoBehaviour:
   _verticalBodyTMP: {fileID: 2830257268992041048}
   _footerArea: {fileID: 2830257269892778034}
   _confirmButton: {fileID: 2830257269112708722}
-  _confirmTMP: {fileID: 0}
+  _confirmTMP: {fileID: 2830257269304385485}
   _declineButton: {fileID: 2830257269187757142}
-  _declineTMP: {fileID: 0}
+  _declineTMP: {fileID: 2830257270425379941}
   _alternateButton: {fileID: 2830257268375231489}
-  _alternateTMP: {fileID: 0}
+  _alternateTMP: {fileID: 2830257269750032883}
 --- !u!1 &2830257269747666461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,10 +1240,10 @@ RectTransform:
   m_Father: {fileID: 2830257270050205110}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -28.005}
+  m_SizeDelta: {x: 400, y: 36.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2830257269747666467
 CanvasRenderer:
@@ -1510,10 +1511,10 @@ RectTransform:
   m_Father: {fileID: 2830257270446791646}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -134.005}
+  m_SizeDelta: {x: 400, y: 268.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2830257269842852650
 MonoBehaviour:
@@ -1536,7 +1537,7 @@ MonoBehaviour:
   m_Spacing: 10
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 1
+  m_ChildControlWidth: 0
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
@@ -1578,9 +1579,9 @@ RectTransform:
   m_Father: {fileID: 2830257268773654643}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 205, y: -349.02002}
   m_SizeDelta: {x: 400, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2830257269892778033
@@ -1683,10 +1684,10 @@ RectTransform:
   m_Father: {fileID: 2830257268773654643}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 205, y: 0}
-  m_SizeDelta: {x: 400, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 205, y: -28.005}
+  m_SizeDelta: {x: 400, y: 46.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2830257270050205114
 CanvasRenderer:
@@ -2094,10 +2095,10 @@ RectTransform:
   m_Father: {fileID: 2830257268773654643}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 205, y: 0}
-  m_SizeDelta: {x: 400, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 205, y: -190.015}
+  m_SizeDelta: {x: 400, y: 268.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2830257270446791650
 CanvasRenderer:
@@ -2159,7 +2160,7 @@ MonoBehaviour:
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
-  m_ChildControlHeight: 1
+  m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0

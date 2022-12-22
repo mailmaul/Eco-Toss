@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class ModalWindowPanel : MonoBehaviour
 {
+    [Header("Parent")]
+    [SerializeField] private VerticalLayoutGroup _modalWindowPanel;
+
     [Header("Header")]
     [SerializeField] private Transform _headerArea;
     [SerializeField] private TextMeshProUGUI _HeaderTMP;
@@ -99,7 +102,7 @@ public class ModalWindowPanel : MonoBehaviour
     }
 
 
-    public void Show(string title, Sprite imageToShow, string message, Action confirmAction, Action declineAction, Action alternateAction = null)
+    public void Show(TextAnchor alignment, string title, Sprite imageToShow, string message, Action confirmAction, Action declineAction, Action alternateAction = null)
     {
         //if (message.IsVertical)
         //{
@@ -118,24 +121,35 @@ public class ModalWindowPanel : MonoBehaviour
 
         _horizontalLayoutArea.gameObject.SetActive(false);
 
-        bool hasTitle = string.IsNullOrEmpty(title);
-        _headerArea.gameObject.SetActive(!hasTitle);
+        bool hasNoTitle = string.IsNullOrEmpty(title);
+        _headerArea.gameObject.SetActive(!hasNoTitle);
         _HeaderTMP.SetText(title);
 
+        bool hasImage = (imageToShow != null);
+        _verticalBodyImage.gameObject.SetActive(hasImage);
         _verticalBodyImage.sprite = imageToShow;
         _verticalBodyTMP.SetText(message);
 
+        bool hasConfirm = (confirmAction != null);
+        _confirmButton.gameObject.SetActive(hasConfirm);
         _onConfirmAction = confirmAction;
         //_confirmTMP.SetText(confirmMessage);
 
         bool hasDecline = (declineAction != null);
         _declineButton.gameObject.SetActive(hasDecline);
-        //_declineTMP.SetText(declineMessage);
         _onDeclineAction = declineAction;
+        //_declineTMP.SetText(declineMessage);
 
         bool hasAlternate = (alternateAction != null);
         _alternateButton.gameObject.SetActive(hasAlternate);
-        //_alternateTMP.SetText(alternateMessage);
         _onAlternateAction = alternateAction;
+        //_alternateTMP.SetText(alternateMessage);
+
+        if (!hasConfirm && !hasDecline && !hasAlternate)
+        {
+            _footerArea.gameObject.SetActive(false);
+        }
+
+        _modalWindowPanel.childAlignment = alignment;
     }
 }

@@ -10,15 +10,17 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private TutorialScriptableObject[] _tutorialScenario;
     [SerializeField] private Canvas _tutorialCanvas;
     [SerializeField] private RectTransform _invertMask;
+    [SerializeField] private bool _hasInvertMask;
     [SerializeField] private Button _helpButton;
     [SerializeField] private ModalWindowPanel _modalWindowPanel;
     [SerializeField] private UnityEvent _onContinueEvent;
     [SerializeField] private UnityEvent _onCancelEvent;
     //[SerializeField] private UnityEvent _onAlternateEvent;
 
+    [SerializeField] private TextAnchor _modalWindowAlignment;
     [SerializeField] private string _title;
     [SerializeField] private Sprite _sprite;
-    [SerializeField] private string _message;
+    [SerializeField] [TextArea(10,15)] private string _message;
 
     // Start is called before the first frame update
     void OnEnable()
@@ -40,11 +42,11 @@ public class TutorialController : MonoBehaviour
         //    alternateCallback = _onAlternateEvent.Invoke;
         //}
 
-        
-
-        _modalWindowPanel.Show(_title, _sprite, _message, continueCallback, cancelCallback);
+        _modalWindowPanel.Show(_modalWindowAlignment, _title, _sprite, _message, continueCallback, cancelCallback);
 
         _tutorialCanvas.gameObject.SetActive(true);
         //_modalWindowPanel.gameObject.SetActive(true);
+
+        _invertMask.gameObject.SetActive(_hasInvertMask);
     }
 }
