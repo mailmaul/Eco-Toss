@@ -2,6 +2,7 @@ using Agate.MVC.Core;
 using EcoTeam.EcoToss.GameManager;
 using EcoTeam.EcoToss.ObjectPooling;
 using EcoTeam.EcoToss.PubSub;
+using EcoTeam.EcoToss.Tutorial;
 using UnityEngine;
 
 namespace EcoTeam.EcoToss.Trash
@@ -64,6 +65,11 @@ namespace EcoTeam.EcoToss.Trash
                     PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("sampah_salah_tanah"));
                     PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
                     PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
+                    if (!TutorialValidator.Instance.HasHitGround)
+                    {
+                        TutorialValidator.Instance.SetHasHitGround(true);
+                        TutorialValidator.Instance.SetActiveTutorialHitGround(true);
+                    }
                     Invoke(nameof(StoreToPool), 0.5f);
                 }
                 else if (collision.gameObject.tag.Substring(0, 8) == "TrashCan")

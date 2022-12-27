@@ -1,6 +1,8 @@
 using Agate.MVC.Core;
 using EcoTeam.EcoToss.PubSub;
+using EcoTeam.EcoToss.SaveData;
 using EcoTeam.EcoToss.Trash;
+using EcoTeam.EcoToss.Tutorial;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -94,10 +96,30 @@ namespace EcoTeam.EcoToss.TrashCan
             {
                 PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Normal"));
                 PublishSubscribe.Instance.Publish<MessageSpawnVFX>(new MessageSpawnVFX("NewParticleEffect", transform.position));
+
+                // Tutorial correct bin
+                if (!SaveDataController.Instance.SaveData.HasDoneTutorial)
+                {
+                    if (!TutorialValidator.Instance.HasGoneToCorrectBin)
+                    {
+                        TutorialValidator.Instance.SetHasGoneToCorrectBin(true);
+                        TutorialValidator.Instance.SetActiveTutorialCorrectBin(true);
+                    }
+                }
             }
             else
             {
                 PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
+
+                // Tutorial wrong bin
+                if (!SaveDataController.Instance.SaveData.HasDoneTutorial)
+                {
+                    if (!TutorialValidator.Instance.HasGoneToWrongBin)
+                    {
+                        TutorialValidator.Instance.SetHasGoneToWrongBin(true);
+                        TutorialValidator.Instance.SetActiveTutorialWrongBin(true);
+                    }
+                }
             }
 
             CheckTrashListElements();
@@ -159,6 +181,16 @@ namespace EcoTeam.EcoToss.TrashCan
                                     _indicators[i - j].enabled = false;
                                 }
                                 _matchedTrashList.Clear();
+
+                                // Tutorial Match-3
+                                if (!SaveDataController.Instance.SaveData.HasDoneTutorial)
+                                {
+                                    if (!TutorialValidator.Instance.HasMatch3)
+                                    {
+                                        TutorialValidator.Instance.SetHasMatch3(true);
+                                        TutorialValidator.Instance.SetActiveTutorialMatch3(true);
+                                    }
+                                }
                             }
                             // Jika Match-2 maka tetap masukkan ke dalam list
                             else

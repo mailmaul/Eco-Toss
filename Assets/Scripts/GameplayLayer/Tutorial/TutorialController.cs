@@ -5,48 +5,78 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class TutorialController : MonoBehaviour
+namespace EcoTeam.EcoToss.Tutorial
 {
-    [SerializeField] private TutorialScriptableObject[] _tutorialScenario;
-    [SerializeField] private Canvas _tutorialCanvas;
-    [SerializeField] private RectTransform _invertMask;
-    [SerializeField] private bool _hasInvertMask;
-    [SerializeField] private Button _helpButton;
-    [SerializeField] private ModalWindowPanel _modalWindowPanel;
-    [SerializeField] private UnityEvent _onContinueEvent;
-    [SerializeField] private UnityEvent _onCancelEvent;
-    //[SerializeField] private UnityEvent _onAlternateEvent;
-
-    [SerializeField] private TextAnchor _modalWindowAlignment;
-    [SerializeField] private string _title;
-    [SerializeField] private Sprite _sprite;
-    [SerializeField] [TextArea(10,15)] private string _message;
-
-    // Start is called before the first frame update
-    void OnEnable()
+    public class TutorialController : MonoBehaviour
     {
-        Action continueCallback = null;
-        Action cancelCallback = null;
-        //Action alternateCallback = null;
+        enum MaskEnum
+        {
+            None,
+            NormalMask,
+            InvertMask,
+        }
 
-        if (_onContinueEvent.GetPersistentEventCount() > 0)
-        {
-            continueCallback = _onContinueEvent.Invoke;
-        }
-        if (_onCancelEvent.GetPersistentEventCount() > 0)
-        {
-            cancelCallback = _onCancelEvent.Invoke;
-        }
-        //if (_onAlternateEvent.GetPersistentEventCount() > 0)
+        [SerializeField] private Canvas _tutorialCanvas;
+        [SerializeField] private RectTransform _normalMask;
+        [SerializeField] private RectTransform _invertMask;
+        [SerializeField] private MaskEnum _applyMask;
+        [SerializeField] private ModalWindowPanel _modalWindowPanel;
+        [SerializeField] private UnityEvent _onContinueEvent;
+        [SerializeField] private UnityEvent _onCancelEvent;
+        //[SerializeField] private UnityEvent _onAlternateEvent;
+
+        [SerializeField] private TextAnchor _modalWindowAlignment;
+        [SerializeField] private string _title;
+        [SerializeField] private Sprite _sprite;
+        [SerializeField][TextArea(10, 15)] private string _message;
+
+        //private RectTransform _tutorialRectTransform;
+
+        //private void Awake()
         //{
-        //    alternateCallback = _onAlternateEvent.Invoke;
+        //    _tutorialRectTransform = _tutorialCanvas.GetComponent<RectTransform>();
         //}
 
-        _modalWindowPanel.Show(_modalWindowAlignment, _title, _sprite, _message, continueCallback, cancelCallback);
+        void OnEnable()
+        {
+            Action continueCallback = null;
+            Action cancelCallback = null;
+            //Action alternateCallback = null;
 
-        _tutorialCanvas.gameObject.SetActive(true);
-        //_modalWindowPanel.gameObject.SetActive(true);
+            if (_onContinueEvent.GetPersistentEventCount() > 0)
+            {
+                continueCallback = _onContinueEvent.Invoke;
+            }
+            if (_onCancelEvent.GetPersistentEventCount() > 0)
+            {
+                cancelCallback = _onCancelEvent.Invoke;
+            }
+            //if (_onAlternateEvent.GetPersistentEventCount() > 0)
+            //{
+            //    alternateCallback = _onAlternateEvent.Invoke;
+            //}
 
-        _invertMask.gameObject.SetActive(_hasInvertMask);
+            _modalWindowPanel.Show(_modalWindowAlignment, _title, _sprite, _message, continueCallback, cancelCallback);
+
+            _tutorialCanvas.gameObject.SetActive(true);
+
+            switch (_applyMask)
+            {
+                case MaskEnum.NormalMask:
+                    _normalMask.gameObject.SetActive(true);
+                    _invertMask.gameObject.SetActive(false);
+                    break;
+
+                case MaskEnum.InvertMask:
+                    _normalMask.gameObject.SetActive(false);
+                    _invertMask.gameObject.SetActive(true);
+                    break;
+
+                case MaskEnum.None:
+                    _normalMask.gameObject.SetActive(false);
+                    _invertMask.gameObject.SetActive(false);
+                    break;
+            }
+        }
     }
 }

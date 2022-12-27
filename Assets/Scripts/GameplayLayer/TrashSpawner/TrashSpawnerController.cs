@@ -36,6 +36,8 @@ namespace EcoTeam.EcoToss.TrashSpawner
             // Debugging purposes
             //IPoolObject createdTrash = _trashPool.CreateObject(_trashController[0], transform.position);
             //createdTrash.transform.position = new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y, transform.position.z);
+
+
         }
     }
 }

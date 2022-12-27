@@ -1020,7 +1020,7 @@ GameObject:
   - component: {fileID: -8539693993197688213}
   - component: {fileID: -7011340461489279547}
   m_Layer: 3
-  m_Name: FriendBlue
+  m_Name: Patrol
   m_TagString: Intruder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

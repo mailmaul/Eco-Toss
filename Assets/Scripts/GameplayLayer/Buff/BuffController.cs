@@ -1,5 +1,7 @@
 using Agate.MVC.Core;
 using EcoTeam.EcoToss.PubSub;
+using EcoTeam.EcoToss.SaveData;
+using EcoTeam.EcoToss.Tutorial;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,6 +55,35 @@ namespace EcoTeam.EcoToss.Buff
             _currentTimerSpin = _timerSpin;
             _buffList[_randomIndex].BuffEffect();
             PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("powerup_dapat"));
+
+            // Tutorial buff
+            if (!SaveDataController.Instance.SaveData.HasDoneTutorial)
+            {
+                if (_buffList[_randomIndex].name == "BuffDoubleScore")
+                {
+                    if (!TutorialValidator.Instance.HasSpawnedBuffDoubleScore)
+                    {
+                        TutorialValidator.Instance.SetHasSpawnedBuffDoubleScore(true);
+                        TutorialValidator.Instance.SetActiveTutorialBuff(_buffList[_randomIndex].name, true);
+                    }
+                }
+                else if (_buffList[_randomIndex].name == "BuffInstantRemoveTrash")
+                {
+                    if (!TutorialValidator.Instance.HasSpawnedBuffCleanBin)
+                    {
+                        TutorialValidator.Instance.SetHasSpawnedBuffCleanBin(true);
+                        TutorialValidator.Instance.SetActiveTutorialBuff(_buffList[_randomIndex].name, true);
+                    }
+                }
+                else if (_buffList[_randomIndex].name == "BuffLargerTrashCanCapacity")
+                {
+                    if (!TutorialValidator.Instance.HasSpawnedBuffLargerCapacity)
+                    {
+                        TutorialValidator.Instance.SetHasSpawnedBuffLargerCapacity(true);
+                        TutorialValidator.Instance.SetActiveTutorialBuff(_buffList[_randomIndex].name, true);
+                    }
+                }
+            }
 
             if (Debug.isDebugBuild)
             {

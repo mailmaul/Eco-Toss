@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 8785870409274464543}
   - component: {fileID: 6467426395818871461}
   m_Layer: 3
-  m_Name: Chicken
+  m_Name: Scramble
   m_TagString: Intruder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

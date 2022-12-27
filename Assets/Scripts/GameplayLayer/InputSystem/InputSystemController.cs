@@ -1,5 +1,7 @@
 using Agate.MVC.Core;
 using EcoTeam.EcoToss.PubSub;
+using EcoTeam.EcoToss.SaveData;
+using EcoTeam.EcoToss.Tutorial;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -17,6 +19,17 @@ namespace EcoTeam.EcoToss.InputSystem
             {
                 _touchStartPosition = Input.touches[0].position;
                 _fingerDown = true;
+
+                // Tutorial throw trash start
+                if (!SaveDataController.Instance.SaveData.HasDoneTutorial)
+                {
+                    if (!TutorialValidator.Instance.HasTapped)
+                    {
+                        TutorialValidator.Instance.SetHasTapped(true);
+                        TutorialValidator.Instance.SetActiveTutorialPrepareToThrow(false);
+                        TutorialValidator.Instance.SetActiveTutorialThrowTrash(true);
+                    }
+                }
             }
 
             // If you hold your finger
@@ -55,6 +68,16 @@ namespace EcoTeam.EcoToss.InputSystem
         {
             PublishSubscribe.Instance.Publish<MessageTrashThrowing>(new MessageTrashThrowing(_swipeDirection));
             _fingerDown = false;
+
+            // Tutorial throw trash end
+            if (!SaveDataController.Instance.SaveData.HasDoneTutorial)
+            {
+                if (!TutorialValidator.Instance.HasThrownTrash)
+                {
+                    TutorialValidator.Instance.SetHasThrownTrash(true);
+                    TutorialValidator.Instance.SetActiveTutorialThrowTrash(false);
+                }
+            }
         }
     }
 }
