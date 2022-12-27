@@ -15,6 +15,10 @@ public class WindVFXController : MonoBehaviour
     [SerializeField] private List<WindVFXObject> _windVFXList = new List<WindVFXObject>();
     [SerializeField] private GameObject[] _windVFXInHierarchy = new GameObject[6];
 
+    //nilai disesuaikan dengan _windStrengthList pada script WindAreaController.cs
+    private const float _slowWindStregth = 2f;
+    private const float _fastWindStrength = 5f;
+
     private void Awake()
     {
         PublishSubscribe.Instance.Subscribe<MessageShowWindProperties>(ShowWindVFX);
@@ -56,7 +60,7 @@ public class WindVFXController : MonoBehaviour
     {
         HideWindVFX();
 
-        if (msg.Strength < 1.5f)
+        if (msg.Strength == _slowWindStregth)
         {
             if(msg.Direction == "Right")
             {
@@ -67,13 +71,13 @@ public class WindVFXController : MonoBehaviour
             } 
             else if(msg.Direction == "Left")
             {
-                if (!_windVFXInHierarchy[3].activeInHierarchy)
+                if (!_windVFXInHierarchy[2].activeInHierarchy)
                 {
-                    _windVFXInHierarchy[3].SetActive(true);
+                    _windVFXInHierarchy[2].SetActive(true);
                 }
             }
         }
-        else if (msg.Strength < 3f)
+        else
         {
             if (msg.Direction == "Right")
             {
@@ -84,26 +88,9 @@ public class WindVFXController : MonoBehaviour
             }
             else if (msg.Direction == "Left")
             {
-                if (!_windVFXInHierarchy[4].activeInHierarchy)
+                if (!_windVFXInHierarchy[3].activeInHierarchy)
                 {
-                    _windVFXInHierarchy[4].SetActive(true);
-                }
-            }
-        }
-        else
-        {
-            if (msg.Direction == "Right")
-            {
-                if (!_windVFXInHierarchy[2].activeInHierarchy)
-                {
-                    _windVFXInHierarchy[2].SetActive(true);
-                }
-            }
-            else if (msg.Direction == "Left")
-            {
-                if (!_windVFXInHierarchy[5].activeInHierarchy)
-                {
-                    _windVFXInHierarchy[5].SetActive(true);
+                    _windVFXInHierarchy[3].SetActive(true);
                 }
             }
         }

@@ -1,14 +1,14 @@
 using Agate.MVC.Core;
 using EcoTeam.EcoToss.PubSub;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace EcoTeam.EcoToss.WindArea
 {
     public class WindAreaController : MonoBehaviour
     {
-        [SerializeField] private float _minWindStrength;
-        [SerializeField] private float _maxWindStrength;
         [SerializeField] private Vector3[] _windDirections = new Vector3[2];
+        [SerializeField] private List<float> _windStrengthList = new List<float>();
 
         private float _windStrength;
         private Vector3 _windDirection;
@@ -52,7 +52,7 @@ namespace EcoTeam.EcoToss.WindArea
         //Dipanggil pada script TrashController saat sampah collide with ground or intruder
         public void RandomPropertiesValue(MessageSetRandomPropertiesWindArea msg)
         {
-            _windStrength = Random.Range(_minWindStrength, _maxWindStrength);
+            _windStrength = _windStrengthList[Random.Range(0, _windStrengthList.Count)];
             int index = Random.Range(0, _windDirections.Length);
             _windDirection = _windDirections[index];
 
