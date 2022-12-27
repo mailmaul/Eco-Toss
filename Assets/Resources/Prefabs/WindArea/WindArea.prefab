@@ -45,11 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61148ec40ff89214ba12218eec90e78f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minWindStrength: 1
-  _maxWindStrength: 5
   _windDirections:
   - {x: 20, y: 0, z: 0}
   - {x: -20, y: 0, z: 0}
+  _windStrengthList:
+  - 2
+  - 5
 --- !u!65 &3817843876530823536
 BoxCollider:
   m_ObjectHideFlags: 0

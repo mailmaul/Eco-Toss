@@ -47,19 +47,13 @@ MonoBehaviour:
   _windVFXList:
   - wind: {fileID: 5642385560906224610, guid: e40c63d34f0a5c5458ae202c7c033ac0, type: 3}
     position: {x: -9.45, y: 8, z: 6.4}
-  - wind: {fileID: 5642385560906224610, guid: 3da7035d891d13543a1db67e67f1c2e8, type: 3}
-    position: {x: -9.45, y: 8, z: 6.4}
   - wind: {fileID: 5642385560906224610, guid: 2c0211b04e172824a8c7927a0da72cae, type: 3}
     position: {x: -9.45, y: 8, z: 6.4}
   - wind: {fileID: 5642385560906224610, guid: 778c61e160893a04cb7aeb84344d0ce8, type: 3}
     position: {x: 9.45, y: 8, z: 6.4}
-  - wind: {fileID: 5642385560906224610, guid: 34c0703f836e0044a8417a466e454c1c, type: 3}
-    position: {x: 9.45, y: 8, z: 6.4}
   - wind: {fileID: 5642385560906224610, guid: 37d0fa52ca1166240905fd0caad54817, type: 3}
     position: {x: 9.45, y: 8, z: 6.4}
   _windVFXInHierarchy:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
