@@ -36,7 +36,7 @@ namespace EcoTeam.EcoToss.Tutorial
         [SerializeField] private Button _declineButton;
         [SerializeField] private TextMeshProUGUI _declineTMP;
         [SerializeField] private Button _alternateButton;
-        [SerializeField] private TextMeshProUGUI _alternateTMP;
+        //[SerializeField] private TMP_Text _alternateTMP;
 
         private Action _onConfirmAction;
         private Action _onDeclineAction;
@@ -50,72 +50,27 @@ namespace EcoTeam.EcoToss.Tutorial
             }
             PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("ui_button"));
             _onConfirmAction?.Invoke();
-            //Close();
         }
 
         public void Decline()
         {
+            if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+            }
             PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("ui_button"));
             _onDeclineAction?.Invoke();
-            //Close();
         }
 
         public void Alternate()
         {
             PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("ui_button"));
             _onAlternateAction?.Invoke();
-            //Close();
         }
 
-        public void Close()
+        public void Show(TextAnchor alignment, string title, Sprite imageToShow, string message, string confirmButtonText, string declineButtonText, Action confirmAction, Action declineAction, Action alternateAction = null)
         {
-            gameObject.SetActive(false);
-        }
-
-        public void Show(string title, Sprite imageToShow, string message, string confirmMessage, string declineMessage, string alternateMessage, Action confirmAction, Action declineAction, Action alternateAction = null)
-        {
-            //if (message.IsVertical)
-            //{
-            //    _horizontalLayoutArea.gameObject.SetActive(false);
-            //    _verticalLayoutArea.gameObject.SetActive(true);
-            //    _verticalBodyImage.sprite = message.ImageToShow;
-            //    _verticalBodyTMP.SetText(message.Message);
-            //}
-            //else
-            //{
-            //    _horizontalLayoutArea.gameObject.SetActive(true);
-            //    _verticalLayoutArea.gameObject.SetActive(false);
-            //    _horizontalBodyImage.sprite = message.ImageToShow;
-            //    _horizontalBodyTMP.SetText(message.Message);
-            //}
-
-            _horizontalLayoutArea.gameObject.SetActive(false);
-
-            //bool hasTitle = string.IsNullOrEmpty(title);
-            //_headerArea.gameObject.SetActive(hasTitle);
-            _HeaderTMP.SetText(title);
-
-            _verticalBodyImage.sprite = imageToShow;
-            _verticalBodyTMP.SetText(message);
-
-            _onConfirmAction = confirmAction;
-            _confirmTMP.SetText(confirmMessage);
-
-            bool hasDecline = (declineAction != null);
-            _declineButton.gameObject.SetActive(hasDecline);
-            _declineTMP.SetText(declineMessage);
-            _onDeclineAction = declineAction;
-
-            bool hasAlternate = (alternateAction != null);
-            _alternateButton.gameObject.SetActive(hasAlternate);
-            _alternateTMP.SetText(alternateMessage);
-            _onAlternateAction = alternateAction;
-        }
-
-
-        public void Show(TextAnchor alignment, string title, Sprite imageToShow, string message, Action confirmAction, Action declineAction, Action alternateAction = null)
-        {
-            //if (message.IsVertical)
+            //if (IsVertical)
             //{
             //    _horizontalLayoutArea.gameObject.SetActive(false);
             //    _verticalLayoutArea.gameObject.SetActive(true);
@@ -144,17 +99,41 @@ namespace EcoTeam.EcoToss.Tutorial
             bool hasConfirm = (confirmAction != null);
             _confirmButton.gameObject.SetActive(hasConfirm);
             _onConfirmAction = confirmAction;
-            //_confirmTMP.SetText(confirmMessage);
+            bool hasNoConfirmButtonText = string.IsNullOrEmpty(confirmButtonText);
+            if (hasNoConfirmButtonText)
+            {
+                _confirmTMP.SetText("Next");
+            }
+            else
+            {
+                _confirmTMP.SetText(confirmButtonText);
+            }
 
             bool hasDecline = (declineAction != null);
             _declineButton.gameObject.SetActive(hasDecline);
             _onDeclineAction = declineAction;
-            //_declineTMP.SetText(declineMessage);
+            bool hasNoDeclineButtonText = string.IsNullOrEmpty(declineButtonText);
+            if (hasNoDeclineButtonText)
+            {
+                _declineTMP.SetText("Prev");
+            }
+            else
+            {
+                _declineTMP.SetText(declineButtonText);
+            }
 
             bool hasAlternate = (alternateAction != null);
             _alternateButton.gameObject.SetActive(hasAlternate);
             _onAlternateAction = alternateAction;
-            //_alternateTMP.SetText(alternateMessage);
+            //bool hasNoAlternateButtonText = string.IsNullOrEmpty(alternateButtonText);
+            //if (hasNoAlternateButtonText)
+            //{
+            //    _alternateTMP = default;
+            //}
+            //else
+            //{
+            //    _alternateTMP.SetText(declineButtonText);
+            //}
 
             if (!hasConfirm && !hasDecline && !hasAlternate)
             {

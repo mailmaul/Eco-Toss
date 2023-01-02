@@ -30,13 +30,9 @@ namespace EcoTeam.EcoToss.Tutorial
         [SerializeField] private string _title;
         [SerializeField] private Sprite _sprite;
         [SerializeField][TextArea(10, 15)] private string _message;
-
-        //private RectTransform _tutorialRectTransform;
-
-        //private void Awake()
-        //{
-        //    _tutorialRectTransform = _tutorialCanvas.GetComponent<RectTransform>();
-        //}
+        [SerializeField] private string _confirmButtonText;
+        [SerializeField] private string _declineButtonText;
+        //[SerializeField] private string _alternateButtonText;
 
         void OnEnable()
         {
@@ -52,10 +48,6 @@ namespace EcoTeam.EcoToss.Tutorial
             if (_onContinueEvent.GetPersistentEventCount() > 0)
             {
                 continueCallback = _onContinueEvent.Invoke;
-                //if (Time.timeScale == 0)
-                //{
-                //    Time.timeScale = 1;
-                //}
             }
             if (_onCancelEvent.GetPersistentEventCount() > 0)
             {
@@ -66,7 +58,7 @@ namespace EcoTeam.EcoToss.Tutorial
             //    alternateCallback = _onAlternateEvent.Invoke;
             //}
 
-            _modalWindowPanel.Show(_modalWindowAlignment, _title, _sprite, _message, continueCallback, cancelCallback);
+            _modalWindowPanel.Show(_modalWindowAlignment, _title, _sprite, _message, _confirmButtonText, _declineButtonText, continueCallback, cancelCallback);
 
             _tutorialCanvas.gameObject.SetActive(true);
 

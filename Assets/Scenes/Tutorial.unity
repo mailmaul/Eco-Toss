@@ -417,6 +417,8 @@ MonoBehaviour:
   _title: 
   _sprite: {fileID: 0}
   _message: Tap and hold anywhere on screen to prepare to throw.
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!4 &68806292
 Transform:
   m_ObjectHideFlags: 0
@@ -2662,6 +2664,8 @@ MonoBehaviour:
   _title: Trash
   _sprite: {fileID: 0}
   _message: Trashes will spawn here. Throw them to correct trash bin category!
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!4 &675363213
 Transform:
   m_ObjectHideFlags: 0
@@ -2894,6 +2898,8 @@ MonoBehaviour:
 
     Your trash bins capacity went up +1.
     This is permanent until game over. Max capacity is 10.'
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!1 &767923549
 GameObject:
   m_ObjectHideFlags: 0
@@ -2976,6 +2982,8 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _message: If the trash went into the correct bin, "O" will be appear on the trash
     bin indicator and it will flash green!
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!4 &767923551
 Transform:
   m_ObjectHideFlags: 0
@@ -4344,6 +4352,8 @@ MonoBehaviour:
 
     It will flash red
     if the trash goes into the wrong bin.'
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!4 &1216880263
 Transform:
   m_ObjectHideFlags: 0
@@ -4513,6 +4523,8 @@ MonoBehaviour:
 
     let''s make it more interesting!
     ;)'
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!4 &1238981082
 Transform:
   m_ObjectHideFlags: 0
@@ -5276,6 +5288,8 @@ MonoBehaviour:
 
     You can revisit Tutorial again
     from Main Menu.'
+  _confirmButtonText: OK
+  _declineButtonText: Cancel
 --- !u!1 &1445126913 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1892725335093958616, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
@@ -5468,6 +5482,8 @@ MonoBehaviour:
   _title: 
   _sprite: {fileID: 0}
   _message: This classmate is blocking your view! Hit 'em!
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!1 &1509779920
 GameObject:
   m_ObjectHideFlags: 0
@@ -5672,9 +5688,9 @@ MonoBehaviour:
   _scoreTMP: {fileID: 1531653405}
   _finalScoreTMP: {fileID: 1987420497}
   _highScoreTMP: {fileID: 1975469379}
-  _normalAddScore: 20
-  _firstScoreToActivateBuff: 4
-  _scoreMultiplierToActivateBuff: 1.5
+  _normalAddScore: 2
+  _firstScoreToActivateBuff: 20
+  _scoreMultiplierToActivateBuff: 1.25
   _scoreMultiplierToSpawnIntruder: 30
 --- !u!1 &1532151425
 GameObject:
@@ -5761,6 +5777,8 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _message: You can remove trash if you throw three pieces of trash into the correct
     bin consecutively.
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!1 &1546337236
 GameObject:
   m_ObjectHideFlags: 0
@@ -6153,6 +6171,8 @@ MonoBehaviour:
 
     You can remove trash if you throw
     three pieces of trash into the correct bin consecutively.'
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!1 &1650035582
 GameObject:
   m_ObjectHideFlags: 0
@@ -6240,6 +6260,8 @@ MonoBehaviour:
 
 
     All trash bin capacity is now empty!'
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!4 &1688098208 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 383348960230476394, guid: a402a987b3ae4ed408bd73f5eb9b1014, type: 3}
@@ -6516,6 +6538,8 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _message: If the trash went into the wrong  bin, "X" will appear on the trash bin
     indicator!
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!1 &1788738552
 GameObject:
   m_ObjectHideFlags: 0
@@ -6585,6 +6609,8 @@ MonoBehaviour:
   _title: Get buffed!
   _sprite: {fileID: 0}
   _message: After reaching certain score, you will get random buff!
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!4 &1788738554
 Transform:
   m_ObjectHideFlags: 0
@@ -6761,6 +6787,8 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _message: This classmate is trying to destroy a trash bin, your health is decreasing!
     Hit 'em!!
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!1 &1864235802
 GameObject:
   m_ObjectHideFlags: 0
@@ -7005,7 +7033,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1975144035}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7026,6 +7054,8 @@ MonoBehaviour:
 
     Your score will double for certain
     amount of time!'
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!1 &1975469377
 GameObject:
   m_ObjectHideFlags: 0
@@ -7428,6 +7458,8 @@ MonoBehaviour:
   _title: Into The Correct Bin (2)
   _sprite: {fileID: 0}
   _message: Also your score will increase!
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!1 &2006561866 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1892725335093958616, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
@@ -7717,6 +7749,8 @@ MonoBehaviour:
   _title: Wind is Blowing!!
   _sprite: {fileID: 0}
   _message: Wind will pushes the trash aside. Adjust your throw direction carefully!!
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!1 &2057961159
 GameObject:
   m_ObjectHideFlags: 0
@@ -7777,6 +7811,8 @@ MonoBehaviour:
   _title: 
   _sprite: {fileID: 0}
   _message: Release your finger to throw!
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!1 &2067166542
 GameObject:
   m_ObjectHideFlags: 0
@@ -7969,6 +8005,8 @@ MonoBehaviour:
 
 
     Be careful!'
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!4 &2068312977
 Transform:
   m_ObjectHideFlags: 0
