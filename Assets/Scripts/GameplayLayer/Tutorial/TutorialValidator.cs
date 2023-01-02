@@ -3,6 +3,7 @@ using EcoTeam.EcoToss.PubSub;
 using EcoTeam.EcoToss.SaveData;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,6 +33,7 @@ namespace EcoTeam.EcoToss.Tutorial
         public bool HasSpawnedWindArea { private set; get; }
         public bool HasSpawnedIntruder1 { private set; get; }
         public bool HasSpawnedIntruder2 { private set; get; }
+        public bool HasSpawnedBuffFirstTime { private set; get; }
         public bool HasSpawnedBuffDoubleScore { private set; get; }
         public bool HasSpawnedBuffCleanBin { private set; get; }
         public bool HasSpawnedBuffLargerCapacity { private set; get; }
@@ -54,6 +56,7 @@ namespace EcoTeam.EcoToss.Tutorial
         [SerializeField] private TutorialController _tutorialWind;
         [SerializeField] private TutorialController _tutorialIntruder1;
         [SerializeField] private TutorialController _tutorialIntruder2;
+        [SerializeField] private TutorialController _tutorialBuff;
         [SerializeField] private TutorialController _tutorialBuffDoubleScore;
         [SerializeField] private TutorialController _tutorialBuffCleanBin;
         [SerializeField] private TutorialController _tutorialBuffLargerCapacity;
@@ -83,6 +86,7 @@ namespace EcoTeam.EcoToss.Tutorial
         public void SetHasSpawnedWindArea(bool state) => HasSpawnedWindArea = state;
         public void SetHasSpawnedIntruder1(bool state) => HasSpawnedIntruder1 = state;
         public void SetHasSpawnedIntruder2(bool state) => HasSpawnedIntruder2 = state;
+        public void SetHasSpawnedBuffFirstTime(bool state) => HasSpawnedBuffFirstTime = state;
         public void SetHasSpawnedBuffDoubleScore(bool state) => HasSpawnedBuffDoubleScore = state;
         public void SetHasSpawnedBuffCleanBin(bool state) => HasSpawnedBuffCleanBin = state;
         public void SetHasSpawnedBuffLargerCapacity(bool state) => HasSpawnedBuffLargerCapacity = state;
@@ -131,13 +135,16 @@ namespace EcoTeam.EcoToss.Tutorial
                     break;
             }
 
-            StartCoroutine(SetActiveTutorialCanvas(false));
+            //StartCoroutine(SetActiveTutorialCanvas(false));
         }
 
         public void SetActiveTutorialBuff(string name, bool state)
         {
             switch (name)
             {
+                case "FirstBuff":
+                    _tutorialBuff.gameObject.SetActive(state);
+                    break;
                 case "BuffDoubleScore":
                     _tutorialBuffDoubleScore.gameObject.SetActive(state);
                     break;
@@ -151,7 +158,7 @@ namespace EcoTeam.EcoToss.Tutorial
                     break;
             }
 
-            StartCoroutine(SetActiveTutorialCanvas(false));
+            //StartCoroutine(SetActiveTutorialCanvas(false));
         }
 
         public void SetActiveTutorialDone(bool state)

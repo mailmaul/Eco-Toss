@@ -38,6 +38,16 @@ namespace EcoTeam.EcoToss.Buff
 
         private void PlayBuff(MessagePlayBuff message)
         {
+            // Tutorial buff spawn
+            if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
+            {
+                if (!TutorialValidator.Instance.HasSpawnedBuffFirstTime)
+                {
+                    TutorialValidator.Instance.SetHasSpawnedBuffFirstTime(true);
+                    TutorialValidator.Instance.SetActiveTutorialBuff("FirstBuff", true);
+                }
+            }
+
             StartCoroutine(RandomBuff());
         }
 
@@ -54,10 +64,30 @@ namespace EcoTeam.EcoToss.Buff
             }
 
             _currentTimerSpin = _timerSpin;
+
+            //// Debug purposes
+            //_randomIndex = 0;
+
+            StartCoroutine(BuffExplanation());
+
             _buffList[_randomIndex].BuffEffect();
             PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("powerup_dapat"));
 
-            // Tutorial buff
+            if (Debug.isDebugBuild)
+            {
+                Debug.Log("get buff: " + _buffList[_randomIndex].name);
+            }
+
+            yield return new WaitForSeconds(3);
+
+            _currentImage.gameObject.SetActive(false);
+        }
+
+        IEnumerator BuffExplanation()
+        {
+            yield return new WaitForSecondsRealtime(1);
+
+            // Tutorial buff effect
             if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
             {
                 if (_buffList[_randomIndex].name == "BuffDoubleScore")
@@ -85,15 +115,6 @@ namespace EcoTeam.EcoToss.Buff
                     }
                 }
             }
-
-            if (Debug.isDebugBuild)
-            {
-                Debug.Log("get buff: " + _buffList[_randomIndex].name);
-            }
-
-            yield return new WaitForSeconds(3);
-
-            _currentImage.gameObject.SetActive(false);
         }
     }
 }

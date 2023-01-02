@@ -52,10 +52,10 @@ namespace EcoTeam.EcoToss.Tutorial
             if (_onContinueEvent.GetPersistentEventCount() > 0)
             {
                 continueCallback = _onContinueEvent.Invoke;
-                if (Time.timeScale == 0)
-                {
-                    Time.timeScale = 1;
-                }
+                //if (Time.timeScale == 0)
+                //{
+                //    Time.timeScale = 1;
+                //}
             }
             if (_onCancelEvent.GetPersistentEventCount() > 0)
             {

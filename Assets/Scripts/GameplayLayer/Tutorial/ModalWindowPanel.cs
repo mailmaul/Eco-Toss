@@ -44,6 +44,10 @@ namespace EcoTeam.EcoToss.Tutorial
 
         public void Confirm()
         {
+            if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+            }
             PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("ui_button"));
             _onConfirmAction?.Invoke();
             //Close();
