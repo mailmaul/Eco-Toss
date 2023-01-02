@@ -5,6 +5,7 @@ using EcoTeam.EcoToss.Tutorial;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace EcoTeam.EcoToss.Buff
@@ -57,7 +58,7 @@ namespace EcoTeam.EcoToss.Buff
             PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("powerup_dapat"));
 
             // Tutorial buff
-            if (!SaveDataController.Instance.SaveData.HasDoneTutorial)
+            if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
             {
                 if (_buffList[_randomIndex].name == "BuffDoubleScore")
                 {

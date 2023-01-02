@@ -20,6 +20,7 @@ namespace EcoTeam.EcoToss.Tutorial
         [SerializeField] private RectTransform _normalMask;
         [SerializeField] private RectTransform _invertMask;
         [SerializeField] private MaskEnum _applyMask;
+        [SerializeField] private bool _applyPause;
         [SerializeField] private ModalWindowPanel _modalWindowPanel;
         [SerializeField] private UnityEvent _onContinueEvent;
         [SerializeField] private UnityEvent _onCancelEvent;
@@ -43,9 +44,18 @@ namespace EcoTeam.EcoToss.Tutorial
             Action cancelCallback = null;
             //Action alternateCallback = null;
 
+            if (_applyPause)
+            {
+                Time.timeScale = 0;
+            }
+
             if (_onContinueEvent.GetPersistentEventCount() > 0)
             {
                 continueCallback = _onContinueEvent.Invoke;
+                if (Time.timeScale == 0)
+                {
+                    Time.timeScale = 1;
+                }
             }
             if (_onCancelEvent.GetPersistentEventCount() > 0)
             {

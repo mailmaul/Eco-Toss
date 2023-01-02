@@ -6,6 +6,7 @@ using EcoTeam.EcoToss.SaveData;
 using EcoTeam.EcoToss.Tutorial;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace EcoTeam.EcoToss.IntruderSpawner
 {
@@ -48,7 +49,7 @@ namespace EcoTeam.EcoToss.IntruderSpawner
             }
 
             // Tutorial Intruder
-            if (!SaveDataController.Instance.SaveData.HasDoneTutorial)
+            if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
             {
                 if (_intrudersList[randomIndex].name == "Patrol")
                 {

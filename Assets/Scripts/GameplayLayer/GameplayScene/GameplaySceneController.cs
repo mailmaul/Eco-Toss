@@ -39,7 +39,7 @@ namespace EcoTeam.EcoToss.GameplayScene
         private void GoToMainMenu()
         {
             // Tutorial Mark as Done Prompt
-            if (!SaveDataController.Instance.SaveData.HasDoneTutorial)
+            if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
             {
                 TutorialValidator.Instance.SetActiveTutorialDone(true);
             }
@@ -60,7 +60,7 @@ namespace EcoTeam.EcoToss.GameplayScene
             PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("ui_button"));
 
             // Tutorial Mark as Done Prompt
-            if (!SaveDataController.Instance.SaveData.HasDoneTutorial)
+            if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
             {
                 TutorialValidator.Instance.MarkTutorialAsDone(true);
                 GoToGameplay();

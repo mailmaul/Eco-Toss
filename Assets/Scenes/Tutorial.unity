@@ -405,6 +405,7 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 25479501}
   _applyMask: 0
+  _applyPause: 0
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
@@ -967,7 +968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2830257268773654643, guid: c5be5ac2ee100c442a3ee0edd7cb0fa5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 719.99994
+      value: 443.7149
       objectReference: {fileID: 0}
     - target: {fileID: 2830257268773654643, guid: c5be5ac2ee100c442a3ee0edd7cb0fa5, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2117,6 +2118,7 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 25479501}
   _applyMask: 2
+  _applyPause: 1
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
@@ -2356,10 +2358,35 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 682474662}
   _applyMask: 2
+  _applyPause: 1
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2067166542}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 752021565}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onCancelEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2404,6 +2431,7 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 682474662}
   _applyMask: 2
+  _applyPause: 1
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
@@ -3750,6 +3778,7 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 682474662}
   _applyMask: 2
+  _applyPause: 1
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
@@ -3944,6 +3973,7 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 25479501}
   _applyMask: 1
+  _applyPause: 1
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
@@ -4018,7 +4048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1258000451
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4648,6 +4678,7 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 25479501}
   _applyMask: 1
+  _applyPause: 0
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
@@ -4742,11 +4773,11 @@ MonoBehaviour:
   _modalWindowAlignment: 4
   _title: Exit tutorial?
   _sprite: {fileID: 0}
-  _message: 'Mark Tutorial as Done?
+  _message: 'Exit and Mark Tutorial as Done?
 
 
-    You can revisit Tutorial again from Main
-    Menu.'
+    You can revisit Tutorial again
+    from Main Menu.'
 --- !u!1 &1445126913 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1892725335093958616, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
@@ -4903,10 +4934,35 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 25479501}
   _applyMask: 0
+  _applyPause: 1
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2067166542}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1468183378}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onCancelEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5170,6 +5226,7 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 682474662}
   _applyMask: 2
+  _applyPause: 1
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
@@ -5518,6 +5575,7 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 682474662}
   _applyMask: 2
+  _applyPause: 1
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
@@ -5645,10 +5703,35 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 682474662}
   _applyMask: 2
+  _applyPause: 1
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2067166542}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1650035582}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onCancelEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5896,6 +5979,7 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 682474662}
   _applyMask: 2
+  _applyPause: 1
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
@@ -6056,10 +6140,35 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 25479501}
   _applyMask: 0
+  _applyPause: 1
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2067166542}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1827337706}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onCancelEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -6274,10 +6383,35 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 25479501}
   _applyMask: 0
+  _applyPause: 1
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2067166542}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1975144035}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: 
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onCancelEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -6607,6 +6741,7 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 2123000205}
   _applyMask: 2
+  _applyPause: 1
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
@@ -6943,6 +7078,7 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 25479501}
   _applyMask: 1
+  _applyPause: 1
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
@@ -7026,6 +7162,7 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 25479501}
   _applyMask: 0
+  _applyPause: 0
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:
@@ -7176,6 +7313,7 @@ MonoBehaviour:
   _normalMask: {fileID: 925915427}
   _invertMask: {fileID: 28002998}
   _applyMask: 2
+  _applyPause: 1
   _modalWindowPanel: {fileID: 44433702}
   _onContinueEvent:
     m_PersistentCalls:

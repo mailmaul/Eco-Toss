@@ -5,6 +5,7 @@ using EcoTeam.EcoToss.Trash;
 using EcoTeam.EcoToss.Tutorial;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace EcoTeam.EcoToss.TrashCan
@@ -98,7 +99,7 @@ namespace EcoTeam.EcoToss.TrashCan
                 PublishSubscribe.Instance.Publish<MessageSpawnVFX>(new MessageSpawnVFX("NewParticleEffect", transform.position));
 
                 // Tutorial correct bin
-                if (!SaveDataController.Instance.SaveData.HasDoneTutorial)
+                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
                 {
                     if (!TutorialValidator.Instance.HasGoneToCorrectBin)
                     {
@@ -112,7 +113,7 @@ namespace EcoTeam.EcoToss.TrashCan
                 PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
 
                 // Tutorial wrong bin
-                if (!SaveDataController.Instance.SaveData.HasDoneTutorial)
+                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
                 {
                     if (!TutorialValidator.Instance.HasGoneToWrongBin)
                     {
@@ -183,7 +184,7 @@ namespace EcoTeam.EcoToss.TrashCan
                                 _matchedTrashList.Clear();
 
                                 // Tutorial Match-3
-                                if (!SaveDataController.Instance.SaveData.HasDoneTutorial)
+                                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
                                 {
                                     if (!TutorialValidator.Instance.HasMatch3)
                                     {
