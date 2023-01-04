@@ -11,6 +11,7 @@ namespace EcoTeam.EcoToss.Buff
     {
         [SerializeField] private List<BaseBuff> _buffList = new();
         [SerializeField] private Image _currentImage;
+        [SerializeField] private GameObject _panel;
 
         private int _randomIndex;
         private float _currentTimerSpin;
@@ -29,7 +30,7 @@ namespace EcoTeam.EcoToss.Buff
         private void Start()
         {
             _currentImage.sprite = _buffList[0].GetSprite();
-            _currentImage.gameObject.SetActive(false);
+            //_currentImage.gameObject.SetActive(false);
             _currentTimerSpin = _timerSpin;
         }
 
@@ -41,7 +42,8 @@ namespace EcoTeam.EcoToss.Buff
         IEnumerator RandomBuff()
         {
             PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("powerup_roll"));
-            _currentImage.gameObject.SetActive(true);
+            _panel.gameObject.SetActive(true);
+            //_currentImage.gameObject.SetActive(true);
             while (_currentTimerSpin >= 0)
             {
                 _randomIndex = Random.Range(0, _buffList.Count);
@@ -61,7 +63,8 @@ namespace EcoTeam.EcoToss.Buff
 
             yield return new WaitForSeconds(3);
 
-            _currentImage.gameObject.SetActive(false);
+            _panel.gameObject.SetActive(false);
+            //_currentImage.gameObject.SetActive(false);
         }
     }
 }
