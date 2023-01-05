@@ -40,26 +40,30 @@ namespace EcoTeam.EcoToss.TrashThrowing
 
                 _rigidbody.AddForce(force);
                 _rigidbody = null;
+                PublishSubscribe.Instance.Publish<MessageDeleteTrajectory>(new MessageDeleteTrajectory());
             }
         }
 
         public void SimulateThrowTrash(Vector2 swipeDirectionSimulation, Rigidbody rigidbody)
         {
-            _simulatedRigidbody = rigidbody;
-
-            if (_simulatedRigidbody != null)
+            if (_rigidbody != null)
             {
-                _simulatedRigidbody.isKinematic = false;
+                _simulatedRigidbody = rigidbody;
 
-                Vector3 force = new Vector3
-                    (
-                        -swipeDirectionSimulation.x * _throwForceInX,
-                        _throwForceInY,
-                        _throwForceInZ
-                    );
+                if (_simulatedRigidbody != null)
+                {
+                    _simulatedRigidbody.isKinematic = false;
 
-                _simulatedRigidbody.AddForce(force);
-                _simulatedRigidbody = null;
+                    Vector3 force = new Vector3
+                        (
+                            -swipeDirectionSimulation.x * _throwForceInX,
+                            _throwForceInY,
+                            _throwForceInZ
+                        );
+
+                    _simulatedRigidbody.AddForce(force);
+                    _simulatedRigidbody = null;
+                }
             }
         }
 
