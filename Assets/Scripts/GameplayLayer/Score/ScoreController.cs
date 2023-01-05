@@ -5,7 +5,6 @@ using EcoTeam.EcoToss.PubSub;
 using TMPro;
 using UnityEngine;
 
-
 namespace EcoTeam.EcoToss.Score
 {
     public class ScoreController : MonoBehaviour
@@ -16,12 +15,11 @@ namespace EcoTeam.EcoToss.Score
         private int _score = 0;
         [SerializeField] private int _normalAddScore = 2;
         private int _match3Score;
-        [SerializeField] private int _firstScoreToActivateBuff = 10;
+        [SerializeField] private int _nextScoreToActivateBuff = 10;
         [SerializeField] private float _scoreMultiplierToActivateBuff = 1.5f;
-        private int _previousScoreWhenActivatingBuff;
+        private int _previousScoreWhenActivatingBuff = 0;
         [SerializeField] private int _scoreMultiplierToSpawnIntruder = 5;
         private int _previousScoreWhenSpawningIntruder = 0;
-        private bool _gotFirstBuff = false;
 
         private void Awake()
         {
@@ -42,8 +40,8 @@ namespace EcoTeam.EcoToss.Score
         private void Start()
         {
             _match3Score = _normalAddScore * 2 + 1;
-            _scoreTMP.SetText($"Score: {_score}");
-            _previousScoreWhenActivatingBuff = _firstScoreToActivateBuff;
+            _scoreTMP.SetText($"{_score}");
+            PublishSubscribe.Instance.Publish<MessageSetProgressBarFill>(new MessageSetProgressBarFill(_score, _nextScoreToActivateBuff, _previousScoreWhenActivatingBuff));
         }
 
         private void AddScore(MessageAddScore message)
@@ -58,7 +56,7 @@ namespace EcoTeam.EcoToss.Score
                     break;
             }
 
-            _scoreTMP.SetText($"Score: {_score}");
+            _scoreTMP.SetText($"{_score}");
 
             if (Debug.isDebugBuild)
             {
@@ -74,25 +72,14 @@ namespace EcoTeam.EcoToss.Score
             // Does the score reach the specified number to activate a Buff
             // First buff = 10
             // Second and beyond buff = 10 + (10 x 1.5) = 25
-            if (_gotFirstBuff && _score >= _previousScoreWhenActivatingBuff + (_previousScoreWhenActivatingBuff * _scoreMultiplierToActivateBuff))
+            if (_score >= _nextScoreToActivateBuff)
             {
-                if (Debug.isDebugBuild)
-                {
-                    Debug.Log("buff kedua dan seterusnya");
-                }
                 PublishSubscribe.Instance.Publish<MessagePlayBuff>(new MessagePlayBuff());
-                _previousScoreWhenActivatingBuff = _score;
+                _previousScoreWhenActivatingBuff = _nextScoreToActivateBuff;
+                _nextScoreToActivateBuff = (int)Mathf.Round(_previousScoreWhenActivatingBuff + (_previousScoreWhenActivatingBuff * _scoreMultiplierToActivateBuff));
             }
-            else if (!_gotFirstBuff && _score >= _firstScoreToActivateBuff)
-            {
-                if (Debug.isDebugBuild)
-                {
-                    Debug.Log("buff pertama");
-                }
-                _gotFirstBuff = true;
-                PublishSubscribe.Instance.Publish<MessagePlayBuff>(new MessagePlayBuff());
-                _previousScoreWhenActivatingBuff = _score;
-            }
+
+            PublishSubscribe.Instance.Publish<MessageSetProgressBarFill>(new MessageSetProgressBarFill(_score, _nextScoreToActivateBuff, _previousScoreWhenActivatingBuff));
         }
 
         private void UpdateFinalScore(MessageGameOver message)
