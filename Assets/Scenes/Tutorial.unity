@@ -4936,6 +4936,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 358515370, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _invertMask
+      value: 
+      objectReference: {fileID: 2123000205}
+    - target: {fileID: 358515370, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _normalMask
+      value: 
+      objectReference: {fileID: 925915427}
+    - target: {fileID: 358515370, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _tutorialCanvas
+      value: 
+      objectReference: {fileID: 2067166545}
+    - target: {fileID: 358515370, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _modalWindowPanel
+      value: 
+      objectReference: {fileID: 44433702}
+    - target: {fileID: 358515370, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onCancelEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2123000204}
+    - target: {fileID: 358515370, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2067166542}
+    - target: {fileID: 358515370, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2123000204}
     - target: {fileID: 1173068913000155286, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
       propertyPath: _invertMask
       value: 
@@ -5081,9 +5109,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 44433702}
     - target: {fileID: 1173068914052475014, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 2067166542}
+      objectReference: {fileID: 682474661}
     - target: {fileID: 1173068914284589187, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
       propertyPath: _invertMask
       value: 
@@ -5376,6 +5404,30 @@ PrefabInstance:
       propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2067166542}
+    - target: {fileID: 7810514189049564008, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _invertMask
+      value: 
+      objectReference: {fileID: 25479501}
+    - target: {fileID: 7810514189049564008, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _normalMask
+      value: 
+      objectReference: {fileID: 925915427}
+    - target: {fileID: 7810514189049564008, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _tutorialCanvas
+      value: 
+      objectReference: {fileID: 2067166545}
+    - target: {fileID: 7810514189049564008, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _modalWindowPanel
+      value: 
+      objectReference: {fileID: 44433702}
+    - target: {fileID: 7810514189049564008, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2067166542}
+    - target: {fileID: 7810514189049564008, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 925915426}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
 --- !u!1001 &1342680131419151056

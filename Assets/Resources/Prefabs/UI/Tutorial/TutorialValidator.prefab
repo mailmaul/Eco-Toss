@@ -1,5 +1,139 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &358515368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 358515369}
+  - component: {fileID: 358515370}
+  m_Layer: 0
+  m_Name: TutorialMatch3BonusScore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &358515369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358515368}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -78.657486, y: -702.2446, z: -57.847942}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1173068914643141313}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &358515370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358515368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialCanvas: {fileID: 0}
+  _normalMask: {fileID: 0}
+  _invertMask: {fileID: 0}
+  _applyMask: 2
+  _applyPause: 1
+  _modalWindowPanel: {fileID: 0}
+  _onContinueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 358515368}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onCancelEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 358515368}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1173068914052475012}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  _modalWindowAlignment: 7
+  _title: Match-3 Bonus Score
+  _sprite: {fileID: 0}
+  _message: When Match-3 happened, you gained BONUS  SCORE!
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!1 &1173068913000155287
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +193,7 @@ MonoBehaviour:
   _modalWindowAlignment: 1
   _title: 
   _sprite: {fileID: 0}
-  _message: Tap and hold anywhere on screen to prepare to throw.
+  _message: TAP and HOLD anywhere on screen to prepare to throw.
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068913674985016
@@ -148,8 +282,8 @@ MonoBehaviour:
   _message: 'You get Larger Bin buff!
 
 
-    Your trash bins capacity went up +1.
-    This is permanent until game over. Max capacity is 10.'
+    Your trash bins CAPACITY went up +1.
+    This is PERMANENT until game over. MAX CAPACITY is 10.'
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068913692506968
@@ -245,10 +379,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _modalWindowAlignment: 7
-  _title: Into The Correct Bin (1)
+  _title: Correct Bin (1)
   _sprite: {fileID: 0}
-  _message: If the trash went into the correct bin, "O" will be appear on the trash
-    bin indicator and it will flash green!
+  _message: If the trash went into the CORRECT bin, "O" will be appear on the trash
+    bin indicator and it will FLASH GREEN!
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068913734670222
@@ -346,7 +480,7 @@ MonoBehaviour:
   _modalWindowAlignment: 4
   _title: Trash
   _sprite: {fileID: 0}
-  _message: Trashes will spawn here. Throw them to correct trash bin category!
+  _message: Trashes will spawn here. Throw them to the CORRECT trash bin category!
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068913818036395
@@ -360,7 +494,7 @@ GameObject:
   - component: {fileID: 1173068913818036394}
   - component: {fileID: 1173068913818036405}
   m_Layer: 0
-  m_Name: TutorialDone
+  m_Name: TutorialMarkAsDone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -397,7 +531,7 @@ MonoBehaviour:
   _normalMask: {fileID: 0}
   _invertMask: {fileID: 0}
   _applyMask: 1
-  _applyPause: 0
+  _applyPause: 1
   _modalWindowPanel: {fileID: 0}
   _onContinueEvent:
     m_PersistentCalls:
@@ -582,7 +716,7 @@ MonoBehaviour:
   _modalWindowAlignment: 1
   _title: 
   _sprite: {fileID: 0}
-  _message: This classmate is blocking your view! Hit 'em!
+  _message: This classmate is blocking your view! HIT EM UP!
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914052475012
@@ -650,6 +784,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 358515368}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -668,8 +814,8 @@ MonoBehaviour:
   _modalWindowAlignment: 7
   _title: Match-3
   _sprite: {fileID: 0}
-  _message: You can remove trash if you throw three pieces of trash into the correct
-    bin consecutively.
+  _message: Three trash REMOVED because you threw them into the correct bin consecutively.
+    This event called "Match-3".
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914284589184
@@ -781,15 +927,15 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _message: 'This is the Trash Bin Indicator.
 
-    It explains the bin''s capacity.
+    It explains the bin''s CAPACITY.
 
 
     It
-    will flash green if trash goes into the correct bin.
+    will FLASH GREEN if trash goes into the CORRECT bin.
 
 
-    It will flash red
-    if the trash goes into the wrong bin.'
+    It will FLASH RED
+    if the trash goes into the WRONG bin.'
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914296174557
@@ -873,10 +1019,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _modalWindowAlignment: 4
-  _title: YAYYYY
+  _title: YAAAYYYY
   _sprite: {fileID: 0}
   _message: 'It''s class duty time.
-
 
     But, hey...
 
@@ -970,7 +1115,7 @@ MonoBehaviour:
   _message: 'You get Double Score buff!
 
 
-    Your score will double for certain
+    Your SCORE WILL DOUBLE for certain
     amount of time!'
   _confirmButtonText: 
   _declineButtonText: 
@@ -1103,9 +1248,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _modalWindowAlignment: 7
-  _title: Into The Correct Bin (2)
+  _title: Correct Bin (2)
   _sprite: {fileID: 0}
-  _message: Also your score will increase!
+  _message: Your SCORE will increase too!
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914567589538
@@ -1191,7 +1336,7 @@ MonoBehaviour:
   _modalWindowAlignment: 7
   _title: Wind is Blowing!!
   _sprite: {fileID: 0}
-  _message: Wind will pushes the trash aside. Adjust your throw direction carefully!!
+  _message: Wind will pushes the trash aside. ADJUST your throw direction carefully!!
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914584555714
@@ -1253,7 +1398,10 @@ MonoBehaviour:
   _modalWindowAlignment: 1
   _title: 
   _sprite: {fileID: 0}
-  _message: Release your finger to throw!
+  _message: 'You can SWIPE your finger LEFT and RIGHT to aim.
+
+    If you already
+    done aiming, RELEASE your finger to throw!'
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914590195082
@@ -1351,7 +1499,7 @@ MonoBehaviour:
   _modalWindowAlignment: 7
   _title: Hit The Ground
   _sprite: {fileID: 0}
-  _message: 'If the trash hit the ground, your health will decrease.
+  _message: 'If the trash hit the ground, your HEALTH will decrease.
 
 
     Be careful!'
@@ -1405,6 +1553,8 @@ Transform:
   - {fileID: 1173068914707260794}
   - {fileID: 1173068913674985019}
   - {fileID: 1173068913818036394}
+  - {fileID: 9197118859050991792}
+  - {fileID: 358515369}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1554,15 +1704,15 @@ MonoBehaviour:
   _modalWindowAlignment: 7
   _title: Trash Bin Indicator (2)
   _sprite: {fileID: 0}
-  _message: 'It will blink red continuously if the bin is almost filled.
-
-    The
-    game will be over when a bin is filled!
+  _message: 'It will BLINK RED continuously if the bin is ALMOST FILLED.
 
 
+    It''s
+    GAME OVER when a bin is FILLED!
 
-    You can remove trash if you throw
-    three pieces of trash into the correct bin consecutively.'
+
+    You can REMOVE trash if you throw THREE
+    TRASHES into the CORRECT bin CONSECUTIVELY.'
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914707260795
@@ -1651,7 +1801,7 @@ MonoBehaviour:
   _message: 'You get Clean Bin buff!
 
 
-    All trash bin capacity is now empty!'
+    All trash bin CAPACITY is emptied!'
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914748201967
@@ -1737,8 +1887,8 @@ MonoBehaviour:
   _modalWindowAlignment: 1
   _title: 
   _sprite: {fileID: 0}
-  _message: This classmate is trying to destroy a trash bin, your health is decreasing!
-    Hit 'em!!
+  _message: This classmate is trying to destroy a trash bin, your HEALTH is decreasing!
+    HIT EM UP!!
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914840320723
@@ -1822,10 +1972,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _modalWindowAlignment: 7
-  _title: Into The Wrong Bin
+  _title: Wrong Bin
   _sprite: {fileID: 0}
-  _message: If the trash went into the wrong  bin, "X" will appear on the trash bin
-    indicator!
+  _message: If the trash went into the WRONG bin, "X" will appear on the trash bin
+    indicator and it will FLASH RED!!
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914853778941
@@ -1911,6 +2061,120 @@ MonoBehaviour:
   _modalWindowAlignment: 4
   _title: Get buffed!
   _sprite: {fileID: 0}
-  _message: After reaching certain score, you will get random buff!
+  _message: After reaching certain score, you will get RANDOM BUFF!
   _confirmButtonText: 
   _declineButtonText: 
+--- !u!1 &1362640187433969215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9197118859050991792}
+  - component: {fileID: 7810514189049564008}
+  m_Layer: 0
+  m_Name: TutorialDone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &9197118859050991792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362640187433969215}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -78.657486, y: -702.2446, z: -57.847942}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1173068914643141313}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7810514189049564008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362640187433969215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialCanvas: {fileID: 0}
+  _normalMask: {fileID: 0}
+  _invertMask: {fileID: 0}
+  _applyMask: 1
+  _applyPause: 1
+  _modalWindowPanel: {fileID: 0}
+  _onContinueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1362640187433969215}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1173068914643141318}
+        m_TargetAssemblyTypeName: EcoTeam.EcoToss.Tutorial.TutorialValidator, Assembly-CSharp
+        m_MethodName: MarkTutorialAsDone
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  _onCancelEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _modalWindowAlignment: 4
+  _title: Tutorial is DONE
+  _sprite: {fileID: 0}
+  _message: 'Congratulations, you finished Tutorial!!
+
+
+    You can continue playing.
+    Try to get as many scores as you can! ;)'
+  _confirmButtonText: OK
+  _declineButtonText: Cancel
