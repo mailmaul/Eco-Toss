@@ -629,8 +629,8 @@ MonoBehaviour:
   _message: 'Exit and Mark Tutorial as Done?
 
 
-    You can revisit Tutorial again
-    from Main Menu.'
+    You can visit Tutorial again from
+    Main Menu.'
   _confirmButtonText: OK
   _declineButtonText: Cancel
 --- !u!1 &1173068913864793431

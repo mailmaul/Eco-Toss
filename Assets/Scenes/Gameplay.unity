@@ -3946,7 +3946,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1546337240}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4165,10 +4165,10 @@ RectTransform:
   - {fileID: 529096469}
   - {fileID: 1456329403}
   - {fileID: 1084700765}
+  - {fileID: 1531653404}
   - {fileID: 733952450}
   - {fileID: 402319300}
   - {fileID: 1877896917}
-  - {fileID: 1531653404}
   - {fileID: 682920905}
   m_Father: {fileID: 0}
   m_RootOrder: 20
@@ -4903,7 +4903,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}

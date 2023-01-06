@@ -82,7 +82,14 @@ namespace EcoTeam.EcoToss.Buff
                 Debug.Log("get buff: " + _buffList[_randomIndex].name);
             }
 
-            yield return new WaitForSeconds(3);
+            if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                yield return new WaitForSeconds(0.75f);
+            }
+            else
+            {
+                yield return new WaitForSeconds(1);
+            }
 
             _panel.gameObject.SetActive(false);
             //_currentImage.gameObject.SetActive(false);

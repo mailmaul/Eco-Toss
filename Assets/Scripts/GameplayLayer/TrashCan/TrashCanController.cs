@@ -275,7 +275,7 @@ namespace EcoTeam.EcoToss.TrashCan
 
             _indicatorParentOutline.enabled = true;
 
-            yield return new WaitForSecondsRealtime(_indicatorParentOutlineBlinkDuration);
+            yield return new WaitForSeconds(_indicatorParentOutlineBlinkDuration);
 
             _indicatorParentOutline.enabled = false;
         }
