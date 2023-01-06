@@ -46,3 +46,43 @@ So, hit 'em up!
 
 mark done tutorialnya setelah masuk scene tutorial.
 
+====
+
+trash apple -> tap, hold, release
+trash apple -> tap, hold, swipe, release
+
+BIN INDICATOR
+This is the Trash Bin Indicators.
+They explains each of the bin's CAPACITY.
+
+It will FLASH GREEN if trash goes into the CORRECT bin.
+
+It will FLASH RED if the trash goes into the WRONG bin.
+
+====
+
+It will BLINK RED continuously if a bin's CAPACITY IS THREE LEFT.
+
+It's GAME OVER when a bin is FILLED!
+
+Current MAX CAPACITY is 6.
+
+====
+
+You can REMOVE trash if you throw 3 TRASHES into the CORRECT bin CONSECUTIVELY.
+
+Another way to REMOVE trash is to get the Clean Bin buff. 
+
+
+CORRECT BIN
+You throw it to the CORRECT bin, AMAZING!
+
+"O" means there is a trash in the correct bin. This can be removed if you throw 3 TRASHES into the CORRECT bin CONSECUTIVELY.
+
+
+WRONG BIN
+Oops... you throw it to the WRONG bin. It's alright, you'll get better.
+
+"X" means there is a trash in the wrong bin. This can be removed if you get the Clean Bin buff.
+
+I'll give you for free this one time!

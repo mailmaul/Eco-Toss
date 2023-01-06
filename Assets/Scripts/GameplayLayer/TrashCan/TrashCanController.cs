@@ -3,6 +3,7 @@ using EcoTeam.EcoToss.PubSub;
 using EcoTeam.EcoToss.SaveData;
 using EcoTeam.EcoToss.Trash;
 using EcoTeam.EcoToss.Tutorial;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -48,7 +49,7 @@ namespace EcoTeam.EcoToss.TrashCan
             _indicatorParentLayoutGroup = _indicatorParent.GetComponent<GridLayoutGroup>();
             _indicatorParentRectTransform = _indicatorParent.GetComponent<RectTransform>();
             _indicatorParentOutline = _indicatorParent.GetComponent<Outline>();
-            _indicatorParentOutlineBlinkTime = _indicatorParentOutlineBlinkDuration;
+            _indicatorParentOutlineBlinkTime = 0f;
 
             // spawn TrashCan Indicators
             for (int i = 0; i < _trashCanMaxCapacity; i++)
@@ -67,19 +68,24 @@ namespace EcoTeam.EcoToss.TrashCan
         {
             if (_indicatorParentIsAlmostFull)
             {
-                if (_indicatorParentOutlineBlinkTime <= _indicatorParentOutlineBlinkDuration)
+                if (_indicatorParentOutlineBlinkTime < _indicatorParentOutlineBlinkDuration)
                 {
                     _indicatorParentOutlineBlinkTime += Time.deltaTime;
                 }
                 else
                 {
-                    if (_indicatorParentOutline.enabled)
+                    if (_indicatorParentOutline.effectColor != Color.red)
                     {
-                        _indicatorParentOutline.enabled = false;
+                        _indicatorParentOutline.effectColor = Color.red;
+                    }
+
+                    if (!_indicatorParentOutline.enabled)
+                    {
+                        _indicatorParentOutline.enabled = true;
                     }
                     else
                     {
-                        _indicatorParentOutline.enabled = true;
+                        _indicatorParentOutline.enabled = false;
                     }
                     _indicatorParentOutlineBlinkTime = 0f;
                 }
@@ -97,9 +103,13 @@ namespace EcoTeam.EcoToss.TrashCan
             {
                 PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Normal"));
                 PublishSubscribe.Instance.Publish<MessageSpawnVFX>(new MessageSpawnVFX("NewParticleEffect", transform.position));
+                StartCoroutine(IndicatorParentOutlineFlash("green"));
 
                 // Tutorial correct bin
-                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
+                //if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
+                //if (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial)
+                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
+                    (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
                 {
                     if (!TutorialValidator.Instance.HasGoneToCorrectBin)
                     {
@@ -111,9 +121,13 @@ namespace EcoTeam.EcoToss.TrashCan
             else
             {
                 PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
+                StartCoroutine(IndicatorParentOutlineFlash("red"));
 
                 // Tutorial wrong bin
-                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
+                //if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
+                //if (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial)
+                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
+                    (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
                 {
                     if (!TutorialValidator.Instance.HasGoneToWrongBin)
                     {
@@ -147,7 +161,7 @@ namespace EcoTeam.EcoToss.TrashCan
                 {
                     //Buat indikator jadi benar
                     _indicators[i].enabled = true;
-                    _indicators[i].sprite = Resources.Load<Sprite>("Prefabs/UI/benar");
+                    _indicators[i].sprite = Resources.Load<Sprite>("Sprites/UI/benar");
 
                     // Jika dia adalah element pertama atau kedua, maka cukup cek apakah _trashList[i] punya tag yang sama dengan TrashCan
                     if (i == 0)
@@ -184,7 +198,10 @@ namespace EcoTeam.EcoToss.TrashCan
                                 _matchedTrashList.Clear();
 
                                 // Tutorial Match-3
-                                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
+                                //if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
+                                //if (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial)
+                                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
+                                    (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
                                 {
                                     if (!TutorialValidator.Instance.HasMatch3)
                                     {
@@ -213,7 +230,7 @@ namespace EcoTeam.EcoToss.TrashCan
 
                     // Buat indikator jadi salah
                     _indicators[i].enabled = true;
-                    _indicators[i].sprite = Resources.Load<Sprite>("Prefabs/UI/salah");
+                    _indicators[i].sprite = Resources.Load<Sprite>("Sprites/UI/salah");
                 }
             }
             _matchedTrashList.Clear();
@@ -243,6 +260,24 @@ namespace EcoTeam.EcoToss.TrashCan
 
                 _trashCanCapacity++;
             }
+        }
+
+        private IEnumerator IndicatorParentOutlineFlash(string color)
+        {
+            if (color == "green")
+            {
+                _indicatorParentOutline.effectColor = Color.green;
+            }
+            else if (color == "red")
+            {
+                _indicatorParentOutline.effectColor = Color.red;
+            }
+
+            _indicatorParentOutline.enabled = true;
+
+            yield return new WaitForSecondsRealtime(_indicatorParentOutlineBlinkDuration);
+
+            _indicatorParentOutline.enabled = false;
         }
     }
 }

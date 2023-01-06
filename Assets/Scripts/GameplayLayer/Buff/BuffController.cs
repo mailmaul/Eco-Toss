@@ -40,7 +40,9 @@ namespace EcoTeam.EcoToss.Buff
         private void PlayBuff(MessagePlayBuff message)
         {
             // Tutorial buff spawn
-            if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
+            if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
+                (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
+            //if (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial)
             {
                 if (!TutorialValidator.Instance.HasSpawnedBuffFirstTime)
                 {
@@ -91,7 +93,9 @@ namespace EcoTeam.EcoToss.Buff
             yield return new WaitForSecondsRealtime(1);
 
             // Tutorial buff effect
-            if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
+            if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
+                (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
+            //if (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial)
             {
                 if (_buffList[_randomIndex].name == "BuffDoubleScore")
                 {

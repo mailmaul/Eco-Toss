@@ -1336,7 +1336,10 @@ MonoBehaviour:
   _modalWindowAlignment: 7
   _title: Wind is Blowing!!
   _sprite: {fileID: 0}
-  _message: Wind will pushes the trash aside. ADJUST your throw direction carefully!!
+  _message: 'Wind PUSHES the trash aside.
+
+
+    ADJUST your throw direction carefully!!'
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914584555714
@@ -1795,7 +1798,7 @@ MonoBehaviour:
   _onCancelEvent:
     m_PersistentCalls:
       m_Calls: []
-  _modalWindowAlignment: 4
+  _modalWindowAlignment: 7
   _title: Clean Bin
   _sprite: {fileID: 21300000, guid: 37fa87d9ab9dc4d47b89194a807de83c, type: 3}
   _message: 'You get Clean Bin buff!
@@ -2025,7 +2028,7 @@ MonoBehaviour:
   _tutorialCanvas: {fileID: 0}
   _normalMask: {fileID: 0}
   _invertMask: {fileID: 0}
-  _applyMask: 2
+  _applyMask: 0
   _applyPause: 1
   _modalWindowPanel: {fileID: 0}
   _onContinueEvent:
@@ -2058,7 +2061,7 @@ MonoBehaviour:
   _onCancelEvent:
     m_PersistentCalls:
       m_Calls: []
-  _modalWindowAlignment: 4
+  _modalWindowAlignment: 7
   _title: Get buffed!
   _sprite: {fileID: 0}
   _message: After reaching certain score, you will get RANDOM BUFF!

@@ -22,7 +22,10 @@ namespace EcoTeam.EcoToss.InputSystem
                 _fingerDown = true;
 
                 // Tutorial throw trash start
-                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
+                //if (Debug.isDebugBuild || !SaveDataController.Instance.SaveData.HasDoneTutorial)
+                //if (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial)
+                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
+                    (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
                 {
                     if (!TutorialValidator.Instance.HasTapped)
                     {
@@ -71,7 +74,10 @@ namespace EcoTeam.EcoToss.InputSystem
             _fingerDown = false;
 
             // Tutorial throw trash end
-            if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
+            //if (Debug.isDebugBuild || !SaveDataController.Instance.SaveData.HasDoneTutorial)
+            //if (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial)
+            if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
+                (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
             {
                 if (!TutorialValidator.Instance.HasThrownTrash)
                 {
