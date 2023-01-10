@@ -174,378 +174,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9758537, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325336}
-    - target: {fileID: 9758537, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 9758537, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 9758537, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 9758537, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 593325337}
-    - target: {fileID: 358515370, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325332}
-    - target: {fileID: 358515370, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 358515370, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 358515370, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 358515370, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onCancelEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 593325333}
-    - target: {fileID: 358515370, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 593325340}
-    - target: {fileID: 358515370, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 593325333}
-    - target: {fileID: 1119945252, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325336}
-    - target: {fileID: 1119945252, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1119945252, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1119945252, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1742465799, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325336}
-    - target: {fileID: 1742465799, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1742465799, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1742465799, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1742465799, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 593325337}
-    - target: {fileID: 1173068913000155286, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325336}
-    - target: {fileID: 1173068913000155286, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068913000155286, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068913000155286, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068913674985018, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325334}
-    - target: {fileID: 1173068913674985018, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068913674985018, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068913674985018, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068913674985018, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 593325340}
-    - target: {fileID: 1173068913692506971, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325334}
-    - target: {fileID: 1173068913692506971, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068913692506971, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068913692506971, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068913692506971, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 593325335}
-    - target: {fileID: 1173068913734670217, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325336}
-    - target: {fileID: 1173068913734670217, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068913734670217, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068913734670217, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068913734670217, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 593325337}
-    - target: {fileID: 1173068913818036405, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325336}
-    - target: {fileID: 1173068913818036405, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068913818036405, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068913818036405, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068913818036405, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onCancelEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 593325340}
-    - target: {fileID: 1173068913818036405, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onCancelEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 593325326}
-    - target: {fileID: 1173068913818036405, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 593325340}
-    - target: {fileID: 1173068913818036405, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 593325326}
-    - target: {fileID: 1173068913864793425, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325336}
-    - target: {fileID: 1173068913864793425, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068913864793425, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068913864793425, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068913864793425, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 593325340}
-    - target: {fileID: 1173068914052475014, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325334}
-    - target: {fileID: 1173068914052475014, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068914052475014, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068914052475014, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068914052475014, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 593325335}
-    - target: {fileID: 1173068914284589187, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325334}
-    - target: {fileID: 1173068914284589187, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068914284589187, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068914284589187, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068914296174556, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325336}
-    - target: {fileID: 1173068914296174556, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068914296174556, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068914296174556, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068914365440096, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325328}
-    - target: {fileID: 1173068914365440096, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068914365440096, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068914365440096, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068914365440096, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 593325340}
-    - target: {fileID: 1173068914386333312, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325332}
-    - target: {fileID: 1173068914386333312, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068914386333312, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068914386333312, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068914386333312, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onCancelEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 593325333}
-    - target: {fileID: 1173068914386333312, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 593325340}
-    - target: {fileID: 1173068914386333312, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 593325333}
-    - target: {fileID: 1173068914567589548, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325336}
-    - target: {fileID: 1173068914567589548, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068914567589548, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068914567589548, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068914567589548, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 593325340}
-    - target: {fileID: 1173068914584555724, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325336}
-    - target: {fileID: 1173068914584555724, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068914584555724, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068914584555724, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068914590195093, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325330}
-    - target: {fileID: 1173068914590195093, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068914590195093, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068914590195093, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068914590195093, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 593325340}
-    - target: {fileID: 1173068914590195093, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 593325331}
     - target: {fileID: 1173068914643141313, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -590,198 +218,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1173068914643141318, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
     - target: {fileID: 1173068914643141319, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
       propertyPath: m_Name
       value: TutorialValidator
       objectReference: {fileID: 0}
-    - target: {fileID: 1173068914680809129, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325334}
-    - target: {fileID: 1173068914680809129, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068914680809129, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068914680809129, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068914680809129, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 593325340}
-    - target: {fileID: 1173068914680809129, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 593325335}
-    - target: {fileID: 1173068914707260805, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325334}
-    - target: {fileID: 1173068914707260805, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068914707260805, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068914707260805, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068914707260805, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 593325340}
-    - target: {fileID: 1173068914748201961, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325336}
-    - target: {fileID: 1173068914748201961, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068914748201961, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068914748201961, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068914748201961, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 593325340}
-    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325334}
-    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068914853778940, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325329}
-    - target: {fileID: 1173068914853778940, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1173068914853778940, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1173068914853778940, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 1173068914853778940, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 593325340}
-    - target: {fileID: 1935547182189814500, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325336}
-    - target: {fileID: 1935547182189814500, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 1935547182189814500, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 1935547182189814500, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 4117969112532546279, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325336}
-    - target: {fileID: 4117969112532546279, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 4117969112532546279, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 4117969112532546279, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 5216941185734551693, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325334}
-    - target: {fileID: 5216941185734551693, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 5216941185734551693, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 593325340}
-    - target: {fileID: 7773706830813211795, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325336}
-    - target: {fileID: 7773706830813211795, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 7773706830813211795, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 7773706830813211795, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 7810514189049564008, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _invertMask
-      value: 
-      objectReference: {fileID: 593325336}
-    - target: {fileID: 7810514189049564008, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _normalMask
-      value: 
-      objectReference: {fileID: 593325338}
-    - target: {fileID: 7810514189049564008, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _tutorialCanvas
-      value: 
-      objectReference: {fileID: 593325339}
-    - target: {fileID: 7810514189049564008, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _modalWindowPanel
-      value: 
-      objectReference: {fileID: 593325327}
-    - target: {fileID: 7810514189049564008, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 593325340}
-    - target: {fileID: 7810514189049564008, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
-      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 593325326}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
 --- !u!1 &49385638
@@ -878,7 +318,7 @@ RectTransform:
   m_Children:
   - {fileID: 1307408839}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1789,184 +1229,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529096468}
   m_CullTransparentMesh: 1
---- !u!1001 &593325325
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7825951608685493156, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_Name
-      value: TutorialCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_RootOrder
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7825951608685493176, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
---- !u!1 &593325326 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7825951607813461960, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-  m_PrefabInstance: {fileID: 593325325}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &593325327 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5466325943910690983, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-  m_PrefabInstance: {fileID: 593325325}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f7fdae46d8d2fe42bba628162327576, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!224 &593325328 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2449318595023828622, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-  m_PrefabInstance: {fileID: 593325325}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &593325329 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2449318593314437761, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-  m_PrefabInstance: {fileID: 593325325}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &593325330 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2449318594776071837, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-  m_PrefabInstance: {fileID: 593325325}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &593325331 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4782652687582153748, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-  m_PrefabInstance: {fileID: 593325325}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &593325332 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2449318594255818252, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-  m_PrefabInstance: {fileID: 593325325}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &593325333 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4782652687598795909, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-  m_PrefabInstance: {fileID: 593325325}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &593325334 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2449318594623155598, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-  m_PrefabInstance: {fileID: 593325325}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &593325335 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4782652687428722439, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-  m_PrefabInstance: {fileID: 593325325}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &593325336 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2449318594077651332, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-  m_PrefabInstance: {fileID: 593325325}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &593325337 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4782652687957476109, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-  m_PrefabInstance: {fileID: 593325325}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &593325338 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7825951607813461961, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-  m_PrefabInstance: {fileID: 593325325}
-  m_PrefabAsset: {fileID: 0}
---- !u!223 &593325339 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 7825951608685493179, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-  m_PrefabInstance: {fileID: 593325325}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &593325340 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7825951608685493156, guid: d296b0f056911954d93e69d7b78bb03e, type: 3}
-  m_PrefabInstance: {fileID: 593325325}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &640764317 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3992176262562285475, guid: 9453a727a90bda24baa803a950db564c, type: 3}
@@ -2263,7 +1525,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &733952450 stripped
 RectTransform:
@@ -3123,6 +2385,120 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050864037}
   m_CullTransparentMesh: 1
+--- !u!1 &1055654869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1055654874}
+  - component: {fileID: 1055654873}
+  - component: {fileID: 1055654872}
+  - component: {fileID: 1055654871}
+  - component: {fileID: 1055654870}
+  m_Layer: 0
+  m_Name: Wall
+  m_TagString: Ground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!54 &1055654870
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055654869}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &1055654871
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055654869}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1055654872
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055654869}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1055654873
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055654869}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1055654874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055654869}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 10.1, z: 13.3}
+  m_LocalScale: {x: 40, y: 20, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1070729189
 GameObject:
   m_ObjectHideFlags: 0
@@ -3155,7 +2531,7 @@ Transform:
   - {fileID: 1774539295}
   - {fileID: 260218452}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1070799128
 GameObject:
@@ -3483,7 +2859,7 @@ RectTransform:
   m_Children:
   - {fileID: 800167169}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3651,7 +3027,7 @@ RectTransform:
   - {fileID: 1726981087}
   - {fileID: 1220517870}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4027,7 +3403,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280950127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -0.501, z: 0}
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4515,7 +3891,7 @@ RectTransform:
   - {fileID: 674145867}
   - {fileID: 1050864038}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4972,7 +4348,7 @@ RectTransform:
   - {fileID: 1877896917}
   - {fileID: 682920905}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6549,7 +5925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 695902304664602806, guid: 5d4577a7e99779e4fb5e073bc2ff0b2f, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 695902304664602806, guid: 5d4577a7e99779e4fb5e073bc2ff0b2f, type: 3}
       propertyPath: m_LocalScale.x
@@ -6690,7 +6066,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1524627947663953175, guid: f07dd4b2615829d4c89b973d10cea7e5, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1524627947663953175, guid: f07dd4b2615829d4c89b973d10cea7e5, type: 3}
       propertyPath: m_LocalPosition.x

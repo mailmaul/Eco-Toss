@@ -20,6 +20,8 @@ namespace EcoTeam.EcoToss.Tutorial
         [SerializeField] private RectTransform _normalMask;
         [SerializeField] private RectTransform _invertMask;
         [SerializeField] private MaskEnum _applyMask;
+        [SerializeField] private bool _nextTutorialHasSameMask;
+        [SerializeField] private bool _prevTutorialHasSameMask;
         [SerializeField] private bool _applyPause;
         [SerializeField] private ModalWindowPanel _modalWindowPanel;
         [SerializeField] private UnityEvent _onContinueEvent;
@@ -34,6 +36,12 @@ namespace EcoTeam.EcoToss.Tutorial
         [SerializeField] private string _declineButtonText;
         //[SerializeField] private string _alternateButtonText;
 
+        private void Awake()
+        {
+            _onContinueEvent.AddListener(TurnOffNext);
+            _onCancelEvent.AddListener(TurnOffPrev);
+        }
+
         void OnEnable()
         {
             Action continueCallback = null;
@@ -47,12 +55,10 @@ namespace EcoTeam.EcoToss.Tutorial
 
             if (_onContinueEvent.GetPersistentEventCount() > 0)
             {
-                gameObject.SetActive(false);
                 continueCallback = _onContinueEvent.Invoke;
             }
             if (_onCancelEvent.GetPersistentEventCount() > 0)
             {
-                gameObject.SetActive(false);
                 cancelCallback = _onCancelEvent.Invoke;
             }
             //if (_onAlternateEvent.GetPersistentEventCount() > 0)
@@ -68,19 +74,51 @@ namespace EcoTeam.EcoToss.Tutorial
             {
                 case MaskEnum.NormalMask:
                     _normalMask.gameObject.SetActive(true);
-                    _invertMask.gameObject.SetActive(false);
+                    //if (_invertMask == null)
+                    //{
+                    //    break;
+                    //}
+                    //_invertMask.gameObject.SetActive(false);
+                    //Debug.Log("on enable " + gameObject.name + " " + _normalMask.gameObject.name + ":" + _normalMask.gameObject.activeInHierarchy);
                     break;
 
                 case MaskEnum.InvertMask:
-                    _normalMask.gameObject.SetActive(false);
+                    //_normalMask.gameObject.SetActive(false);
                     _invertMask.gameObject.SetActive(true);
+                    //Debug.Log("on enable " + gameObject.name + " " + _invertMask.gameObject.name + ":" + _invertMask.gameObject.activeInHierarchy);
                     break;
 
                 case MaskEnum.None:
-                    _normalMask.gameObject.SetActive(false);
-                    _invertMask.gameObject.SetActive(false);
+                    //_normalMask.gameObject.SetActive(false);
+                    //if (_invertMask == null)
+                    //{
+                    //    break;
+                    //}
+                    //_invertMask.gameObject.SetActive(false);
                     break;
             }
+        }
+
+        void TurnOffNext()
+        {
+            gameObject.SetActive(false);
+
+            if (_applyMask == MaskEnum.InvertMask && _invertMask != null && !_nextTutorialHasSameMask /*&& _invertMask.gameObject.activeInHierarchy*/) { _invertMask.gameObject.SetActive(false); }
+            if (_applyMask == MaskEnum.NormalMask && _normalMask != null && !_nextTutorialHasSameMask /*&& _normalMask.gameObject.activeInHierarchy*/) { _normalMask.gameObject.SetActive(false); }
+
+            //Debug.Log("TurnOffNext " + gameObject.name + " " + _normalMask.gameObject.name + ":" + _normalMask.gameObject.activeInHierarchy);
+            //Debug.Log("TurnOffNext " + gameObject.name + " " + _invertMask.gameObject.name + ":" + _invertMask.gameObject.activeInHierarchy);
+        }
+
+        void TurnOffPrev()
+        {
+            gameObject.SetActive(false);
+
+            if (_applyMask == MaskEnum.InvertMask && _invertMask != null && !_prevTutorialHasSameMask /*&& _invertMask.gameObject.activeInHierarchy*/) { _invertMask.gameObject.SetActive(false); }
+            if (_applyMask == MaskEnum.NormalMask && _normalMask != null && !_prevTutorialHasSameMask /*&& _normalMask.gameObject.activeInHierarchy*/) { _normalMask.gameObject.SetActive(false); }
+
+            //Debug.Log("TurnOffPrev " + gameObject.name + " " + _normalMask.gameObject.name + ":" + _normalMask.gameObject.activeInHierarchy);
+            //Debug.Log("TurnOffPrev " + gameObject.name + " " + _invertMask.gameObject.name + ":" + _invertMask.gameObject.activeInHierarchy);
         }
     }
 }
