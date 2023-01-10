@@ -1,5 +1,116 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9758535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9758536}
+  - component: {fileID: 9758537}
+  m_Layer: 0
+  m_Name: TutorialTrashCanType
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &9758536
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9758535}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -78.657486, y: -702.2446, z: -57.847942}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1173068914643141313}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9758537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9758535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialCanvas: {fileID: 0}
+  _normalMask: {fileID: 0}
+  _invertMask: {fileID: 0}
+  _applyMask: 2
+  _applyPause: 1
+  _modalWindowPanel: {fileID: 0}
+  _onContinueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9758535}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1173068914284589184}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  _onCancelEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _modalWindowAlignment: 4
+  _title: Trash Can Category
+  _sprite: {fileID: 0}
+  _message: 'There are three types of trash cans:
+
+    1. INORGANIC, the yellow one
+    on the LEFT, is for trash that is hard to decompose. Examples: Glass, Dust, and
+    Metal.
+
+
+    2. ORGANIC, the green one in the MIDDLE, is for trash that is easy
+    to decompose. Example: Food, Paper, Wood, Plants.
+
+
+    3. DANGEROUS or Hazardous,
+    the red one on the RIGHT, is for trash that is potentially dangerous for our
+    health and environment.'
+  _confirmButtonText: 
+  _declineButtonText: 
 --- !u!1 &358515368
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,7 +141,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 20
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &358515370
 MonoBehaviour:
@@ -131,7 +242,172 @@ MonoBehaviour:
   _modalWindowAlignment: 7
   _title: Match-3 Bonus Score
   _sprite: {fileID: 0}
-  _message: When Match-3 happened, you gained BONUS  SCORE!
+  _message: When Match-3 happened, you gained a BONUS SCORE!
+  _confirmButtonText: 
+  _declineButtonText: 
+--- !u!1 &1119945250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1119945251}
+  - component: {fileID: 1119945252}
+  m_Layer: 0
+  m_Name: TutorialCorrectCanTryAgain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1119945251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119945250}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -78.657486, y: -702.2446, z: -57.847942}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1173068914643141313}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1119945252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119945250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialCanvas: {fileID: 0}
+  _normalMask: {fileID: 0}
+  _invertMask: {fileID: 0}
+  _applyMask: 0
+  _applyPause: 0
+  _modalWindowPanel: {fileID: 0}
+  _onContinueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCancelEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _modalWindowAlignment: 1
+  _title: Throw to The Correct Can
+  _sprite: {fileID: 0}
+  _message: 'Oops, let''s try it again.
+
+
+    Throw the trash into Organic Trash
+    Can in the middle!'
+  _confirmButtonText: 
+  _declineButtonText: 
+--- !u!1 &1742465797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1742465798}
+  - component: {fileID: 1742465799}
+  m_Layer: 0
+  m_Name: TutorialThrowToOrganic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1742465798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742465797}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -78.657486, y: -702.2446, z: -57.847942}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1173068914643141313}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1742465799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742465797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialCanvas: {fileID: 0}
+  _normalMask: {fileID: 0}
+  _invertMask: {fileID: 0}
+  _applyMask: 1
+  _applyPause: 1
+  _modalWindowPanel: {fileID: 0}
+  _onContinueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1742465797}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1173068913000155287}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  _onCancelEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _modalWindowAlignment: 4
+  _title: Where To Throw?
+  _sprite: {fileID: 0}
+  _message: The trash this time is an Apple, a food. So you must throw it to ORGANIC
+    TRASH CAN, the green one, in the MIDDLE.
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068913000155287
@@ -164,7 +440,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 2
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068913000155286
 MonoBehaviour:
@@ -193,7 +469,7 @@ MonoBehaviour:
   _modalWindowAlignment: 1
   _title: 
   _sprite: {fileID: 0}
-  _message: TAP and HOLD anywhere on screen to prepare to throw.
+  _message: TAP and HOLD anywhere on the screen to prepare to throw.
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068913674985016
@@ -226,7 +502,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 17
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068913674985018
 MonoBehaviour:
@@ -277,13 +553,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _modalWindowAlignment: 7
-  _title: Larger Bin Capacity
+  _title: Larger Can Capacity
   _sprite: {fileID: 21300000, guid: 773de35bba62b6b4ea0bd0352e4046d3, type: 3}
-  _message: 'You get Larger Bin buff!
+  _message: 'This is the Larger Can Buff!
 
 
-    Your trash bins CAPACITY went up +1.
-    This is PERMANENT until game over. MAX CAPACITY is 10.'
+    All trash can CAPACITY went up +1.
+    This is PERMANENT until the game is over. MAX CAPACITY is 10.'
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068913692506968
@@ -297,7 +573,7 @@ GameObject:
   - component: {fileID: 1173068913692506970}
   - component: {fileID: 1173068913692506971}
   m_Layer: 0
-  m_Name: TutorialCorrectBin
+  m_Name: TutorialCorrectCan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,7 +592,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 5
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068913692506971
 MonoBehaviour:
@@ -379,10 +655,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _modalWindowAlignment: 7
-  _title: Correct Bin (1)
+  _title: Correct Can (1)
   _sprite: {fileID: 0}
-  _message: If the trash went into the CORRECT bin, "O" will be appear on the trash
-    bin indicator and it will FLASH GREEN!
+  _message: 'You''ve thrown it to the CORRECT can, AMAZING!
+
+
+    "O" means there
+    is trash in the correct can. This can be removed if you throw 3 TRASHES into
+    the CORRECT can CONSECUTIVELY.'
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068913734670222
@@ -462,7 +742,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1173068913000155287}
+      - m_Target: {fileID: 9758535}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -480,7 +760,7 @@ MonoBehaviour:
   _modalWindowAlignment: 4
   _title: Trash
   _sprite: {fileID: 0}
-  _message: Trashes will spawn here. Throw them to the CORRECT trash bin category!
+  _message: Trashes will spawn here. Throw them into the CORRECT trash can category!
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068913818036395
@@ -513,7 +793,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 18
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068913818036405
 MonoBehaviour:
@@ -624,15 +904,15 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _modalWindowAlignment: 4
-  _title: Exit tutorial?
+  _title: Done With Tutorial?
   _sprite: {fileID: 0}
-  _message: 'Exit and Mark Tutorial as Done?
+  _message: 'Would you like to mark the Tutorial as done?
 
 
-    You can visit Tutorial again from
-    Main Menu.'
-  _confirmButtonText: OK
-  _declineButtonText: Cancel
+    You can revisit it
+    from Main Menu.'
+  _confirmButtonText: Yes
+  _declineButtonText: No, just exit
 --- !u!1 &1173068913864793431
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,7 +943,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 12
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068913864793425
 MonoBehaviour:
@@ -749,7 +1029,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 10
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068914052475014
 MonoBehaviour:
@@ -814,8 +1094,8 @@ MonoBehaviour:
   _modalWindowAlignment: 7
   _title: Match-3
   _sprite: {fileID: 0}
-  _message: Three trash REMOVED because you threw them into the correct bin consecutively.
-    This event called "Match-3".
+  _message: Three trash REMOVED because you threw them into the correct can consecutively.
+    This event is called "Match-3".
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914284589184
@@ -829,7 +1109,7 @@ GameObject:
   - component: {fileID: 1173068914284589186}
   - component: {fileID: 1173068914284589187}
   m_Layer: 0
-  m_Name: TutorialBinIndicator
+  m_Name: TutorialCanIndicator1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -848,7 +1128,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 8
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068914284589187
 MonoBehaviour:
@@ -923,19 +1203,19 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   _modalWindowAlignment: 7
-  _title: Trash Bin Indicator (1)
+  _title: Trash Can Indicator (1)
   _sprite: {fileID: 0}
-  _message: 'This is the Trash Bin Indicator.
+  _message: 'These are the Trash Can Indicators.
 
-    It explains the bin''s CAPACITY.
+    They explain each of the can''s
+    CAPACITY.
+
+
+    It will FLASH GREEN if trash goes into the CORRECT can.
 
 
     It
-    will FLASH GREEN if trash goes into the CORRECT bin.
-
-
-    It will FLASH RED
-    if the trash goes into the WRONG bin.'
+    will FLASH RED if the trash goes into the WRONG can.'
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914296174557
@@ -1059,7 +1339,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 15
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068914365440096
 MonoBehaviour:
@@ -1112,11 +1392,11 @@ MonoBehaviour:
   _modalWindowAlignment: 4
   _title: Double Score
   _sprite: {fileID: 21300000, guid: bd669ad0038e48041b56ca78121461f5, type: 3}
-  _message: 'You get Double Score buff!
+  _message: 'This is the Double Score Buff!
 
 
-    Your SCORE WILL DOUBLE for certain
-    amount of time!'
+    Your SCORE WILL DOUBLE for a short
+    time!'
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914386333318
@@ -1149,7 +1429,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 6
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068914386333312
 MonoBehaviour:
@@ -1248,7 +1528,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _modalWindowAlignment: 7
-  _title: Correct Bin (2)
+  _title: Score
   _sprite: {fileID: 0}
   _message: Your SCORE will increase too!
   _confirmButtonText: 
@@ -1283,7 +1563,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 11
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068914567589548
 MonoBehaviour:
@@ -1336,10 +1616,11 @@ MonoBehaviour:
   _modalWindowAlignment: 7
   _title: Wind is Blowing!!
   _sprite: {fileID: 0}
-  _message: 'Wind PUSHES the trash aside.
+  _message: 'Wind PUSHES the trash aside. The stronger the wind, the stronger the
+    push.
 
 
-    ADJUST your throw direction carefully!!'
+    ADJUST your throwing direction carefully!!'
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914584555714
@@ -1372,7 +1653,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 3
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068914584555724
 MonoBehaviour:
@@ -1403,8 +1684,8 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _message: 'You can SWIPE your finger LEFT and RIGHT to aim.
 
-    If you already
-    done aiming, RELEASE your finger to throw!'
+    If you finished
+    aiming, RELEASE your finger to throw!'
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914590195082
@@ -1437,7 +1718,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 4
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068914590195093
 MonoBehaviour:
@@ -1502,7 +1783,7 @@ MonoBehaviour:
   _modalWindowAlignment: 7
   _title: Hit The Ground
   _sprite: {fileID: 0}
-  _message: 'If the trash hit the ground, your HEALTH will decrease.
+  _message: 'If the trash hits the ground, your HEALTH will decrease.
 
 
     Be careful!'
@@ -1539,25 +1820,32 @@ Transform:
   m_Children:
   - {fileID: 1173068914296174559}
   - {fileID: 1173068913734670216}
-  - {fileID: 1173068913000155281}
-  - {fileID: 1173068914584555725}
-  - {fileID: 1173068914590195092}
-  - {fileID: 1173068913692506970}
-  - {fileID: 1173068914386333313}
-  - {fileID: 1173068914840320722}
+  - {fileID: 9758536}
   - {fileID: 1173068914284589186}
   - {fileID: 1173068914680809134}
+  - {fileID: 212096390979296731}
+  - {fileID: 1742465798}
+  - {fileID: 1173068913000155281}
+  - {fileID: 1173068914584555725}
+  - {fileID: 1119945251}
+  - {fileID: 1173068913692506970}
+  - {fileID: 1173068914386333313}
+  - {fileID: 6370768042719649523}
+  - {fileID: 1173068914840320722}
+  - {fileID: 5300576557096636765}
   - {fileID: 1173068914052475015}
-  - {fileID: 1173068914567589549}
-  - {fileID: 1173068913864793430}
-  - {fileID: 1173068914748201966}
+  - {fileID: 358515369}
+  - {fileID: 7037942837402873067}
+  - {fileID: 1173068914590195092}
   - {fileID: 1173068914853778943}
   - {fileID: 1173068914365440097}
   - {fileID: 1173068914707260794}
   - {fileID: 1173068913674985019}
-  - {fileID: 1173068913818036394}
+  - {fileID: 1173068914567589549}
+  - {fileID: 1173068913864793430}
+  - {fileID: 1173068914748201966}
   - {fileID: 9197118859050991792}
-  - {fileID: 358515369}
+  - {fileID: 1173068913818036394}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1599,7 +1887,7 @@ GameObject:
   - component: {fileID: 1173068914680809134}
   - component: {fileID: 1173068914680809129}
   m_Layer: 0
-  m_Name: TutorialBinIndicator2
+  m_Name: TutorialCanIndicator2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1618,7 +1906,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 9
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068914680809129
 MonoBehaviour:
@@ -1705,17 +1993,17 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   _modalWindowAlignment: 7
-  _title: Trash Bin Indicator (2)
+  _title: Trash Can Indicator (2)
   _sprite: {fileID: 0}
-  _message: 'It will BLINK RED continuously if the bin is ALMOST FILLED.
+  _message: 'It will BLINK RED continuously if a can''s CAPACITY IS THREE LEFT.
 
 
     It''s
-    GAME OVER when a bin is FILLED!
+    GAME OVER when a can is FILLED!
 
 
-    You can REMOVE trash if you throw THREE
-    TRASHES into the CORRECT bin CONSECUTIVELY.'
+    At the start of the game, MAX CAPACITY
+    is 6. It can be upgraded to 10 if you get the Larger Capacity Buff.'
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914707260795
@@ -1729,7 +2017,7 @@ GameObject:
   - component: {fileID: 1173068914707260794}
   - component: {fileID: 1173068914707260805}
   m_Layer: 0
-  m_Name: TutorialBuffCleanBin
+  m_Name: TutorialBuffCleanCan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1748,7 +2036,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 16
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068914707260805
 MonoBehaviour:
@@ -1799,12 +2087,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _modalWindowAlignment: 7
-  _title: Clean Bin
+  _title: Clean Can
   _sprite: {fileID: 21300000, guid: 37fa87d9ab9dc4d47b89194a807de83c, type: 3}
-  _message: 'You get Clean Bin buff!
+  _message: 'This is the Clean Can Buff!
 
 
-    All trash bin CAPACITY is emptied!'
+    All trash can CAPACITY is emptied!'
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914748201967
@@ -1837,7 +2125,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 13
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068914748201961
 MonoBehaviour:
@@ -1890,7 +2178,7 @@ MonoBehaviour:
   _modalWindowAlignment: 1
   _title: 
   _sprite: {fileID: 0}
-  _message: This classmate is trying to destroy a trash bin, your HEALTH is decreasing!
+  _message: This classmate is trying to destroy a trash can, your HEALTH is decreasing!
     HIT EM UP!!
   _confirmButtonText: 
   _declineButtonText: 
@@ -1905,7 +2193,7 @@ GameObject:
   - component: {fileID: 1173068914840320722}
   - component: {fileID: 1173068914840320733}
   m_Layer: 0
-  m_Name: TutorialWrongBin
+  m_Name: TutorialWrongCan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1924,7 +2212,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 7
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068914840320733
 MonoBehaviour:
@@ -1975,10 +2263,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _modalWindowAlignment: 7
-  _title: Wrong Bin
+  _title: Wrong Can
   _sprite: {fileID: 0}
-  _message: If the trash went into the WRONG bin, "X" will appear on the trash bin
-    indicator and it will FLASH RED!!
+  _message: 'You''ve thrown it to the WRONG can.
+
+
+    "X" means there is trash in
+    the wrong can. This can be removed if you get the Clean Can buff.
+
+
+    We have
+    one for free this one time!'
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1173068914853778941
@@ -2011,7 +2306,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 14
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173068914853778940
 MonoBehaviour:
@@ -2064,7 +2359,8 @@ MonoBehaviour:
   _modalWindowAlignment: 7
   _title: Get buffed!
   _sprite: {fileID: 0}
-  _message: After reaching certain score, you will get RANDOM BUFF!
+  _message: This is the Buff Progress Bar. It will be filled after reaching a particular
+    score, then you will get a RANDOM BUFF!
   _confirmButtonText: 
   _declineButtonText: 
 --- !u!1 &1362640187433969215
@@ -2097,7 +2393,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173068914643141313}
-  m_RootOrder: 19
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7810514189049564008
 MonoBehaviour:
@@ -2172,12 +2468,335 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _modalWindowAlignment: 4
-  _title: Tutorial is DONE
+  _title: Tutorial COMPLETE
   _sprite: {fileID: 0}
-  _message: 'Congratulations, you finished Tutorial!!
+  _message: 'Congratulations, you have completed the Tutorial!!
 
 
-    You can continue playing.
-    Try to get as many scores as you can! ;)'
+    You can continue
+    playing. Try to get the highest possible score! ;)'
   _confirmButtonText: OK
   _declineButtonText: Cancel
+--- !u!1 &4751243682160718422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5300576557096636765}
+  - component: {fileID: 4117969112532546279}
+  m_Layer: 0
+  m_Name: TutorialMatch3TryAgain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5300576557096636765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4751243682160718422}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -78.657486, y: -702.2446, z: -57.847942}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1173068914643141313}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4117969112532546279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4751243682160718422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialCanvas: {fileID: 0}
+  _normalMask: {fileID: 0}
+  _invertMask: {fileID: 0}
+  _applyMask: 0
+  _applyPause: 0
+  _modalWindowPanel: {fileID: 0}
+  _onContinueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCancelEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _modalWindowAlignment: 1
+  _title: Throw to The Correct Can Three Times
+  _sprite: {fileID: 0}
+  _message: 'Oops, let''s try it again.
+
+
+    Throw three trashes into the Organic
+    Trash Can consecutively!'
+  _confirmButtonText: 
+  _declineButtonText: 
+--- !u!1 &6056609864422107745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7037942837402873067}
+  - component: {fileID: 7773706830813211795}
+  m_Layer: 0
+  m_Name: TutorialHitGroundTryAgain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &7037942837402873067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6056609864422107745}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -78.657486, y: -702.2446, z: -57.847942}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1173068914643141313}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7773706830813211795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6056609864422107745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialCanvas: {fileID: 0}
+  _normalMask: {fileID: 0}
+  _invertMask: {fileID: 0}
+  _applyMask: 0
+  _applyPause: 0
+  _modalWindowPanel: {fileID: 0}
+  _onContinueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCancelEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _modalWindowAlignment: 1
+  _title: Throw to The Ground
+  _sprite: {fileID: 0}
+  _message: 'Oops, let''s try it again.
+
+
+    Throw the trash to the ground!'
+  _confirmButtonText: 
+  _declineButtonText: 
+--- !u!1 &6666960222208435953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 212096390979296731}
+  - component: {fileID: 5216941185734551693}
+  m_Layer: 0
+  m_Name: TutorialCanIndicator3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &212096390979296731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6666960222208435953}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -78.657486, y: -702.2446, z: -57.847942}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1173068914643141313}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5216941185734551693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6666960222208435953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialCanvas: {fileID: 0}
+  _normalMask: {fileID: 0}
+  _invertMask: {fileID: 0}
+  _applyMask: 2
+  _applyPause: 1
+  _modalWindowPanel: {fileID: 0}
+  _onContinueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6666960222208435953}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onCancelEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6666960222208435953}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1173068914680809135}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  _modalWindowAlignment: 7
+  _title: Trash Can Indicator (3)
+  _sprite: {fileID: 0}
+  _message: 'You can REMOVE trash if you throw 3 TRASHES into the CORRECT can of
+    CONSECUTIVELY.
+
+
+    Another way to REMOVE trash is to get the Clean Can buff.'
+  _confirmButtonText: 
+  _declineButtonText: 
+--- !u!1 &6874248371631767663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6370768042719649523}
+  - component: {fileID: 1935547182189814500}
+  m_Layer: 0
+  m_Name: TutorialWrongCanTryAgain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6370768042719649523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874248371631767663}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -78.657486, y: -702.2446, z: -57.847942}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1173068914643141313}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1935547182189814500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874248371631767663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialCanvas: {fileID: 0}
+  _normalMask: {fileID: 0}
+  _invertMask: {fileID: 0}
+  _applyMask: 0
+  _applyPause: 0
+  _modalWindowPanel: {fileID: 0}
+  _onContinueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCancelEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _modalWindowAlignment: 1
+  _title: Throw to The Wrong Can
+  _sprite: {fileID: 0}
+  _message: 'Oops, let''s try it again.
+
+
+    Throw the trash into the wrong trash
+    can on the left or right!'
+  _confirmButtonText: 
+  _declineButtonText: 

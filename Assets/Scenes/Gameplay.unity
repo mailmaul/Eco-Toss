@@ -422,7 +422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1892725335093958619, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -26.999998
+      value: -54
       objectReference: {fileID: 0}
     - target: {fileID: 1892725335093958619, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -654,7 +654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1892725335093958619, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -26.999998
+      value: -54
       objectReference: {fileID: 0}
     - target: {fileID: 1892725335093958619, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1017,7 +1017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1892725335093958619, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -27
+      value: -54
       objectReference: {fileID: 0}
     - target: {fileID: 1892725335093958619, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1045,7 +1045,7 @@ GameObject:
   - component: {fileID: 529096471}
   - component: {fileID: 529096470}
   m_Layer: 5
-  m_Name: OrganicWasteTMP
+  m_Name: OrganicTrashCanTMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1093,7 +1093,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Organic
 
-    Waste'
+    Trash
+
+    Can'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cafbd13200772d94eb889aa70305195e, type: 2}
   m_sharedMaterial: {fileID: 2005344269516955860, guid: cafbd13200772d94eb889aa70305195e, type: 2}
@@ -2464,7 +2466,7 @@ GameObject:
   - component: {fileID: 1084700767}
   - component: {fileID: 1084700766}
   m_Layer: 5
-  m_Name: DangerousWasteTMP
+  m_Name: DangerousTrashCanTMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2512,7 +2514,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Dangerous
 
-    Waste'
+    Trash
+
+    Can'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cafbd13200772d94eb889aa70305195e, type: 2}
   m_sharedMaterial: {fileID: 2005344269516955860, guid: cafbd13200772d94eb889aa70305195e, type: 2}
@@ -3735,7 +3739,7 @@ GameObject:
   - component: {fileID: 1456329405}
   - component: {fileID: 1456329404}
   m_Layer: 5
-  m_Name: InorganicWasteTMP
+  m_Name: InorganicTrashCanTMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3783,7 +3787,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Inorganic
 
-    Waste'
+    Trash
+
+    Can'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cafbd13200772d94eb889aa70305195e, type: 2}
   m_sharedMaterial: {fileID: 2005344269516955860, guid: cafbd13200772d94eb889aa70305195e, type: 2}

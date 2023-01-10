@@ -174,6 +174,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9758537, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _invertMask
+      value: 
+      objectReference: {fileID: 593325336}
+    - target: {fileID: 9758537, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _normalMask
+      value: 
+      objectReference: {fileID: 593325338}
+    - target: {fileID: 9758537, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _tutorialCanvas
+      value: 
+      objectReference: {fileID: 593325339}
+    - target: {fileID: 9758537, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _modalWindowPanel
+      value: 
+      objectReference: {fileID: 593325327}
+    - target: {fileID: 9758537, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 593325337}
     - target: {fileID: 358515370, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
       propertyPath: _invertMask
       value: 
@@ -202,6 +222,42 @@ PrefabInstance:
       propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 593325333}
+    - target: {fileID: 1119945252, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _invertMask
+      value: 
+      objectReference: {fileID: 593325336}
+    - target: {fileID: 1119945252, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _normalMask
+      value: 
+      objectReference: {fileID: 593325338}
+    - target: {fileID: 1119945252, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _tutorialCanvas
+      value: 
+      objectReference: {fileID: 593325339}
+    - target: {fileID: 1119945252, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _modalWindowPanel
+      value: 
+      objectReference: {fileID: 593325327}
+    - target: {fileID: 1742465799, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _invertMask
+      value: 
+      objectReference: {fileID: 593325336}
+    - target: {fileID: 1742465799, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _normalMask
+      value: 
+      objectReference: {fileID: 593325338}
+    - target: {fileID: 1742465799, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _tutorialCanvas
+      value: 
+      objectReference: {fileID: 593325339}
+    - target: {fileID: 1742465799, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _modalWindowPanel
+      value: 
+      objectReference: {fileID: 593325327}
+    - target: {fileID: 1742465799, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 593325337}
     - target: {fileID: 1173068913000155286, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
       propertyPath: _invertMask
       value: 
@@ -642,6 +698,66 @@ PrefabInstance:
       propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 593325340}
+    - target: {fileID: 1935547182189814500, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _invertMask
+      value: 
+      objectReference: {fileID: 593325336}
+    - target: {fileID: 1935547182189814500, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _normalMask
+      value: 
+      objectReference: {fileID: 593325338}
+    - target: {fileID: 1935547182189814500, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _tutorialCanvas
+      value: 
+      objectReference: {fileID: 593325339}
+    - target: {fileID: 1935547182189814500, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _modalWindowPanel
+      value: 
+      objectReference: {fileID: 593325327}
+    - target: {fileID: 4117969112532546279, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _invertMask
+      value: 
+      objectReference: {fileID: 593325336}
+    - target: {fileID: 4117969112532546279, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _normalMask
+      value: 
+      objectReference: {fileID: 593325338}
+    - target: {fileID: 4117969112532546279, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _tutorialCanvas
+      value: 
+      objectReference: {fileID: 593325339}
+    - target: {fileID: 4117969112532546279, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _modalWindowPanel
+      value: 
+      objectReference: {fileID: 593325327}
+    - target: {fileID: 5216941185734551693, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _invertMask
+      value: 
+      objectReference: {fileID: 593325334}
+    - target: {fileID: 5216941185734551693, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _tutorialCanvas
+      value: 
+      objectReference: {fileID: 593325339}
+    - target: {fileID: 5216941185734551693, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 593325340}
+    - target: {fileID: 7773706830813211795, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _invertMask
+      value: 
+      objectReference: {fileID: 593325336}
+    - target: {fileID: 7773706830813211795, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _normalMask
+      value: 
+      objectReference: {fileID: 593325338}
+    - target: {fileID: 7773706830813211795, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _tutorialCanvas
+      value: 
+      objectReference: {fileID: 593325339}
+    - target: {fileID: 7773706830813211795, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _modalWindowPanel
+      value: 
+      objectReference: {fileID: 593325327}
     - target: {fileID: 7810514189049564008, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
       propertyPath: _invertMask
       value: 
@@ -923,7 +1039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1892725335093958619, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -26.999998
+      value: -53.999996
       objectReference: {fileID: 0}
     - target: {fileID: 1892725335093958619, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1155,7 +1271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1892725335093958619, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -26.999998
+      value: -53.999996
       objectReference: {fileID: 0}
     - target: {fileID: 1892725335093958619, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1518,7 +1634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1892725335093958619, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -27
+      value: -54
       objectReference: {fileID: 0}
     - target: {fileID: 1892725335093958619, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1546,7 +1662,7 @@ GameObject:
   - component: {fileID: 529096471}
   - component: {fileID: 529096470}
   m_Layer: 5
-  m_Name: OrganicWasteTMP
+  m_Name: OrganicTrashCanTMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1594,7 +1710,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Organic
 
-    Waste'
+    Trash
+
+    Can'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cafbd13200772d94eb889aa70305195e, type: 2}
   m_sharedMaterial: {fileID: 2005344269516955860, guid: cafbd13200772d94eb889aa70305195e, type: 2}
@@ -3143,7 +3261,7 @@ GameObject:
   - component: {fileID: 1084700767}
   - component: {fileID: 1084700766}
   m_Layer: 5
-  m_Name: DangerousWasteTMP
+  m_Name: DangerousTrashCanTMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3191,7 +3309,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Dangerous
 
-    Waste'
+    Trash
+
+    Can'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cafbd13200772d94eb889aa70305195e, type: 2}
   m_sharedMaterial: {fileID: 2005344269516955860, guid: cafbd13200772d94eb889aa70305195e, type: 2}
@@ -4414,7 +4534,7 @@ GameObject:
   - component: {fileID: 1456329405}
   - component: {fileID: 1456329404}
   m_Layer: 5
-  m_Name: InorganicWasteTMP
+  m_Name: InorganicTrashCanTMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4462,7 +4582,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Inorganic
 
-    Waste'
+    Trash
+
+    Can'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cafbd13200772d94eb889aa70305195e, type: 2}
   m_sharedMaterial: {fileID: 2005344269516955860, guid: cafbd13200772d94eb889aa70305195e, type: 2}

@@ -1,52 +1,4 @@
 Tutorial
-attach scriptable objects yang sesuai dengan event yang terjadi
-
-- tap dan hold untuk lempar
-It's class duty time. But, hey, let's make it more interesting! ;)
-
-Tap and hold the Trash.
-
-- throw to correct bin (ga ada button, hilang sendiri jika sudah lempar sampah)
-Good! Now drag it to the correct bin, then release!
-
-- If forget, press ? icon
-Nice! Still don't understand? Press ? icon to rehearse last tutorial.
-
-ada tombol help, ikon tanda tanya -> buat ngulang step tutorial terakhir
-
-
-- kalau sampah masuk/nyentuh lantai -> jelaskan kalau ground dan trash can
-vertical dialog, satu tahap, no image, OK, middle center
-The Health will decrease when a trash hit the ground.
-The game will be over when Health reach 0!
-
-- vertical dialog, tiga tahap, no image, OK, upper center
-This is the Trash Bin Indicator. It explains the bin's capacity.
-
-It will flash green if trash goes into the correct bin.
-
-It will flash red if the trash goes into the wrong bin.
-
-It will blink red continuously if the bin is almost filled.
-The game will be over when a bin is filled!
-
-You can remove trash if you throw three pieces of trash into the correct bin consecutively.
-
-- setelah angin spawn
-vertical dialog, tanpa image, satu tahap, OK, lower center
-Your classroom is drafty as ever.
-Watchout for strong/weak wind, adjust your throw carefully!
-
-- setelah spawn intruder, jelaskan intruder secara general
-vertical dialog, tanpa image, satu tahap, OK, lower center
-Classmates has come!
-Each of them has their own unique way to ruin the game.
-So, hit 'em up!
-
-
-mark done tutorialnya setelah masuk scene tutorial.
-
-====
 
 trash apple -> tap, hold, release
 trash apple -> tap, hold, swipe, release
@@ -75,14 +27,64 @@ Another way to REMOVE trash is to get the Clean Bin buff.
 
 
 CORRECT BIN
-You throw it to the CORRECT bin, AMAZING!
+You've thrown it to the CORRECT bin, AMAZING!
 
 "O" means there is a trash in the correct bin. This can be removed if you throw 3 TRASHES into the CORRECT bin CONSECUTIVELY.
 
 
 WRONG BIN
-Oops... you throw it to the WRONG bin. It's alright, you'll get better.
+You've thrown it to the WRONG bin.
 
 "X" means there is a trash in the wrong bin. This can be removed if you get the Clean Bin buff.
 
-I'll give you for free this one time!
+We have one for free this one time!
+
+
+
+*****
+
+throwing projection line renderer order = 1
+score controller next score to activate buff 20
+score to spawn intruder 15
+
+
+lempar apple ke tong sampah yang bener = 2
+jika dia masuk ke tong sampah yang salah, ulangi
+jika dia kena tanah, ulangi
+
+
+
+lempar apple ke tanah = 2 -> restore health
+jika dia masuk ke tong sampah yang benar, ulangi
+jika dia masuk ke tong sampah yang salah, ulangi
+
+
+lempar apple ke tong sampah yang salah = 2 -> kasih tau nanti kita bakal benerin
+jika dia masuk ke tong sampah yang benar, ulangi
+jika dia kena tanah, ulangi
+
+lempar apple ke tong sampah yang bener 3x -> 4, 6, 13
+jika dia masuk ke tong sampah yang salah, ulangi
+jika dia kena tanah, ulangi
+
+match-3
+jelasin buff = 15
+jelasin efek buff 1 = 15 -> clean bin
+jelasin efek buff 2 = 15 -> jelasin semua buff
+jelasin efek buff 3 = 15
+jelasin angin = 17
+jelasin intruder bulak balik = 24 -> kalau masuk tong sampah, maka tidak terjadi apa2 -> darah nanti restore lagi jadi 5 ketika kena intruder
+jelasin intruder acak acak = 26 -> kalau masuk tong sampah, maka tidak terjadi apa2 -> darah nanti restore lagi jadi 5 ketika kena intruder
+done
+
+
+kalau bukan tutorial -> system lakukan seperti gameplay biasa
+kalau tutorial -> cek apakah dia melakukan hal yang bener:
+-> kalau bener, system lakukan hal yang seharusnya -> kasih flag
+-> kalau salah, ulangi
+
+
+
+
+Exit game?
+Mark tutorial as done? Yes/No
