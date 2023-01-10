@@ -72,5 +72,11 @@ namespace EcoTeam.EcoToss.ObjectPooling
         {
             _storedList.Add((IPoolObject)poolObject);
         }
+
+        public void Clear()
+        {
+            _storedList.Clear();
+            _spawnedList.Clear();
+        }
     }
 }

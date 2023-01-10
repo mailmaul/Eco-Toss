@@ -64,8 +64,23 @@ namespace EcoTeam.EcoToss.Trash
                 if (collision.gameObject.CompareTag("Ground"))
                 {
                     PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("sampah_salah_tanah"));
-                    PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
                     PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
+
+                    // Jika berada di scene tutorial
+                    if (Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2)
+                    {
+                        // Jika salah maka ulang tutorial sampai dia berhasil jatuh ke tanah
+                        if (!TutorialValidator.Instance.HasGoneToCorrectBin ||
+                            !TutorialValidator.Instance.HasGoneToWrongBin)
+                        {
+                            Invoke(nameof(StoreToPool), 0.5f);
+                            PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
+                            return;
+                        }
+                    }
+
+                    PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
+
                     //if (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial)
                     if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
                         (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))

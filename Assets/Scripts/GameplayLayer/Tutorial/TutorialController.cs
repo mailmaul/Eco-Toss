@@ -47,10 +47,12 @@ namespace EcoTeam.EcoToss.Tutorial
 
             if (_onContinueEvent.GetPersistentEventCount() > 0)
             {
+                gameObject.SetActive(false);
                 continueCallback = _onContinueEvent.Invoke;
             }
             if (_onCancelEvent.GetPersistentEventCount() > 0)
             {
+                gameObject.SetActive(false);
                 cancelCallback = _onCancelEvent.Invoke;
             }
             //if (_onAlternateEvent.GetPersistentEventCount() > 0)

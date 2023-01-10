@@ -184,4 +184,6 @@ namespace EcoTeam.EcoToss.PubSub
             PreviousMaxValue = prevMax;
         }
     }
+
+    public struct MessageClearTrashSpawnerPool { }
 }

@@ -106,8 +106,6 @@ namespace EcoTeam.EcoToss.TrashCan
                 StartCoroutine(IndicatorParentOutlineFlash("green"));
 
                 // Tutorial correct bin
-                //if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
-                //if (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial)
                 if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
                     (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
                 {
@@ -120,12 +118,22 @@ namespace EcoTeam.EcoToss.TrashCan
             }
             else
             {
+                // Jika berada di scene tutorial
+                if (Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2)
+                {
+                    // Jika salah maka ulang tutorial sampai dia berhasil masuk ke tempat sampah yang benar
+                    if (!TutorialValidator.Instance.HasGoneToCorrectBin ||
+                        !TutorialValidator.Instance.HasHitGround)
+                    {
+                        return;
+                    }
+                }
+
+
                 PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
                 StartCoroutine(IndicatorParentOutlineFlash("red"));
 
                 // Tutorial wrong bin
-                //if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
-                //if (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial)
                 if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
                     (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
                 {
