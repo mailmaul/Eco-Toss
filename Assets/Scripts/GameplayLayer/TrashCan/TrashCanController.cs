@@ -101,46 +101,82 @@ namespace EcoTeam.EcoToss.TrashCan
 
             if (_trashCanTag == collisionTag)
             {
+                // Jika berada di scene tutorial
+                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
+                    (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
+                {
+                    if (TutorialValidator.Instance.HasGoneToCorrectCan)
+                    {
+                        // Ulang tutorial sampai dia berhasil masuk ke tempat sampah yang salah
+                        if (!TutorialValidator.Instance.HasGoneToWrongCan)
+                        {
+                            PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
+                            TutorialValidator.Instance.SetActiveTutorialWrongCanTryAgain(true);
+                            return;
+                        }
+                        else
+                        {
+                            // Ulang tutorial sampai dia berhasil menyentuh tanah
+                            if (!TutorialValidator.Instance.HasHitGround)
+                            {
+                                PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
+                                TutorialValidator.Instance.SetActiveTutorialHitGroundTryAgain(true);
+                                return;
+                            }   
+                        }
+                    }
+                }
+
                 PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Normal"));
                 PublishSubscribe.Instance.Publish<MessageSpawnVFX>(new MessageSpawnVFX("NewParticleEffect", transform.position));
                 StartCoroutine(IndicatorParentOutlineFlash("green"));
 
-                // Tutorial correct bin
+                // Tutorial correct can berhasil
                 if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
                     (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
                 {
-                    if (!TutorialValidator.Instance.HasGoneToCorrectBin)
+                    if (!TutorialValidator.Instance.HasGoneToCorrectCan)
                     {
-                        TutorialValidator.Instance.SetHasGoneToCorrectBin(true);
-                        TutorialValidator.Instance.SetActiveTutorialCorrectBin(true);
+                        TutorialValidator.Instance.SetHasGoneToCorrectCan(true);
+                        TutorialValidator.Instance.SetActiveTutorialCorrectCanTryAgain(false);
+                        TutorialValidator.Instance.SetActiveTutorialCorrectCan(true);
                     }
                 }
             }
             else
             {
-                // Jika berada di scene tutorial
-                if (Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2)
-                {
-                    // Jika salah maka ulang tutorial sampai dia berhasil masuk ke tempat sampah yang benar
-                    if (!TutorialValidator.Instance.HasGoneToCorrectBin ||
-                        !TutorialValidator.Instance.HasHitGround)
-                    {
-                        return;
-                    }
-                }
-
-
                 PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
-                StartCoroutine(IndicatorParentOutlineFlash("red"));
 
-                // Tutorial wrong bin
+                // Jika berada di scene tutorial
                 if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
                     (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
                 {
-                    if (!TutorialValidator.Instance.HasGoneToWrongBin)
+                    // Ulang tutorial sampai dia berhasil masuk ke tempat sampah yang benar
+                    if (!TutorialValidator.Instance.HasGoneToWrongCan && !TutorialValidator.Instance.HasGoneToCorrectCan)
                     {
-                        TutorialValidator.Instance.SetHasGoneToWrongBin(true);
-                        TutorialValidator.Instance.SetActiveTutorialWrongBin(true);
+                        TutorialValidator.Instance.SetActiveTutorialCorrectCanTryAgain(true);
+                        return;
+                    }
+                    // Ulang tutorial sampai dia berhasil menyentuh tanah
+                    else if (TutorialValidator.Instance.HasGoneToWrongCan && !TutorialValidator.Instance.HasHitGround)
+                    {
+                        TutorialValidator.Instance.SetActiveTutorialHitGroundTryAgain(true);
+                        return;
+                    }
+                    
+                }
+
+                StartCoroutine(IndicatorParentOutlineFlash("red"));
+
+                // Tutorial wrong Can
+                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
+                    (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
+                {
+                    if (!TutorialValidator.Instance.HasGoneToWrongCan)
+                    {
+                        TutorialValidator.Instance.SetHasGoneToWrongCan(true);
+                        TutorialValidator.Instance.SetActiveTutorialWrongCanTryAgain(false);
+                        TutorialValidator.Instance.SetActiveTutorialWrongCan(true);
                     }
                 }
             }
@@ -206,8 +242,6 @@ namespace EcoTeam.EcoToss.TrashCan
                                 _matchedTrashList.Clear();
 
                                 // Tutorial Match-3
-                                //if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
-                                //if (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial)
                                 if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
                                     (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
                                 {

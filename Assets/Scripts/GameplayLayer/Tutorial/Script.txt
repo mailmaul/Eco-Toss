@@ -52,16 +52,13 @@ lempar apple ke tong sampah yang bener = 2
 jika dia masuk ke tong sampah yang salah, ulangi
 jika dia kena tanah, ulangi
 
-
+lempar apple ke tong sampah yang salah = 2 -> kasih tau nanti kita bakal benerin
+jika dia masuk ke tong sampah yang benar, ulangi
+jika dia kena tanah, ulangi
 
 lempar apple ke tanah = 2 -> restore health
 jika dia masuk ke tong sampah yang benar, ulangi
 jika dia masuk ke tong sampah yang salah, ulangi
-
-
-lempar apple ke tong sampah yang salah = 2 -> kasih tau nanti kita bakal benerin
-jika dia masuk ke tong sampah yang benar, ulangi
-jika dia kena tanah, ulangi
 
 lempar apple ke tong sampah yang bener 3x -> 4, 6, 13
 jika dia masuk ke tong sampah yang salah, ulangi

@@ -54,6 +54,18 @@ namespace EcoTeam.EcoToss.Buff
             StartCoroutine(RandomBuff());
         }
 
+        public void TutorialCleanTrashCan()
+        {
+            for (int i = 0; i < _buffList.Count; i++)
+            {
+                if (_buffList[i].name == "BuffInstantRemoveTrash")
+                {
+                    _buffList[i].BuffEffect();
+                    break;
+                }
+            }
+        }
+
         IEnumerator RandomBuff()
         {
             PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("powerup_roll"));
@@ -114,9 +126,9 @@ namespace EcoTeam.EcoToss.Buff
                 }
                 else if (_buffList[_randomIndex].name == "BuffInstantRemoveTrash")
                 {
-                    if (!TutorialValidator.Instance.HasSpawnedBuffCleanBin)
+                    if (!TutorialValidator.Instance.HasSpawnedBuffCleanCan)
                     {
-                        TutorialValidator.Instance.SetHasSpawnedBuffCleanBin(true);
+                        TutorialValidator.Instance.SetHasSpawnedBuffCleanCan(true);
                         TutorialValidator.Instance.SetActiveTutorialBuff(_buffList[_randomIndex].name, true);
                     }
                 }

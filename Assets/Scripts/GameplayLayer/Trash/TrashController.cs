@@ -69,14 +69,19 @@ namespace EcoTeam.EcoToss.Trash
                     // Jika berada di scene tutorial
                     if (Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2)
                     {
-                        // Jika salah maka ulang tutorial sampai dia berhasil jatuh ke tanah
-                        if (!TutorialValidator.Instance.HasGoneToCorrectBin ||
-                            !TutorialValidator.Instance.HasGoneToWrongBin)
+                        // Ulang step tutorial sampai dia berhasil masuk ke tong sampah yang benar
+                        if (!TutorialValidator.Instance.HasGoneToCorrectCan)
                         {
-                            Invoke(nameof(StoreToPool), 0.5f);
-                            PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
-                            return;
+                            TutorialValidator.Instance.SetActiveTutorialCorrectCanTryAgain(true);
                         }
+                        // Ulang step tutorial sampai dia berhasil masuk ke tong sampah yang salah
+                        else if (!TutorialValidator.Instance.HasGoneToWrongCan)
+                        {
+                            TutorialValidator.Instance.SetActiveTutorialWrongCanTryAgain(true);
+                        }
+                        Invoke(nameof(StoreToPool), 0.5f);
+                        PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
+                        return;
                     }
 
                     PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
@@ -88,6 +93,7 @@ namespace EcoTeam.EcoToss.Trash
                         if (!TutorialValidator.Instance.HasHitGround)
                         {
                             TutorialValidator.Instance.SetHasHitGround(true);
+                            TutorialValidator.Instance.SetActiveTutorialHitGroundTryAgain(false);
                             TutorialValidator.Instance.SetActiveTutorialHitGround(true);
                         }
                     }

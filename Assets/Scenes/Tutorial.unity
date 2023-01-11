@@ -174,6 +174,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1119945252, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _title
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119945252, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _message
+      value: 'Oops, let''s try it again.
+
+
+        Throw the trash
+
+        into
+        Organic Trash Can
+
+        in the middle!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068913000155287, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068913692506971, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _title
+      value: Correct Can
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914296174557, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914386333312, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914386333312, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1926049985}
+    - target: {fileID: 1173068914386333312, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914386333312, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914386333312, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914386333312, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1173068914643141313, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -218,9 +270,89 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1173068914643141318, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _tutorialWrongCan
+      value: 
+      objectReference: {fileID: 212552783}
+    - target: {fileID: 1173068914643141318, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _tutorialCorrectCan
+      value: 
+      objectReference: {fileID: 1131299238}
+    - target: {fileID: 1173068914643141318, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _tutorialBuffCleanCan
+      value: 
+      objectReference: {fileID: 1925008600}
+    - target: {fileID: 1173068914643141318, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _tutorialMatch3TryAgain
+      value: 
+      objectReference: {fileID: 1411786134}
+    - target: {fileID: 1173068914643141318, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _tutorialWrongCanTryAgain
+      value: 
+      objectReference: {fileID: 998332419}
+    - target: {fileID: 1173068914643141318, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _tutorialHitGroundTryAgain
+      value: 
+      objectReference: {fileID: 1474335662}
+    - target: {fileID: 1173068914643141318, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _tutorialCorrectCanTryAgain
+      value: 
+      objectReference: {fileID: 855802985}
     - target: {fileID: 1173068914643141319, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
       propertyPath: m_Name
       value: TutorialValidator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _nextTutorialHasSameMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1509779921}
+    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 325233762}
+    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TutorialCleanTrashCan
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EcoTeam.EcoToss.Buff.BuffController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+      propertyPath: _onContinueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
@@ -727,10 +859,106 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
+--- !u!1 &159466048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 159466050}
+  - component: {fileID: 159466049}
+  m_Layer: 0
+  m_Name: TutorialMatch-3Transition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &159466049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159466048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialCanvas: {fileID: 2057253807}
+  _normalMask: {fileID: 2139811482}
+  _invertMask: {fileID: 223155457}
+  _applyMask: 1
+  _nextTutorialHasSameMask: 0
+  _prevTutorialHasSameMask: 0
+  _applyPause: 1
+  _modalWindowPanel: {fileID: 1985064764}
+  _onContinueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2057253803}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onCancelEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _modalWindowAlignment: 4
+  _title: Throw Three Times to The Correct Can
+  _sprite: {fileID: 0}
+  _message: 'Now, let''s try to throw Apple three times to Organic Trash Can, the
+    one in the middle.
+
+
+    Something interesting will happen!'
+  _confirmButtonText: OK
+  _declineButtonText: 
+--- !u!4 &159466050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159466048}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -78.657486, y: -702.2446, z: -57.847942}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1399115328}
+  m_RootOrder: 32
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &186412975 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1892725335093958616, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
   m_PrefabInstance: {fileID: 158814269}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &212552783 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1173068914840320733, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+  m_PrefabInstance: {fileID: 12565972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!224 &223155457 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 282715585, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+  m_PrefabInstance: {fileID: 12565972}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &260218452 stripped
 Transform:
@@ -915,6 +1143,85 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e47921519883c394b9f79f97e50f3ff8, type: 3}
+--- !u!1 &325233762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 325233764}
+  - component: {fileID: 325233763}
+  m_Layer: 0
+  m_Name: TutorialWrongCanDone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &325233763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325233762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialCanvas: {fileID: 2057253807}
+  _normalMask: {fileID: 2139811482}
+  _invertMask: {fileID: 223155457}
+  _applyMask: 2
+  _nextTutorialHasSameMask: 0
+  _prevTutorialHasSameMask: 0
+  _applyPause: 1
+  _modalWindowPanel: {fileID: 1985064764}
+  _onContinueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 159466048}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  _onCancelEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _modalWindowAlignment: 7
+  _title: Clean Can
+  _sprite: {fileID: 21300000, guid: 37fa87d9ab9dc4d47b89194a807de83c, type: 3}
+  _message: 'This is the Clean Can Buff!
+
+
+    All trash cans'' CAPACITY is emptied!'
+  _confirmButtonText: Nice!
+  _declineButtonText: 
+--- !u!4 &325233764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325233762}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -78.657486, y: -702.2446, z: -57.847942}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1399115328}
+  m_RootOrder: 33
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &361208429 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 383348961371729308, guid: a402a987b3ae4ed408bd73f5eb9b1014, type: 3}
@@ -2095,6 +2402,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 854663256}
   m_CullTransparentMesh: 1
+--- !u!114 &855802985 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1119945252, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+  m_PrefabInstance: {fileID: 12565972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &900872199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2209,6 +2527,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e47921519883c394b9f79f97e50f3ff8, type: 3}
+--- !u!114 &998332419 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1935547182189814500, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+  m_PrefabInstance: {fileID: 12565972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1006288591 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1443540485028722914, guid: 24f64f00fb0fded4facbdccc8807430a, type: 3}
@@ -2876,6 +3205,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b73c12d0a77b364cbf1d2c42b0100d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1131299238 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1173068913692506971, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+  m_PrefabInstance: {fileID: 12565972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1141889757
@@ -3790,6 +4130,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394144121}
   m_CullTransparentMesh: 1
+--- !u!4 &1399115328 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1173068914643141313, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+  m_PrefabInstance: {fileID: 12565972}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1411786134 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4117969112532546279, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+  m_PrefabInstance: {fileID: 12565972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1445126913 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1892725335093958616, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
@@ -4037,6 +4393,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456329402}
   m_CullTransparentMesh: 1
+--- !u!114 &1474335662 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7773706830813211795, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+  m_PrefabInstance: {fileID: 12565972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1509779920
 GameObject:
   m_ObjectHideFlags: 0
@@ -5180,6 +5547,97 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1892725335093958619, guid: 1551a853f86c2614cb1a23e0ce494326, type: 3}
   m_PrefabInstance: {fileID: 158814269}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1925008600 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1173068914707260805, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+  m_PrefabInstance: {fileID: 12565972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1926049985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1926049986}
+  - component: {fileID: 1926049987}
+  m_Layer: 0
+  m_Name: TutorialWrongCanTransition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1926049986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926049985}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -78.657486, y: -702.2446, z: -57.847942}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1399115328}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1926049987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926049985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1338efeadecb913489ff9ef2076b29e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialCanvas: {fileID: 2057253807}
+  _normalMask: {fileID: 2139811482}
+  _invertMask: {fileID: 223155457}
+  _applyMask: 1
+  _nextTutorialHasSameMask: 0
+  _prevTutorialHasSameMask: 0
+  _applyPause: 1
+  _modalWindowPanel: {fileID: 1985064764}
+  _onContinueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2057253803}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onCancelEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _modalWindowAlignment: 4
+  _title: Throw to Wrong Can
+  _sprite: {fileID: 0}
+  _message: 'Let''s try throwing to the wrong category of trash can.
+
+
+    Try throw
+    Apple to Inorganic or Dangerous trash can!'
+  _confirmButtonText: OK
+  _declineButtonText: 
 --- !u!1 &1975469377
 GameObject:
   m_ObjectHideFlags: 0
@@ -5315,6 +5773,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975469377}
   m_CullTransparentMesh: 1
+--- !u!114 &1985064764 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 642110975, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+  m_PrefabInstance: {fileID: 12565972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f7fdae46d8d2fe42bba628162327576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1987420495
 GameObject:
   m_ObjectHideFlags: 0
@@ -5655,6 +6124,16 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &2057253803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 543072268, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+  m_PrefabInstance: {fileID: 12565972}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &2057253807 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 543072272, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+  m_PrefabInstance: {fileID: 12565972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2090946189
 GameObject:
   m_ObjectHideFlags: 0
@@ -5835,6 +6314,11 @@ Transform:
   m_Father: {fileID: 1509779922}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &2139811482 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 117662475, guid: 2f87c423bf4640540ab37d7aa46d1133, type: 3}
+  m_PrefabInstance: {fileID: 12565972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &101093223733492506
 PrefabInstance:
   m_ObjectHideFlags: 0

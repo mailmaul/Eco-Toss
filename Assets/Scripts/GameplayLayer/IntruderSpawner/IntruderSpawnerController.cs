@@ -49,8 +49,6 @@ namespace EcoTeam.EcoToss.IntruderSpawner
             }
 
             // Tutorial Intruder
-            //if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) || !SaveDataController.Instance.SaveData.HasDoneTutorial)
-            //if (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial)
             if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
                 (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
             {
