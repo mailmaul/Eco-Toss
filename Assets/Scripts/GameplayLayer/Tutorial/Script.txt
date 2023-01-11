@@ -1,0 +1,87 @@
+Tutorial
+
+trash apple -> tap, hold, release
+trash apple -> tap, hold, swipe, release
+
+BIN INDICATOR
+This is the Trash Bin Indicators.
+They explains each of the bin's CAPACITY.
+
+It will FLASH GREEN if trash goes into the CORRECT bin.
+
+It will FLASH RED if the trash goes into the WRONG bin.
+
+====
+
+It will BLINK RED continuously if a bin's CAPACITY IS THREE LEFT.
+
+It's GAME OVER when a bin is FILLED!
+
+Current MAX CAPACITY is 6.
+
+====
+
+You can REMOVE trash if you throw 3 TRASHES into the CORRECT bin CONSECUTIVELY.
+
+Another way to REMOVE trash is to get the Clean Bin buff. 
+
+
+CORRECT BIN
+You've thrown it to the CORRECT bin, AMAZING!
+
+"O" means there is a trash in the correct bin. This can be removed if you throw 3 TRASHES into the CORRECT bin CONSECUTIVELY.
+
+
+WRONG BIN
+You've thrown it to the WRONG bin.
+
+"X" means there is a trash in the wrong bin. This can be removed if you get the Clean Bin buff.
+
+We have one for free this one time!
+
+
+
+*****
+
+throwing projection line renderer order = 1
+score controller next score to activate buff 20
+score to spawn intruder 15
+
+
+lempar apple ke tong sampah yang bener = 2
+jika dia masuk ke tong sampah yang salah, ulangi
+jika dia kena tanah, ulangi
+
+lempar apple ke tong sampah yang salah = 2 -> kasih tau nanti kita bakal benerin
+jika dia masuk ke tong sampah yang benar, ulangi
+jika dia kena tanah, ulangi
+
+lempar apple ke tanah = 2 -> restore health
+jika dia masuk ke tong sampah yang benar, ulangi
+jika dia masuk ke tong sampah yang salah, ulangi
+
+lempar apple ke tong sampah yang bener 3x -> 4, 6, 13
+jika dia masuk ke tong sampah yang salah, ulangi
+jika dia kena tanah, ulangi
+
+match-3
+jelasin buff = 15
+jelasin efek buff 1 = 15 -> clean bin
+jelasin efek buff 2 = 15 -> jelasin semua buff
+jelasin efek buff 3 = 15
+jelasin angin = 17
+jelasin intruder bulak balik = 24 -> kalau masuk tong sampah, maka tidak terjadi apa2 -> darah nanti restore lagi jadi 5 ketika kena intruder
+jelasin intruder acak acak = 26 -> kalau masuk tong sampah, maka tidak terjadi apa2 -> darah nanti restore lagi jadi 5 ketika kena intruder
+done
+
+
+kalau bukan tutorial -> system lakukan seperti gameplay biasa
+kalau tutorial -> cek apakah dia melakukan hal yang bener:
+-> kalau bener, system lakukan hal yang seharusnya -> kasih flag
+-> kalau salah, ulangi
+
+
+
+
+Exit game?
+Mark tutorial as done? Yes/No

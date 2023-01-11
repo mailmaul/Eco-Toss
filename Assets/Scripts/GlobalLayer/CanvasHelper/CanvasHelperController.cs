@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace EcoTeam.EcoToss.UI
+namespace EcoTeam.EcoToss.CanvasHelper
 {
     [RequireComponent(typeof(Canvas))]
     public class CanvasHelperController : MonoBehaviour

@@ -1,9 +1,12 @@
 using Agate.MVC.Core;
 using EcoTeam.EcoToss.PubSub;
+using EcoTeam.EcoToss.SaveData;
 using EcoTeam.EcoToss.Trash;
+using EcoTeam.EcoToss.Tutorial;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace EcoTeam.EcoToss.TrashCan
@@ -98,14 +101,84 @@ namespace EcoTeam.EcoToss.TrashCan
 
             if (_trashCanTag == collisionTag)
             {
+                // Jika berada di scene tutorial
+                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
+                    (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
+                {
+                    if (TutorialValidator.Instance.HasGoneToCorrectCan)
+                    {
+                        // Ulang tutorial sampai dia berhasil masuk ke tempat sampah yang salah
+                        if (!TutorialValidator.Instance.HasGoneToWrongCan)
+                        {
+                            PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
+                            TutorialValidator.Instance.SetActiveTutorialWrongCanTryAgain(true);
+                            return;
+                        }
+                        else
+                        {
+                            // Ulang tutorial sampai dia berhasil menyentuh tanah
+                            if (!TutorialValidator.Instance.HasHitGround)
+                            {
+                                PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
+                                TutorialValidator.Instance.SetActiveTutorialHitGroundTryAgain(true);
+                                return;
+                            }   
+                        }
+                    }
+                }
+
                 PublishSubscribe.Instance.Publish<MessageAddScore>(new MessageAddScore("Normal"));
                 PublishSubscribe.Instance.Publish<MessageSpawnVFX>(new MessageSpawnVFX("NewParticleEffect", transform.position));
                 StartCoroutine(IndicatorParentOutlineFlash("green"));
+
+                // Tutorial correct can berhasil
+                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
+                    (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
+                {
+                    if (!TutorialValidator.Instance.HasGoneToCorrectCan)
+                    {
+                        TutorialValidator.Instance.SetHasGoneToCorrectCan(true);
+                        TutorialValidator.Instance.SetActiveTutorialCorrectCanTryAgain(false);
+                        TutorialValidator.Instance.SetActiveTutorialCorrectCan(true);
+                    }
+                }
             }
             else
             {
                 PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
+
+                // Jika berada di scene tutorial
+                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
+                    (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
+                {
+                    // Ulang tutorial sampai dia berhasil masuk ke tempat sampah yang benar
+                    if (!TutorialValidator.Instance.HasGoneToWrongCan && !TutorialValidator.Instance.HasGoneToCorrectCan)
+                    {
+                        TutorialValidator.Instance.SetActiveTutorialCorrectCanTryAgain(true);
+                        return;
+                    }
+                    // Ulang tutorial sampai dia berhasil menyentuh tanah
+                    else if (TutorialValidator.Instance.HasGoneToWrongCan && !TutorialValidator.Instance.HasHitGround)
+                    {
+                        TutorialValidator.Instance.SetActiveTutorialHitGroundTryAgain(true);
+                        return;
+                    }
+                    
+                }
+
                 StartCoroutine(IndicatorParentOutlineFlash("red"));
+
+                // Tutorial wrong Can
+                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
+                    (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
+                {
+                    if (!TutorialValidator.Instance.HasGoneToWrongCan)
+                    {
+                        TutorialValidator.Instance.SetHasGoneToWrongCan(true);
+                        TutorialValidator.Instance.SetActiveTutorialWrongCanTryAgain(false);
+                        TutorialValidator.Instance.SetActiveTutorialWrongCan(true);
+                    }
+                }
             }
 
             CheckTrashListElements();
@@ -167,6 +240,17 @@ namespace EcoTeam.EcoToss.TrashCan
                                     _indicators[i - j].enabled = false;
                                 }
                                 _matchedTrashList.Clear();
+
+                                // Tutorial Match-3
+                                if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
+                                    (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
+                                {
+                                    if (!TutorialValidator.Instance.HasMatch3)
+                                    {
+                                        TutorialValidator.Instance.SetHasMatch3(true);
+                                        TutorialValidator.Instance.SetActiveTutorialMatch3(true);
+                                    }
+                                }
                             }
                             // Jika Match-2 maka tetap masukkan ke dalam list
                             else
@@ -233,7 +317,7 @@ namespace EcoTeam.EcoToss.TrashCan
 
             _indicatorParentOutline.enabled = true;
 
-            yield return new WaitForSecondsRealtime(_indicatorParentOutlineBlinkDuration);
+            yield return new WaitForSeconds(_indicatorParentOutlineBlinkDuration);
 
             _indicatorParentOutline.enabled = false;
         }

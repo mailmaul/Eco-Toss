@@ -2,7 +2,10 @@ using Agate.MVC.Core;
 using EcoTeam.EcoToss.GameManager;
 using EcoTeam.EcoToss.ObjectPooling;
 using EcoTeam.EcoToss.PubSub;
+using EcoTeam.EcoToss.SaveData;
+using EcoTeam.EcoToss.Tutorial;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace EcoTeam.EcoToss.Trash
 {
@@ -61,8 +64,40 @@ namespace EcoTeam.EcoToss.Trash
                 if (collision.gameObject.CompareTag("Ground"))
                 {
                     PublishSubscribe.Instance.Publish<MessagePlaySFX>(new MessagePlaySFX("sampah_salah_tanah"));
-                    PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
                     PublishSubscribe.Instance.Publish<MessageShakingCamera>(new MessageShakingCamera());
+
+                    // Jika berada di scene tutorial
+                    if (Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2)
+                    {
+                        // Ulang step tutorial sampai dia berhasil masuk ke tong sampah yang benar
+                        if (!TutorialValidator.Instance.HasGoneToCorrectCan)
+                        {
+                            TutorialValidator.Instance.SetActiveTutorialCorrectCanTryAgain(true);
+                        }
+                        // Ulang step tutorial sampai dia berhasil masuk ke tong sampah yang salah
+                        else if (!TutorialValidator.Instance.HasGoneToWrongCan)
+                        {
+                            TutorialValidator.Instance.SetActiveTutorialWrongCanTryAgain(true);
+                        }
+                        Invoke(nameof(StoreToPool), 0.5f);
+                        PublishSubscribe.Instance.Publish<MessageTrashSpawn>(new MessageTrashSpawn());
+                        return;
+                    }
+
+                    PublishSubscribe.Instance.Publish<MessageDecreaseHealth>(new MessageDecreaseHealth());
+
+                    //if (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial)
+                    if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
+                        (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
+                    {
+                        if (!TutorialValidator.Instance.HasHitGround)
+                        {
+                            TutorialValidator.Instance.SetHasHitGround(true);
+                            TutorialValidator.Instance.SetActiveTutorialHitGroundTryAgain(false);
+                            TutorialValidator.Instance.SetActiveTutorialHitGround(true);
+                        }
+                    }
+                        
                     Invoke(nameof(StoreToPool), 0.5f);
                 }
                 else if (collision.gameObject.tag.Substring(0, 8) == "TrashCan")

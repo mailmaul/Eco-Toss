@@ -40,7 +40,7 @@ namespace EcoTeam.EcoToss.Score
         private void Start()
         {
             _match3Score = _normalAddScore * 2 + 1;
-            _scoreTMP.SetText($"Score: {_score}");
+            _scoreTMP.SetText($"{_score}");
             PublishSubscribe.Instance.Publish<MessageSetProgressBarFill>(new MessageSetProgressBarFill(_score, _nextScoreToActivateBuff, _previousScoreWhenActivatingBuff));
         }
 
@@ -56,7 +56,7 @@ namespace EcoTeam.EcoToss.Score
                     break;
             }
 
-            _scoreTMP.SetText($"Score: {_score}");
+            _scoreTMP.SetText($"{_score}");
 
             if (Debug.isDebugBuild)
             {

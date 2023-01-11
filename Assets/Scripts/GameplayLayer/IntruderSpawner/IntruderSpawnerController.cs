@@ -2,8 +2,11 @@ using Agate.MVC.Core;
 using EcoTeam.EcoToss.Intruder;
 using EcoTeam.EcoToss.ObjectPooling;
 using EcoTeam.EcoToss.PubSub;
+using EcoTeam.EcoToss.SaveData;
+using EcoTeam.EcoToss.Tutorial;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace EcoTeam.EcoToss.IntruderSpawner
 {
@@ -36,10 +39,35 @@ namespace EcoTeam.EcoToss.IntruderSpawner
         public void Spawn(MessageSpawnIntruder msg)
         {
             int randomIndex = Random.Range(0, _intrudersList.Count);
+            string intruderName = _intrudersList[randomIndex].name;
+
             _pool.CreateObject(_intrudersList[randomIndex], transform.position, transform);
-            if (_intrudersList[randomIndex].name == "Chicken")
+
+            if (intruderName == "Scramble")
             {
                 PublishSubscribe.Instance.Publish<MessageCheckPointSpawn>(new MessageCheckPointSpawn());
+            }
+
+            // Tutorial Intruder
+            if ((Debug.isDebugBuild && SceneManager.GetActiveScene().buildIndex == 2) ||
+                (SceneManager.GetActiveScene().buildIndex == 2 && !SaveDataController.Instance.SaveData.HasDoneTutorial))
+            {
+                if (_intrudersList[randomIndex].name == "Patrol")
+                {
+                    if (!TutorialValidator.Instance.HasSpawnedIntruder1)
+                    {
+                        TutorialValidator.Instance.SetHasSpawnedIntruder1(true);
+                        TutorialValidator.Instance.SetActiveTutorialIntruder(intruderName, true);
+                    }
+                }
+                else if (_intrudersList[randomIndex].name == "Scramble")
+                {
+                    if (!TutorialValidator.Instance.HasSpawnedIntruder2)
+                    {
+                        TutorialValidator.Instance.SetHasSpawnedIntruder2(true);
+                        TutorialValidator.Instance.SetActiveTutorialIntruder(intruderName, true);
+                    }
+                }
             }
         }
     }

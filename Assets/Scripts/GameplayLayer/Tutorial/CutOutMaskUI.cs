@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-namespace EcoTeam.EcoToss.UI
+namespace EcoTeam.EcoToss.Tutorial
 {
     public class CutOutMaskUI : Image
     {
